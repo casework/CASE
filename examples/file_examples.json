@@ -1,0 +1,230 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#"
+  },
+  "@graph": [
+    // Each fileSystem has a parentFileSystem property which allows us to layer them.
+    // If you trace down this object, you will see that, the first object represents a Base64 encoded file found within an AES encrypted TAR archive which was a blob within a SQLite database found within an EXT4 file system that was the third partition within an image file found within an NTFS file system.
+
+    // This represents a base64 decoded file.
+    {
+      "@id": "decoded_attachment",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "tar_archive_file",
+          "fileSystemType": "Encoded",
+          "content": "decoded_attachment_content"
+        },
+        {
+          "@type": "EncodedStream",
+          "encodingMethod": "BASE64"
+        }
+      ]
+    },
+    {
+      "@id": "decoded_attachment_content",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 35000,
+          "data": "<base 64 encoded data of the file>"
+        },
+        {
+          "@type": "File",
+          "magicNumber": "/9j/ww==",
+          "mimeType": "image/jpg"
+        },
+        {
+          "@type": "Hash",
+          "hashMethod": "MD5",
+          "hashValue": "3d137a188c1e82247b815209ce44af2c"
+        }
+        ]
+    },
+
+    // This represents a file within a TAR archive.
+    {
+      "@id": "tar_archive_file",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "decrypted_blob",
+          "fileSystemType": "TAR",
+          "content": "tar_archive_file_content",
+          "filePath": "/some/files/in/archive/attachment.jpg",
+          "extension": "jpg",
+          "accessedTime": "2009-01-15T17:59:43.25Z25Z",
+          "createdTime": "2009-01-15T17:59:43.25Z25Z",
+          "modifiedTime": "2009-01-15T17:59:43.25Z25Z"
+        }
+      ]
+    },
+    {
+      "@id": "tar_archive_file_content",
+      "@type": "Item",
+      "propertyBundle": [
+          {
+            "@type": "ContentData",
+            "size": 23000,
+            "data": "<base 64 encoded data of the file>"
+          },
+          {
+            "@type": "Hash",
+            "hashMethod": "MD5",
+            "hashValue": "56137a188c1e82247b815209ce33af2d"
+          }
+        ]
+    },
+
+    // If you want to represent the root TAR archive file. You can omit the file path information.
+    {
+      "@id": "tar_archive",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "decrypted_blob",
+          "fileSystemType": "TAR"
+        }
+      ]
+    },
+
+    // This represents an AES decrypted file. (Which in this case is a TAR archive file.)
+    {
+      "@id": "decrypted_blob",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "sqlite_blob",
+          "fileSystemType": "Encrypted",
+          "content": "decrypted_blob_content"
+        },
+        {
+          "@type": "EncryptedStream",
+          "encryptionMethod": "AES",
+          "encryptionMode": "CBC",
+          "key": "whatsappKEY",
+          "iv": "whatsaoppIV"
+        }
+      ]
+    },
+
+    {
+      "@id": "decrypted_blob_content",
+      "@type": "Item",
+      "propertyBundle": [
+          {
+            "@type": "ContentData",
+            "size": 23000,
+            "data": "<base 64 encoded data of the file>"
+          },
+          {
+            "@type": "Hash",
+            "hashMethod": "MD5",
+            "hashValue": "45137a188c1e82247b815209ce33af2d"
+          }
+        ]
+    },
+
+    // This represents a SQLite blob file.
+    {
+      "@id": "sqlite_blob",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "sqlite_database",
+          "fileSystemType": "SQLite"
+        },
+        {
+          "@type": "SQLiteBlob",
+          "tableName": "AttachmentTable",
+          "columnName": "data",
+          "rowCondition": "pk_id == 5"
+        }
+      ]
+    },
+
+    // This represents a database file found within an EXT4 formatted volume.
+    {
+      "@id": "sqlite_database",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "image_partition",
+          "fileSystemType": "EXT4",
+          "content": "sqlite_database_content",
+          "filePath": "/data/data/com.whatsapp/cache/messages.db",
+          "fileName": "messages.db",
+          "extension": "db",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "size": 1231
+        }
+      ]
+    },
+    {
+      "@id": "sqlite_database_content",
+      "@type": "Item",
+      "propertyBundle": [
+          {
+            "@type": "File",
+            "magicNumber": "U1FMaXRlIGZvcm1hdCAzAA=="
+          }
+        ]
+    },
+
+    // This represents a partition found in an android image.
+    {
+      "@id": "image_partition",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "android_image",
+          "fileSystemType": "Volume",
+          "size": 23100
+        },
+        {
+          "@type": "DiskPartition",
+          "partIndex": 3
+        }
+      ]
+    },
+
+    // This represents the android image.
+    {
+      "@id": "android_image",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": null,
+          "fileSystemType": "NTFS",
+          "extension": "img",
+          "isDirectory": false,
+          "fileName": "DFL-20140712-001C.img",
+          "filePath": "C:\\input_devices\\DFL-20140712-001C.img",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "size": 350000
+        },
+        {
+          "@type": "NTFS",
+          "sid": 1,
+          "alternateDataStream": null  // Leave null when describing the main data stream.
+        }
+      ]
+    }
+  ]
+}

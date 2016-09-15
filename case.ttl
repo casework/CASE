@@ -4,10 +4,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix exif: <http://www.kanzaki.com/ns/exif#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://case.example.org/core> .
 
 <http://case.example.org/core> rdf:type owl:Ontology ;
+                                owl:imports <http://www.kanzaki.com/ns/dliser.rdf> ;
                                 owl:versionInfo "version_info" ;
                                 owl:priorVersion 0.0 ;
                                 owl:versionInfo "0.1"^^xsd:string ;
@@ -40,14 +42,12 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                       rdfs:range :ActionLifecyclePattern .
 
 
-###  http://case.example.org/core#alternateDataStream
-:alternateDataStream rdf:type owl:ObjectProperty ;
-                     rdfs:domain :NTFSFile ;
-                     rdfs:range [ rdf:type owl:Restriction ;
-                                  owl:onProperty :propertyBundle ;
-                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :AlternateDataStream
-                                ] .
+###  http://case.example.org/core#application
+:application rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :ApplicationAccount ;
+             rdfs:range :Item ;
+             rdfs:comment "Defines the application-like item used by this account." .
 
 
 ###  http://case.example.org/core#associatedAccount
@@ -67,13 +67,13 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :binary rdf:type owl:ObjectProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :Process ;
-        rdfs:range :CyberItem .
+        rdfs:range :Item .
 
 
 ###  http://case.example.org/core#byteOrder
 :byteOrder rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain :DataRange ;
+           rdfs:domain :ContentData ;
            rdfs:range :ByteOrder .
 
 
@@ -81,8 +81,8 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :compressionMethod rdf:type owl:ObjectProperty ,
                             owl:FunctionalProperty ;
                    rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( :CompressedStream
-                                               :RasterImage
+                                 owl:unionOf ( :Compressed
+                                               :EWFImage
                                              )
                                ] ;
                    rdfs:range :CompressionMethod .
@@ -92,19 +92,26 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :creator rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
          rdfs:domain :WindowsRegistryKey ;
-         rdfs:range :CyberItem .
+         rdfs:range :Item .
 
 
 ###  http://case.example.org/core#creatorUser
 :creatorUser rdf:type owl:ObjectProperty ;
              rdfs:domain :Process ;
-             rdfs:range :CyberItem .
+             rdfs:range :Item .
 
 
 ###  http://case.example.org/core#currentWorkingDirectory
 :currentWorkingDirectory rdf:type owl:ObjectProperty ;
                          rdfs:domain :Process ;
                          rdfs:range :FilePath .
+
+
+###  http://case.example.org/core#dataPath
+:dataPath rdf:type owl:ObjectProperty ;
+          rdfs:domain :Package ;
+          rdfs:range :Item ;
+          rdfs:comment "Path designated by the OS to be used by that package application." .
 
 
 ###  http://case.example.org/core#dataType
@@ -133,7 +140,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#encodingMethod
 :encodingMethod rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :EncodedStream
+                              owl:unionOf ( :Encoded
                                             :ExtractedString
                                           )
                             ] ;
@@ -143,14 +150,14 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#encryptionMethod
 :encryptionMethod rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
-                  rdfs:domain :EncryptedStream ;
+                  rdfs:domain :Encrypted ;
                   rdfs:range :EncryptionMethod .
 
 
 ###  http://case.example.org/core#encryptionMode
 :encryptionMode rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain :EncryptedStream ;
+                rdfs:domain :Encrypted ;
                 rdfs:range :EncryptionMode .
 
 
@@ -171,17 +178,47 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#environmentVariable
 :environmentVariable rdf:type owl:ObjectProperty ;
                      rdfs:domain :Process ;
-                     rdfs:range :EnvironmentVariable .
+                     rdfs:range :DictionaryItem .
 
 
 ###  http://case.example.org/core#errorType
 :errorType rdf:type owl:ObjectProperty .
 
 
-###  http://case.example.org/core#exifTag
-:exifTag rdf:type owl:ObjectProperty ;
-         rdfs:domain :EXIF ;
-         rdfs:range :EXIFTag .
+###  http://case.example.org/core#exifData
+:exifData rdf:type owl:ObjectProperty ;
+          rdfs:domain :EXIF ;
+          rdfs:range :DictionaryItem .
+
+
+###  http://case.example.org/core#extractedCodeSnippet
+:extractedCodeSnippet rdf:type owl:ObjectProperty ;
+                      rdfs:domain :ExtractedFeatures ;
+                      rdfs:range :Item ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :propertyBundle ;
+                                   owl:someValuesFrom :ExtractedString
+                                 ] .
+
+
+###  http://case.example.org/core#extractedImport
+:extractedImport rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ExtractedFeatures ;
+                 rdfs:range :Item ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :propertyBundle ;
+                              owl:someValuesFrom :ExtractedString
+                            ] .
+
+
+###  http://case.example.org/core#extractedString
+:extractedString rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ExtractedFeatures ;
+                 rdfs:range :Item ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :propertyBundle ;
+                              owl:someValuesFrom :ExtractedString
+                            ] .
 
 
 ###  http://case.example.org/core#fileHeader
@@ -209,23 +246,11 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
  ] .
 
 
-###  http://case.example.org/core#filesystem
-:filesystem rdf:type owl:ObjectProperty ,
-                     owl:FunctionalProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Attachment
-                                        :File
-                                      )
-                        ] ;
-            rdfs:range [ rdf:type owl:Restriction ;
-                         owl:onProperty :propertyBundle ;
-                         owl:someValuesFrom :FileSystem
-                       ] ;
-            rdfs:comment """Points to an object with a file system property bundle that describes how to retreive the file. (This is why there is no filepath or encryption information in the File class.)
-
-This is mainly used when we have parsed file information outside of something that isn't the file itself. (eg. attachment file metadata from a chat message) Otherwise it doesn't make sense, because it would link to itself.
-
-TODO: Iron out the details of this.""" .
+###  http://case.example.org/core#fileSystemType
+:fileSystemType rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :FileSystem ;
+                rdfs:range :FileSystemType .
 
 
 ###  http://case.example.org/core#forensicActions
@@ -242,29 +267,18 @@ TODO: Iron out the details of this.""" .
                             ] .
 
 
-###  http://case.example.org/core#fromApplication
-:fromApplication rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain :ApplicationAccount ;
-                 rdfs:range :Object ;
-                 rdfs:comment "Defines the application-like item used by this account." .
-
-
 ###  http://case.example.org/core#hash
 :hash rdf:type owl:ObjectProperty ;
       rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( :AlternateDataStream
-                                  :Attachment
-                                  :ByteRun
-                                  :DataRange
-                                  :ExtractedString
+                    owl:unionOf ( :ExtractedString
                                   :WindowsPEFileHeader
                                   :WindowsPEOptionalHeader
                                   :WindowsPESection
                                   :X509Certificate
                                 )
                   ] ;
-      rdfs:range :Hash .
+      rdfs:range :Hash ;
+      rdfs:comment "TODO: Remove this use of this property in exchange for using the Hash property bundle." .
 
 
 ###  http://case.example.org/core#hashMethod
@@ -278,6 +292,13 @@ TODO: Iron out the details of this.""" .
 :homeDirectory rdf:type owl:ObjectProperty ;
                rdfs:domain :UserAccount ;
                rdfs:range :FilePath .
+
+
+###  http://case.example.org/core#imageCompressionMethod
+:imageCompressionMethod rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :RasterPicture ;
+                        rdfs:range :ImageCompressionMethod .
 
 
 ###  http://case.example.org/core#instrument
@@ -335,7 +356,11 @@ TODO: Iron out the details of this.""" .
 ###  http://case.example.org/core#mimeType
 :mimeType rdf:type owl:ObjectProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :File ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Attachment
+                                      :File
+                                    )
+                      ] ;
           rdfs:range :MimeType .
 
 
@@ -351,6 +376,7 @@ TODO: Iron out the details of this.""" .
         rdfs:subPropertyOf owl:topObjectProperty ;
         rdfs:domain [ rdf:type owl:Class ;
                       owl:unionOf ( :Annotation
+                                    :Attachment
                                     :ProvenanceRecord
                                     :Role
                                   )
@@ -361,7 +387,7 @@ TODO: Iron out the details of this.""" .
 ###  http://case.example.org/core#operatingSystem
 :operatingSystem rdf:type owl:ObjectProperty ;
                  rdfs:domain :Application ;
-                 rdfs:range :Object ,
+                 rdfs:range :Item ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :propertyBundle ;
                               owl:someValuesFrom :OperatingSystem
@@ -379,7 +405,7 @@ TODO: Iron out the details of this.""" .
 :parentFileSystem rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :FileSystem ;
-                  rdfs:range :Object ,
+                  rdfs:range :Item ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :propertyBundle ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -391,7 +417,7 @@ TODO: Iron out the details of this.""" .
 ###  http://case.example.org/core#parentProcess
 :parentProcess rdf:type owl:ObjectProperty ;
                rdfs:domain :Process ;
-               rdfs:range :CyberItem ,
+               rdfs:range :Item ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :propertyBundle ;
                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -422,15 +448,6 @@ TODO: Iron out the details of this.""" .
            rdfs:domain :Action ;
            rdfs:range :Object ;
            rdfs:comment "Defines the person, action, or thing that caused this action." .
-
-
-###  http://case.example.org/core#previousRevision
-:previousRevision rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Object ;
-                  rdfs:range :Object ;
-                  rdfs:comment """Points to an existing object if the new object is a modified version of a previous revision.
-
-If this item is the product of merging two or more object, it will contain multiple previousRevision properties.""" .
 
 
 ###  http://case.example.org/core#propertyBundle
@@ -521,19 +538,15 @@ If this item is the product of merging two or more object, it will contain multi
 
 
 ###  http://case.example.org/core#subject
-:subject rdf:type owl:ObjectProperty ;
-         rdfs:domain :Investigation ;
+:subject rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Investigation ,
+                     :X509Certificate ;
          rdfs:range [ rdf:type owl:Class ;
                       owl:unionOf ( :Identity
                                     :Role
                                   )
                     ] .
-
-
-###  http://case.example.org/core#thumbnail
-:thumbnail rdf:type owl:ObjectProperty ;
-           rdfs:domain :Object ;
-           rdfs:range :Object .
 
 
 ###  http://case.example.org/core#victim
@@ -590,39 +603,22 @@ olo:slot rdf:type owl:ObjectProperty .
               rdfs:range xsd:dateTimeStamp .
 
 
-###  http://case.example.org/core#accountCreated
-:accountCreated rdf:type owl:DatatypeProperty ,
-                         owl:FunctionalProperty ;
-                rdfs:domain :AccountAuthentication ;
-                rdfs:range xsd:dateTimeStamp .
-
-
-###  http://case.example.org/core#accountExpires
-:accountExpires rdf:type owl:DatatypeProperty ,
-                         owl:FunctionalProperty ;
-                rdfs:domain :AccountAuthentication ;
-                rdfs:range xsd:dateTimeStamp .
-
-
-###  http://case.example.org/core#accountFirstLogin
-:accountFirstLogin rdf:type owl:DatatypeProperty ,
-                            owl:FunctionalProperty ;
-                   rdfs:domain :AccountAuthentication ;
-                   rdfs:range xsd:dateTimeStamp .
-
-
-###  http://case.example.org/core#accountLastLogin
-:accountLastLogin rdf:type owl:DatatypeProperty ,
-                           owl:FunctionalProperty ;
-                  rdfs:domain :AccountAuthentication ;
-                  rdfs:range xsd:dateTimeStamp .
+###  http://case.example.org/core#accountIssuer
+:accountIssuer rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Account ;
+               rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#accountLogin
-:accountLogin rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :Account ;
+:accountLogin rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DigitalAccount ;
               rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#acquiryDate
+:acquiryDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :EWFImage ;
+             rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#addressOfEntryPoint
@@ -630,6 +626,20 @@ olo:slot rdf:type owl:ObjectProperty .
                               owl:FunctionalProperty ;
                      rdfs:domain :WindowsPEOptionalHeader ;
                      rdfs:range xsd:hexBinary .
+
+
+###  http://case.example.org/core#alternateDataStream
+:alternateDataStream rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :NTFS ;
+                     rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#applicationName
+:applicationName rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Package ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The name of the application (friendly name)" .
 
 
 ###  http://case.example.org/core#arguments
@@ -682,14 +692,14 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#birthday
 :birthday rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :Identity ;
+          rdfs:domain :IdentityO ;
           rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#bitsPerPixel
 :bitsPerPixel rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
-              rdfs:domain :RasterImage ;
+              rdfs:domain :RasterPicture ;
               rdfs:range xsd:integer .
 
 
@@ -709,6 +719,12 @@ olo:slot rdf:type owl:ObjectProperty .
 :canEscalatePrivs rdf:type owl:DatatypeProperty ;
                   rdfs:domain :UserAccount ;
                   rdfs:range xsd:boolean .
+
+
+###  http://case.example.org/core#caseNumber
+:caseNumber rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EWFImage ;
+            rdfs:range xsd:integer .
 
 
 ###  http://case.example.org/core#certificatePolicies
@@ -748,7 +764,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#comment
 :comment rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :Archive ;
+         rdfs:domain :ArchiveFile ;
          rdfs:range xsd:string .
 
 
@@ -770,7 +786,8 @@ olo:slot rdf:type owl:ObjectProperty .
              rdfs:subPropertyOf owl:topDataProperty ;
              rdf:type owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :FileSystem
+                           owl:unionOf ( :Account
+                                         :FileSystem
                                          :Process
                                        )
                          ] ;
@@ -782,6 +799,12 @@ olo:slot rdf:type owl:ObjectProperty .
                                 owl:FunctionalProperty ;
                        rdfs:domain :X509V3Extensions ;
                        rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#data
+:data rdf:type owl:DatatypeProperty ;
+      rdfs:domain :ContentData ;
+      rdfs:range xsd:base64Binary .
 
 
 ###  http://case.example.org/core#delimiter
@@ -799,7 +822,11 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#description
 :description rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Descriptive ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Descriptive
+                                         :EWFImage
+                                       )
+                         ] ;
              rdfs:range xsd:string .
 
 
@@ -826,7 +853,6 @@ olo:slot rdf:type owl:ObjectProperty .
                       owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Account
-                                         :EmailAddress
                                          :MessageThread
                                          :WindowsService
                                        )
@@ -853,15 +879,21 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#emailAddress
+:emailAddress rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EmailAccount ;
+              rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#encryptionIV
 :encryptionIV rdf:type owl:DatatypeProperty ;
-              rdfs:domain :EncryptedStream ;
+              rdfs:domain :Encrypted ;
               rdfs:range xsd:hexBinary .
 
 
 ###  http://case.example.org/core#encryptionKey
 :encryptionKey rdf:type owl:DatatypeProperty ;
-               rdfs:domain :EncryptedStream ;
+               rdfs:domain :Encrypted ;
                rdfs:range xsd:hexBinary .
 
 
@@ -890,10 +922,34 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:range xsd:float .
 
 
+###  http://case.example.org/core#errorGranularity
+:errorGranularity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EWFImage ;
+                  rdfs:range xsd:integer .
+
+
+###  http://case.example.org/core#evidenceNumber
+:evidenceNumber rdf:type owl:DatatypeProperty ;
+                rdfs:domain :EWFImage ;
+                rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#examinerName
+:examinerName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EWFImage ;
+              rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#exhibitNumber
 :exhibitNumber rdf:type owl:DatatypeProperty ;
                rdfs:domain :ProvenanceRecord ;
                rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#expiredTime
+:expiredTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Account ;
+             rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#extendedKeyUsage
@@ -923,17 +979,27 @@ olo:slot rdf:type owl:ObjectProperty .
           rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#firstLoginTime
+:firstLoginTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain :DigitalAccount ;
+                rdfs:range xsd:dateTimeStamp .
+
+
 ###  http://case.example.org/core#firstName
 :firstName rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain :Identity ;
+           rdfs:domain :IdentityO ;
            rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#format
 :format rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
-        rdfs:domain :RasterImage ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :EWFImage
+                                    :RasterPicture
+                                  )
+                    ] ;
         rdfs:range xsd:string .
 
 
@@ -945,15 +1011,25 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#group
 :group rdf:type owl:DatatypeProperty ;
-       rdfs:domain :WindowsService ;
+       rdfs:domain [ rdf:type owl:Class ;
+                     owl:unionOf ( :UNIXAccount
+                                   :WindowsAccount
+                                   :WindowsService
+                                 )
+                   ] ;
        rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#height
-:height rdf:type owl:DatatypeProperty ,
-                 owl:FunctionalProperty ;
-        rdfs:domain :RasterImage ;
-        rdfs:range xsd:positiveInteger .
+###  http://case.example.org/core#guid
+:guid rdf:type owl:DatatypeProperty ;
+      rdfs:domain :EWFImage ;
+      rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#hashValue
+:hashValue rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Hash ;
+           rdfs:range xsd:hexBinary .
 
 
 ###  http://case.example.org/core#httpMessageBodyData
@@ -999,6 +1075,20 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#imageHeight
+:imageHeight rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :RasterPicture ;
+             rdfs:range xsd:positiveInteger .
+
+
+###  http://case.example.org/core#imageWidth
+:imageWidth rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :RasterPicture ;
+            rdfs:range xsd:positiveInteger .
+
+
 ###  http://case.example.org/core#impHash
 :impHash rdf:type owl:DatatypeProperty ;
          rdfs:domain :WindowsPEBinaryFile ;
@@ -1018,6 +1108,12 @@ olo:slot rdf:type owl:ObjectProperty .
                   rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#inode
+:inode rdf:type owl:DatatypeProperty ;
+       rdfs:domain :FileSystem ;
+       rdfs:range xsd:integer .
+
+
 ###  http://case.example.org/core#ipAddress
 :ipAddress rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
@@ -1026,16 +1122,16 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:comment "Change this to an already defined ip address type." .
 
 
+###  http://case.example.org/core#isActive
+:isActive rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Account ;
+          rdfs:range xsd:boolean .
+
+
 ###  http://case.example.org/core#isDirectory
 :isDirectory rdf:type owl:DatatypeProperty ;
              rdfs:domain :FileSystem ;
              rdfs:range xsd:boolean .
-
-
-###  http://case.example.org/core#isDisabled
-:isDisabled rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Account ;
-            rdfs:range xsd:boolean .
 
 
 ###  http://case.example.org/core#isHidden
@@ -1093,7 +1189,11 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#key
 :key rdf:type owl:DatatypeProperty ;
-     rdfs:domain :WindowsRegistryKey ;
+     rdfs:domain [ rdf:type owl:Class ;
+                   owl:unionOf ( :DictionaryItem
+                                 :WindowsRegistryKey
+                               )
+                 ] ;
      rdfs:range xsd:string .
 
 
@@ -1110,10 +1210,16 @@ olo:slot rdf:type owl:ObjectProperty .
                     rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#lastLoginTime
+:lastLoginTime rdf:type owl:DatatypeProperty ;
+               rdfs:domain :DigitalAccount ;
+               rdfs:range xsd:dateTimeStamp .
+
+
 ###  http://case.example.org/core#lastName
 :lastName rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :Identity ;
+          rdfs:domain :IdentityO ;
           rdfs:range xsd:string .
 
 
@@ -1241,9 +1347,7 @@ olo:slot rdf:type owl:ObjectProperty .
 :name rdf:type owl:DatatypeProperty ,
                owl:FunctionalProperty ;
       rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( :AlternateDataStream
-                                  :Descriptive
-                                  :EnvironmentVariable
+                    owl:unionOf ( :Descriptive
                                   :Mutex
                                   :WindowsPESection
                                   :WindowsRegistryValue
@@ -1258,6 +1362,12 @@ olo:slot rdf:type owl:ObjectProperty .
                          owl:FunctionalProperty ;
                 rdfs:domain :X509V3Extensions ;
                 rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#notes
+:notes rdf:type owl:DatatypeProperty ;
+       rdfs:domain :EWFImage ;
+       rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#numberOfLaunches
@@ -1299,6 +1409,12 @@ olo:slot rdf:type owl:ObjectProperty .
           rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#operatingSystemUsed
+:operatingSystemUsed rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :EWFImage ;
+                     rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#organization
 :organization rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
@@ -1313,6 +1429,21 @@ olo:slot rdf:type owl:ObjectProperty .
           rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#packageName
+:packageName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Package ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The package name (identifier)" .
+
+
+###  http://case.example.org/core#packagePermission
+:packagePermission rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Package ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Defines a permission associated with the application." .
+
+
 ###  http://case.example.org/core#partIndex
 :partIndex rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
@@ -1323,7 +1454,12 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#password
 :password rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :Account ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :AccountAuthentication
+                                      :BDEVolume
+                                      :EWFImage
+                                    )
+                      ] ;
           rdfs:range xsd:string .
 
 
@@ -1350,6 +1486,12 @@ olo:slot rdf:type owl:ObjectProperty .
                  owl:FunctionalProperty ;
         rdfs:domain :PDFFile ;
         rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#phoneNumber
+:phoneNumber rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PhoneAccount ;
+             rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#pid
@@ -1419,6 +1561,12 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:range xsd:positiveInteger .
 
 
+###  http://case.example.org/core#recoveryPassword
+:recoveryPassword rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :BDEVolume ;
+                  rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#rowCondition
 :rowCondition rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
@@ -1440,6 +1588,12 @@ olo:slot rdf:type owl:ObjectProperty .
                   rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#sectorsPerChunk
+:sectorsPerChunk rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EWFImage ;
+                 rdfs:range xsd:integer .
+
+
 ###  http://case.example.org/core#serialNumber
 :serialNumber rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
@@ -1459,7 +1613,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#sid
 :sid rdf:type owl:DatatypeProperty ;
-     rdfs:domain :NTFSFile ;
+     rdfs:domain :NTFS ;
      rdfs:range xsd:string .
 
 
@@ -1474,7 +1628,8 @@ olo:slot rdf:type owl:ObjectProperty .
 :size rdf:type owl:DatatypeProperty ,
                owl:FunctionalProperty ;
       rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( :File
+                    owl:unionOf ( :ContentData
+                                  :FileSystem
                                   :WindowsPESection
                                 )
                   ] ;
@@ -1552,9 +1707,21 @@ olo:slot rdf:type owl:ObjectProperty .
                            rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#snapshotID
+:snapshotID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :VSSVolume ;
+            rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#softwareLanguage
 :softwareLanguage rdf:type owl:DatatypeProperty ;
                   rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#softwareVersionUsed
+:softwareVersionUsed rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :EWFImage ;
+                     rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#sourceFlags
@@ -1593,6 +1760,12 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:range xsd:dateTimeStamp .
 
 
+###  http://case.example.org/core#startupKey
+:startupKey rdf:type owl:DatatypeProperty ;
+            rdfs:domain :BDEVolume ;
+            rdfs:range xsd:base64Binary .
+
+
 ###  http://case.example.org/core#stringValue
 :stringValue rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
@@ -1607,7 +1780,6 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#subject
 :subject rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :X509Certificate ;
          rdfs:range xsd:string .
 
 
@@ -1671,6 +1843,12 @@ olo:slot rdf:type owl:ObjectProperty .
       rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#systemDate
+:systemDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EWFImage ;
+            rdfs:range xsd:dateTimeStamp .
+
+
 ###  http://case.example.org/core#tableName
 :tableName rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
@@ -1696,13 +1874,6 @@ olo:slot rdf:type owl:ObjectProperty .
         rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#url
-:url rdf:type owl:DatatypeProperty ,
-              owl:FunctionalProperty ;
-     rdfs:domain :Attachment ;
-     rdfs:range xsd:anyURI .
-
-
 ###  http://case.example.org/core#validityNotAfter
 :validityNotAfter rdf:type owl:DatatypeProperty ,
                            owl:FunctionalProperty ;
@@ -1721,23 +1892,16 @@ olo:slot rdf:type owl:ObjectProperty .
 :value rdf:type owl:DatatypeProperty ,
                 owl:FunctionalProperty ;
        rdfs:domain [ rdf:type owl:Class ;
-                     owl:unionOf ( :DomainName
-                                   :EnvironmentVariable
-                                   :Hash
+                     owl:unionOf ( :DictionaryItem
+                                   :DomainName
                                    :IPv4Address
                                    :IPv6Address
                                    :MACAddress
-                                   :RawData
                                    :URI
                                    :WindowsRegistryValue
                                  )
                    ] ;
-       rdfs:range [ rdf:type rdfs:Datatype ;
-                    owl:unionOf ( xsd:base64Binary
-                                  xsd:hexBinary
-                                  xsd:string
-                                )
-                  ] .
+       rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#vendor
@@ -1751,21 +1915,15 @@ olo:slot rdf:type owl:ObjectProperty .
                   owl:FunctionalProperty ;
          rdfs:domain [ rdf:type owl:Class ;
                        owl:unionOf ( :Application
-                                     :Archive
+                                     :ArchiveFile
                                      :OperatingSystem
                                      :PDFFile
+                                     :Package
                                      :Tool
                                      :X509Certificate
                                    )
                      ] ;
          rdfs:range xsd:string .
-
-
-###  http://case.example.org/core#width
-:width rdf:type owl:DatatypeProperty ,
-                owl:FunctionalProperty ;
-       rdfs:domain :RasterImage ;
-       rdfs:range xsd:positiveInteger .
 
 
 ###  http://case.example.org/core#win32VersionValue
@@ -1812,11 +1970,6 @@ olo:slot rdf:type owl:ObjectProperty .
                         rdfs:comment "Defines an ordered list that must contain only Action classes as items." .
 
 
-###  http://case.example.org/core#AlternateDataStream
-:AlternateDataStream rdf:type owl:Class ;
-                     rdfs:subClassOf :SupportingClasses .
-
-
 ###  http://case.example.org/core#AndroidPackage
 :AndroidPackage rdf:type owl:Class ;
                 rdfs:subClassOf :PropertyBundle .
@@ -1837,16 +1990,18 @@ olo:slot rdf:type owl:ObjectProperty .
                     rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#Archive
-:Archive rdf:type owl:Class ;
-         rdfs:subClassOf :PropertyBundle ;
-         rdfs:comment "Defines the basic properties associated with an archive file system." .
+###  http://case.example.org/core#ArchiveFile
+:ArchiveFile rdf:type owl:Class ;
+             rdfs:subClassOf :PropertyBundle ;
+             rdfs:comment "Defines the basic properties associated with an archive file system." .
 
 
 ###  http://case.example.org/core#Attachment
 :Attachment rdf:type owl:Class ;
             rdfs:subClassOf :PropertyBundle ;
-            rdfs:comment "Defines a file that is an attachment of a message." .
+            rdfs:comment """Defines an object that is an attachment of a message.
+
+Note: This property bundle is different. Instead of putting this as a property bundle of the attachment itself, you put this on the message.""" .
 
 
 ###  http://case.example.org/core#Attorney
@@ -1891,19 +2046,12 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#ByteRun
 :ByteRun rdf:type owl:Class ;
-         owl:equivalentClass :DataRange ;
          rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#CPIOArchive
-:CPIOArchive rdf:type owl:Class ;
-             rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#CompressedStream
-:CompressedStream rdf:type owl:Class ;
-                  rdfs:subClassOf :PropertyBundle ;
-                  rdfs:comment "Defines the basic properties associated with a compressed stream." .
+###  http://case.example.org/core#Compressed
+:Compressed rdf:type owl:Class ;
+            rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#CompressionMethod
@@ -1921,21 +2069,14 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#CyberItem
-:CyberItem rdf:type owl:Class ;
-           rdfs:subClassOf :Descriptive ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :propertyBundle ;
-                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :PropertyBundle
-                           ] ;
-           rdfs:comment "An object that must contain at least one property bundle." .
+###  http://case.example.org/core#ContentData
+:ContentData rdf:type owl:Class ;
+             rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#DataRange
 :DataRange rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle ;
-           rdfs:comment "Defines the basic properties associated with a range of data." .
+           rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#DataType
@@ -1952,6 +2093,26 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#Device
 :Device rdf:type owl:Class ;
         rdfs:subClassOf :PropertyBundle .
+
+
+###  http://case.example.org/core#DictionaryItem
+:DictionaryItem rdf:type owl:Class ;
+                rdfs:subClassOf :SupportingClasses ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :key ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:string
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :value ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:string
+                                ] .
+
+
+###  http://case.example.org/core#DigitalAccount
+:DigitalAccount rdf:type owl:Class ;
+                rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#Disk
@@ -1976,12 +2137,8 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#EXIF
 :EXIF rdf:type owl:Class ;
-      rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#EXIFTag
-:EXIFTag rdf:type owl:Class ;
-         rdfs:subClassOf :Enumeration .
+      rdfs:subClassOf :PropertyBundle ;
+      rdfs:comment "TODO: Use imported exif ontology" .
 
 
 ###  http://case.example.org/core#EmailAccount
@@ -2001,9 +2158,9 @@ olo:slot rdf:type owl:ObjectProperty .
               owl:disjointWith :SMSMessage .
 
 
-###  http://case.example.org/core#EncodedStream
-:EncodedStream rdf:type owl:Class ;
-               rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#Encoded
+:Encoded rdf:type owl:Class ;
+         rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#EncodingMethod
@@ -2011,9 +2168,9 @@ olo:slot rdf:type owl:ObjectProperty .
                 rdfs:subClassOf :Enumeration .
 
 
-###  http://case.example.org/core#EncryptedStream
-:EncryptedStream rdf:type owl:Class ;
-                 rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#Encrypted
+:Encrypted rdf:type owl:Class ;
+           rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#EncryptionMethod
@@ -2028,11 +2185,6 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#Enumeration
 :Enumeration rdf:type owl:Class .
-
-
-###  http://case.example.org/core#EnvironmentVariable
-:EnvironmentVariable rdf:type owl:Class ;
-                     rdfs:subClassOf :SupportingClasses .
 
 
 ###  http://case.example.org/core#Error
@@ -2055,17 +2207,22 @@ olo:slot rdf:type owl:ObjectProperty .
           rdfs:subClassOf :BenevolentRole .
 
 
+###  http://case.example.org/core#ExtractedFeatures
+:ExtractedFeatures rdf:type owl:Class ;
+                   rdfs:subClassOf :PropertyBundle .
+
+
 ###  http://case.example.org/core#ExtractedString
 :ExtractedString rdf:type owl:Class ;
-                 rdfs:subClassOf :SupportingClasses .
+                 rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#File
 :File rdf:type owl:Class ;
       rdfs:subClassOf :PropertyBundle ;
-      rdfs:comment """Represents the properties of a file.
+      rdfs:comment """Represents a file.
 
-Note: The encryption information is represented by the EncryptedStream FileSystem propertbundle.""" .
+TODO: Not sure what properties should be in here versus being in Data or FileSystem.""" .
 
 
 ###  http://case.example.org/core#FileMetadataMismatch
@@ -2081,13 +2238,18 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
 ###  http://case.example.org/core#FilePath
 :FilePath rdf:type owl:Class ;
           rdfs:subClassOf :SupportingClasses ;
-          rdfs:comment "TODO: How is this different then the filepath property found in FileSystem?" .
+          rdfs:comment "TODO: Determine if this object is wanted, or if we want to stick with strings." .
 
 
 ###  http://case.example.org/core#FileSystem
 :FileSystem rdf:type owl:Class ;
             rdfs:subClassOf :PropertyBundle ;
             rdfs:comment "Defines the basic properties associated with the storage of a file on a file system." .
+
+
+###  http://case.example.org/core#FileSystemType
+:FileSystemType rdf:type owl:Class ;
+                rdfs:subClassOf :Enumeration .
 
 
 ###  http://case.example.org/core#ForensicAction
@@ -2119,7 +2281,7 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
 
 ###  http://case.example.org/core#Hash
 :Hash rdf:type owl:Class ;
-      rdfs:subClassOf :SupportingClasses .
+      rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#HashMethod
@@ -2172,7 +2334,12 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
 ###  http://case.example.org/core#Image
 :Image rdf:type owl:Class ;
        rdfs:subClassOf :PropertyBundle ;
-       rdfs:comment "Defines the basic properties associated with a disk image file." .
+       rdfs:comment "Defines the basic properties associated with a disk image file. (Ie. the full image of a disk, not just specific volumes.)" .
+
+
+###  http://case.example.org/core#ImageCompressionMethod
+:ImageCompressionMethod rdf:type owl:Class ;
+                        rdfs:subClassOf :Enumeration .
 
 
 ###  http://case.example.org/core#Investigation
@@ -2183,6 +2350,17 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
 ###  http://case.example.org/core#Investigator
 :Investigator rdf:type owl:Class ;
               rdfs:subClassOf :BenevolentRole .
+
+
+###  http://case.example.org/core#Item
+:Item rdf:type owl:Class ;
+      rdfs:subClassOf :Descriptive ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :propertyBundle ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :PropertyBundle
+                      ] ;
+      rdfs:comment "An object that must contain at least one property bundle." .
 
 
 ###  http://case.example.org/core#LVMVolume
@@ -2247,14 +2425,9 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
        rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#NTFSFile
-:NTFSFile rdf:type owl:Class ;
-          rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#NTFSFileSystem
-:NTFSFileSystem rdf:type owl:Class ;
-                rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#NTFS
+:NTFS rdf:type owl:Class ;
+      rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#NetworkConnection
@@ -2313,7 +2486,10 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
 
 ###  http://case.example.org/core#Package
 :Package rdf:type owl:Class ;
-         rdfs:subClassOf :PropertyBundle .
+         rdfs:subClassOf :PropertyBundle ;
+         rdfs:comment """Defines a software application package.
+
+TODO: Determine which of these properties are valid and which need to go into a specific property bundle (AndoridPackage, iOSPackage, LinuxPackage, etc.)""" .
 
 
 ###  http://case.example.org/core#PhoneAccount
@@ -2324,11 +2500,6 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
 ###  http://case.example.org/core#PhoneCall
 :PhoneCall rdf:type owl:Class ;
            rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#PlasoArguments
-:PlasoArguments rdf:type owl:Class ;
-                rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#Process
@@ -2350,20 +2521,14 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
            rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#RasterImage
-:RasterImage rdf:type owl:Class ;
-             rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#RawData
-:RawData rdf:type owl:Class ;
-         rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#RasterPicture
+:RasterPicture rdf:type owl:Class ;
+               rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#Relationship
 :Relationship rdf:type owl:Class ;
-              rdfs:subClassOf :Descriptive ;
-              rdfs:comment "TODO: Determine what data type this property should point to." .
+              rdfs:subClassOf :Descriptive .
 
 
 ###  http://case.example.org/core#Role
@@ -2415,11 +2580,6 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
         rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#TARArchive
-:TARArchive rdf:type owl:Class ;
-            rdfs:subClassOf :PropertyBundle .
-
-
 ###  http://case.example.org/core#TCPConnection
 :TCPConnection rdf:type owl:Class ;
                rdfs:subClassOf :PropertyBundle .
@@ -2446,11 +2606,6 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
              rdfs:subClassOf :PropertyBundle ;
              owl:disjointWith :WindowsAccount ;
              rdfs:comment "Properties specific to an account on a UNIX system" .
-
-
-###  http://case.example.org/core#UNIXFile
-:UNIXFile rdf:type owl:Class ;
-          rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#UNIXNetworkRoute
@@ -2613,17 +2768,6 @@ Note: The encryption information is represented by the EncryptedStream FileSyste
                   rdfs:subClassOf :SupportingClasses .
 
 
-###  http://case.example.org/core#ZIPArchive
-:ZIPArchive rdf:type owl:Class ;
-            rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#7zArchive
-:7zArchive rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle ;
-           rdfs:comment "Defines the basic properties associated with 7z archive file." .
-
-
 ###  http://purl.org/ontology/olo/core#OrderedList
 olo:OrderedList rdf:type owl:Class .
 
@@ -2639,6 +2783,16 @@ olo:Slot rdf:type owl:Class .
 ###  http://case.example.org/core#AES
 :AES rdf:type owl:NamedIndividual ,
               :EncryptionMethod .
+
+
+###  http://case.example.org/core#BDEVolume
+:BDEVolume rdf:type owl:NamedIndividual ,
+                    :FileSystemType .
+
+
+###  http://case.example.org/core#BMP
+:BMP rdf:type owl:NamedIndividual ,
+              :ImageCompressionMethod .
 
 
 ###  http://case.example.org/core#BZIP2
@@ -2661,6 +2815,11 @@ olo:Slot rdf:type owl:Class .
                  :EncodingMethod .
 
 
+###  http://case.example.org/core#BigEndian
+:BigEndian rdf:type owl:NamedIndividual ,
+                    :ByteOrder .
+
+
 ###  http://case.example.org/core#Blowfish
 :Blowfish rdf:type owl:NamedIndividual ,
                    :EncryptionMethod .
@@ -2674,6 +2833,16 @@ olo:Slot rdf:type owl:Class .
 ###  http://case.example.org/core#CFB
 :CFB rdf:type owl:NamedIndividual ,
               :EncryptionMode .
+
+
+###  http://case.example.org/core#CPIO
+:CPIO rdf:type owl:NamedIndividual ,
+               :FileSystemType .
+
+
+###  http://case.example.org/core#Compressed
+:Compressed rdf:type owl:NamedIndividual ,
+                     :FileSystemType .
 
 
 ###  http://case.example.org/core#Critical
@@ -2691,6 +2860,11 @@ olo:Slot rdf:type owl:Class .
                :EncryptionMethod .
 
 
+###  http://case.example.org/core#DataRange
+:DataRange rdf:type owl:NamedIndividual ,
+                    :FileSystemType .
+
+
 ###  http://case.example.org/core#Debug
 :Debug rdf:type owl:NamedIndividual ,
                 :ErrorType .
@@ -2701,9 +2875,33 @@ olo:Slot rdf:type owl:Class .
                   :CompressionMethod .
 
 
+###  http://case.example.org/core#DiskPartition
+:DiskPartition rdf:type owl:NamedIndividual .
+
+
 ###  http://case.example.org/core#ECB
 :ECB rdf:type owl:NamedIndividual ,
               :EncryptionMode .
+
+
+###  http://case.example.org/core#EWF
+:EWF rdf:type owl:NamedIndividual ,
+              :FileSystemType .
+
+
+###  http://case.example.org/core#EXT4
+:EXT4 rdf:type owl:NamedIndividual ,
+               :FileSystemType .
+
+
+###  http://case.example.org/core#Encoded
+:Encoded rdf:type owl:NamedIndividual ,
+                  :FileSystemType .
+
+
+###  http://case.example.org/core#Encrypted
+:Encrypted rdf:type owl:NamedIndividual ,
+                    :FileSystemType .
 
 
 ###  http://case.example.org/core#English
@@ -2716,9 +2914,19 @@ olo:Slot rdf:type owl:Class .
                 :ErrorType .
 
 
+###  http://case.example.org/core#F2FS
+:F2FS rdf:type owl:NamedIndividual ,
+               :FileSystemType .
+
+
 ###  http://case.example.org/core#French
 :French rdf:type owl:NamedIndividual ,
                  :Language .
+
+
+###  http://case.example.org/core#Huffman
+:Huffman rdf:type owl:NamedIndividual ,
+                  :ImageCompressionMethod .
 
 
 ###  http://case.example.org/core#Info
@@ -2726,9 +2934,24 @@ olo:Slot rdf:type owl:Class .
                :ErrorType .
 
 
+###  http://case.example.org/core#JPEG
+:JPEG rdf:type owl:NamedIndividual ,
+               :ImageCompressionMethod .
+
+
 ###  http://case.example.org/core#LZMA
 :LZMA rdf:type owl:NamedIndividual ,
                :CompressionMethod .
+
+
+###  http://case.example.org/core#LZW
+:LZW rdf:type owl:NamedIndividual ,
+              :ImageCompressionMethod .
+
+
+###  http://case.example.org/core#LittleEndian
+:LittleEndian rdf:type owl:NamedIndividual ,
+                       :ByteOrder .
 
 
 ###  http://case.example.org/core#MD5
@@ -2736,9 +2959,19 @@ olo:Slot rdf:type owl:Class .
               :HashMethod .
 
 
+###  http://case.example.org/core#NTFS
+:NTFS rdf:type owl:NamedIndividual ,
+               :FileSystemType .
+
+
 ###  http://case.example.org/core#OFB
 :OFB rdf:type owl:NamedIndividual ,
               :EncryptionMode .
+
+
+###  http://case.example.org/core#PNG
+:PNG rdf:type owl:NamedIndividual ,
+              :ImageCompressionMethod .
 
 
 ###  http://case.example.org/core#Private
@@ -2771,9 +3004,39 @@ olo:Slot rdf:type owl:Class .
                 :HashMethod .
 
 
+###  http://case.example.org/core#SQLiteBlob
+:SQLiteBlob rdf:type owl:NamedIndividual ,
+                     :FileSystemType .
+
+
+###  http://case.example.org/core#SevenZ
+:SevenZ rdf:type owl:NamedIndividual ,
+                 :FileSystemType .
+
+
 ###  http://case.example.org/core#Spanish
 :Spanish rdf:type owl:NamedIndividual ,
                   :Language .
+
+
+###  http://case.example.org/core#TAR
+:TAR rdf:type owl:NamedIndividual ,
+              :FileSystemType .
+
+
+###  http://case.example.org/core#TIFF
+:TIFF rdf:type owl:NamedIndividual ,
+               :ImageCompressionMethod .
+
+
+###  http://case.example.org/core#VSSVolume
+:VSSVolume rdf:type owl:NamedIndividual ,
+                    :FileSystemType .
+
+
+###  http://case.example.org/core#Volume
+:Volume rdf:type owl:NamedIndividual ,
+                 :FileSystemType .
 
 
 ###  http://case.example.org/core#Warning
@@ -2781,9 +3044,19 @@ olo:Slot rdf:type owl:Class .
                   :ErrorType .
 
 
+###  http://case.example.org/core#WebP
+:WebP rdf:type owl:NamedIndividual ,
+               :ImageCompressionMethod .
+
+
 ###  http://case.example.org/core#XZ
 :XZ rdf:type owl:NamedIndividual ,
              :CompressionMethod .
+
+
+###  http://case.example.org/core#ZIP
+:ZIP rdf:type owl:NamedIndividual ,
+              :FileSystemType .
 
 
 ###  http://case.example.org/core#ZLIB
@@ -2795,36 +3068,32 @@ olo:Slot rdf:type owl:Class .
 ] .
 
 #################################################################
+#    Annotations
+#################################################################
+
+:BDEVolume rdfs:comment "The Bitlocker Drive Encryption (BDE) credentials." .
+
+
+:Compressed rdfs:comment "Defines the basic properties associated with a compressed stream." .
+
+
+:DataRange rdfs:comment "Defines the basic properties associated with a range of data." .
+
+
+#################################################################
 #    General axioms
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-   owl:members ( :Action
-                 :ActionLifecyclePattern
-                 :Annotation
-                 :CyberItem
-                 :Investigation
-                 :ProvenanceRecord
-                 :Relationship
-                 :Role
-                 :Tool
-               )
- ] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AlternateDataStream
-                :Archive
-                :CompressedStream
-                :DataRange
-                :Disk
-                :DiskPartition
-                :EncodedStream
-                :EncryptedStream
-                :Image
-                :NTFSFileSystem
-                :SQLiteBlob
-                :Volume
+  owl:members ( :Action
+                :ActionLifecyclePattern
+                :Annotation
+                :Investigation
+                :Item
+                :ProvenanceRecord
+                :Relationship
+                :Role
+                :Tool
               )
 ] .
 
@@ -2865,20 +3134,10 @@ olo:Slot rdf:type owl:Class .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :CPIOArchive
-                :EWFImage
-                :TARArchive
-                :ZIPArchive
-                :7zArchive
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Disk
                 :DiskPartition
-                :EncodedStream
-                :EncryptedStream
+                :Encoded
+                :Encrypted
                 :SQLiteBlob
               )
 ] .

@@ -1,0 +1,50 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#"
+  },
+  "@graph": [
+    {
+      "@id": "phone_account1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Account",
+          "accountIssuer": "AT&T",
+          "isActive": true
+        },
+        {
+          "@type": "PhoneAccount",
+          "phoneNumber": "1237771337"
+        }
+      ]
+    },
+    {
+      "@id": "phone_account2",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Account",
+          "accountIssuer": "Sprint",
+          "isActive": true
+        },
+        {
+          "@type": "PhoneAccount",
+          "identifier": "1234560000"
+        }
+      ]
+    },
+    {
+      "@id": "call_action1",
+      "@type": "Action",
+      "description": "Phone call",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "endTime": "2010-01-15T18:30:43.25Z",
+      "performer": "phone_account1",
+      "instrument": "phone_application1",
+      "location": "starbucks_location1",
+      "environment": "android_phone1",
+      "propertyBundle": null
+    }
+  ]
+}

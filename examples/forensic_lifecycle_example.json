@@ -1,0 +1,551 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#",
+    "acme": "http://custompb.acme.org/core#"
+    // This prefix is used to show the use of the ability to extend with custom property bundles.
+  },
+  "@graph": [
+    // Ordered lists are defined using the OrderedListOntology (http://purl.org/ontology/olo/core)
+    {
+      "@id": "forensic_lifecycle1",
+      "@type": "ActionLifecycle",
+      "description": "Describes the forensic lifecycle.",
+      "olo:length": 5,
+      "olo:slot": [
+        {
+          "olo:index": 1,
+          "olo:item": "phase1"
+        },
+        {
+          "olo:index": 2,
+          "olo:item": "phase2"
+        },
+        {
+          "olo:index": 3,
+          "olo:item": "phase3"
+        },
+        {
+          "olo:index": 4,
+          "olo:item": "phase4"
+        },
+        {
+          "olo:index": 5,
+          "olo:item": "phase5"
+        }
+      ],
+      "propertyBundle": null
+    },
+    {
+      "@id": "phase1",
+      "@type": "Action",
+      "name": "Survey"
+    },
+    {
+      "@id": "phase2",
+      "@type": "Action",
+      "name": "Preservation"
+    },
+    {
+      "@id": "phase3",
+      "@type": "Action",
+      "name": "Examination"
+    },
+    {
+      "@id": "phase4",
+      "@type": "Action",
+      "name": "Analysis"
+    },
+    {
+      "@id": "phase5",
+      "@type": "Action",
+      "name": "Report"
+    },
+
+    {
+      "@id": "case1",
+      "@type": "Investigation",
+      "description": "John Doe solicited minor (Jane Doe) and exchange contraband (digital photographs)",
+      "startAction": "subject_action1",
+      "endAction": "subject_action2",
+      "suspectedOffense": [
+        "Pornography/Obscene Material"
+      ],
+      "investigator": [
+        "examiner1"
+      ],
+      "subject": [
+        "actor1"
+      ],
+      "victim": [
+        "actor2"
+      ],
+      "forensicActions": [
+        {
+          "olo:length": 6,
+          "olo:slot": [
+            {
+              "olo:index": 1,
+              "olo:item": "forensic_action1"
+            },
+            {
+              "olo:index": 2,
+              "olo:item": "forensic_action2"
+            },
+            {
+              "olo:index": 3,
+              "olo:item": "forensic_action3"
+            },
+            {
+              "olo:index": 4,
+              "olo:item": "forensic_action4"
+            },
+            {
+              "olo:index": 5,
+              "olo:item": "forensic_action5"
+            },
+            {
+              "olo:index": 6,
+              "olo:item": "forensic-action6"
+            }
+          ]
+        }
+      ]
+    },
+
+    // Forensic Actions
+
+    {
+      "@id": "forensic_action1",
+      "@type": "ForensicAction",
+      "name": "seized",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "endTime": "2010-01-15T19:59:43.25Z",
+      "performer": "role2",
+      "result": [
+        "provenance_record1"
+      ],
+      "propertyBundle": null
+    },
+    {
+      "@id": "lifecycle_phase1",
+      "@type": "Relationship",
+      "source": "forensic_action1",
+      "target": "phase1",
+      "kindOfRelationship": "fits-pattern",
+      "isDirectional": true
+    },
+    {
+      "@id": "annotation2",
+      "@type": "Annotation",
+      "description": "Receive evidence via FedEx from Jon Graves.",
+      "tag": [
+        "forensic"
+      ],
+      "object": [
+        "forensic_action2"
+      ]
+    },
+    {
+      "@id": "forensic_action2",
+      "@type": "ForensicAction",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "performer": "role3",
+      "source": [
+        "provenance_record1"
+      ],
+      "result": [
+        "provenance_record2",
+        "provenance_record3"
+      ],
+      "location": "fedex_dropoff_location1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "lifecycle_phase2",
+      "@type": "Relationship",
+      "source": "forensic_action2",
+      "target": "phase2",
+      "kindOfRelationship": "fits-pattern",
+      "isDirectional": true
+    },
+    {
+      "@id": "annotation3",
+      "@type": "Annotation",
+      "description": "Make forensic image of suspect's cell phone",
+      "tags": [
+        "forensic"
+      ],
+      "object": [
+        "forensic_action3"
+      ],
+      "propertyBundle": null
+    },
+    {
+      "@id": "forensic_action3",
+      "@type": "ForensicAction",
+      "name": "imaged",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "endTime": "2010-01-15T19:59:43.25Z",
+      "performer": "role4",
+      "instrument": "tool1",
+      "source": [
+        "provenance_record2"
+      ],
+      "result": [
+        "provenance_record4"
+      ],
+      "location": "forensic_lab1",
+      "environment": "forensic_lab_computer1",
+      "propertyBundle": [
+        {
+          "@type": "acme:UFEDArguments",
+          "aquisitionType": "Logical",
+          "method": "ADB"
+        }
+      ]
+    },
+    {
+      "@id": "lifecycle_phase3",
+      "@type": "Relationship",
+      "source": "forensic_action3",
+      "target": "phase2",
+      "kindOfRelationship": "fits-pattern",
+      "isDirectional": true
+    },
+    {
+      "@id": "annotation4",
+      "@type": "Annotation",
+      "description": "Make forensic image of SD card from suspect's cell phone.",
+      "tags": [
+        "forensic"
+      ],
+      "object": [
+        "forensic_action4"
+      ]
+    },
+    {
+      "@id": "forensic_action4",
+      "@type": "ForensicAction",
+      "name": "imaged",
+      "startTime": "2010-01-16T17:59:43.25Z",
+      "endTime": "2010-01-16T19:59:43.25Z",
+      "performer": "role4",
+      "instrument": "tool2",
+      "source": [
+        "provenance_record3"
+      ],
+      "result": [
+        "provenance_record5"
+      ],
+      "location": "forensic_lab1",
+      "environment": "forensic_lab_computer1",
+    },
+    {
+      "@id": "lifecycle_phase4",
+      "@type": "Relationship",
+      "source": "forensic_action4",
+      "target": "phase2",
+      "kindOfRelationship": "fits-pattern",
+      "isDirectional": true
+    },
+    {
+      "@id": "annotation5",
+      "@type": "Annotation",
+      "tags": [
+        "forensic"
+      ],
+      "text": "Run Plaso tool to find communications and multimedia exchanged between subject and victim.",
+      "object": [
+        "forensic_action5"
+      ],
+      "propertyBundle": null
+    },
+    {
+      "@id": "forensic_action5",
+      "@type": "ForensicAction",
+      "name": "executed",
+      "startTime": "2010-01-20T17:59:43.25Z",
+      "endTime": "2010-01-21T17:59:43.25Z",
+      "performer": "role4",
+      "instrument": "tool3",
+      "source": [
+        "provenance_record4",
+        "provenance_record5"
+      ],
+      "result": [
+        "provenance_record6",
+        "provenance_record7",
+        "provenance_record8",
+        "provenance_record9",
+        "provenance_record10",
+        "provenance_record11",
+        "provenance_record12",
+        "forensic_action6"
+      ],
+      "location": "forensic_lab1",
+      "environment": "forensic_lab_computer1",
+      "propertyBundle": [
+        {
+          "@type": "Process",
+          "arguments": "log2timeline C:\\exams\\inbox\\case-123.img C:\\exams\\output\\case-123 --config C:\\plaso\\config.cfg --analysis chat_messages,windows_registries --output xlsx,pstorage --parsers sqlite/android_whatsapp,plist --log C:\\exams\\output\\case-123.log",
+          "pid": 1234,
+          "currentWorkingDirectory": "C:\\exams",
+          "createdTime": "2010-01-20T17:59:43.25Z",
+          "creatorUser": "role4",
+          "environmentVariable": [
+            {
+              "key": "PYTHONPATH",
+              "value": "C:\\Python27\\Scripts\\python.exe"
+            }
+          ],
+          "isHidden": false
+        },
+        // Custom propertybundle that allows us to reference the objects were created for this specific software.
+        {
+          "@type": "acme:PlasoArguments",
+          "input": "android_image",
+          "configFile": "config_file",
+          "analysisReport": [
+            "chat_messages_report",
+            "windows_registries_report"
+          ],
+          "storageFile": "plaso_storage_file",
+          "logFile": "log_file"
+        }
+      ]
+    },
+    {
+      "@id": "lifecycle_phase5",
+      "@type": "Relationship",
+      "source": "forensic_action5",
+      "target": "phase3",
+      "kindOfRelationship": "fits-pattern",
+      "isDirectional": true
+    },
+    {
+      "@id": "annotation6",
+      "@type": "Annotation",
+      "description": "Plaso tool runs WhatsApp parser",
+      "tag": [
+        "forensic"
+      ],
+      "target": [
+        "forensic_action6"
+      ]
+    },
+    // This forensic_action was spawned by the main tool action. It shows the resulting CyberItems that were produced when
+    // running a specific parser on specific files found within the image.
+    {
+      "@id": "forensic_action6",
+      "@type": "ForensicAction",
+      "name": "executed",
+      "startTime": "2010-02-15T17:59:43.25Z",
+      "endTime": "2010-02-16T17:59:43.25Z",
+      "performer": "forensic_action5",
+      "instrument": "parser1",
+      "source": [
+        "provenance_record9",
+        "provenance_record10",
+        "provenance_record11"
+      ],
+      "result": [
+        "provenance_record13",
+        "provenance_record14",
+        "provenance_record15",
+        "provenance_record16",
+        "provenance_record17",
+        "provenance_record18",
+        "provenance_record19",
+        "provenance_record20",
+        "provenance_record21"
+      ],
+      "location": "forensic_lab1",
+      "environment": "forensic_lab_computer1",
+      "propertyBundle": [
+        // Custom property bundle used to define arguments used by the parser.
+        {
+          "@type": "acme:PlasoParserArguments",
+          "parsedFile": "message_database",
+          "attachmentFile": [
+            "thumbnail_database",
+            "attachment_file"
+          ],
+          "fullQueryMatch": true,
+          "query": "SELECT sender, recipients, body from MessageTable"
+        }
+      ]
+    },
+
+    // Provenance Records
+
+    {
+      "@id": "provenance_record1",
+      "@type": "ProvenanceRecord",
+      "description": "Android Smartphone",
+      "exhibitNumber": "ACME-676553402357",
+      "object": "device1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record2",
+      "@type": "ProvenanceRecord",
+      "description": "Android Smartphone",
+      "exhibitNumber": "DFL-20140712-001A",
+      "object": "device1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record3",
+      "@type": "ProvenanceRecord",
+      "description": "SD Card",
+      "exhibitNumber": "DFL-20140712-001B",
+      "object": "device1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record4",
+      "@type": "ProvenanceRecord",
+      "description": "Forensic image of Android Smartphone",
+      "exhibitNumber": "DFL-20140712-001C",
+      "object": "android_image",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record5",
+      "@type": "ProvenanceRecord",
+      "description": "Forensic image of SD Card",
+      "exhibitNumber": "DFL-20140712-001D",
+      "object": "sd_card",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record6",
+      "@type": "ProvenanceRecord",
+      "description": "Chat Messages Report",
+      "exhibitNumber": "DFL-20140712-001E",
+      "object": "chat_messages_report",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record7",
+      "@type": "ProvenanceRecord",
+      "description": "Plaso Storage File",
+      "exhibitNumber": "DFL-20140712-001F",
+      "object": "plaso_storage_file",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record8",
+      "@type": "ProvenanceRecord",
+      "description": "Android OS Information",
+      "exhibitNumber": "DFL-20140712-0020",
+      "object": "os1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record9",
+      "@type": "ProvenanceRecord",
+      "description": "Contraband photograph",
+      "exhibitNumber": "DFL-20140712-0021",
+      "object": "attachment_file",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record10",
+      "@type": "ProvenanceRecord",
+      "description": "WhatsApp message database",
+      "exhibitNumber": "DFL-20140712-0022",
+      "object": "message_database",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record11",
+      "@type": "ProvenanceRecord",
+      "description": "WhatsApp thumbnail database",
+      "exhibitNumber": "DFL-20140712-0023",
+      "object": "thumbnail_database",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record12",
+      "@type": "ProvenanceRecord",
+      "description": "Android data partition",
+      "exhibitNumber": "DFL-20140712-0024",
+      "object": "image_partition",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record13",
+      "@type": "ProvenanceRecord",
+      "description": "WhatsApp message being sent from subject to victim",
+      "exhibitNumber": "DFL-20140712-0025",
+      "object": "message_action1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record14",
+      "@type": "ProvenanceRecord",
+      "description": "WhatsApp chat message thread between subject and victim",
+      "exhibitNumber": "DFL-20140712-0026",
+      "object": "thread1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record15",
+      "@type": "ProvenanceRecord",
+      "description": "WhatsApp chat message containing contraband attachment",
+      "exhibitNumber": "DFL-20140712-0027",
+      "object": "message1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record16",
+      "@type": "ProvenanceRecord",
+      "description": "Location of subject when using WhatsApp",
+      "exhibitNumber": "DFL-20140712-0028",
+      "object": "location1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record17",
+      "@type": "ProvenanceRecord",
+      "description": "Subject's WhatsApp account",
+      "exhibitNumber": "DFL-20140712-0029",
+      "object": "account1",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record18",
+      "@type": "ProvenanceRecord",
+      "description": "Victim's WhatsApp account",
+      "exhibitNumber": "DFL-20140712-002A",
+      "object": "account2",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record19",
+      "@type": "ProvenanceRecord",
+      "description": "Thumbnail of contraband picture",
+      "exhibitNumber": "DFL-20140712-002B",
+      "object": "decoded_blob",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record20",
+      "@type": "ProvenanceRecord",
+      "description": "Encoded thumbnail of contraband picture",
+      "exhibitNumber": "DFL-20140712-002C",
+      "object": "decrypted_blob",
+      "propertyBundle": null
+    },
+    {
+      "@id": "provenance_record21",
+      "@type": "ProvenanceRecord",
+      "description": "Encrypted thumbnail of contraband picture",
+      "exhibitNumber": "DFL-20140712-002D",
+      "object": "sqlite_blob",
+      "propertyBundle": null
+    }
+  ]
+}

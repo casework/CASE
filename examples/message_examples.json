@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#",
+  },
+  "@graph": [
+    {
+      "@id": "os1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "OperatingSystem",
+          "name": "Android",
+          "manufacturer": "Google",
+          "version": "5.4.3"
+        }
+      ]
+    },
+    {
+      "@id": "application1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Application",
+          "name": "WhatsApp",
+          "identifier": "com.whatsapp",
+          "operatingSystem": "os1",
+          "version": "1.23.45",
+          "numberOfLaunches": 34,
+          "object": [
+            "thread1",
+            "message1",
+            "message2",
+            "account1",
+            "account2",
+            "... etc"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "thread1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "MessageThread",
+          "identifier": "billy~sarah@whatsapp.gs.net",
+          "displayName": "Best Friend Chat!!",
+          "visibility": "PRIVATE",
+          "messages": {
+            "olo:length": 3,
+            "olo:slot": [
+              {
+                "olo:index": 1,
+                "olo:item": "message1"
+              },
+              {
+                "olo:index": 2,
+                "olo:item": "message2"
+              },
+              {
+                "olo:index": 3,
+                "olo:item": "message3"
+              }
+            ]
+          },
+          "participant": [
+            "account1",
+            "account2"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "thread2",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "MessageThread",
+          "identifier": "twitter_public",
+          "display_name": "Argle-bargle",
+          "visibility": "PUBLIC",
+          "messages": {
+            "olo:length": 1,
+            "olo:slot": [
+              {
+                "olo:index": 1,
+                "olo:item": "post1"
+              }
+            ]
+          },
+          "participant": [
+            "account3",
+            "account4"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "post1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Message",
+          "body": "I said some things in a tweet! @sarahsmithtweeter #hashtag",
+          "sender": "account3",
+          "participant": [
+            "account3",
+            "account4"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "message1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Message",
+          "body": "Hey bud!",
+          "sender": "account1",
+          "participant": [
+            "account1",
+            "account2"
+          ]
+        },
+        {
+          "@type": "Attachment",
+          "object": "location1",
+          "url": "http://maps.google.com/maps/@32.5345,-123.4324,11z"
+        },
+        {
+          "@type": "Attachment",
+          "object": "attachment_file1",
+          "url": "http://whatsapp.com/attachments/thumbnails/1.png",
+          "mimeType": "image/png",
+          "size": 35
+        },
+        {
+          "@type": "Attachment",
+          "object": "attachment_file2",
+          "url": "http://whatsapp.com/attachments/1.png",
+          "mimeType": "image/png",
+          "size": 551
+        }
+      ]
+    },
+  ]
+}

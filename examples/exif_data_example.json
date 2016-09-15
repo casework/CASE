@@ -1,0 +1,128 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "camera1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Device",
+          "manufacturer": "Canon",
+          "model": "PowerShot SX540"
+        }
+      ]
+    },
+    {
+      "@id": "digital_photograph1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 35000,
+          "data": "<base 64 encoded data of the file>"
+        },
+        {
+          "@type": "File",
+          "magicNumber": "/9j/ww==",
+          "mimeType": "image/jpg"
+        },
+        {
+          "@type": "Hash",
+          "hashMethod": "MD5",
+          "hashValue": "3d137a188c1e82247b815209ce44af2c"
+        },
+        {
+          "@type": "FileSystem",
+          "parentFileSystem": "device_partition3",
+          "fileName": "IMG_0123.jpg",
+          "filePath": "\\sdcard\\IMG_0123.jpg",
+          "extension": "jpg",
+          "isDirectory": false,
+          "size": 35002
+        },
+        {
+          "@type": "RasterImage",
+          "format": "jpg",
+          "height": 12345,
+          "width": 12345,
+          "bitsPerPixel": 2
+        },
+        // TODO: This exif data will be switched to an imported ontology.
+        {
+          "@type": "EXIF",
+          "exifData": [
+            {
+              "key": "Make",
+              "value": "Canon"
+            },
+            {
+              "key": "Model",
+              "value": "PowerShot SX540"
+            },
+            {
+              "key": "Orientation",
+              "value": "Horizontal (normal)"
+            },
+            {
+              "key": "DateTimeDigitized",
+              "value": "2010-01-15T17:59:43.25Z"
+            },
+            {
+              "key": "Latitude",
+              "value": "15.8235"
+            },
+            {
+              "key": "LatitudeRef",
+              "value": "S"
+            },
+            {
+              "key": "Longitude",
+              "value": "47.9941"
+            },
+            {
+              "key": "LongitudeRef",
+              "value": "W"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "camera_action1",
+      "@type": "Action",
+      "name": "photo_taken",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "instrument": "camera1",
+      "result": [
+        "digital_photograph1"
+      ],
+      "location": "location1"
+    },
+    {
+      "@id": "annotation1",
+      "@type": "Annotation",
+      "description": "Photo was taken by a Canon digital camera.",
+      "tag": ["photo", "user_added", "extracted"],
+      "object": "camera_action1"
+    },
+    {
+      "@id": "forensic_action7",
+      "@type": "Action",
+      "name": "annotated",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "endTime": "2010-01-15T18:59:43.25Z",
+      "performer": "examiner1",
+      "instrument": "annotator1",
+      "result": [
+        "annotation1"
+      ],
+      "location": "forensic_lab1",
+      "environment": "forensic_lab_computer1"
+    }
+  ]
+}

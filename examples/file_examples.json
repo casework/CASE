@@ -15,11 +15,11 @@
         {
           "@type": "FileSystem",
           "parentFileSystem": "tar_archive_file",
-          "fileSystemType": "Encoded",
+          "fileSystemType": "Encoding",
           "content": "decoded_attachment_content"
         },
         {
-          "@type": "EncodedStream",
+          "@type": "Encoding",
           "encodingMethod": "BASE64"
         }
       ]
@@ -82,19 +82,6 @@
         ]
     },
 
-    // If you want to represent the root TAR archive file. You can omit the file path information.
-    {
-      "@id": "tar_archive",
-      "@type": "Item",
-      "propertyBundle": [
-        {
-          "@type": "FileSystem",
-          "parentFileSystem": "decrypted_blob",
-          "fileSystemType": "TAR"
-        }
-      ]
-    },
-
     // This represents an AES decrypted file. (Which in this case is a TAR archive file.)
     {
       "@id": "decrypted_blob",
@@ -103,11 +90,11 @@
         {
           "@type": "FileSystem",
           "parentFileSystem": "sqlite_blob",
-          "fileSystemType": "Encrypted",
+          "fileSystemType": "Encryption",
           "content": "decrypted_blob_content"
         },
         {
-          "@type": "EncryptedStream",
+          "@type": "Encryption",
           "encryptionMethod": "AES",
           "encryptionMode": "CBC",
           "key": "whatsappKEY",

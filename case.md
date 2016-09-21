@@ -65,7 +65,7 @@
 ### FileSystemType
 
 
-**SubTypes:**  BDEVolume, CPIO, Compressed, DataRange, EWF, EXT4, Encoded, Encrypted, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
+**SubTypes:**  BDEVolume, CPIO, Compression, DataRange, EWF, EXT4, Encoding, Encryption, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
 
 
 
@@ -300,7 +300,6 @@ Attribute | Range | Comment
 ---: | --- | ---
 *location* | [Location](#location) | 
 *propertyBundle* | [PropertyBundle](#propertybundle) | 
-*thumbnail* | [Object](#object) | 
 
 
 ### Descriptive
@@ -347,7 +346,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [PropertyBundle](#propertybundle)]), [Object](#object) | References objects with an account property bundle.
+*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [PropertyBundle](#propertybundle), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Object](#object) | References objects with an account property bundle.
 *organization* | xsd:string | 
 
 
@@ -385,7 +384,7 @@ Attribute | Range | Comment
 
 
 ##### Relationship
-TODO: Determine what data type this property should point to.
+
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -526,8 +525,8 @@ Attribute | Range | Comment
 
 
 
-### Compressed
-Defines the basic properties associated with a compressed stream.
+### Compression
+
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -644,7 +643,7 @@ Attribute | Range | Comment
 
 
 
-### Encoded
+### Encoding
 
 
 Attribute | Range | Comment
@@ -652,7 +651,7 @@ Attribute | Range | Comment
 *encodingMethod* | [EncodingMethod](#encodingmethod) | 
 
 
-### Encrypted
+### Encryption
 
 
 Attribute | Range | Comment
@@ -730,7 +729,7 @@ Attribute | Range | Comment
 *inode* | xsd:integer | 
 *isDirectory* | xsd:boolean | 
 *modifedTime* | xsd:dateTimeStamp | 
-*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:qualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [FileSystem](#filesystem)]), [Object](#object) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
+*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:qualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [FileSystem](#filesystem)]), [Item](#item) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
 *size* | xsd:positiveInteger | Size of file in bytes.
 
 

@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+
+
+# Pycharm files
+.idea
+
+# Protege files
+catalog-v001.xml
+.project

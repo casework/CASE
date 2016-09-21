@@ -88,6 +88,12 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                    rdfs:range :CompressionMethod .
 
 
+###  http://case.example.org/core#content
+:content rdf:type owl:ObjectProperty ;
+         rdfs:domain :FileSystem ;
+         rdfs:range :Trace .
+
+
 ###  http://case.example.org/core#creator
 :creator rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;

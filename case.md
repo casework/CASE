@@ -65,7 +65,7 @@
 ### FileSystemType
 
 
-**SubTypes:**  BDEVolume, CPIO, Compression, DataRange, EWF, EXT4, Encoding, Encryption, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
+**SubTypes:**  BDEVolume, CPIO, Compressed, DataRange, EWF, EXT4, Encoded, Encrypted, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
 
 
 
@@ -346,7 +346,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [PropertyBundle](#propertybundle), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Object](#object) | References objects with an account property bundle.
+*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [PropertyBundle](#propertybundle)]), [Object](#object) | References objects with an account property bundle.
 *organization* | xsd:string | 
 
 
@@ -362,11 +362,6 @@ Attribute | Range | Comment
 *subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
 *suspectedOffense* | xsd:string | 
 *victim* | ([Identity](#identity) or [Role](#role)) | 
-
-
-##### Item
-An object that must contain at least one property bundle.
-
 
 
 ##### Location
@@ -411,6 +406,11 @@ Attribute | Range | Comment
 ---: | --- | ---
 *vendor* | xsd:string | 
 *version* | xsd:string | 
+
+
+##### Trace
+An object that must contain at least one property bundle.
+
 
 
 # Property Bundle
@@ -458,7 +458,7 @@ Attribute | Range | Comment
 ---: | --- | ---
 *identifier* | xsd:string | 
 *numberOfLaunches* | xsd:positiveInteger | 
-*operatingSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [OperatingSystem](#operatingsystem)]), [Item](#item) | 
+*operatingSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [OperatingSystem](#operatingsystem)]), [Trace](#trace) | 
 *version* | xsd:string | 
 
 
@@ -467,7 +467,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*application* | [Item](#item) | Defines the application-like item used by this account.
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
 
 
 ### ArchiveFile
@@ -525,8 +525,8 @@ Attribute | Range | Comment
 
 
 
-### Compression
-
+### Compressed
+Defines the basic properties associated with a compressed stream.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -643,7 +643,7 @@ Attribute | Range | Comment
 
 
 
-### Encoding
+### Encoded
 
 
 Attribute | Range | Comment
@@ -651,7 +651,7 @@ Attribute | Range | Comment
 *encodingMethod* | [EncodingMethod](#encodingmethod) | 
 
 
-### Encryption
+### Encrypted
 
 
 Attribute | Range | Comment
@@ -677,9 +677,9 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*extractedCodeSnippet* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [ExtractedString](#extractedstring)]), [Item](#item) | 
-*extractedImport* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [ExtractedString](#extractedstring)]), [Item](#item) | 
-*extractedString* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [ExtractedString](#extractedstring)]), [Item](#item) | 
+*extractedCodeSnippet* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [ExtractedString](#extractedstring)]), [Trace](#trace) | 
+*extractedImport* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [ExtractedString](#extractedstring)]), [Trace](#trace) | 
+*extractedString* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [ExtractedString](#extractedstring)]), [Trace](#trace) | 
 
 
 ### ExtractedString
@@ -729,7 +729,7 @@ Attribute | Range | Comment
 *inode* | xsd:integer | 
 *isDirectory* | xsd:boolean | 
 *modifedTime* | xsd:dateTimeStamp | 
-*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:qualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [FileSystem](#filesystem)]), [Item](#item) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
+*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [FileSystem](#filesystem), owl:qualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
 *size* | xsd:positiveInteger | Size of file in bytes.
 
 
@@ -894,7 +894,7 @@ TODO: Determine which of these properties are valid and which need to go into a 
 Attribute | Range | Comment
 ---: | --- | ---
 *applicationName* | xsd:string | The name of the application (friendly name)
-*dataPath* | [Item](#item) | Path designated by the OS to be used by that package application.
+*dataPath* | [Trace](#trace) | Path designated by the OS to be used by that package application.
 *packageName* | xsd:string | The package name (identifier)
 *packagePermission* | xsd:string | Defines a permission associated with the application.
 *version* | xsd:string | 
@@ -923,13 +923,13 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *arguments* | xsd:string | 
-*binary* | [Item](#item) | 
+*binary* | [Trace](#trace) | 
 *createdTime* | xsd:dateTimeStamp | 
-*creatorUser* | [Item](#item) | 
+*creatorUser* | [Trace](#trace) | 
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Item](#item) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 
@@ -1122,7 +1122,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*creator* | [Item](#item) | 
+*creator* | [Trace](#trace) | 
 *key* | xsd:string | 
 *modifedTime* | xsd:dateTimeStamp | 
 *numberOfSubkeys* | xsd:integer | 

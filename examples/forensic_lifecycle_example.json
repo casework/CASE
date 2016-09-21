@@ -334,7 +334,7 @@
         "forensic_action6"
       ]
     },
-    // This forensic_action was spawned by the main tool action. It shows the resulting CyberItems that were produced when
+    // This forensic_action was spawned by the main tool action. It shows the resulting Trace that were produced when
     // running a specific parser on specific files found within the image.
     {
       "@id": "forensic_action6",

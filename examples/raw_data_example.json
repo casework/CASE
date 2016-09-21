@@ -8,7 +8,7 @@
     // This thumbnail is a 2878 byte file located at offset 224 within the digital photograph.
     {
       "@id": "digital_photograph_thumbnail1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -25,7 +25,7 @@
     },
     {
       "@id": "digital_photograph_thumbnail1_content",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "Hash",

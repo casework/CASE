@@ -46,7 +46,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :application rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
              rdfs:domain :ApplicationAccount ;
-             rdfs:range :Item ;
+             rdfs:range :Trace ;
              rdfs:comment "Defines the application-like item used by this account." .
 
 
@@ -67,7 +67,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :binary rdf:type owl:ObjectProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :Process ;
-        rdfs:range :Item .
+        rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#byteOrder
@@ -92,13 +92,13 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :creator rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
          rdfs:domain :WindowsRegistryKey ;
-         rdfs:range :Item .
+         rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#creatorUser
 :creatorUser rdf:type owl:ObjectProperty ;
              rdfs:domain :Process ;
-             rdfs:range :Item .
+             rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#currentWorkingDirectory
@@ -110,7 +110,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#dataPath
 :dataPath rdf:type owl:ObjectProperty ;
           rdfs:domain :Package ;
-          rdfs:range :Item ;
+          rdfs:range :Trace ;
           rdfs:comment "Path designated by the OS to be used by that package application." .
 
 
@@ -194,7 +194,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#extractedCodeSnippet
 :extractedCodeSnippet rdf:type owl:ObjectProperty ;
                       rdfs:domain :ExtractedFeatures ;
-                      rdfs:range :Item ,
+                      rdfs:range :Trace ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :propertyBundle ;
                                    owl:someValuesFrom :ExtractedString
@@ -204,7 +204,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#extractedImport
 :extractedImport rdf:type owl:ObjectProperty ;
                  rdfs:domain :ExtractedFeatures ;
-                 rdfs:range :Item ,
+                 rdfs:range :Trace ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :propertyBundle ;
                               owl:someValuesFrom :ExtractedString
@@ -214,7 +214,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#extractedString
 :extractedString rdf:type owl:ObjectProperty ;
                  rdfs:domain :ExtractedFeatures ;
-                 rdfs:range :Item ,
+                 rdfs:range :Trace ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :propertyBundle ;
                               owl:someValuesFrom :ExtractedString
@@ -387,7 +387,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#operatingSystem
 :operatingSystem rdf:type owl:ObjectProperty ;
                  rdfs:domain :Application ;
-                 rdfs:range :Item ,
+                 rdfs:range :Trace ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :propertyBundle ;
                               owl:someValuesFrom :OperatingSystem
@@ -405,7 +405,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :parentFileSystem rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :FileSystem ;
-                  rdfs:range :Item ,
+                  rdfs:range :Trace ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :propertyBundle ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -417,7 +417,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#parentProcess
 :parentProcess rdf:type owl:ObjectProperty ;
                rdfs:domain :Process ;
-               rdfs:range :Item ,
+               rdfs:range :Trace ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :propertyBundle ;
                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -2352,17 +2352,6 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
               rdfs:subClassOf :BenevolentRole .
 
 
-###  http://case.example.org/core#Item
-:Item rdf:type owl:Class ;
-      rdfs:subClassOf :Descriptive ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :propertyBundle ;
-                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :PropertyBundle
-                      ] ;
-      rdfs:comment "An object that must contain at least one property bundle." .
-
-
 ###  http://case.example.org/core#LVMVolume
 :LVMVolume rdf:type owl:Class ;
            rdfs:subClassOf :PropertyBundle .
@@ -2594,6 +2583,17 @@ TODO: Determine which of these properties are valid and which need to go into a 
 ###  http://case.example.org/core#ToolArguments
 :ToolArguments rdf:type owl:Class ;
                rdfs:subClassOf :PropertyBundle .
+
+
+###  http://case.example.org/core#Trace
+:Trace rdf:type owl:Class ;
+       rdfs:subClassOf :Descriptive ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :propertyBundle ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :PropertyBundle
+                       ] ;
+       rdfs:comment "An object that must contain at least one property bundle." .
 
 
 ###  http://case.example.org/core#UDPConnection
@@ -3089,11 +3089,11 @@ olo:Slot rdf:type owl:Class .
                 :ActionLifecyclePattern
                 :Annotation
                 :Investigation
-                :Item
                 :ProvenanceRecord
                 :Relationship
                 :Role
                 :Tool
+                :Trace
               )
 ] .
 

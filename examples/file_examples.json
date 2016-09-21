@@ -10,7 +10,7 @@
     // This represents a base64 decoded file.
     {
       "@id": "decoded_attachment",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -26,7 +26,7 @@
     },
     {
       "@id": "decoded_attachment_content",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "ContentData",
@@ -50,7 +50,7 @@
     // This represents a file within a TAR archive.
     {
       "@id": "tar_archive_file",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -67,7 +67,7 @@
     },
     {
       "@id": "tar_archive_file_content",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
           {
             "@type": "ContentData",
@@ -85,7 +85,7 @@
     // This represents an AES decrypted file. (Which in this case is a TAR archive file.)
     {
       "@id": "decrypted_blob",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -105,7 +105,7 @@
 
     {
       "@id": "decrypted_blob_content",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
           {
             "@type": "ContentData",
@@ -123,7 +123,7 @@
     // This represents a SQLite blob file.
     {
       "@id": "sqlite_blob",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -142,7 +142,7 @@
     // This represents a database file found within an EXT4 formatted volume.
     {
       "@id": "sqlite_database",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -161,7 +161,7 @@
     },
     {
       "@id": "sqlite_database_content",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
           {
             "@type": "File",
@@ -173,7 +173,7 @@
     // This represents a partition found in an android image.
     {
       "@id": "image_partition",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",
@@ -191,7 +191,7 @@
     // This represents the android image.
     {
       "@id": "android_image",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "FileSystem",

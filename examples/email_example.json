@@ -89,7 +89,7 @@
     },
     {
       "@id": "email_account1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "EmailAccount",

@@ -6,7 +6,7 @@
   "@graph": [
     {
       "@id": "phone_account1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "Account",
@@ -21,7 +21,7 @@
     },
     {
       "@id": "phone_account2",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "Account",

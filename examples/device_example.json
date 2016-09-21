@@ -8,7 +8,7 @@
   "@graph": [
     {
       "@id": "forensic_lab_computer1",
-      "@type": "Item",
+      "@type": "Trace",
       "location": "forensic_lab1",
       "propertyBundle": [
         {

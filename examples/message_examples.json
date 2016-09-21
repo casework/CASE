@@ -6,7 +6,7 @@
   "@graph": [
     {
       "@id": "os1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "OperatingSystem",
@@ -18,7 +18,7 @@
     },
     {
       "@id": "application1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "Application",
@@ -40,7 +40,7 @@
     },
     {
       "@id": "thread1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "MessageThread",
@@ -73,7 +73,7 @@
     },
     {
       "@id": "thread2",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "MessageThread",
@@ -98,7 +98,7 @@
     },
     {
       "@id": "post1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "Message",
@@ -113,7 +113,7 @@
     },
     {
       "@id": "message1",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "Message",

@@ -26,17 +26,24 @@
           "identifier": "com.whatsapp",
           "operatingSystem": "os1",
           "version": "1.23.45",
-          "numberOfLaunches": 34,
-          "object": [
+          "numberOfLaunches": 34
+        }
+      ]
+    },
+    {
+      "@id": "application_objects1",
+      "@type": "Relationship",
+      "source": "application1",
+      "target": [
             "thread1",
             "message1",
             "message2",
             "account1",
             "account2",
             "... etc"
-          ]
-        }
-      ]
+      ],
+      "kindOfRelationship": "contains",
+      "isDirectional": true
     },
     {
       "@id": "thread1",

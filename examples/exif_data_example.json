@@ -21,6 +21,22 @@
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "FileSystem",
+          "parentFileSystem": "device_partition3",
+          "fileName": "IMG_0123.jpg",
+          "filePath": "\\sdcard\\IMG_0123.jpg",
+          "content": "digital_photograph_content1",
+          "extension": "jpg",
+          "isDirectory": false,
+          "size": 35002
+        }
+      ]
+    },
+    {
+      "@id": "digital_photograph_content1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "size": 35000,
@@ -35,15 +51,6 @@
           "@type": "Hash",
           "hashMethod": "MD5",
           "hashValue": "3d137a188c1e82247b815209ce44af2c"
-        },
-        {
-          "@type": "FileSystem",
-          "parentFileSystem": "device_partition3",
-          "fileName": "IMG_0123.jpg",
-          "filePath": "\\sdcard\\IMG_0123.jpg",
-          "extension": "jpg",
-          "isDirectory": false,
-          "size": 35002
         },
         {
           "@type": "RasterImage",
@@ -117,7 +124,7 @@
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T18:59:43.25Z",
       "performer": "examiner1",
-      "instrument": "annotator1",
+      "instrument": "annotator_tool1",
       "result": [
         "annotation1"
       ],

@@ -128,7 +128,7 @@
         {
           "@type": "FileSystem",
           "parentFileSystem": "sqlite_database",
-          "fileSystemType": "SQLite"
+          "fileSystemType": "SQLiteBlob"
         },
         {
           "@type": "SQLiteBlob",

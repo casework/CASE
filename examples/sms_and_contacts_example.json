@@ -1,0 +1,115 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#",
+  },
+  "@graph": [
+    {
+      "@id": "sms_action1",
+      "@type": "Action",
+      "description": "Message Sent",
+      "startTime": "2010-01-15T17:59:43.25Z",
+      "performer": "phone_account3",
+      "instrument": "sms_application1",
+      "source": "sms_message1"
+    },
+    {
+      "@id": "sms_message1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "Message",
+          "body": "Yo dude! This is my new number.",
+          "sender": "phone_account3",
+          "participant": [
+            "phone_account1"
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "actor1",
+      "@type": "Identity",
+      "firstName": "John",
+      "lastName": "Doe",
+      "associatedAccount": [
+        "phone_account1",
+        "phone_account2",
+        "email_account1"
+      ]
+    },
+
+    {
+      "@id": "phone_account1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "PhoneAccount",
+          "name": "phone",
+          "phoneNumber": "1237771337",
+          "isActive": true
+        }
+      ]
+    },
+
+    {
+      "@id": "phone_account2",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "PhoneAccount",
+          "phoneNumber": "1234560000"
+        }
+      ]
+    },
+    {
+      "@id": "email_account1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "EmailAccount",
+          "emailAddress": "jdoe@example.com"
+        }
+      ]
+    },
+
+    {
+      "@id": "phone_account3",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "PhoneAccount",
+          "phoneNumber": "11235557890"
+        }
+      ]
+    },
+
+    {
+      "@id": "android_phonebook1",
+      "@type": "Item",
+      "propertyBundle": [
+        {
+          "@type": "Application",
+          "name": "Android Phonebook",
+          "identifier": "com.android.providers.telephony",
+          "operatingSystem": "os1",
+          "version": "2.3.4",
+          "numberOfLaunches": 323
+        }
+      ]
+    },
+
+    {
+      "@id": "application_objects1",
+      "@type": "Relationship",
+      "source": "android_phonebook1",
+      "target": [
+        "actor1",
+        "phone_account1",
+        "phone_account2"
+      ],
+      "kindOfRelationship": "contains",
+      "isDirectional": true
+    }
+  ]
+}

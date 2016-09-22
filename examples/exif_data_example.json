@@ -24,7 +24,7 @@
           "@type": "FileSystem",
           "parentFileSystem": "device_partition3",
           "fileName": "IMG_0123.jpg",
-          "filePath": "\\sdcard\\IMG_0123.jpg",
+          "filePath": "/sdcard/IMG_0123.jpg",
           "content": "digital_photograph_content1",
           "extension": "jpg",
           "isDirectory": false,

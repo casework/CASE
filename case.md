@@ -346,7 +346,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [PropertyBundle](#propertybundle)]), [Object](#object) | References objects with an account property bundle.
+*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom ([Account](#account) or [DigitalAccount](#digitalaccount) or [EmailAccount](#emailaccount) or [PhoneAccount](#phoneaccount) or [UserAccount](#useraccount) or [WindowsAccount](#windowsaccount))]), [Object](#object) | References objects with an account type property bundle.
 *organization* | xsd:string | 
 
 
@@ -721,6 +721,7 @@ Defines the basic properties associated with the storage of a file on a file sys
 Attribute | Range | Comment
 ---: | --- | ---
 *accessedTime* | xsd:dateTimeStamp | 
+*content* | [Trace](#trace) | 
 *createdTime* | xsd:dateTimeStamp | 
 *extension* | xsd:string | The file extension.
 *fileName* | xsd:string | 

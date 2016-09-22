@@ -57,10 +57,17 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                    rdfs:range :Object ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :propertyBundle ;
-                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass :PropertyBundle
+                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Account
+                                                                   :DigitalAccount
+                                                                   :EmailAccount
+                                                                   :PhoneAccount
+                                                                   :UserAccount
+                                                                   :WindowsAccount
+                                                                 )
+                                                   ]
                               ] ;
-                   rdfs:comment "References objects with an account property bundle." .
+                   rdfs:comment "References objects with an account type property bundle." .
 
 
 ###  http://case.example.org/core#binary

@@ -36,6 +36,18 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://case.example.org/core#accessedDirectory
+:accessedDirectory rdf:type owl:ObjectProperty ;
+                   rdfs:domain :WindowsPrefetch ;
+                   rdfs:range :Trace .
+
+
+###  http://case.example.org/core#accessedFile
+:accessedFile rdf:type owl:ObjectProperty ;
+              rdfs:domain :WindowsPrefetch ;
+              rdfs:range :Trace .
+
+
 ###  http://case.example.org/core#actionLifecyclePhase
 :actionLifecyclePhase rdf:type owl:ObjectProperty ;
                       rdfs:domain :Action ;
@@ -285,6 +297,12 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
            rdfs:domain :Fragments .
 
 
+###  http://case.example.org/core#globalFlagList
+:globalFlagList rdf:type owl:ObjectProperty ;
+                rdfs:domain :WindowsComputerSpecification ;
+                rdfs:range :GlobalFlagType .
+
+
 ###  http://case.example.org/core#hash
 :hash rdf:type owl:ObjectProperty ;
       rdfs:domain [ rdf:type owl:Class ;
@@ -454,7 +472,8 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://case.example.org/core#peType
-:peType rdf:type owl:ObjectProperty ;
+:peType rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain :WindowsPEBinaryFile ;
         rdfs:range :PEType .
 
@@ -478,6 +497,20 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#protocols
 :protocols rdf:type owl:ObjectProperty ;
            rdfs:domain :NetworkConnection .
+
+
+###  http://case.example.org/core#registeredOrganization
+:registeredOrganization rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :WindowsComputerSpecification ;
+                        rdfs:range :Identity .
+
+
+###  http://case.example.org/core#registeredOwner
+:registeredOwner rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :WindowsComputerSpecification ;
+                 rdfs:range :Identity .
 
 
 ###  http://case.example.org/core#registryValue
@@ -583,6 +616,34 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
             rdfs:range :VisibilityType .
 
 
+###  http://case.example.org/core#volume
+:volume rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :WindowsPrefetch ;
+        rdfs:range :Trace .
+
+
+###  http://case.example.org/core#windowsDirectory
+:windowsDirectory rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :WindowsComputerSpecification ;
+                  rdfs:range :Trace .
+
+
+###  http://case.example.org/core#windowsSystemDirectory
+:windowsSystemDirectory rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :WindowsComputerSpecification ;
+                        rdfs:range :Trace .
+
+
+###  http://case.example.org/core#windowsTempDirectory
+:windowsTempDirectory rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :WindowsComputerSpecification ;
+                      rdfs:range :Trace .
+
+
 ###  http://case.example.org/core#x509V3Extensions
 :x509V3Extensions rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
@@ -649,6 +710,13 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#alternateDataStream
 :alternateDataStream rdf:type owl:DatatypeProperty ;
                      rdfs:domain :NTFS ;
+                     rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#applicationFileName
+:applicationFileName rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :WindowsPrefetch ;
                      rdfs:range xsd:string .
 
 
@@ -892,6 +960,12 @@ olo:slot rdf:type owl:ObjectProperty .
         rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#driveLetter
+:driveLetter rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WindowsVolume ;
+             rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#edition
 :edition rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string .
@@ -1010,6 +1084,13 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#firstRunTime
+:firstRunTime rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :WindowsPrefetch ;
+              rdfs:range xsd:dateTimeStamp .
+
+
 ###  http://case.example.org/core#format
 :format rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
@@ -1027,15 +1108,17 @@ olo:slot rdf:type owl:ObjectProperty .
      rdfs:range xsd:integer .
 
 
-###  http://case.example.org/core#group
-:group rdf:type owl:DatatypeProperty ;
-       rdfs:domain [ rdf:type owl:Class ;
-                     owl:unionOf ( :UNIXAccount
-                                   :WindowsAccount
-                                   :WindowsService
-                                 )
-                   ] ;
-       rdfs:range xsd:string .
+###  http://case.example.org/core#groupName
+:groupName rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :UNIXAccount
+                                       :WindowsAccount
+                                       :WindowsActiveDirectoryAccount
+                                       :WindowsService
+                                     )
+                       ] ;
+           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#guid
@@ -1048,6 +1131,12 @@ olo:slot rdf:type owl:ObjectProperty .
 :hashValue rdf:type owl:DatatypeProperty ;
            rdfs:domain :Hash ;
            rdfs:range xsd:hexBinary .
+
+
+###  http://case.example.org/core#hiveType
+:hiveType rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WindowsRegistryHive ;
+          rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#httpMessageBodyData
@@ -1108,7 +1197,8 @@ olo:slot rdf:type owl:ObjectProperty .
 
 
 ###  http://case.example.org/core#impHash
-:impHash rdf:type owl:DatatypeProperty ;
+:impHash rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
          rdfs:domain :WindowsPEBinaryFile ;
          rdfs:range xsd:string .
 
@@ -1207,11 +1297,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#key
 :key rdf:type owl:DatatypeProperty ;
-     rdfs:domain [ rdf:type owl:Class ;
-                   owl:unionOf ( :DictionaryItem
-                                 :WindowsRegistryKey
-                               )
-                 ] ;
+     rdfs:domain :DictionaryItem ;
      rdfs:range xsd:string .
 
 
@@ -1239,6 +1325,12 @@ olo:slot rdf:type owl:ObjectProperty .
                    owl:FunctionalProperty ;
           rdfs:domain :IdentityO ;
           rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#lastRunTime
+:lastRunTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WindowsPrefetch ;
+             rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#length
@@ -1361,6 +1453,20 @@ olo:slot rdf:type owl:ObjectProperty .
              rdfs:range xsd:dateTimeStamp .
 
 
+###  http://case.example.org/core#msProductID
+:msProductID rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :WindowsComputerSpecification ;
+             rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#msProductName
+:msProductName rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :WindowsComputerSpecification ;
+               rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#name
 :name rdf:type owl:DatatypeProperty ,
                owl:FunctionalProperty ;
@@ -1380,6 +1486,13 @@ olo:slot rdf:type owl:ObjectProperty .
                          owl:FunctionalProperty ;
                 rdfs:domain :X509V3Extensions ;
                 rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#netBiosName
+:netBiosName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :WindowsComputerSpecification ;
+             rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#notes
@@ -1420,6 +1533,13 @@ olo:slot rdf:type owl:ObjectProperty .
                           owl:FunctionalProperty ;
                  rdfs:domain :WindowsPEFileHeader ;
                  rdfs:range xsd:hexBinary .
+
+
+###  http://case.example.org/core#objectGUID
+:objectGUID rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :WindowsActiveDirectoryAccount ;
+            rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#objectID
@@ -1539,6 +1659,13 @@ olo:slot rdf:type owl:ObjectProperty .
                 rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#prefetchHash
+:prefetchHash rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :WindowsPrefetch ;
+              rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#priority
 :priority rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
@@ -1585,6 +1712,13 @@ olo:slot rdf:type owl:ObjectProperty .
                   rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#registryKey
+:registryKey rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :WindowsRegistryKey ;
+             rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#rowCondition
 :rowCondition rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
@@ -1606,6 +1740,13 @@ olo:slot rdf:type owl:ObjectProperty .
                   rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#sectorSize
+:sectorSize rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Volume ;
+            rdfs:range xsd:long .
+
+
 ###  http://case.example.org/core#sectorsPerChunk
 :sectorsPerChunk rdf:type owl:DatatypeProperty ;
                  rdfs:domain :EWFImage ;
@@ -1621,6 +1762,12 @@ olo:slot rdf:type owl:ObjectProperty .
                                         )
                           ] ;
               rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#serviceDescription
+:serviceDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :WindowsService ;
+                    rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#shell
@@ -1761,7 +1908,8 @@ olo:slot rdf:type owl:ObjectProperty .
 
 
 ###  http://case.example.org/core#startCommandLine
-:startCommandLine rdf:type owl:DatatypeProperty ;
+:startCommandLine rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :WindowsService ;
                   rdfs:range xsd:string .
 
@@ -1887,6 +2035,13 @@ olo:slot rdf:type owl:ObjectProperty .
                rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#timesExecuted
+:timesExecuted rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :WindowsPrefetch ;
+               rdfs:range xsd:long .
+
+
 ###  http://case.example.org/core#update
 :update rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:string .
@@ -1944,6 +2099,13 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#volumeID
+:volumeID rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Volume ;
+          rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#win32VersionValue
 :win32VersionValue rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
@@ -1951,8 +2113,15 @@ olo:slot rdf:type owl:ObjectProperty .
                    rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#windowsDomain
+:windowsDomain rdf:type owl:DatatypeProperty ;
+               rdfs:domain :WindowsComputerSpecification ;
+               rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#windowsTitle
-:windowsTitle rdf:type owl:DatatypeProperty ;
+:windowsTitle rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :WindowsProcess ;
               rdfs:range xsd:string .
 
@@ -2294,6 +2463,11 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 ###  http://case.example.org/core#Fragments
 :Fragments rdf:type owl:Class .
+
+
+###  http://case.example.org/core#GlobalFlagType
+:GlobalFlagType rdf:type owl:Class ;
+                rdfs:subClassOf :Enumeration .
 
 
 ###  http://case.example.org/core#HTTPConnection
@@ -2699,6 +2873,23 @@ TODO: Determine which of these properties are valid and which need to go into a 
                 rdfs:comment "Properties specific to an account on a Microsoft Windows (tm) system." .
 
 
+###  http://case.example.org/core#WindowsActiveDirectoryAccount
+:WindowsActiveDirectoryAccount rdf:type owl:Class ;
+                               rdfs:subClassOf :PropertyBundle ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :objectGUID ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange owl:rational
+                                               ] ;
+                               rdfs:comment "Properties specific to a Windows Active Directory account." .
+
+
+###  http://case.example.org/core#WindowsComputerSpecification
+:WindowsComputerSpecification rdf:type owl:Class ;
+                              rdfs:subClassOf :PropertyBundle ;
+                              rdfs:comment "Specifies Windows-specific system properties." .
+
+
 ###  http://case.example.org/core#WindowsMutex
 :WindowsMutex rdf:type owl:Class ;
               rdfs:subClassOf :PropertyBundle .
@@ -2711,7 +2902,8 @@ TODO: Determine which of these properties are valid and which need to go into a 
 
 ###  http://case.example.org/core#WindowsPEBinaryFile
 :WindowsPEBinaryFile rdf:type owl:Class ;
-                     rdfs:subClassOf :PropertyBundle .
+                     rdfs:subClassOf :PropertyBundle ;
+                     rdfs:comment "Properties specific to Windows portable executable (PE) files." .
 
 
 ###  http://case.example.org/core#WindowsPEFileHeader
@@ -2740,19 +2932,28 @@ TODO: Determine which of these properties are valid and which need to go into a 
                 rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#WindowsPrefetchFile
-:WindowsPrefetchFile rdf:type owl:Class ;
-                     rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#WindowsPrefetch
+:WindowsPrefetch rdf:type owl:Class ;
+                 rdfs:subClassOf :PropertyBundle ;
+                 rdfs:comment "Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup." .
 
 
 ###  http://case.example.org/core#WindowsProcess
 :WindowsProcess rdf:type owl:Class ;
-                rdfs:subClassOf :PropertyBundle .
+                rdfs:subClassOf :PropertyBundle ;
+                rdfs:comment "Properties specific to a Windows's process." .
+
+
+###  http://case.example.org/core#WindowsRegistryHive
+:WindowsRegistryHive rdf:type owl:Class ;
+                     rdfs:subClassOf :PropertyBundle ;
+                     rdfs:comment "(Undocumented)" .
 
 
 ###  http://case.example.org/core#WindowsRegistryKey
 :WindowsRegistryKey rdf:type owl:Class ;
-                    rdfs:subClassOf :PropertyBundle .
+                    rdfs:subClassOf :PropertyBundle ;
+                    rdfs:comment "Properties of a Windows registry key." .
 
 
 ###  http://case.example.org/core#WindowsRegistryValue
@@ -2777,7 +2978,8 @@ TODO: Determine which of these properties are valid and which need to go into a 
 
 ###  http://case.example.org/core#WindowsVolume
 :WindowsVolume rdf:type owl:Class ;
-               rdfs:subClassOf :PropertyBundle .
+               rdfs:subClassOf :PropertyBundle ;
+               rdfs:comment "Characterizes a Windows disk volume." .
 
 
 ###  http://case.example.org/core#X509Certificate

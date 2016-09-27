@@ -69,6 +69,11 @@
 
 
 
+### GlobalFlagType
+
+
+
+
 ### HashMethod
 
 
@@ -730,7 +735,7 @@ Attribute | Range | Comment
 *inode* | xsd:integer | 
 *isDirectory* | xsd:boolean | 
 *modifedTime* | xsd:dateTimeStamp | 
-*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [FileSystem](#filesystem), owl:qualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
+*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:qualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [FileSystem](#filesystem)]), [Trace](#trace) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
 *size* | xsd:positiveInteger | Size of file in bytes.
 
 
@@ -1008,7 +1013,7 @@ Properties specific to an account on a UNIX system
 Attribute | Range | Comment
 ---: | --- | ---
 *gid* | xsd:integer | 
-*group* | xsd:string | 
+*groupName* | xsd:string | 
 *shell* | xsd:string | 
 
 
@@ -1059,6 +1064,10 @@ Attribute | Range | Comment
 ### Volume
 
 
+Attribute | Range | Comment
+---: | --- | ---
+*sectorSize* | xsd:long | 
+*volumeID* | xsd:string | 
 
 
 ### WHOIS
@@ -1071,7 +1080,33 @@ Properties specific to an account on a Microsoft Windows (tm) system.
 
 Attribute | Range | Comment
 ---: | --- | ---
-*group* | xsd:string | 
+*groupName* | xsd:string | 
+
+
+### WindowsActiveDirectoryAccount
+Properties specific to a Windows Active Directory account.
+
+Attribute | Range | Comment
+---: | --- | ---
+*groupName* | xsd:string | 
+*objectGUID* | xsd:string | 
+
+
+### WindowsComputerSpecification
+Specifies Windows-specific system properties.
+
+Attribute | Range | Comment
+---: | --- | ---
+*globalFlagList* | [GlobalFlagType](#globalflagtype) | 
+*msProductID* | xsd:string | 
+*msProductName* | xsd:string | 
+*netBiosName* | xsd:string | 
+*registeredOrganization* | [Identity](#identity) | 
+*registeredOwner* | [Identity](#identity) | 
+*windowsDirectory* | [Trace](#trace) | 
+*windowsDomain* | xsd:string | 
+*windowsSystemDirectory* | [Trace](#trace) | 
+*windowsTempDirectory* | [Trace](#trace) | 
 
 
 ### WindowsMutex
@@ -1085,7 +1120,7 @@ Attribute | Range | Comment
 
 
 ### WindowsPEBinaryFile
-
+Properties specific to Windows portable executable (PE) files.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -1100,13 +1135,23 @@ Attribute | Range | Comment
 
 
 
-### WindowsPrefetchFile
+### WindowsPrefetch
+Characterizes entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup.
 
-
+Attribute | Range | Comment
+---: | --- | ---
+*accessedDirectory* | [Trace](#trace) | 
+*accessedFile* | [Trace](#trace) | 
+*applicationFileName* | xsd:string | 
+*firstRunTime* | xsd:dateTimeStamp | 
+*lastRunTime* | xsd:dateTimeStamp | 
+*prefetchHash* | xsd:string | 
+*timesExecuted* | xsd:long | 
+*volume* | [Trace](#trace) | 
 
 
 ### WindowsProcess
-
+Properties specific to a Windows's process.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -1118,15 +1163,23 @@ Attribute | Range | Comment
 *windowsTitle* | xsd:string | 
 
 
-### WindowsRegistryKey
+### WindowsRegistryHive
+(Undocumented)
 
+Attribute | Range | Comment
+---: | --- | ---
+*hiveType* | xsd:string | 
+
+
+### WindowsRegistryKey
+Properties of a Windows registry key.
 
 Attribute | Range | Comment
 ---: | --- | ---
 *creator* | [Trace](#trace) | 
-*key* | xsd:string | 
 *modifedTime* | xsd:dateTimeStamp | 
 *numberOfSubkeys* | xsd:integer | 
+*registryKey* | xsd:string | 
 *registryValue* | [WindowsRegistryValue](#windowsregistryvalue) | 
 
 
@@ -1136,7 +1189,8 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *displayName* | xsd:string | 
-*group* | xsd:string | 
+*groupName* | xsd:string | 
+*serviceDescription* | xsd:string | 
 *serviceStatus* | [ServiceStatus](#servicestatus) | 
 *serviceType* | [Servicetype](#servicetype) | 
 *startCommandLine* | xsd:string | 
@@ -1149,8 +1203,11 @@ Attribute | Range | Comment
 
 
 ### WindowsVolume
+Characterizes a Windows disk volume.
 
-
+Attribute | Range | Comment
+---: | --- | ---
+*driveLetter* | xsd:string | 
 
 
 ### X509Certificate

@@ -88,7 +88,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :compressionMethod rdf:type owl:ObjectProperty ,
                             owl:FunctionalProperty ;
                    rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( :Compression
+                                 owl:unionOf ( :Compressed
                                                :EWFImage
                                              )
                                ] ;
@@ -153,7 +153,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#encodingMethod
 :encodingMethod rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :Encoding
+                              owl:unionOf ( :Encoded
                                             :ExtractedString
                                           )
                             ] ;
@@ -163,14 +163,14 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#encryptionMethod
 :encryptionMethod rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
-                  rdfs:domain :Encryption ;
+                  rdfs:domain :Encrypted ;
                   rdfs:range :EncryptionMethod .
 
 
 ###  http://case.example.org/core#encryptionMode
 :encryptionMode rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain :Encryption ;
+                rdfs:domain :Encrypted ;
                 rdfs:range :EncryptionMode .
 
 
@@ -280,9 +280,11 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                             ] .
 
 
+
 ###  http://case.example.org/core#fragments
 :fragments rdf:type owl:ObjectProperty ;
-           rdfs:domain :Fragments .
+           rdfs:domain :Fragments ;
+           rdfs:range :ListOfTraces .
 
 
 ###  http://case.example.org/core#hash
@@ -905,13 +907,13 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#encryptionIV
 :encryptionIV rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Encryption ;
+              rdfs:domain :Encrypted ;
               rdfs:range xsd:hexBinary .
 
 
 ###  http://case.example.org/core#encryptionKey
 :encryptionKey rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Encryption ;
+               rdfs:domain :Encrypted ;
                rdfs:range xsd:hexBinary .
 
 
@@ -2067,9 +2069,9 @@ Note: This property bundle is different. Instead of putting this as a property b
          rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#Compression
-:Compression rdf:type owl:Class ;
-             rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#Compressed
+:Compressed rdf:type owl:Class ;
+            rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#CompressionMethod
@@ -2176,9 +2178,9 @@ Note: This property bundle is different. Instead of putting this as a property b
               owl:disjointWith :SMSMessage .
 
 
-###  http://case.example.org/core#Encoding
-:Encoding rdf:type owl:Class ;
-          rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#Encoded
+:Encoded rdf:type owl:Class ;
+         rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#EncodingMethod
@@ -2186,9 +2188,9 @@ Note: This property bundle is different. Instead of putting this as a property b
                 rdfs:subClassOf :Enumeration .
 
 
-###  http://case.example.org/core#Encryption
-:Encryption rdf:type owl:Class ;
-            rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#Encrypted
+:Encrypted rdf:type owl:Class ;
+           rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#EncryptionMethod
@@ -2293,7 +2295,8 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 
 ###  http://case.example.org/core#Fragments
-:Fragments rdf:type owl:Class .
+:Fragments rdf:type owl:Class ;
+           rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#HTTPConnection
@@ -2388,6 +2391,24 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 ###  http://case.example.org/core#LinuxPackage
 :LinuxPackage rdf:type owl:Class ;
               rdfs:subClassOf :PropertyBundle .
+
+
+:ListOfTraces a owl:Class ;
+              owl:equivalentClass [
+                a owl:Class ;
+                owl:intersectionOf (
+                    rdf:List
+                    [
+                        a owl:Restriction ;
+                        owl:allValuesFrom :Trace ;
+                        owl:onProperty rdf:first
+                    ]
+                    [
+                        a owl;Restriction ;
+                        owl:allValuesFrom :ListOfTraces ;
+                        owl:onProperty rdf:rest
+                    ] )
+              ]  .
 
 
 ###  http://case.example.org/core#Location
@@ -2862,9 +2883,9 @@ olo:Slot rdf:type owl:Class .
                :FileSystemType .
 
 
-###  http://case.example.org/core#Compression
-:Compression rdf:type owl:NamedIndividual ,
-                      :FileSystemType .
+###  http://case.example.org/core#Compressed
+:Compressed rdf:type owl:NamedIndividual ,
+                     :FileSystemType .
 
 
 ###  http://case.example.org/core#Critical
@@ -2917,14 +2938,14 @@ olo:Slot rdf:type owl:Class .
                :FileSystemType .
 
 
-###  http://case.example.org/core#Encoding
-:Encoding rdf:type owl:NamedIndividual ,
-                   :FileSystemType .
+###  http://case.example.org/core#Encoded
+:Encoded rdf:type owl:NamedIndividual ,
+                  :FileSystemType .
 
 
-###  http://case.example.org/core#Encryption
-:Encryption rdf:type owl:NamedIndividual ,
-                     :FileSystemType .
+###  http://case.example.org/core#Encrypted
+:Encrypted rdf:type owl:NamedIndividual ,
+                    :FileSystemType .
 
 
 ###  http://case.example.org/core#English
@@ -2940,6 +2961,11 @@ olo:Slot rdf:type owl:Class .
 ###  http://case.example.org/core#F2FS
 :F2FS rdf:type owl:NamedIndividual ,
                :FileSystemType .
+
+
+###  http://case.example.org/core#Fragments
+:Fragments rdf:type owl:NamedIndividual ,
+                    :FileSystemType .
 
 
 ###  http://case.example.org/core#French
@@ -3097,7 +3123,7 @@ olo:Slot rdf:type owl:Class .
 :BDEVolume rdfs:comment "The Bitlocker Drive Encryption (BDE) credentials." .
 
 
-:Compression rdfs:comment "Defines the basic properties associated with a compressed stream." .
+:Compressed rdfs:comment "Defines the basic properties associated with a compressed stream." .
 
 
 :DataRange rdfs:comment "Defines the basic properties associated with a range of data." .
@@ -3159,8 +3185,8 @@ olo:Slot rdf:type owl:Class .
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Disk
                 :DiskPartition
-                :Encoding
-                :Encryption
+                :Encoded
+                :Encrypted
                 :SQLiteBlob
               )
 ] .

@@ -65,7 +65,7 @@
 ### FileSystemType
 
 
-**SubTypes:**  BDEVolume, CPIO, Compressed, DataRange, EWF, EXT4, Encoded, Encrypted, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
+**SubTypes:**  BDEVolume, CPIO, Compression, DataRange, DiskPartition, EWF, EXT4, Encoding, Encryption, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
 
 
 
@@ -525,7 +525,7 @@ Attribute | Range | Comment
 
 
 
-### Compressed
+### Compression
 Defines the basic properties associated with a compressed stream.
 
 Attribute | Range | Comment
@@ -643,7 +643,7 @@ Attribute | Range | Comment
 
 
 
-### Encoded
+### Encoding
 
 
 Attribute | Range | Comment
@@ -651,7 +651,7 @@ Attribute | Range | Comment
 *encodingMethod* | [EncodingMethod](#encodingmethod) | 
 
 
-### Encrypted
+### Encryption
 
 
 Attribute | Range | Comment

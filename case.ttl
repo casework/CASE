@@ -33,6 +33,14 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -82,6 +90,12 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                    rdfs:comment "References objects with an account type property bundle." .
 
 
+###  http://case.example.org/core#bcc
+:bcc rdf:type owl:ObjectProperty ;
+     rdfs:domain :EmailMessage ;
+     rdfs:range :Trace .
+
+
 ###  http://case.example.org/core#binary
 :binary rdf:type owl:ObjectProperty ,
                  owl:FunctionalProperty ;
@@ -89,11 +103,30 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
         rdfs:range :Trace .
 
 
+###  http://case.example.org/core#bodyMultipart
+:bodyMultipart rdf:type owl:ObjectProperty ;
+               rdfs:domain :EmailMessage ;
+               rdfs:range :MimePartType .
+
+
+###  http://case.example.org/core#bodyRaw
+:bodyRaw rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :EmailMessage ;
+         rdfs:range :Trace .
+
+
 ###  http://case.example.org/core#byteOrder
 :byteOrder rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :ContentData ;
            rdfs:range :ByteOrder .
+
+
+###  http://case.example.org/core#cc
+:cc rdf:type owl:ObjectProperty ;
+    rdfs:domain :EmailMessage ;
+    rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#compressionMethod
@@ -324,6 +357,13 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
             rdfs:range :HashMethod .
 
 
+###  http://case.example.org/core#headerRaw
+:headerRaw rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :EmailMessage ;
+           rdfs:range :Trace .
+
+
 ###  http://case.example.org/core#homeDirectory
 :homeDirectory rdf:type owl:ObjectProperty ;
                rdfs:domain :UserAccount ;
@@ -335,6 +375,13 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                                  owl:FunctionalProperty ;
                         rdfs:domain :RasterPicture ;
                         rdfs:range :ImageCompressionMethod .
+
+
+###  http://case.example.org/core#inReplyTo
+:inReplyTo rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :EmailMessage ;
+           rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#instrument
@@ -371,6 +418,13 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 :location rdf:type owl:ObjectProperty ;
           rdfs:domain :Object ;
           rdfs:range :Location .
+
+
+###  http://case.example.org/core#messageID
+:messageID rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :EmailMessage ;
+           rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#messages
@@ -437,6 +491,12 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                 rdfs:range :WindowsPEOptionalHeader .
 
 
+###  http://case.example.org/core#otherHeader
+:otherHeader rdf:type owl:ObjectProperty ;
+             rdfs:domain :EmailMessage ;
+             rdfs:range :DictionaryItem .
+
+
 ###  http://case.example.org/core#parentFileSystem
 :parentFileSystem rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
@@ -467,8 +527,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                            owl:unionOf ( :Message
                                          :PhoneCall
                                        )
-                         ] ;
-             rdfs:comment "A participant of the Message." .
+                         ] .
 
 
 ###  http://case.example.org/core#peType
@@ -497,6 +556,25 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://case.example.org/core#protocols
 :protocols rdf:type owl:ObjectProperty ;
            rdfs:domain :NetworkConnection .
+
+
+###  http://case.example.org/core#received
+:received rdf:type owl:ObjectProperty ;
+          rdfs:domain :Message ;
+          rdfs:range :ReceivedEvent .
+
+
+###  http://case.example.org/core#receiver
+:receiver rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :ReceivedEvent ;
+          rdfs:range :Trace .
+
+
+###  http://case.example.org/core#reference
+:reference rdf:type owl:ObjectProperty ;
+           rdfs:domain :EmailMessage ;
+           rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#registeredOrganization
@@ -539,8 +617,7 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                       owl:unionOf ( :Message
                                     :PhoneCall
                                   )
-                    ] ;
-        rdfs:comment "The sender of the message." .
+                    ] .
 
 
 ###  http://case.example.org/core#serviceStatus
@@ -649,6 +726,13 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                            owl:FunctionalProperty ;
                   rdfs:domain :X509Certificate ;
                   rdfs:range :X509V3Extensions .
+
+
+###  http://case.example.org/core#xOriginatingIP
+:xOriginatingIP rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :EmailMessage ;
+                rdfs:range :Trace .
 
 
 ###  http://purl.org/ontology/olo/core#item
@@ -801,6 +885,12 @@ olo:slot rdf:type owl:ObjectProperty .
                  rdfs:range xsd:base64Binary .
 
 
+###  http://case.example.org/core#callType
+:callType rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PhoneCall ;
+          rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#canEscalatePrivs
 :canEscalatePrivs rdf:type owl:DatatypeProperty ;
                   rdfs:domain :UserAccount ;
@@ -811,6 +901,12 @@ olo:slot rdf:type owl:ObjectProperty .
 :caseNumber rdf:type owl:DatatypeProperty ;
             rdfs:domain :EWFImage ;
             rdfs:range xsd:integer .
+
+
+###  http://case.example.org/core#category
+:category rdf:type owl:DatatypeProperty ;
+          rdfs:domain :EmailMessage ;
+          rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#certificatePolicies
@@ -852,6 +948,20 @@ olo:slot rdf:type owl:ObjectProperty .
                   owl:FunctionalProperty ;
          rdfs:domain :ArchiveFile ;
          rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#contentDisposition
+:contentDisposition rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :EmailMessage ;
+                    rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#contentType
+:contentType rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :EmailMessage ;
+             rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#country
@@ -966,6 +1076,12 @@ olo:slot rdf:type owl:ObjectProperty .
              rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PhoneCall ;
+          rdfs:range xsd:duration .
+
+
 ###  http://case.example.org/core#edition
 :edition rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string .
@@ -995,6 +1111,7 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:domain [ rdf:type owl:Class ;
                        owl:unionOf ( :Action
                                      :NetworkConnection
+                                     :PhoneCall
                                      :Relationship
                                    )
                      ] ;
@@ -1248,6 +1365,20 @@ olo:slot rdf:type owl:ObjectProperty .
           rdfs:range xsd:boolean .
 
 
+###  http://case.example.org/core#isMimeEncoded
+:isMimeEncoded rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :EmailMessage ;
+               rdfs:range xsd:boolean .
+
+
+###  http://case.example.org/core#isMultipart
+:isMultipart rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :EmailMessage ;
+             rdfs:range xsd:boolean .
+
+
 ###  http://case.example.org/core#isOptimized
 :isOptimized rdf:type owl:DatatypeProperty ;
              rdfs:domain :PDFFile ;
@@ -1259,6 +1390,13 @@ olo:slot rdf:type owl:ObjectProperty .
                        owl:FunctionalProperty ;
               rdfs:domain :UserAccount ;
               rdfs:range xsd:boolean .
+
+
+###  http://case.example.org/core#isRead
+:isRead rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Message ;
+        rdfs:range xsd:boolean .
 
 
 ###  http://case.example.org/core#isSelfSigned
@@ -1312,6 +1450,12 @@ olo:slot rdf:type owl:ObjectProperty .
 :kindOfRelationship rdf:type owl:DatatypeProperty ;
                     rdfs:domain :Relationship ;
                     rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#label
+:label rdf:type owl:DatatypeProperty ;
+       rdfs:domain :EmailMessage ;
+       rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#lastLoginTime
@@ -1447,6 +1591,7 @@ olo:slot rdf:type owl:ObjectProperty .
              rdf:type owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :FileSystem
+                                         :Message
                                          :WindowsRegistryKey
                                        )
                          ] ;
@@ -1669,7 +1814,11 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#priority
 :priority rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :WindowsProcess ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :EmailMessage
+                                      :WindowsProcess
+                                    )
+                      ] ;
           rdfs:range xsd:string .
 
 
@@ -1704,6 +1853,19 @@ olo:slot rdf:type owl:ObjectProperty .
 :rangeSize rdf:type owl:DatatypeProperty ;
            rdfs:domain :DataRange ;
            rdfs:range xsd:positiveInteger .
+
+
+###  http://case.example.org/core#receivedLine
+:receivedLine rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EmailMessage ;
+              rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#receivedTime
+:receivedTime rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :ReceivedEvent ;
+              rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#recoveryPassword
@@ -1751,6 +1913,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :sectorsPerChunk rdf:type owl:DatatypeProperty ;
                  rdfs:domain :EWFImage ;
                  rdfs:range xsd:integer .
+
+
+###  http://case.example.org/core#sentTime
+:sentTime rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Message ;
+          rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#serialNumber
@@ -1920,6 +2089,7 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:domain [ rdf:type owl:Class ;
                          owl:unionOf ( :Action
                                        :NetworkConnection
+                                       :PhoneCall
                                        :Relationship
                                      )
                        ] ;
@@ -1946,6 +2116,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#subject
 :subject rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
+         rdfs:domain :EmailMessage ;
          rdfs:range xsd:string .
 
 
@@ -2124,6 +2295,13 @@ olo:slot rdf:type owl:ObjectProperty .
                        owl:FunctionalProperty ;
               rdfs:domain :WindowsProcess ;
               rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#xMailer
+:xMailer rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :EmailMessage ;
+         rdfs:range xsd:string .
 
 
 #################################################################
@@ -2341,8 +2519,19 @@ Note: This property bundle is different. Instead of putting this as a property b
 
 ###  http://case.example.org/core#EmailMessage
 :EmailMessage rdf:type owl:Class ;
-              rdfs:subClassOf :PropertyBundle ;
-              owl:disjointWith :SMSMessage .
+              rdfs:subClassOf :PropertyBundle ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :isMimeEncoded ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:boolean
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :isMultipart ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:boolean
+                              ] ;
+              owl:disjointWith :SMSMessage ;
+              rdfs:comment "The properties unique to an email message corresponding to the internet message format described in RFC 5322 and related RFCs." .
 
 
 ###  http://case.example.org/core#Encoding
@@ -2592,12 +2781,18 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 ###  http://case.example.org/core#Message
 :Message rdf:type owl:Class ;
-         rdfs:subClassOf :PropertyBundle .
+         rdfs:subClassOf :PropertyBundle ;
+         rdfs:comment "The properties associated with message (eg. email, sms, whatsapp, etc.)" .
 
 
 ###  http://case.example.org/core#MessageThread
 :MessageThread rdf:type owl:Class ;
                rdfs:subClassOf :PropertyBundle .
+
+
+###  http://case.example.org/core#MimePartType
+:MimePartType rdf:type owl:Class ;
+              rdfs:subClassOf :Enumeration .
 
 
 ###  http://case.example.org/core#MimeType
@@ -2684,7 +2879,9 @@ TODO: Determine which of these properties are valid and which need to go into a 
 
 ###  http://case.example.org/core#PhoneCall
 :PhoneCall rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle .
+           rdfs:subClassOf :PropertyBundle ;
+           rdfs:comment """NFI Needed
+TODO: Community discuss""" .
 
 
 ###  http://case.example.org/core#Process
@@ -2711,6 +2908,23 @@ TODO: Determine which of these properties are valid and which need to go into a 
                rdfs:subClassOf :PropertyBundle .
 
 
+###  http://case.example.org/core#ReceivedEvent
+:ReceivedEvent rdf:type owl:Class ;
+               rdfs:subClassOf :SupportingClasses ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :receiver ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Trace
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :receivedTime ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:dateTimeStamp
+                               ] ;
+               rdfs:comment """Defines received events.
+Contains information on who received it and when.""" .
+
+
 ###  http://case.example.org/core#Relationship
 :Relationship rdf:type owl:Class ;
               rdfs:subClassOf :Descriptive .
@@ -2723,7 +2937,9 @@ TODO: Determine which of these properties are valid and which need to go into a 
 
 ###  http://case.example.org/core#SMSMessage
 :SMSMessage rdf:type owl:Class ;
-            rdfs:subClassOf :PropertyBundle .
+            rdfs:subClassOf :PropertyBundle ;
+            rdfs:comment """The properties uniquely associated with an SMS message.
+TODO: Add properties.""" .
 
 
 ###  http://case.example.org/core#SQLiteBlob
@@ -2879,7 +3095,7 @@ TODO: Determine which of these properties are valid and which need to go into a 
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :objectGUID ;
                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onDataRange owl:rational
+                                                 owl:onDataRange xsd:string
                                                ] ;
                                rdfs:comment "Properties specific to a Windows Active Directory account." .
 

@@ -129,6 +129,17 @@
           "participant": [
             "account1",
             "account2"
+          ],
+          "sentTime": "2010-01-15T17:59:43.25Z"
+          "received": [
+            {
+              "receiver": "account1",
+              "receivedTime": "2010-01-15T17:59:43.25Z"
+            },
+            {
+              "receiver": "account2",
+              "receivedTime": "2010-01-15T17:59:43.25Z"
+            }
           ]
         },
         {

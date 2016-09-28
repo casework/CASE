@@ -95,6 +95,11 @@ TODO: We probably can use an already existing schema for this.
 
 
 
+### MimePartType
+
+
+
+
 ### MimeType
 
 
@@ -190,6 +195,16 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *value* | xsd:string | 
+
+
+### ReceivedEvent
+Defines received events.
+Contains information on who received it and when.
+
+Attribute | Range | Comment
+---: | --- | ---
+*receivedTime* | xsd:dateTimeStamp | 
+*receiver* | [Trace](#trace) | 
 
 
 ### URI
@@ -644,8 +659,30 @@ Attribute | Range | Comment
 
 
 ### EmailMessage
+The properties unique to an email message corresponding to the internet message format described in RFC 5322 and related RFCs.
 
-
+Attribute | Range | Comment
+---: | --- | ---
+*bcc* | [Trace](#trace) | 
+*bodyMultipart* | [MimePartType](#mimeparttype) | 
+*bodyRaw* | [Trace](#trace) | 
+*category* | xsd:string | 
+*cc* | [Trace](#trace) | 
+*contentDisposition* | xsd:string | 
+*contentType* | xsd:string | 
+*headerRaw* | [Trace](#trace) | 
+*inReplyTo* | [Trace](#trace) | 
+*isMimeEncoded* | xsd:boolean | 
+*isMultipart* | xsd:boolean | 
+*label* | xsd:string | 
+*messageID* | [Trace](#trace) | 
+*otherHeader* | [DictionaryItem](#dictionaryitem) | 
+*priority* | xsd:string | 
+*receivedLine* | xsd:string | 
+*reference* | [Trace](#trace) | 
+*subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
+*xMailer* | xsd:string | 
+*xOriginatingIP* | [Trace](#trace) | 
 
 
 ### Encoding
@@ -793,13 +830,17 @@ Defines the basic properties associated with a disk image file. (Ie. the full im
 
 
 ### Message
-
+The properties associated with message (eg. email, sms, whatsapp, etc.)
 
 Attribute | Range | Comment
 ---: | --- | ---
 *body* | xsd:string | 
-*participant* |  | A participant of the Message.
-*sender* |  | The sender of the message.
+*isRead* | xsd:boolean | 
+*modifedTime* | xsd:dateTimeStamp | 
+*participant* |  | 
+*received* | [ReceivedEvent](#receivedevent) | 
+*sender* |  | 
+*sentTime* | xsd:dateTimeStamp | 
 
 
 ### MessageThread
@@ -915,12 +956,17 @@ Attribute | Range | Comment
 
 
 ### PhoneCall
-
+NFI Needed
+TODO: Community discuss
 
 Attribute | Range | Comment
 ---: | --- | ---
-*participant* |  | A participant of the Message.
-*sender* |  | The sender of the message.
+*callType* | xsd:string | 
+*duration* | xsd:duration | 
+*endTime* | xsd:dateTimeStamp | 
+*participant* |  | 
+*sender* |  | 
+*startTime* | xsd:dateTimeStamp | 
 
 
 ### Process
@@ -935,7 +981,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 
@@ -957,7 +1003,8 @@ Attribute | Range | Comment
 
 
 ### SMSMessage
-
+The properties uniquely associated with an SMS message.
+TODO: Add properties.
 
 
 

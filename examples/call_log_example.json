@@ -35,16 +35,19 @@
       ]
     },
     {
-      "@id": "call_action1",
-      "@type": "Action",
-      "description": "Phone call",
-      "startTime": "2010-01-15T17:59:43.25Z",
-      "endTime": "2010-01-15T18:30:43.25Z",
-      "performer": "phone_account1",
-      "instrument": "phone_application1",
-      "location": "starbucks_location1",
-      "environment": "android_phone1",
-      "propertyBundle": null
+      "@id": "phone_call1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "PhoneCall",
+          "callType": "mobile",  // TODO: What are valid call types?
+          "startTime": "2010-01-15T17:59:43.25Z",
+          "endTime": "2010-01-15T18:30:41.25Z",
+          "sender": "phone_account1",
+          "participant": "phone_account2",
+          "duration": "PT31M2S"
+        }
+      ]
     }
   ]
 }

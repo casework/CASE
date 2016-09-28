@@ -11,9 +11,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "digital_photograph1",
-          "fileSystemType": "DataRange",
+          "@type": "DataContainer",
+          "parentDataContainer": "digital_photograph1",
+          "dataContainerType": "DataRange",
           "content": "digital_photograph_thumbnail1_content"
         },
         {

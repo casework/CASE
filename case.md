@@ -24,6 +24,13 @@
 
 
 
+### DataContainerType
+
+
+**SubTypes:**  BDEVolume, CPIO, Compression, DataRange, DiskPartition, EWF, EXT4, Encoding, Encryption, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
+
+
+
 ### DataType
 
 
@@ -59,13 +66,6 @@
 
 ### FileMismatchType
 
-
-
-
-### FileSystemType
-
-
-**SubTypes:**  BDEVolume, CPIO, Compression, DataRange, DiskPartition, EWF, EXT4, Encoding, Encryption, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
 
 
 
@@ -578,6 +578,25 @@ Attribute | Range | Comment
 *size* | xsd:positiveInteger | Size of file in bytes.
 
 
+### DataContainer
+Defines the basic properties associated with the storage of data.
+
+Attribute | Range | Comment
+---: | --- | ---
+*accessedTime* | xsd:dateTimeStamp | 
+*content* | [Trace](#trace) | 
+*createdTime* | xsd:dateTimeStamp | 
+*dataContainerType* | [DataContainerType](#datacontainertype) | 
+*extension* | xsd:string | The file extension.
+*fileName* | xsd:string | 
+*filePath* | [FilePath](#filepath) | 
+*inode* | xsd:integer | 
+*isDirectory* | xsd:boolean | 
+*modifedTime* | xsd:dateTimeStamp | 
+*parentDataContainer* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [DataContainer](#datacontainer), owl:qualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
+*size* | xsd:positiveInteger | Size of file in bytes.
+
+
 ### DataRange
 Defines the basic properties associated with a range of data.
 
@@ -755,25 +774,6 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *mismatchType* | [FileMismatchType](#filemismatchtype) | 
-
-
-### FileSystem
-Defines the basic properties associated with the storage of a file on a file system.
-
-Attribute | Range | Comment
----: | --- | ---
-*accessedTime* | xsd:dateTimeStamp | 
-*content* | [Trace](#trace) | 
-*createdTime* | xsd:dateTimeStamp | 
-*extension* | xsd:string | The file extension.
-*fileName* | xsd:string | 
-*filePath* | [FilePath](#filepath) | 
-*fileSystemType* | [FileSystemType](#filesystemtype) | 
-*inode* | xsd:integer | 
-*isDirectory* | xsd:boolean | 
-*modifedTime* | xsd:dateTimeStamp | 
-*parentFileSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:qualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [FileSystem](#filesystem)]), [Trace](#trace) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
-*size* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### HTTPConnection

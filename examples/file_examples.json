@@ -4,7 +4,7 @@
     "olo": "http://purl.org/ontology/olo/core#"
   },
   "@graph": [
-    // Each fileSystem has a parentFileSystem property which allows us to layer them.
+    // Each data container has a parentDataContainer property which allows us to layer them.
     // If you trace down this object, you will see that, the first object represents a Base64 encoded file found within an AES encrypted TAR archive which was a blob within a SQLite database found within an EXT4 file system that was the third partition within an image file found within an NTFS file system.
 
     // This represents a base64 decoded file.
@@ -13,9 +13,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "tar_archive_file",
-          "fileSystemType": "Encoding",
+          "@type": "DataContainer",
+          "parentDataContainer": "tar_archive_file",
+          "dataContainerType": "Encoding",
           "content": "decoded_attachment_content"
         },
         {
@@ -53,9 +53,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "decrypted_blob",
-          "fileSystemType": "TAR",
+          "@type": "DataContainer",
+          "parentDataContainer": "decrypted_blob",
+          "dataContainerType": "TAR",
           "content": "tar_archive_file_content",
           "filePath": "/some/files/in/archive/attachment.jpg",
           "extension": "jpg",
@@ -88,9 +88,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "sqlite_blob",
-          "fileSystemType": "Encryption",
+          "@type": "DataContainer",
+          "parentDataContainer": "sqlite_blob",
+          "dataContainerType": "Encryption",
           "content": "decrypted_blob_content"
         },
         {
@@ -126,9 +126,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "sqlite_database",
-          "fileSystemType": "SQLiteBlob"
+          "@type": "DataContainer",
+          "parentDataContainer": "sqlite_database",
+          "dataContainerType": "SQLiteBlob"
         },
         {
           "@type": "SQLiteBlob",
@@ -145,9 +145,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "image_partition",
-          "fileSystemType": "EXT4",
+          "@type": "DataContainer",
+          "parentDataContainer": "image_partition",
+          "dataContainerType": "EXT4",
           "content": "sqlite_database_content",
           "filePath": "/data/data/com.whatsapp/cache/messages.db",
           "fileName": "messages.db",
@@ -176,9 +176,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": "android_image",
-          "fileSystemType": "Volume",
+          "@type": "DataContainer",
+          "parentDataContainer": "android_image",
+          "dataContainerType": "Volume",
           "size": 23100
         },
         {
@@ -194,9 +194,9 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "parentFileSystem": null,
-          "fileSystemType": "NTFS",
+          "@type": "DataContainer",
+          "parentDataContainer": null,
+          "dataContainerType": "NTFS",
           "extension": "img",
           "isDirectory": false,
           "fileName": "DFL-20140712-001C.img",

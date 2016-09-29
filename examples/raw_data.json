@@ -3,9 +3,6 @@
     "@vocab": "http://case.example.org/core#"
   },
   "@graph": [
-
-    // This represents a range of data found within a digital photograph which contains the thumbnail of the image.
-    // This thumbnail is a 2878 byte file located at offset 224 within the digital photograph.
     {
       "@id": "digital_photograph_thumbnail1",
       "@type": "Trace",

@@ -2,14 +2,13 @@
   "@context": {
     "@vocab": "http://case.example.org/core#",
     "olo": "http://purl.org/ontology/olo/core#",
-    "schema": "http://schema.org",  // This example will show the use of schema.org to describe Location and Identity objects. This ontology is only a placeholder until an ontology has been chosen.
-    "acme": "http://custompb.acme.org/core#"  // This prefix is used to show the use of the ability to extend with custom property bundles.
+    "schema": "http://schema.org",
+    "acme": "http://custompb.acme.org/core#"
   },
   "@graph": [
     {
       "@id": "location1",
       "@type": "Location",
-      // Example using another defined ontology to represent our location.
       "schema:Address": {
         "@type": "schema:PostalAddress",
         "schema:addressLocality": "Seattle",
@@ -17,7 +16,6 @@
         "schema:postalCode": "98052",
         "schema:streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
       },
-      // This is an example of how you can extend an Trace with a custom property bundle.
       "propertyBundle": [
         {
           "@type": "acme:InternalLocation",
@@ -35,8 +33,7 @@
         "schema:addressRegion": "",
         "schema:postalCode": "F-75002",
         "schema:streetAddress": "38 Bad Guy Headquarters st."
-      },
-      "propertyBundle": null
+      }
     }
   ]
 }

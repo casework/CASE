@@ -3,10 +3,8 @@
     "@vocab": "http://case.example.org/core#",
     "olo": "http://purl.org/ontology/olo/core#",
     "acme": "http://custompb.acme.org/core#"
-    // This prefix is used to show the use of the ability to extend with custom property bundles.
   },
   "@graph": [
-    // Ordered lists are defined using the OrderedListOntology (http://purl.org/ontology/olo/core)
     {
       "@id": "forensic_lifecycle1",
       "@type": "ActionLifecycle",
@@ -33,8 +31,7 @@
           "olo:index": 5,
           "olo:item": "phase5"
         }
-      ],
-      "propertyBundle": null
+      ]
     },
     {
       "@id": "phase1",
@@ -113,8 +110,6 @@
       ]
     },
 
-    // Forensic Actions
-
     {
       "@id": "forensic_action1",
       "@type": "ForensicAction",
@@ -124,8 +119,7 @@
       "performer": "role2",
       "result": [
         "provenance_record1"
-      ],
-      "propertyBundle": null
+      ]
     },
     {
       "@id": "lifecycle_phase1",
@@ -158,8 +152,7 @@
         "provenance_record2",
         "provenance_record3"
       ],
-      "location": "fedex_dropoff_location1",
-      "propertyBundle": null
+      "location": "fedex_dropoff_location1"
     },
     {
       "@id": "lifecycle_phase2",
@@ -178,8 +171,7 @@
       ],
       "object": [
         "forensic_action3"
-      ],
-      "propertyBundle": null
+      ]
     },
     {
       "@id": "forensic_action3",
@@ -258,8 +250,7 @@
       "text": "Run Plaso tool to find communications and multimedia exchanged between subject and victim.",
       "object": [
         "forensic_action5"
-      ],
-      "propertyBundle": null
+      ]
     },
     {
       "@id": "forensic_action5",
@@ -301,7 +292,6 @@
           ],
           "isHidden": false
         },
-        // Custom propertybundle that allows us to reference the objects were created for this specific software.
         {
           "@type": "acme:PlasoArguments",
           "input": "android_image",
@@ -334,8 +324,6 @@
         "forensic_action6"
       ]
     },
-    // This forensic_action was spawned by the main tool action. It shows the resulting Trace that were produced when
-    // running a specific parser on specific files found within the image.
     {
       "@id": "forensic_action6",
       "@type": "ForensicAction",
@@ -363,7 +351,6 @@
       "location": "forensic_lab1",
       "environment": "forensic_lab_computer1",
       "propertyBundle": [
-        // Custom property bundle used to define arguments used by the parser.
         {
           "@type": "acme:PlasoParserArguments",
           "parsedFile": "message_database",
@@ -376,176 +363,152 @@
         }
       ]
     },
-
-    // Provenance Records
-
     {
       "@id": "provenance_record1",
       "@type": "ProvenanceRecord",
       "description": "Android Smartphone",
       "exhibitNumber": "ACME-676553402357",
-      "object": "device1",
-      "propertyBundle": null
+      "object": "device1"
     },
     {
       "@id": "provenance_record2",
       "@type": "ProvenanceRecord",
       "description": "Android Smartphone",
       "exhibitNumber": "DFL-20140712-001A",
-      "object": "device1",
-      "propertyBundle": null
+      "object": "device1"
     },
     {
       "@id": "provenance_record3",
       "@type": "ProvenanceRecord",
       "description": "SD Card",
       "exhibitNumber": "DFL-20140712-001B",
-      "object": "device1",
-      "propertyBundle": null
+      "object": "device1"
     },
     {
       "@id": "provenance_record4",
       "@type": "ProvenanceRecord",
       "description": "Forensic image of Android Smartphone",
       "exhibitNumber": "DFL-20140712-001C",
-      "object": "android_image",
-      "propertyBundle": null
+      "object": "android_image"
     },
     {
       "@id": "provenance_record5",
       "@type": "ProvenanceRecord",
       "description": "Forensic image of SD Card",
       "exhibitNumber": "DFL-20140712-001D",
-      "object": "sd_card",
-      "propertyBundle": null
+      "object": "sd_card"
     },
     {
       "@id": "provenance_record6",
       "@type": "ProvenanceRecord",
       "description": "Chat Messages Report",
       "exhibitNumber": "DFL-20140712-001E",
-      "object": "chat_messages_report",
-      "propertyBundle": null
+      "object": "chat_messages_report"
     },
     {
       "@id": "provenance_record7",
       "@type": "ProvenanceRecord",
       "description": "Plaso Storage File",
       "exhibitNumber": "DFL-20140712-001F",
-      "object": "plaso_storage_file",
-      "propertyBundle": null
+      "object": "plaso_storage_file"
     },
     {
       "@id": "provenance_record8",
       "@type": "ProvenanceRecord",
       "description": "Android OS Information",
       "exhibitNumber": "DFL-20140712-0020",
-      "object": "os1",
-      "propertyBundle": null
+      "object": "os1"
     },
     {
       "@id": "provenance_record9",
       "@type": "ProvenanceRecord",
       "description": "Contraband photograph",
       "exhibitNumber": "DFL-20140712-0021",
-      "object": "attachment_file",
-      "propertyBundle": null
+      "object": "attachment_file"
     },
     {
       "@id": "provenance_record10",
       "@type": "ProvenanceRecord",
       "description": "WhatsApp message database",
       "exhibitNumber": "DFL-20140712-0022",
-      "object": "message_database",
-      "propertyBundle": null
+      "object": "message_database"
     },
     {
       "@id": "provenance_record11",
       "@type": "ProvenanceRecord",
       "description": "WhatsApp thumbnail database",
       "exhibitNumber": "DFL-20140712-0023",
-      "object": "thumbnail_database",
-      "propertyBundle": null
+      "object": "thumbnail_database"
     },
     {
       "@id": "provenance_record12",
       "@type": "ProvenanceRecord",
       "description": "Android data partition",
       "exhibitNumber": "DFL-20140712-0024",
-      "object": "image_partition",
-      "propertyBundle": null
+      "object": "image_partition"
     },
     {
       "@id": "provenance_record13",
       "@type": "ProvenanceRecord",
       "description": "WhatsApp message being sent from subject to victim",
       "exhibitNumber": "DFL-20140712-0025",
-      "object": "message_action1",
-      "propertyBundle": null
+      "object": "message_action1"
     },
     {
       "@id": "provenance_record14",
       "@type": "ProvenanceRecord",
       "description": "WhatsApp chat message thread between subject and victim",
       "exhibitNumber": "DFL-20140712-0026",
-      "object": "thread1",
-      "propertyBundle": null
+      "object": "thread1"
     },
     {
       "@id": "provenance_record15",
       "@type": "ProvenanceRecord",
       "description": "WhatsApp chat message containing contraband attachment",
       "exhibitNumber": "DFL-20140712-0027",
-      "object": "message1",
-      "propertyBundle": null
+      "object": "message1"
     },
     {
       "@id": "provenance_record16",
       "@type": "ProvenanceRecord",
       "description": "Location of subject when using WhatsApp",
       "exhibitNumber": "DFL-20140712-0028",
-      "object": "location1",
-      "propertyBundle": null
+      "object": "location1"
     },
     {
       "@id": "provenance_record17",
       "@type": "ProvenanceRecord",
       "description": "Subject's WhatsApp account",
       "exhibitNumber": "DFL-20140712-0029",
-      "object": "account1",
-      "propertyBundle": null
+      "object": "account1"
     },
     {
       "@id": "provenance_record18",
       "@type": "ProvenanceRecord",
       "description": "Victim's WhatsApp account",
       "exhibitNumber": "DFL-20140712-002A",
-      "object": "account2",
-      "propertyBundle": null
+      "object": "account2"
     },
     {
       "@id": "provenance_record19",
       "@type": "ProvenanceRecord",
       "description": "Thumbnail of contraband picture",
       "exhibitNumber": "DFL-20140712-002B",
-      "object": "decoded_blob",
-      "propertyBundle": null
+      "object": "decoded_blob"
     },
     {
       "@id": "provenance_record20",
       "@type": "ProvenanceRecord",
       "description": "Encoded thumbnail of contraband picture",
       "exhibitNumber": "DFL-20140712-002C",
-      "object": "decrypted_blob",
-      "propertyBundle": null
+      "object": "decrypted_blob"
     },
     {
       "@id": "provenance_record21",
       "@type": "ProvenanceRecord",
       "description": "Encrypted thumbnail of contraband picture",
       "exhibitNumber": "DFL-20140712-002D",
-      "object": "sqlite_blob",
-      "propertyBundle": null
+      "object": "sqlite_blob"
     }
   ]
 }

@@ -4,10 +4,6 @@
     "olo": "http://purl.org/ontology/olo/core#"
   },
   "@graph": [
-    // Each data container has a parentDataContainer property which allows us to layer them.
-    // If you trace down this object, you will see that, the first object represents a Base64 encoded file found within an AES encrypted TAR archive which was a blob within a SQLite database found within an EXT4 file system that was the third partition within an image file found within an NTFS file system.
-
-    // This represents a base64 decoded file.
     {
       "@id": "decoded_attachment",
       "@type": "Trace",
@@ -46,8 +42,6 @@
         }
         ]
     },
-
-    // This represents a file within a TAR archive.
     {
       "@id": "tar_archive_file",
       "@type": "Trace",
@@ -81,8 +75,6 @@
           }
         ]
     },
-
-    // This represents an AES decrypted file. (Which in this case is a TAR archive file.)
     {
       "@id": "decrypted_blob",
       "@type": "Trace",
@@ -119,8 +111,6 @@
           }
         ]
     },
-
-    // This represents a SQLite blob file.
     {
       "@id": "sqlite_blob",
       "@type": "Trace",
@@ -138,8 +128,6 @@
         }
       ]
     },
-
-    // This represents a database file found within an EXT4 formatted volume.
     {
       "@id": "sqlite_database",
       "@type": "Trace",
@@ -169,8 +157,6 @@
           }
         ]
     },
-
-    // This represents a partition found in an android image.
     {
       "@id": "image_partition",
       "@type": "Trace",
@@ -187,15 +173,12 @@
         }
       ]
     },
-
-    // This represents the android image.
     {
       "@id": "android_image",
       "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "DataContainer",
-          "parentDataContainer": null,
           "dataContainerType": "NTFS",
           "extension": "img",
           "isDirectory": false,
@@ -208,8 +191,7 @@
         },
         {
           "@type": "NTFS",
-          "sid": 1,
-          "alternateDataStream": null  // Leave null when describing the main data stream.
+          "sid": 1
         }
       ]
     }

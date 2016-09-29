@@ -14,8 +14,7 @@
         "facebook_identity1",
         "google_identity1",
         "email_account1"
-      ],
-      "propertyBundle": null
+      ]
     },
     {
       "@id": "facebook_identity1",

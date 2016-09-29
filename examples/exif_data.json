@@ -59,7 +59,6 @@
           "width": 12345,
           "bitsPerPixel": 2
         },
-        // TODO: This exif data will be switched to an imported ontology.
         {
           "@type": "EXIF",
           "exifData": [

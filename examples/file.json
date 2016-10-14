@@ -1,19 +1,55 @@
+// This example shows how we can represent any type of data within an image.
+// Note: For brevity, all the provenence records and forensic actions are not shown.
+
 {
   "@context": {
     "@vocab": "http://case.example.org/core#",
-    "olo": "http://purl.org/ontology/olo/core#"
+    "olo": "http://purl.org/ontology/olo/core#",
+    "acme": "http://custompb.acme.org/core#"
   },
   "@graph": [
     {
-      "@id": "decoded_attachment",
+      "@id": "relationship0",
+      "@type": "Relationship",
+      "source": "decoded_attachment",
+      "target": "chunk_of_data",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DataRange",
+          "rangeOffset": 45,
+          "rangeSize": 29
+        }
+      ]
+    },
+    {
+      "@id": "chunk_of_data",
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "parentDataContainer": "tar_archive_file",
-          "dataContainerType": "Encoding",
-          "content": "decoded_attachment_content"
-        },
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 29,
+          "data": "Q0FTRSBpcyBhbiBhd2Vzb21lIG9udG9sb2d5IQ=",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "c99c56455e4362016016f251edab7c55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "relationship1",
+      "@type": "Relationship",
+      "source": "tar_archive_file",
+      "target": "decoded_attachment",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
         {
           "@type": "Encoding",
           "encodingMethod": "BASE64"
@@ -21,38 +57,50 @@
       ]
     },
     {
-      "@id": "decoded_attachment_content",
+      "@id": "decoded_attachment",
       "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 35000,
-          "data": "<base 64 encoded data of the file>"
+          "size": 3500,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "3d137a188c1e82247b815209ce44af2c"
+            },
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "8c8b39473c4064f6b4db11a67251ffdf65c42ebadc5c3e02a009f95f6cf7c9e8"
+            }
+          ]
         },
         {
           "@type": "File",
+          "isDirectory": false,
           "magicNumber": "/9j/ww==",
           "mimeType": "image/jpg"
-        },
-        {
-          "@type": "Hash",
-          "hashMethod": "MD5",
-          "hashValue": "3d137a188c1e82247b815209ce44af2c"
         }
-        ]
+      ]
     },
     {
-      "@id": "tar_archive_file",
-      "@type": "Trace",
+      "@id": "relationship2",
+      "@type": "Relationship",
+      "source": "decrypted_blob",
+      "target": "tar_archive_file",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
       "propertyBundle": [
         {
+          // TODO: Determine if its better to treat archive files and file systems
+          // the same way ("DataContainer") or to create separate equivalent classes
+          // "ArchiveFile" and "FileSystem" that have the same properties.
           "@type": "DataContainer",
-          "parentDataContainer": "decrypted_blob",
           "dataContainerType": "TAR",
-          "content": "tar_archive_file_content",
           "filePath": "/some/files/in/archive/attachment.jpg",
-          "extension": "jpg",
           "accessedTime": "2009-01-15T17:59:43.25Z25Z",
           "createdTime": "2009-01-15T17:59:43.25Z25Z",
           "modifiedTime": "2009-01-15T17:59:43.25Z25Z"
@@ -60,66 +108,67 @@
       ]
     },
     {
-      "@id": "tar_archive_file_content",
+      "@id": "tar_archive_file",
       "@type": "Trace",
       "propertyBundle": [
           {
             "@type": "ContentData",
             "size": 23000,
-            "data": "<base 64 encoded data of the file>"
-          },
-          {
-            "@type": "Hash",
-            "hashMethod": "MD5",
-            "hashValue": "56137a188c1e82247b815209ce33af2d"
+            "data": "<base 64 encoded data of the file>",
+            "hash": [
+              {
+                "@type": "Hash",
+                "hashMethod": "MD5",
+                "hashValue": "56137a188c1e82247b815209ce33af2d"
+              }
+            ]
           }
         ]
     },
     {
-      "@id": "decrypted_blob",
-      "@type": "Trace",
+      "@id": "relationship3",
+      "@type": "Relationship",
+      "source": "sqlite_blob",
+      "target": "decrypted_blob",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
       "propertyBundle": [
-        {
-          "@type": "DataContainer",
-          "parentDataContainer": "sqlite_blob",
-          "dataContainerType": "Encryption",
-          "content": "decrypted_blob_content"
-        },
         {
           "@type": "Encryption",
           "encryptionMethod": "AES",
           "encryptionMode": "CBC",
           "key": "whatsappKEY",
-          "iv": "whatsaoppIV"
+          "iv": "whatsappIV"
         }
       ]
     },
 
     {
-      "@id": "decrypted_blob_content",
-      "@type": "Trace",
-      "propertyBundle": [
-          {
-            "@type": "ContentData",
-            "size": 23000,
-            "data": "<base 64 encoded data of the file>"
-          },
-          {
-            "@type": "Hash",
-            "hashMethod": "MD5",
-            "hashValue": "45137a188c1e82247b815209ce33af2d"
-          }
-        ]
-    },
-    {
-      "@id": "sqlite_blob",
+      "@id": "decrypted_blob",
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "parentDataContainer": "sqlite_database",
-          "dataContainerType": "SQLiteBlob"
-        },
+          "@type": "ContentData",
+          "size": 23000,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "45137a188c1e82247b815209ce33af2d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "relationship4",
+      "@type": "Relationship",
+      "source": "sqlite_database",
+      "target": "sqlite_blob",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
         {
           "@type": "SQLiteBlob",
           "tableName": "AttachmentTable",
@@ -129,12 +178,33 @@
       ]
     },
     {
-      "@id": "sqlite_database",
+      "@id": "sqlite_blob",
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "ContentData",
+          "size": 54000,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "bea5438a9521adc1b23a9117024bbb43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "relationship5",
+      "@type": "Relationship",
+      "source": "image_partition",
+      "target": "sqlite_database",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
           "@type": "DataContainer",
-          "parentDataContainer": "image_partition",
           "dataContainerType": "EXT4",
           "content": "sqlite_database_content",
           "filePath": "/data/data/com.whatsapp/cache/messages.db",
@@ -143,30 +213,41 @@
           "modifiedTime": "2010-01-15T17:59:43.25Z",
           "accessAction": "2010-01-15T17:59:43.25Z",
           "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 1231
+          "size": 546000
         }
       ]
     },
     {
-      "@id": "sqlite_database_content",
+      "@id": "sqlite_database",
       "@type": "Trace",
       "propertyBundle": [
           {
+            "@type": "ContentData",
+            "size": 546000,
+            "data": "<base 64 encoded data of the file>",
+            "hash": [
+              {
+                "@type": "Hash",
+                "hashMethod": "MD5",
+                "hashValue": "99bcf55577f19674034da613fe6664d9"
+              }
+            ]
+          },
+          {
             "@type": "File",
+            "isDirectory": false,
             "magicNumber": "U1FMaXRlIGZvcm1hdCAzAA=="
           }
         ]
     },
     {
-      "@id": "image_partition",
-      "@type": "Trace",
+      "@id": "relationship6",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "image_partition",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
       "propertyBundle": [
-        {
-          "@type": "DataContainer",
-          "parentDataContainer": "android_image",
-          "dataContainerType": "Volume",
-          "size": 23100
-        },
         {
           "@type": "DiskPartition",
           "partIndex": 3
@@ -174,24 +255,132 @@
       ]
     },
     {
-      "@id": "android_image",
+      "@id": "image_partition",
       "@type": "Trace",
+      "propertyBundle": [
+          {
+            "@type": "ContentData",
+            "size": 45654000,
+            "data": null, // We will obviously exclude the "data" property for most files.
+            "hash": [
+              {
+                "@type": "Hash",
+                "hashMethod": "MD5",
+                "hashValue": "5d41402abc4b2a76b9719d911017c592"
+              }
+            ]
+          }
+        ]
+    },
+    // Describes that android_image is contained in the hard drive of forensic_lab_computer1.
+    // Note: We could obviously make the hard drive itself rather than the computer
+    // the source if we wanted to. For brevity, I made the source the computer.
+    {
+      "@id": "relationship7",
+      "@type": "Relationship",
+      "source": "forensic_lab_computer1",
+      "target": "android_image",
+      "kindOfRelationship": "contains", // TODO: Maybe we need a different name when we are going from physical device to digital file.
+      "isDirectional": true,
       "propertyBundle": [
         {
           "@type": "DataContainer",
           "dataContainerType": "NTFS",
           "extension": "img",
-          "isDirectory": false,
           "fileName": "DFL-20140712-001C.img",
-          "filePath": "/input_devices/DFL-20140712-001C.img",
+          "filePath": "C:/input_devices/DFL-20140712-001C.img",
           "modifiedTime": "2010-01-15T17:59:43.25Z",
           "accessAction": "2010-01-15T17:59:43.25Z",
           "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 350000
+          "size": 35000000
         },
         {
           "@type": "NTFS",
           "sid": 1
+        }
+      ]
+    },
+    // Describes that android_image is the image of android_device1.
+    {
+      "@id": "relationship8",
+      "@type": "Relationship",
+      "source": "android_device1",
+      "target": "android_image",
+      "kindOfRelationship": "extracted_physical_image",  // TODO: Not sure what the best name for this would be. I could do "image_of" but I was trying to keep the relationships all in the same direction.
+      "isDirectional": true,
+      "propertyBundle": [
+      ]
+    },
+    {
+      "@id": "android_image",
+      "@type": "Trace",
+      "propertyBundle": [
+          {
+            "@type": "ContentData",
+            "size": 45654000,
+            "hash": [
+              {
+                "@type": "Hash",
+                "hashMethod": "MD5",
+                "hashValue": "ff9d460e1b2c36622bb4bdde85b7a653"
+              }
+            ]
+          }
+        ]
+    },
+    {
+      "@id": "forensic_lab_computer1",
+      "@type": "Trace",
+      "location": "forensic_lab1",
+      "propertyBundle": [
+        {
+          "@type": "Device",
+          "manufacturer": "Dell",
+          "model": "Inspiron 5000",
+          "serialNumber": "D1234567"
+        },
+        {
+          "@type": "OperatingSystem",
+          "name": "Windows 7 Ultimate Edition",
+          "manufacturer": "Microsoft",
+          "version": "6.1.7601 Service Pack 1 Build 7601"
+        },
+        {
+          "@type": "ComputerSpecifications",
+          "bios": "E1762IMS.10M",
+          "cpu": "Intel Pentium i7",
+          "ram": "4GB"
+        },
+        {
+          "@type": "acme:InventoryComputer",
+          "name": "DFL-03",
+          "inventoryNumber": "10503"
+        }
+      ]
+    },
+    {
+      "@id": "android_device1",
+      "@type": "Trace",
+      "location": "forensic_lab1",
+      "propertyBundle": [
+        {
+          "@type": "Device",
+          "manufacturer": "Samsung",
+          "model": "I9500 Galaxy S4",
+          "serialNumber": "123456SAM"
+        },
+        {
+          "@type": "OperatingSystem",
+          "name": "Android",
+          "manufacturer": "Google",
+          "version": "4.2.2"
+        },
+        {
+          "@type": "ComputerSpecifications",
+          "chipset": "Exynos 5410 Octa",
+          "cpu": "Octa-core",
+          "gpu": "Power VR SGX544MP3",
+          "ram": "2GB"
         }
       ]
     }

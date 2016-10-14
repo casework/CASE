@@ -206,7 +206,6 @@
         {
           "@type": "DataContainer",
           "dataContainerType": "EXT4",
-          "content": "sqlite_database_content",
           "filePath": "/data/data/com.whatsapp/cache/messages.db",
           "fileName": "messages.db",
           "extension": "db",

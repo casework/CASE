@@ -1,0 +1,190 @@
+// This example shows how we can represent a multipart file.
+
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#",
+    "acme": "http://custompb.acme.org/core#"
+  },
+  "@graph": [
+    {
+      "@id": "relationship0",
+      "@type": "Relationship",
+      "source": "data_piece0",
+      "target": "multipart_file",
+      "kindOfRelationship": "part_of",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Fragment",
+          "fragmentIndex": 0,
+          "totalFragments": 3
+        }
+      ]
+    },
+    {
+      "@id": "relationship1",
+      "@type": "Relationship",
+      "source": "data_piece1",
+      "target": "multipart_file",
+      "kindOfRelationship": "part_of",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Fragment",
+          "fragmentIndex": 1,
+          "totalFragments": 3
+        }
+      ]
+    },
+    {
+      "@id": "relationship2",
+      "@type": "Relationship",
+      "source": "data_piece2",
+      "target": "multipart_file",
+      "kindOfRelationship": "part_of",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Fragment",
+          "fragmentIndex": 2,
+          "totalFragments": 3
+        }
+      ]
+    },
+
+    {
+      "@id": "multipart_file",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 30,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "c99c56455e4362016016f251edab7c55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "data_piece0",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 10,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "0cc175b9c0f1b6a831c399e269772661"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "data_piece1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 10,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "92eb5ffee6ae2fec3ad71c777531578f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "data_piece2",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 10,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "4a8a08f09d37b73795649038408b5f33"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "relationship3",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "data_piece0",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DataContainer",
+          "dataContainerType": "EXT4",
+          "filePath": "/data/data/multipart_file.001",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "@id": "relationship4",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "data_piece1",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DataContainer",
+          "dataContainerType": "EXT4",
+          "filePath": "/data/data/multipart_file.002",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "@id": "relationship5",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "data_piece2",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DataContainer",
+          "dataContainerType": "EXT4",
+          "filePath": "/data/data/multipart_file.003",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "size": 10
+        }
+      ]
+    }
+  ]
+}

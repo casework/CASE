@@ -10,9 +10,9 @@
     {
       "@id": "relationship0",
       "@type": "Relationship",
-      "source": "data_piece0",
-      "target": "multipart_file",
-      "kindOfRelationship": "part_of",
+      "source": "multipart_file",
+      "target": "data_piece0",
+      "kindOfRelationship": "has-fragment",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -25,9 +25,9 @@
     {
       "@id": "relationship1",
       "@type": "Relationship",
-      "source": "data_piece1",
-      "target": "multipart_file",
-      "kindOfRelationship": "part_of",
+      "source": "multipart_file",
+      "target": "data_piece1",
+      "kindOfRelationship": "has-fragment",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -40,9 +40,9 @@
     {
       "@id": "relationship2",
       "@type": "Relationship",
-      "source": "data_piece2",
-      "target": "multipart_file",
-      "kindOfRelationship": "part_of",
+      "source": "multipart_file",
+      "target": "data_piece2",
+      "kindOfRelationship": "has-fragment",
       "isDirectional": true,
       "propertyBundle": [
         {

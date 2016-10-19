@@ -1,6 +1,6 @@
 # File Example
 
-*Note: For brevity, all the provenence records and forensic actions are not shown.*
+*Note: For brevity, all the provenance records and forensic actions are not shown.*
 
 This example shows how we can represent a file or piece of data can be
 represented within the CASE ontology. By using a combination of Traces and
@@ -41,7 +41,7 @@ special keywords (*contained-within* or *stored-on*). This object will contain p
 that describe how the Trace pointed to by the `source` property was extracted from the
 Trace pointed to by the `target` property.
 
-For the extraction of a file within a [file system](../glossary.md#File-System) (EXT4, NTFS, TAR, etc)
+For the extraction of a file within a [file system](../glossary.md#file-system) (EXT4, NTFS, TAR, etc)
 we use the property bundle **FileSystem**. This proeprty bundle will contain file path
 information needed to extract the file out of the file system.
 

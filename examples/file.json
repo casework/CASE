@@ -1,6 +1,3 @@
-// This example shows how we can represent any type of data within an image.
-// Note: For brevity, all the provenence records and forensic actions are not shown.
-
 {
   "@context": {
     "@vocab": "http://case.example.org/core#",
@@ -9,28 +6,13 @@
   },
   "@graph": [
     {
-      "@id": "relationship0",
-      "@type": "Relationship",
-      "source": "decoded_attachment",
-      "target": "chunk_of_data",
-      "kindOfRelationship": "contains",
-      "isDirectional": true,
-      "propertyBundle": [
-        {
-          "@type": "DataRange",
-          "rangeOffset": 45,
-          "rangeSize": 29
-        }
-      ]
-    },
-    {
       "@id": "chunk_of_data",
       "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 29,
+          "sizeInBytes": 29,
           "data": "Q0FTRSBpcyBhbiBhd2Vzb21lIG9udG9sb2d5IQ=",
           "hash": [
             {
@@ -43,16 +25,17 @@
       ]
     },
     {
-      "@id": "relationship1",
+      "@id": "relationship0",
       "@type": "Relationship",
-      "source": "tar_archive_file",
+      "source": "chunk_of_data",
       "target": "decoded_attachment",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "Encoding",
-          "encodingMethod": "BASE64"
+          "@type": "DataRange",
+          "rangeOffset": 45,
+          "rangeSize": 29
         }
       ]
     },
@@ -63,7 +46,7 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 3500,
+          "sizeInBytes": 3500,
           "data": "<base 64 encoded data of the file>",
           "hash": [
             {
@@ -87,23 +70,16 @@
       ]
     },
     {
-      "@id": "relationship2",
+      "@id": "relationship1",
       "@type": "Relationship",
-      "source": "decrypted_blob",
+      "source": "decoded_attachment",
       "target": "tar_archive_file",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          // TODO: Determine if its better to treat archive files and file systems
-          // the same way ("DataContainer") or to create separate equivalent classes
-          // "ArchiveFile" and "FileSystem" that have the same properties.
-          "@type": "DataContainer",
-          "dataContainerType": "TAR",
-          "filePath": "/some/files/in/archive/attachment.jpg",
-          "accessedTime": "2009-01-15T17:59:43.25Z25Z",
-          "createdTime": "2009-01-15T17:59:43.25Z25Z",
-          "modifiedTime": "2009-01-15T17:59:43.25Z25Z"
+          "@type": "Encoding",
+          "encodingMethod": "BASE64"
         }
       ]
     },
@@ -113,7 +89,7 @@
       "propertyBundle": [
           {
             "@type": "ContentData",
-            "size": 23000,
+            "sizeInBytes": 23000,
             "data": "<base 64 encoded data of the file>",
             "hash": [
               {
@@ -126,30 +102,30 @@
         ]
     },
     {
-      "@id": "relationship3",
+      "@id": "relationship2",
       "@type": "Relationship",
-      "source": "sqlite_blob",
+      "source": "tar_archive_file",
       "target": "decrypted_blob",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "Encryption",
-          "encryptionMethod": "AES",
-          "encryptionMode": "CBC",
-          "key": "whatsappKEY",
-          "iv": "whatsappIV"
+          "@type": "FileSystem",
+          "fileSystemType": "TAR",
+          "filePath": "/some/files/in/archive/attachment.jpg",
+          "accessedTime": "2009-01-15T17:59:43.25Z25Z",
+          "createdTime": "2009-01-15T17:59:43.25Z25Z",
+          "modifiedTime": "2009-01-15T17:59:43.25Z25Z"
         }
       ]
     },
-
     {
       "@id": "decrypted_blob",
       "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "ContentData",
-          "size": 23000,
+          "sizeInBytes": 23000,
           "data": "<base 64 encoded data of the file>",
           "hash": [
             {
@@ -162,18 +138,19 @@
       ]
     },
     {
-      "@id": "relationship4",
+      "@id": "relationship3",
       "@type": "Relationship",
-      "source": "sqlite_database",
+      "source": "decrypted_blob",
       "target": "sqlite_blob",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "SQLiteBlob",
-          "tableName": "AttachmentTable",
-          "columnName": "data",
-          "rowCondition": "pk_id == 5"
+          "@type": "Encryption",
+          "encryptionMethod": "AES",
+          "encryptionMode": "CBC",
+          "key": "whatsappKEY",
+          "iv": "whatsappIV"
         }
       ]
     },
@@ -183,7 +160,7 @@
       "propertyBundle": [
         {
           "@type": "ContentData",
-          "size": 54000,
+          "sizeInBytes": 54000,
           "data": "<base 64 encoded data of the file>",
           "hash": [
             {
@@ -196,23 +173,18 @@
       ]
     },
     {
-      "@id": "relationship5",
+      "@id": "relationship4",
       "@type": "Relationship",
-      "source": "image_partition",
+      "source": "sqlite_blob",
       "target": "sqlite_database",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "dataContainerType": "EXT4",
-          "filePath": "/data/data/com.whatsapp/cache/messages.db",
-          "fileName": "messages.db",
-          "extension": "db",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 546000
+          "@type": "SQLiteBlob",
+          "tableName": "AttachmentTable",
+          "columnName": "data",
+          "rowCondition": "pk_id == 5"
         }
       ]
     },
@@ -222,7 +194,7 @@
       "propertyBundle": [
           {
             "@type": "ContentData",
-            "size": 546000,
+            "sizeInBytes": 546000,
             "data": "<base 64 encoded data of the file>",
             "hash": [
               {
@@ -240,16 +212,22 @@
         ]
     },
     {
-      "@id": "relationship6",
+      "@id": "relationship5",
       "@type": "Relationship",
-      "source": "android_image",
+      "source": "sqlite_database",
       "target": "image_partition",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "DiskPartition",
-          "partIndex": 3
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
+          "filePath": "/data/data/com.whatsapp/cache/messages.db",
+          "fileName": "messages.db",
+          "extension": "db",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
         }
       ]
     },
@@ -259,7 +237,7 @@
       "propertyBundle": [
           {
             "@type": "ContentData",
-            "size": 45654000,
+            "sizeInBytes": 45654000,
             "data": null, // We will obviously exclude the "data" property for most files.
             "hash": [
               {
@@ -271,52 +249,28 @@
           }
         ]
     },
-    // Describes that android_image is contained in the hard drive of forensic_lab_computer1.
-    // Note: We could obviously make the hard drive itself rather than the computer
-    // the source if we wanted to. For brevity, I made the source the computer.
     {
-      "@id": "relationship7",
+      "@id": "relationship6",
       "@type": "Relationship",
-      "source": "forensic_lab_computer1",
+      "source": "image_partition",
       "target": "android_image",
-      "kindOfRelationship": "contains", // TODO: Maybe we need a different name when we are going from physical device to digital file.
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "dataContainerType": "NTFS",
-          "extension": "img",
-          "fileName": "DFL-20140712-001C.img",
-          "filePath": "C:/input_devices/DFL-20140712-001C.img",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 35000000
-        },
-        {
-          "@type": "NTFS",
-          "sid": 1
+          "@type": "DiskPartition",
+          "partIndex": 3
         }
       ]
     },
     // Describes that android_image is the image of android_device1.
-    {
-      "@id": "relationship8",
-      "@type": "Relationship",
-      "source": "android_device1",
-      "target": "android_image",
-      "kindOfRelationship": "extracted_physical_image",  // TODO: Not sure what the best name for this would be. I could do "image_of" but I was trying to keep the relationships all in the same direction.
-      "isDirectional": true,
-      "propertyBundle": [
-      ]
-    },
     {
       "@id": "android_image",
       "@type": "Trace",
       "propertyBundle": [
           {
             "@type": "ContentData",
-            "size": 45654000,
+            "sizeInBytes": 45654000,
             "hash": [
               {
                 "@type": "Hash",
@@ -326,6 +280,40 @@
             ]
           }
         ]
+    },
+    {
+      "@id": "relationship7",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "forensic_lab_computer1",
+      "kindOfRelationship": "stored-on",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "fileSystemType": "NTFS",
+          "extension": "img",
+          "fileName": "DFL-20140712-001C.img",
+          "filePath": "C:/input_devices/DFL-20140712-001C.img",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+        },
+        {
+          "@type": "NTFS",
+          "sid": 1
+        }
+      ]
+    },
+    {
+      "@id": "relationship8",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "android_device1",
+      "kindOfRelationship": "forensic_image_of",
+      "isDirectional": true,
+      "propertyBundle": [
+      ]
     },
     {
       "@id": "forensic_lab_computer1",

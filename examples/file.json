@@ -113,9 +113,9 @@
           "@type": "FileSystem",
           "fileSystemType": "TAR",
           "filePath": "/some/files/in/archive/attachment.jpg",
-          "accessedTime": "2009-01-15T17:59:43.25Z25Z",
-          "createdTime": "2009-01-15T17:59:43.25Z25Z",
-          "modifiedTime": "2009-01-15T17:59:43.25Z25Z"
+          "accessedTime": "2009-01-15T17:59:43.25Z",
+          "createdTime": "2009-01-15T17:59:43.25Z",
+          "modifiedTime": "2009-01-15T17:59:43.25Z"
         }
       ]
     },
@@ -297,7 +297,7 @@
           "filePath": "C:/input_devices/DFL-20140712-001C.img",
           "modifiedTime": "2010-01-15T17:59:43.25Z",
           "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z"
         },
         {
           "@type": "NTFS",
@@ -334,9 +334,9 @@
         },
         {
           "@type": "ComputerSpecifications",
-          "bios": "E1762IMS.10M",
-          "cpu": "Intel Pentium i7",
-          "ram": "4GB"
+          "biosVersion": "E1762IMS.10M",
+          "cpuFamily": "Intel Pentium i7",
+          "totalRam": "4GB"
         },
         {
           "@type": "acme:InventoryComputer",
@@ -364,10 +364,10 @@
         },
         {
           "@type": "ComputerSpecifications",
-          "chipset": "Exynos 5410 Octa",
-          "cpu": "Octa-core",
-          "gpu": "Power VR SGX544MP3",
-          "ram": "2GB"
+          "processorArchitecture": "Octa-core",
+          "cpuFamily": "Exynos 5410 Octa",
+          "gpuFamily": "Power VR SGX544MP3",
+          "totalRam": "2GB"
         }
       ]
     }

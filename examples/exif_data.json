@@ -17,40 +17,44 @@
       ]
     },
     {
-      "@id": "digital_photograph1",
-      "@type": "Trace",
+      "@id": "relationship1",
+      "@type": "Relationship",
+      "source": "digital_photograph1",
+      "target": "device_partition3",
+      "kindOfRelationship": "contained-within",
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "parentDataContainer": "device_partition3",
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
           "fileName": "IMG_0123.jpg",
           "filePath": "/sdcard/IMG_0123.jpg",
-          "content": "digital_photograph_content1",
           "extension": "jpg",
-          "isDirectory": false,
           "size": 35002
         }
       ]
     },
     {
-      "@id": "digital_photograph_content1",
+      "@id": "digital_photograph1",
       "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "size": 35000,
-          "data": "<base 64 encoded data of the file>"
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+            }
+          ]
         },
         {
           "@type": "File",
           "magicNumber": "/9j/ww==",
-          "mimeType": "image/jpg"
-        },
-        {
-          "@type": "Hash",
-          "hashMethod": "MD5",
-          "hashValue": "3d137a188c1e82247b815209ce44af2c"
+          "mimeType": "image/jpg",
+          "isDirectory": false
         },
         {
           "@type": "RasterImage",

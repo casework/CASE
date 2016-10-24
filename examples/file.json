@@ -17,8 +17,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "c99c56455e4362016016f251edab7c55"
+              "hashMethod": "SHA256",
+              "hashValue": "6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918"
             }
           ]
         }
@@ -94,8 +94,8 @@
             "hash": [
               {
                 "@type": "Hash",
-                "hashMethod": "MD5",
-                "hashValue": "56137a188c1e82247b815209ce33af2d"
+                "hashMethod": "SHA256",
+                "hashValue": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
               }
             ]
           }
@@ -130,8 +130,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "45137a188c1e82247b815209ce33af2d"
+              "hashMethod": "SHA256",
+              "hashValue": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
             }
           ]
         }
@@ -165,8 +165,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "bea5438a9521adc1b23a9117024bbb43"
+              "hashMethod": "SHA256",
+              "hashValue": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
             }
           ]
         }
@@ -199,8 +199,8 @@
             "hash": [
               {
                 "@type": "Hash",
-                "hashMethod": "MD5",
-                "hashValue": "99bcf55577f19674034da613fe6664d9"
+                "hashMethod": "SHA256",
+                "hashValue": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
               }
             ]
           },
@@ -238,12 +238,11 @@
           {
             "@type": "ContentData",
             "sizeInBytes": 45654000,
-            "data": null, // We will obviously exclude the "data" property for most files.
             "hash": [
               {
                 "@type": "Hash",
-                "hashMethod": "MD5",
-                "hashValue": "5d41402abc4b2a76b9719d911017c592"
+                "hashMethod": "SHA256",
+                "hashValue": "8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414"
               }
             ]
           }
@@ -274,8 +273,8 @@
             "hash": [
               {
                 "@type": "Hash",
-                "hashMethod": "MD5",
-                "hashValue": "ff9d460e1b2c36622bb4bdde85b7a653"
+                "hashMethod": "SHA256",
+                "hashValue": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
               }
             ]
           }

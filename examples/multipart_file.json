@@ -65,8 +65,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "c99c56455e4362016016f251edab7c55"
+              "hashMethod": "SHA256",
+              "hashValue": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225"
             }
           ]
         }
@@ -84,8 +84,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "0cc175b9c0f1b6a831c399e269772661"
+              "hashMethod": "SHA256",
+              "hashValue": "2943a567bc05bc66ca6201dbc5f00bec3f774a47b1b94289a2ae8e79834c21a5"
             }
           ]
         }
@@ -103,8 +103,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "92eb5ffee6ae2fec3ad71c777531578f"
+              "hashMethod": "SHA256",
+              "hashValue": "882b8486a082615ea7fbbba8b8e7082ac8b3a94c9e152fc0920b715edf02cb15"
             }
           ]
         }
@@ -122,8 +122,8 @@
           "hash": [
             {
               "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "4a8a08f09d37b73795649038408b5f33"
+              "hashMethod": "SHA256",
+              "hashValue": "c2608309ab2e636950109918e5de24526e3ad9053311859b168cee8606c9d3e2"
             }
           ]
         }
@@ -138,8 +138,8 @@
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "dataContainerType": "EXT4",
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
           "filePath": "/data/data/multipart_file.001",
           "modifiedTime": "2010-01-15T17:59:43.25Z",
           "accessAction": "2010-01-15T17:59:43.25Z",
@@ -157,8 +157,8 @@
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "dataContainerType": "EXT4",
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
           "filePath": "/data/data/multipart_file.002",
           "modifiedTime": "2010-01-15T17:59:43.25Z",
           "accessAction": "2010-01-15T17:59:43.25Z",
@@ -176,8 +176,8 @@
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "dataContainerType": "EXT4",
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
           "filePath": "/data/data/multipart_file.003",
           "modifiedTime": "2010-01-15T17:59:43.25Z",
           "accessAction": "2010-01-15T17:59:43.25Z",

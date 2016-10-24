@@ -20,7 +20,7 @@
 ### CompressionMethod
 
 
-**SubTypes:**  BZIP2, Deflate, LZMA, XZ, ZLIB
+**SubTypes:**  BZIP2, Deflate, GZIP, LZMA, XZ, ZLIB
 
 
 

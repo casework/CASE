@@ -668,7 +668,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://case.example.org/core#subject
 :subject rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :Investigation ,
+         rdfs:domain :EmailMessage ,
+                     :Investigation ,
                      :X509Certificate ;
          rdfs:range [ rdf:type owl:Class ;
                       owl:unionOf ( :Identity
@@ -2116,7 +2117,6 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#subject
 :subject rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :EmailMessage ;
          rdfs:range xsd:string .
 
 
@@ -3363,6 +3363,11 @@ olo:Slot rdf:type owl:Class .
 ###  http://case.example.org/core#French
 :French rdf:type owl:NamedIndividual ,
                  :Language .
+
+
+###  http://case.example.org/core#GZIP
+:GZIP rdf:type owl:NamedIndividual ,
+               :CompressionMethod .
 
 
 ###  http://case.example.org/core#Huffman

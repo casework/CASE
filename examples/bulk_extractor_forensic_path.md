@@ -1,9 +1,9 @@
 # Bulk Extractor Forensic Path Example
 
 This example shows how to represent a *forensic_path* created by the 
-[Bulk Extractor](github.com/simsong/bulk_extractor) tool. It shows 
+[Bulk Extractor](https://github.com/simsong/bulk_extractor) tool. It shows 
 how to represent the following forensic path seen on page 63 of
-the [2013 COSE paper](github.com/simsong/bulk_extractor/blob/master/doc/2013.COSE.bulk_extractor.pdf):
+the [2013 COSE paper](https://github.com/simsong/bulk_extractor/blob/master/doc/2013.COSE.bulk_extractor.pdf):
 
 ```
 946315592-GZIP-64000-GZIP-1600   nelson@crynwr.com

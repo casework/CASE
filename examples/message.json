@@ -23,27 +23,52 @@
         {
           "@type": "Application",
           "name": "WhatsApp",
-          "identifier": "com.whatsapp",
-          "operatingSystem": "os1",
+          "applicationIdentifier": "com.whatsapp",
           "version": "1.23.45",
+          "operatingSystem": "os1",
           "numberOfLaunches": 34
         }
       ]
     },
     {
-      "@id": "application_objects1",
-      "@type": "Relationship",
-      "source": "application1",
-      "target": [
-            "thread1",
-            "message1",
-            "message2",
-            "account1",
-            "account2",
-            "... etc"
-      ],
-      "kindOfRelationship": "contains",
-      "isDirectional": true
+      "@id": "account1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ApplicationAccount",
+          "application": "application1",
+        }
+      ]
+    },
+    {
+      "@id": "account2",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ApplicationAccount",
+          "application": "application1",
+        }
+      ]
+    },
+    {
+      "@id": "account3",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ApplicationAccount",
+          "application": "application2",
+        }
+      ]
+    },
+    {
+      "@id": "account4",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ApplicationAccount",
+          "application": "application2",
+        }
+      ]
     },
     {
       "@id": "thread1",
@@ -109,10 +134,10 @@
       "propertyBundle": [
         {
           "@type": "Message",
+          "application": "application2",
           "body": "I said some things in a tweet! @sarahsmithtweeter #hashtag",
-          "sender": "account3",
-          "participant": [
-            "account3",
+          "from": "account3",
+          "to": [
             "account4"
           ]
         }
@@ -124,10 +149,10 @@
       "propertyBundle": [
         {
           "@type": "Message",
+          "application": "application1",
           "body": "Hey bud!",
-          "sender": "account1",
-          "participant": [
-            "account1",
+          "from": "account1",
+          "to": [
             "account2"
           ],
           "sentTime": "2010-01-15T17:59:43.25Z"
@@ -154,4 +179,4 @@
       ]
     },
   ]
-}
+} 

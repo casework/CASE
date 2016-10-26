@@ -21,26 +21,12 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "DataContainer",
-          "parentDataContainer": "device_partition3",
+          "@type": "FileSystem",
           "fileName": "IMG_0123.jpg",
           "filePath": "/sdcard/IMG_0123.jpg",
-          "content": "digital_photograph_content1",
           "extension": "jpg",
           "isDirectory": false,
-          "size": 35002
-        }
-      ]
-    },
-    {
-      "@id": "digital_photograph_content1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "ContentData",
-          "byteOrder": "BigEndian",
-          "size": 35000,
-          "data": "<base 64 encoded data of the file>"
+          "sizeInBytes": 35002
         },
         {
           "@type": "File",
@@ -48,15 +34,10 @@
           "mimeType": "image/jpg"
         },
         {
-          "@type": "Hash",
-          "hashMethod": "MD5",
-          "hashValue": "3d137a188c1e82247b815209ce44af2c"
-        },
-        {
-          "@type": "RasterImage",
-          "format": "jpg",
-          "height": 12345,
-          "width": 12345,
+          "@type": "RasterPicture",
+          "pictureType": "jpg",
+          "pictureheight": 12345,
+          "picturewidth": 12345,
           "bitsPerPixel": 2
         },
         {
@@ -95,6 +76,33 @@
               "value": "W"
             }
           ]
+        },
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "sizeInBytes": 35000,
+          "dataPayload": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "MD5",
+              "hashValue": "3d137a188c1e82247b815209ce44af2c"
+            }
+          ]
+        },
+      ]
+    },
+    {
+      "@id": "relationship1",
+      "@type": "Relationship",
+      "source": "digital_photograph1",
+      "target": "device_partition3",
+      "kindOfRelationship": "contained-within",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DiskPartition",
+          "partIndex": 3
         }
       ]
     },
@@ -103,11 +111,16 @@
       "@type": "Action",
       "name": "photo_taken",
       "startTime": "2010-01-15T17:59:43.25Z",
-      "instrument": "camera1",
-      "result": [
-        "digital_photograph1"
-      ],
-      "location": "location1"
+      "propertyBundle": [
+        {
+          "@type": "ActionRefs",
+          "instrument": "camera1",
+          "result": [
+            "digital_photograph1"
+          ],
+          "location": "location1"
+        }
+      ]
     },
     {
       "@id": "annotation1",
@@ -118,17 +131,21 @@
     },
     {
       "@id": "forensic_action7",
-      "@type": "Action",
+      "@type": "ForensicAction",
       "name": "annotated",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T18:59:43.25Z",
-      "performer": "examiner1",
-      "instrument": "annotator_tool1",
-      "result": [
-        "annotation1"
-      ],
-      "location": "forensic_lab1",
-      "environment": "forensic_lab_computer1"
+      "propertyBundle": [
+        {
+          "performer": "examiner1",
+          "instrument": "annotator_tool1",
+          "result": [
+            "annotation1"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        }
+      ]
     }
   ]
-}
+} 

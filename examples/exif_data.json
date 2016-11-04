@@ -137,6 +137,7 @@
       "endTime": "2010-01-15T18:59:43.25Z",
       "propertyBundle": [
         {
+          "@type": "ActionRefs",
           "performer": "examiner1",
           "instrument": "annotator_tool1",
           "result": [
@@ -148,4 +149,4 @@
       ]
     }
   ]
-} 
+}

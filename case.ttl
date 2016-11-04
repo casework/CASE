@@ -140,12 +140,6 @@ xsd:duration rdf:type rdfs:Datatype .
                    rdfs:range :CompressionMethod .
 
 
-###  http://case.example.org/core#content
-:content rdf:type owl:ObjectProperty ;
-         rdfs:domain :DataContainer ;
-         rdfs:range :Trace .
-
-
 ###  http://case.example.org/core#creator
 :creator rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
@@ -163,13 +157,6 @@ xsd:duration rdf:type rdfs:Datatype .
 :currentWorkingDirectory rdf:type owl:ObjectProperty ;
                          rdfs:domain :Process ;
                          rdfs:range :FilePath .
-
-
-###  http://case.example.org/core#dataContainerType
-:dataContainerType rdf:type owl:ObjectProperty ,
-                            owl:FunctionalProperty ;
-                   rdfs:domain :DataContainer ;
-                   rdfs:range :DataContainerType .
 
 
 ###  http://case.example.org/core#dataPath
@@ -294,7 +281,7 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://case.example.org/core#filePath
 :filePath rdf:type owl:ObjectProperty ;
-          rdfs:domain :DataContainer ;
+          rdfs:domain :FileSystem ;
           rdfs:range :FilePath .
 
 
@@ -309,6 +296,13 @@ xsd:duration rdf:type rdfs:Datatype .
    owl:annotatedTarget olo:OrderedList ;
    rdfs:comment "TODO: This should point to an array of strings."
  ] .
+
+
+###  http://case.example.org/core#fileSystemType
+:fileSystemType rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :FileSystem ;
+                rdfs:range :FileSystemType .
 
 
 ###  http://case.example.org/core#forensicActions
@@ -497,19 +491,6 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:range :DictionaryItem .
 
 
-###  http://case.example.org/core#parentDataContainer
-:parentDataContainer rdf:type owl:ObjectProperty ,
-                              owl:FunctionalProperty ;
-                     rdfs:domain :DataContainer ;
-                     rdfs:range :Trace ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :propertyBundle ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :DataContainer
-                                ] ;
-                     rdfs:comment "The parent property must point to an Item type that has at exactly one dfvfs property within it." .
-
-
 ###  http://case.example.org/core#parentProcess
 :parentProcess rdf:type owl:ObjectProperty ;
                rdfs:domain :Process ;
@@ -668,7 +649,8 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://case.example.org/core#subject
 :subject rdf:type owl:ObjectProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :Investigation ,
+         rdfs:domain :EmailMessage ,
+                     :Investigation ,
                      :X509Certificate ;
          rdfs:range [ rdf:type owl:Class ;
                       owl:unionOf ( :Identity
@@ -762,7 +744,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#accessedTime
 :accessedTime rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
-              rdfs:domain :DataContainer ;
+              rdfs:domain :FileSystem ;
               rdfs:range xsd:dateTimeStamp .
 
 
@@ -983,7 +965,7 @@ olo:slot rdf:type owl:ObjectProperty .
              rdf:type owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Account
-                                         :DataContainer
+                                         :FileSystem
                                          :Process
                                        )
                          ] ;
@@ -1170,7 +1152,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#extension
 :extension rdf:type owl:DatatypeProperty ;
-           rdfs:domain :DataContainer ;
+           rdfs:domain :FileSystem ;
            rdfs:range xsd:string ;
            rdfs:comment "The file extension." .
 
@@ -1184,7 +1166,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#fileName
 :fileName rdf:type owl:DatatypeProperty ;
-          rdfs:domain :DataContainer ;
+          rdfs:domain :FileSystem ;
           rdfs:range xsd:string .
 
 
@@ -1335,7 +1317,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#inode
 :inode rdf:type owl:DatatypeProperty ;
-       rdfs:domain :DataContainer ;
+       rdfs:domain :FileSystem ;
        rdfs:range xsd:integer .
 
 
@@ -1355,7 +1337,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#isDirectory
 :isDirectory rdf:type owl:DatatypeProperty ;
-             rdfs:domain :DataContainer ;
+             rdfs:domain :File ;
              rdfs:range xsd:boolean .
 
 
@@ -1590,7 +1572,7 @@ olo:slot rdf:type owl:ObjectProperty .
              rdfs:subPropertyOf owl:topDataProperty ;
              rdf:type owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :DataContainer
+                           owl:unionOf ( :FileSystem
                                          :Message
                                          :WindowsRegistryKey
                                        )
@@ -1963,7 +1945,7 @@ olo:slot rdf:type owl:ObjectProperty .
                owl:FunctionalProperty ;
       rdfs:domain [ rdf:type owl:Class ;
                     owl:unionOf ( :ContentData
-                                  :DataContainer
+                                  :FileSystem
                                   :WindowsPESection
                                 )
                   ] ;
@@ -2116,7 +2098,6 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#subject
 :subject rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :EmailMessage ;
          rdfs:range xsd:string .
 
 
@@ -2439,17 +2420,6 @@ Note: This property bundle is different. Instead of putting this as a property b
              rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#DataContainer
-:DataContainer rdf:type owl:Class ;
-               rdfs:subClassOf :PropertyBundle ;
-               rdfs:comment "Defines the basic properties associated with the storage of data." .
-
-
-###  http://case.example.org/core#DataContainerType
-:DataContainerType rdf:type owl:Class ;
-                   rdfs:subClassOf :Enumeration .
-
-
 ###  http://case.example.org/core#DataRange
 :DataRange rdf:type owl:Class ;
            rdfs:subClassOf :PropertyBundle .
@@ -2626,6 +2596,17 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 :FilePath rdf:type owl:Class ;
           rdfs:subClassOf :SupportingClasses ;
           rdfs:comment "TODO: Determine if this object is wanted, or if we want to stick with strings." .
+
+
+###  http://case.example.org/core#FileSystem
+:FileSystem rdf:type owl:Class ;
+            rdfs:subClassOf :PropertyBundle ;
+            rdfs:comment "Defines the basic properties associated with the storage of data." .
+
+
+###  http://case.example.org/core#FileSystemType
+:FileSystemType rdf:type owl:Class ;
+                rdfs:subClassOf :Enumeration .
 
 
 ###  http://case.example.org/core#ForensicAction
@@ -3227,7 +3208,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#BDEVolume
 :BDEVolume rdf:type owl:NamedIndividual ,
-                    :DataContainerType .
+                    :FileSystemType .
 
 
 ###  http://case.example.org/core#BMP
@@ -3277,12 +3258,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#CPIO
 :CPIO rdf:type owl:NamedIndividual ,
-               :DataContainerType .
-
-
-###  http://case.example.org/core#Compression
-:Compression rdf:type owl:NamedIndividual ,
-                      :DataContainerType .
+               :FileSystemType .
 
 
 ###  http://case.example.org/core#Critical
@@ -3300,11 +3276,6 @@ olo:Slot rdf:type owl:Class .
                :EncryptionMethod .
 
 
-###  http://case.example.org/core#DataRange
-:DataRange rdf:type owl:NamedIndividual ,
-                    :DataContainerType .
-
-
 ###  http://case.example.org/core#Debug
 :Debug rdf:type owl:NamedIndividual ,
                 :ErrorType .
@@ -3315,11 +3286,6 @@ olo:Slot rdf:type owl:Class .
                   :CompressionMethod .
 
 
-###  http://case.example.org/core#DiskPartition
-:DiskPartition rdf:type owl:NamedIndividual ,
-                        :DataContainerType .
-
-
 ###  http://case.example.org/core#ECB
 :ECB rdf:type owl:NamedIndividual ,
               :EncryptionMode .
@@ -3327,22 +3293,12 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#EWF
 :EWF rdf:type owl:NamedIndividual ,
-              :DataContainerType .
+              :FileSystemType .
 
 
 ###  http://case.example.org/core#EXT4
 :EXT4 rdf:type owl:NamedIndividual ,
-               :DataContainerType .
-
-
-###  http://case.example.org/core#Encoding
-:Encoding rdf:type owl:NamedIndividual ,
-                   :DataContainerType .
-
-
-###  http://case.example.org/core#Encryption
-:Encryption rdf:type owl:NamedIndividual ,
-                     :DataContainerType .
+               :FileSystemType .
 
 
 ###  http://case.example.org/core#English
@@ -3357,12 +3313,17 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#F2FS
 :F2FS rdf:type owl:NamedIndividual ,
-               :DataContainerType .
+               :FileSystemType .
 
 
 ###  http://case.example.org/core#French
 :French rdf:type owl:NamedIndividual ,
                  :Language .
+
+
+###  http://case.example.org/core#GZIP
+:GZIP rdf:type owl:NamedIndividual ,
+               :CompressionMethod .
 
 
 ###  http://case.example.org/core#Huffman
@@ -3402,7 +3363,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#NTFS
 :NTFS rdf:type owl:NamedIndividual ,
-               :DataContainerType .
+               :FileSystemType .
 
 
 ###  http://case.example.org/core#OFB
@@ -3445,14 +3406,9 @@ olo:Slot rdf:type owl:Class .
                 :HashMethod .
 
 
-###  http://case.example.org/core#SQLiteBlob
-:SQLiteBlob rdf:type owl:NamedIndividual ,
-                     :DataContainerType .
-
-
 ###  http://case.example.org/core#SevenZ
 :SevenZ rdf:type owl:NamedIndividual ,
-                 :DataContainerType .
+                 :FileSystemType .
 
 
 ###  http://case.example.org/core#Spanish
@@ -3462,7 +3418,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#TAR
 :TAR rdf:type owl:NamedIndividual ,
-              :DataContainerType .
+              :FileSystemType .
 
 
 ###  http://case.example.org/core#TIFF
@@ -3472,12 +3428,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#VSSVolume
 :VSSVolume rdf:type owl:NamedIndividual ,
-                    :DataContainerType .
-
-
-###  http://case.example.org/core#Volume
-:Volume rdf:type owl:NamedIndividual ,
-                 :DataContainerType .
+                    :FileSystemType .
 
 
 ###  http://case.example.org/core#Warning
@@ -3497,7 +3448,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#ZIP
 :ZIP rdf:type owl:NamedIndividual ,
-              :DataContainerType .
+              :FileSystemType .
 
 
 ###  http://case.example.org/core#ZLIB
@@ -3513,12 +3464,6 @@ olo:Slot rdf:type owl:Class .
 #################################################################
 
 :BDEVolume rdfs:comment "The Bitlocker Drive Encryption (BDE) credentials." .
-
-
-:Compression rdfs:comment "Defines the basic properties associated with a compressed stream." .
-
-
-:DataRange rdfs:comment "Defines the basic properties associated with a range of data." .
 
 
 #################################################################

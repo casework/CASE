@@ -1,0 +1,231 @@
+{
+  "@context": {
+    "@vocab": "http://case.example.org/core#",
+    "olo": "http://purl.org/ontology/olo/core#",
+    "acme": "http://custompb.acme.org/core#"
+  },
+  "@graph": [
+    {
+      "@id": "relationship0",
+      "@type": "Relationship",
+      "source": "reconstructed_file",
+      "target": "data_piece0",
+      "kindOfRelationship": "has-fragment",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Fragment",
+          "fragmentIndex": 0,
+          "totalFragments": 3
+        }
+      ]
+    },
+    {
+      "@id": "relationship1",
+      "@type": "Relationship",
+      "source": "reconstructed_file",
+      "target": "data_piece1",
+      "kindOfRelationship": "has-fragment",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Fragment",
+          "fragmentIndex": 1,
+          "totalFragments": 3
+        }
+      ]
+    },
+    {
+      "@id": "relationship2",
+      "@type": "Relationship",
+      "source": "reconstructed_file",
+      "target": "data_piece2",
+      "kindOfRelationship": "has-fragment",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Fragment",
+          "fragmentIndex": 2,
+          "totalFragments": 3
+        }
+      ]
+    },
+
+    {
+      "@id": "reconstructed_file",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 774,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "e5ca3be56f66200a1bb2262e948ac08dbc672bc8033c1ada743787b0c667dea6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "data_piece0",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 14,
+          "data": "w7/DmMO/w6AAEEpGSUY=",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "a2bfbb3fbcfbf372c3a83ac9b9aad3d0aa4fb8bcc807af7aabcccac94a8d4892"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "data_piece1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 512,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "a2bfbb3fbcfbf372c3a83ac9b9aad3d0aa4fb8bcc807af7aabcccac94a8d4892"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "data_piece2",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "size": 248,
+          "data": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "befb6b14790081e9d79e9b533e227791033e952d04b5f07d577ad65d4806a7a9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "relationship3",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "data_piece1",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DataRange",
+          "rangeOffset": 45156,
+          "rangeSize": 512
+        }
+      ]
+    },
+    {
+      "@id": "relationship4",
+      "@type": "Relationship",
+      "source": "android_image",
+      "target": "data_piece2",
+      "kindOfRelationship": "contains",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "DataRange",
+          "rangeOffset": 57984,
+          "rangeSize": 248
+        }
+      ]
+    },
+    // TODO: Determine if it's better to group objects together using provenance records
+    // or to have a provenance record for each object.
+    {
+      "@id": "forensic_action0",
+      "@type": "ForensicAction",
+      "name": "executed",
+      "startTime": "2010-01-20T17:59:43.25Z",
+      "endTime": "2010-01-21T17:59:43.25Z",
+      "performer": "role4",
+      "instrument": "carving_tool1",
+      "source": [
+        "provenance_record0"
+      ],
+      "result": [
+        "provenance_record1"
+      ],
+      "location": "forensic_lab1",
+      "environment": "forensic_lab_computer1"
+    },
+    {
+      "@id": "provenance_record0",
+      "@type": "ProvenanceRecord",
+      "description": "Forensic image of Android Smartphone",
+      "exhibitNumber": "ACME-676553402356",
+      "object": "android_image"
+    },
+    {
+      "@id": "provenance_record1",
+      "@type": "ProvenanceRecord",
+      "description": "JPG file reconstruction",
+      "exhibitNumber": "ACME-676553402357",
+      "object": [
+        "provenance_record2",
+        "provenance_record3",
+        "provenance_record4"
+      ]
+    },
+    {
+      "@id": "provenance_record2",
+      "@type": "ProvenanceRecord",
+      "description": "Reconstructed JPG File",
+      "exhibitNumber": "ACME-676553402357-00",
+      "object": [
+        "relationship0",
+        "relationship1",
+        "relationship2",
+        "reconstructed_file"
+      ]
+    },
+    {
+      "@id": "provenance_record3",
+      "@type": "ProvenanceRecord",
+      "description": "Carved data fragments",
+      "exhibitNumber": "ACME-676553402357-01",
+      "object": [
+        "data_piece1",
+        "data_piece2",
+        "relationship3",
+        "relationship4"
+      ]
+    },
+    {
+      "@id": "provenance_record4",
+      "@type": "ProvenanceRecord",
+      "description": "JPG Header",
+      "exhibitNumber": "ACME-676553402357-02",
+      "object": [
+        "data_piece0"
+      ]
+    }
+  ]
+}

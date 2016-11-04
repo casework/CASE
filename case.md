@@ -20,14 +20,7 @@
 ### CompressionMethod
 
 
-**SubTypes:**  BZIP2, Deflate, LZMA, XZ, ZLIB
-
-
-
-### DataContainerType
-
-
-**SubTypes:**  BDEVolume, CPIO, Compression, DataRange, DiskPartition, EWF, EXT4, Encoding, Encryption, F2FS, NTFS, SQLiteBlob, SevenZ, TAR, VSSVolume, Volume, ZIP
+**SubTypes:**  BZIP2, Deflate, GZIP, LZMA, XZ, ZLIB
 
 
 
@@ -66,6 +59,13 @@
 
 ### FileMismatchType
 
+
+
+
+### FileSystemType
+
+
+**SubTypes:**  BDEVolume, CPIO, EWF, EXT4, F2FS, NTFS, SevenZ, TAR, VSSVolume, ZIP
 
 
 
@@ -546,7 +546,7 @@ Attribute | Range | Comment
 
 
 ### Compression
-Defines the basic properties associated with a compressed stream.
+
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -578,27 +578,8 @@ Attribute | Range | Comment
 *size* | xsd:positiveInteger | Size of file in bytes.
 
 
-### DataContainer
-Defines the basic properties associated with the storage of data.
-
-Attribute | Range | Comment
----: | --- | ---
-*accessedTime* | xsd:dateTimeStamp | 
-*content* | [Trace](#trace) | 
-*createdTime* | xsd:dateTimeStamp | 
-*dataContainerType* | [DataContainerType](#datacontainertype) | 
-*extension* | xsd:string | The file extension.
-*fileName* | xsd:string | 
-*filePath* | [FilePath](#filepath) | 
-*inode* | xsd:integer | 
-*isDirectory* | xsd:boolean | 
-*modifedTime* | xsd:dateTimeStamp | 
-*parentDataContainer* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [DataContainer](#datacontainer), owl:qualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | The parent property must point to an Item type that has at exactly one dfvfs property within it.
-*size* | xsd:positiveInteger | Size of file in bytes.
-
-
 ### DataRange
-Defines the basic properties associated with a range of data.
+
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -764,6 +745,7 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 Attribute | Range | Comment
 ---: | --- | ---
+*isDirectory* | xsd:boolean | 
 *magicNumber* | xsd:base64Binary | 
 *mimeType* | [MimeType](#mimetype) | 
 
@@ -774,6 +756,22 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *mismatchType* | [FileMismatchType](#filemismatchtype) | 
+
+
+### FileSystem
+Defines the basic properties associated with the storage of data.
+
+Attribute | Range | Comment
+---: | --- | ---
+*accessedTime* | xsd:dateTimeStamp | 
+*createdTime* | xsd:dateTimeStamp | 
+*extension* | xsd:string | The file extension.
+*fileName* | xsd:string | 
+*filePath* | [FilePath](#filepath) | 
+*fileSystemType* | [FileSystemType](#filesystemtype) | 
+*inode* | xsd:integer | 
+*modifedTime* | xsd:dateTimeStamp | 
+*size* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### HTTPConnection
@@ -981,7 +979,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 

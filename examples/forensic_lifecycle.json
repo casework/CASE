@@ -103,7 +103,7 @@
     {
       "@id": "lifecycle_phase1",
       "@type": "Relationship",
-      "object": "forensic_action1",
+      "source": "forensic_action1",
       "target": "phase1",
       "kindOfRelationship": "fits-pattern",
       "isDirectional": true
@@ -512,4 +512,3 @@
     }
   ]
 }
- 

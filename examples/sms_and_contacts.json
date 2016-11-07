@@ -11,7 +11,7 @@
       "startTime": "2010-01-15T17:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "phone_account3",
           "instrument": "sms_application1",
           "result": [ "sms_message1" ]

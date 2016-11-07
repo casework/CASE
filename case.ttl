@@ -772,6 +772,13 @@ olo:slot rdf:type owl:ObjectProperty .
                      rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#applicationIdentifier
+:applicationIdentifier rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain :Application ;
+                       rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#applicationName
 :applicationName rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
@@ -1259,7 +1266,6 @@ olo:slot rdf:type owl:ObjectProperty .
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( :Account
-                                        :Application
                                         :MessageThread
                                       )
                         ] ;

@@ -87,12 +87,12 @@
     {
       "@id": "forensic_action1",
       "@type": "ForensicAction",
-      "name": "seized",
+      "name": "seize",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T19:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "investigator1",
           "result": [
             "provenance_record1"
@@ -126,7 +126,7 @@
       "startTime": "2010-01-15T17:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "examiner1",
           "object": [
             "device1"
@@ -166,7 +166,7 @@
       "endTime": "2010-01-15T19:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "examiner1",
           "instrument": "tool1",
           "object": [
@@ -212,7 +212,7 @@
       "endTime": "2010-01-16T19:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "examiner1",
           "instrument": "tool2",
           "object": [
@@ -249,12 +249,12 @@
     {
       "@id": "forensic_action5",
       "@type": "ForensicAction",
-      "name": "executed",
+      "name": "parse",
       "startTime": "2010-01-20T17:59:43.25Z",
       "endTime": "2010-01-21T17:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "examiner2",
           "instrument": "tool3",
           "object": [
@@ -329,7 +329,7 @@
       "endTime": "2010-02-16T17:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "examiner2",
           "instrument": "parser1",
           "object": [

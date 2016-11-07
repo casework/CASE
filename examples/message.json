@@ -36,7 +36,7 @@
       "propertyBundle": [
         {
           "@type": "ApplicationAccount",
-          "application": "application1",
+          "application": "application1"
         }
       ]
     },
@@ -46,7 +46,7 @@
       "propertyBundle": [
         {
           "@type": "ApplicationAccount",
-          "application": "application1",
+          "application": "application1"
         }
       ]
     },
@@ -56,7 +56,7 @@
       "propertyBundle": [
         {
           "@type": "ApplicationAccount",
-          "application": "application2",
+          "application": "application2"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "propertyBundle": [
         {
           "@type": "ApplicationAccount",
-          "application": "application2",
+          "application": "application2"
         }
       ]
     },

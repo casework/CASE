@@ -474,7 +474,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*identifier* | xsd:string | 
+*applicationIdentifier* | xsd:string | 
 *numberOfLaunches* | xsd:positiveInteger | 
 *operatingSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [OperatingSystem](#operatingsystem)]), [Trace](#trace) | 
 *version* | xsd:string | 

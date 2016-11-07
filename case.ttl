@@ -324,6 +324,14 @@ xsd:duration rdf:type rdfs:Datatype .
            rdfs:domain :Fragments .
 
 
+###  http://case.example.org/core#from
+:from rdf:type owl:ObjectProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Message ;
+      rdfs:range :Trace ;
+      rdfs:comment "The designated sender of the Message." .
+
+
 ###  http://case.example.org/core#globalFlagList
 :globalFlagList rdf:type owl:ObjectProperty ;
                 rdfs:domain :WindowsComputerSpecification ;
@@ -504,11 +512,10 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://case.example.org/core#participant
 :participant rdf:type owl:ObjectProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Message
-                                         :PhoneCall
-                                       )
-                         ] .
+             rdfs:domain :Message ;
+             rdfs:comment """Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+
+This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.""" .
 
 
 ###  http://case.example.org/core#peType
@@ -591,16 +598,6 @@ xsd:duration rdf:type rdfs:Datatype .
           rdfs:range :WindowsPESection .
 
 
-###  http://case.example.org/core#sender
-:sender rdf:type owl:ObjectProperty ,
-                 owl:FunctionalProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :Message
-                                    :PhoneCall
-                                  )
-                    ] .
-
-
 ###  http://case.example.org/core#serviceStatus
 :serviceStatus rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
@@ -657,6 +654,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                     :Role
                                   )
                     ] .
+
+
+###  http://case.example.org/core#to
+:to rdf:type owl:ObjectProperty ,
+             owl:FunctionalProperty ;
+    rdfs:domain :Message ;
+    rdfs:range :Trace ;
+    rdfs:comment "The designated recipients of the Message." .
 
 
 ###  http://case.example.org/core#victim

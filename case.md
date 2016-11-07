@@ -833,12 +833,15 @@ The properties associated with message (eg. email, sms, whatsapp, etc.)
 Attribute | Range | Comment
 ---: | --- | ---
 *body* | xsd:string | 
+*from* | [Trace](#trace) | The designated sender of the Message.
 *isRead* | xsd:boolean | 
 *modifedTime* | xsd:dateTimeStamp | 
-*participant* |  | 
+*participant* |  | Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+
+This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.
 *received* | [ReceivedEvent](#receivedevent) | 
-*sender* |  | 
 *sentTime* | xsd:dateTimeStamp | 
+*to* | [Trace](#trace) | The designated recipients of the Message.
 
 
 ### MessageThread
@@ -962,8 +965,6 @@ Attribute | Range | Comment
 *callType* | xsd:string | 
 *duration* | xsd:duration | 
 *endTime* | xsd:dateTimeStamp | 
-*participant* |  | 
-*sender* |  | 
 *startTime* | xsd:dateTimeStamp | 
 
 

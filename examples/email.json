@@ -71,7 +71,7 @@
         {
           "@type": "SimpleName",
           "givenName": "Willy",
-          "familyName": "Smith",
+          "familyName": "Smith"
         },
         {
           "@type": "BirthInformation",
@@ -146,4 +146,4 @@
       ]
     }
   ]
-} 
+}

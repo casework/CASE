@@ -17,21 +17,44 @@
       ]
     },
     {
+      "@id": "relationship1",
+      "@type": "Relationship",
+      "source": "digital_photograph1",
+      "target": "device_partition3",
+      "kindOfRelationship": "contained-within",
+      "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
+          "fileName": "IMG_0123.jpg",
+          "filePath": "/sdcard/IMG_0123.jpg",
+          "extension": "jpg",
+          "sizeInBytes": 35002
+        }
+      ]
+    },
+    {
       "@id": "digital_photograph1",
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileName": "IMG_0123.jpg",
-          "filePath": "/sdcard/IMG_0123.jpg",
-          "extension": "jpg",
-          "isDirectory": false,
-          "sizeInBytes": 35002
+          "@type": "ContentData",
+          "byteOrder": "BigEndian",
+          "sizeInBytes": 35000,
+          "dataPayload": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+            }
+          ]
         },
         {
           "@type": "File",
           "magicNumber": "/9j/ww==",
-          "mimeType": "image/jpg"
+          "mimeType": "image/jpg",
+          "isDirectory": false
         },
         {
           "@type": "RasterPicture",
@@ -76,33 +99,6 @@
               "value": "W"
             }
           ]
-        },
-        {
-          "@type": "ContentData",
-          "byteOrder": "BigEndian",
-          "sizeInBytes": 35000,
-          "dataPayload": "<base 64 encoded data of the file>",
-          "hash": [
-            {
-              "@type": "Hash",
-              "hashMethod": "MD5",
-              "hashValue": "3d137a188c1e82247b815209ce44af2c"
-            }
-          ]
-        },
-      ]
-    },
-    {
-      "@id": "relationship1",
-      "@type": "Relationship",
-      "source": "digital_photograph1",
-      "target": "device_partition3",
-      "kindOfRelationship": "contained-within",
-      "isDirectional": true,
-      "propertyBundle": [
-        {
-          "@type": "DiskPartition",
-          "partIndex": 3
         }
       ]
     },
@@ -113,7 +109,7 @@
       "startTime": "2010-01-15T17:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "instrument": "camera1",
           "result": [
             "digital_photograph1"
@@ -137,7 +133,7 @@
       "endTime": "2010-01-15T18:59:43.25Z",
       "propertyBundle": [
         {
-          "@type": "ActionRefs",
+          "@type": "ActionReferences",
           "performer": "examiner1",
           "instrument": "annotator_tool1",
           "result": [

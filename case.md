@@ -276,7 +276,7 @@ Attribute | Range | Comment
 ---: | --- | ---
 *hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
 *name* | xsd:string | The name property defines a common word or phrase that describes the meaning of the object.
-*size* | xsd:positiveInteger | Size of file in bytes.
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### WindowsRegistryValue
@@ -340,9 +340,6 @@ Attribute | Range | Comment
 *actionLifecyclePhase* | [ActionLifecyclePattern](#actionlifecyclepattern) | 
 *endTime* | xsd:dateTimeStamp | 
 *environment* | [Object](#object) | Defines the environment of an Action. This can point to things like the descriptions of the area the action was performed or information about the computer that was used.
-*instrument* | [Object](#object) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
-*performer* | [Object](#object) | Defines the person, action, or thing that caused this action.
-*result* | [Object](#object) | 
 *source* | [Object](#object) | 
 *startTime* | xsd:dateTimeStamp | 
 
@@ -455,6 +452,16 @@ Attribute | Range | Comment
 ---: | --- | ---
 *password* | xsd:string | 
 *passwordLastChanged* | xsd:dateTimeStamp | 
+
+
+### ActionReferences
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*instrument* | [Object](#object) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
+*performer* | [Object](#object) | Defines the person, action, or thing that caused this action.
+*result* | [Object](#object) | 
 
 
 ### AndroidPackage
@@ -573,8 +580,8 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *byteOrder* | [ByteOrder](#byteorder) | 
-*data* | xsd:base64Binary | 
-*size* | xsd:positiveInteger | Size of file in bytes.
+*dataPayload* | xsd:base64Binary | 
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### DataRange
@@ -770,7 +777,7 @@ Attribute | Range | Comment
 *fileSystemType* | [FileSystemType](#filesystemtype) | 
 *inode* | xsd:integer | 
 *modifedTime* | xsd:dateTimeStamp | 
-*size* | xsd:positiveInteger | Size of file in bytes.
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### HTTPConnection
@@ -988,7 +995,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 

@@ -369,7 +369,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://case.example.org/core#instrument
 :instrument rdf:type owl:ObjectProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain :Action ;
+            rdfs:domain :ActionReferences ;
             rdfs:range :Object ;
             rdfs:comment "The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)" .
 
@@ -510,7 +510,7 @@ This property is useful if the people involved with the Message are known, but t
 :performer rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdf:type owl:FunctionalProperty ;
-           rdfs:domain :Action ;
+           rdfs:domain :ActionReferences ;
            rdfs:range :Object ;
            rdfs:comment "Defines the person, action, or thing that caused this action." .
 
@@ -569,7 +569,7 @@ This property is useful if the people involved with the Message are known, but t
 ###  http://case.example.org/core#result
 :result rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf owl:topObjectProperty ;
-        rdfs:domain :Action ;
+        rdfs:domain :ActionReferences ;
         rdfs:range :Object .
 
 
@@ -964,10 +964,10 @@ olo:slot rdf:type owl:ObjectProperty .
                        rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#data
-:data rdf:type owl:DatatypeProperty ;
-      rdfs:domain :ContentData ;
-      rdfs:range xsd:base64Binary .
+###  http://case.example.org/core#dataPayload
+:dataPayload rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ContentData ;
+             rdfs:range xsd:base64Binary .
 
 
 ###  http://case.example.org/core#delimiter
@@ -1946,17 +1946,17 @@ olo:slot rdf:type owl:ObjectProperty .
                     rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#size
-:size rdf:type owl:DatatypeProperty ,
-               owl:FunctionalProperty ;
-      rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( :ContentData
-                                  :FileSystem
-                                  :WindowsPESection
-                                )
-                  ] ;
-      rdfs:range xsd:positiveInteger ;
-      rdfs:comment "Size of file in bytes." .
+###  http://case.example.org/core#sizeInBytes
+:sizeInBytes rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :ContentData
+                                         :FileSystem
+                                         :WindowsPESection
+                                       )
+                         ] ;
+             rdfs:range xsd:positiveInteger ;
+             rdfs:comment "Size of file in bytes." .
 
 
 ###  http://case.example.org/core#sizeOfCode
@@ -2334,6 +2334,11 @@ olo:slot rdf:type owl:ObjectProperty .
                         rdfs:subClassOf :Descriptive ,
                                         olo:OrderedList ;
                         rdfs:comment "Defines an ordered list that must contain only Action classes as items." .
+
+
+###  http://case.example.org/core#ActionReferences
+:ActionReferences rdf:type owl:Class ;
+                  rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#AndroidPackage

@@ -558,9 +558,9 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*bios* | xsd:string | 
-*cpu* | xsd:string | 
-*ram* | xsd:string | 
+*biosVersion* | xsd:string | 
+*cpuFamily* | xsd:string | 
+*totalRam* | xsd:string | 
 
 
 ### Contact
@@ -1016,6 +1016,11 @@ Attribute | Range | Comment
 *rowCondition* | xsd:string | 
 *rowIndex* | xsd:positiveInteger | 
 *tableName* | xsd:string | 
+
+
+### SupportingClasses
+
+
 
 
 ### SymbolicLink

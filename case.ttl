@@ -839,11 +839,11 @@ olo:slot rdf:type owl:ObjectProperty .
                rdfs:range xsd:boolean .
 
 
-###  http://case.example.org/core#bios
-:bios rdf:type owl:DatatypeProperty ,
-               owl:FunctionalProperty ;
-      rdfs:domain :ComputerSpecifications ;
-      rdfs:range xsd:string .
+###  http://case.example.org/core#biosVersion
+:biosVersion rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :ComputerSpecifications ;
+             rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#birthday
@@ -957,11 +957,11 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#cpu
-:cpu rdf:type owl:DatatypeProperty ,
-              owl:FunctionalProperty ;
-     rdfs:domain :ComputerSpecifications ;
-     rdfs:range xsd:string .
+###  http://case.example.org/core#cpuFamily
+:cpuFamily rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :ComputerSpecifications ;
+           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#createdTime
@@ -1823,13 +1823,6 @@ olo:slot rdf:type owl:ObjectProperty .
                                 rdfs:range xsd:dateTimeStamp .
 
 
-###  http://case.example.org/core#ram
-:ram rdf:type owl:DatatypeProperty ,
-              owl:FunctionalProperty ;
-     rdfs:domain :ComputerSpecifications ;
-     rdfs:range xsd:string .
-
-
 ###  http://case.example.org/core#rangeOffset
 :rangeOffset rdf:type owl:DatatypeProperty ;
              rdfs:domain :DataRange ;
@@ -2197,6 +2190,13 @@ olo:slot rdf:type owl:ObjectProperty .
                         owl:FunctionalProperty ;
                rdfs:domain :WindowsPrefetch ;
                rdfs:range xsd:long .
+
+
+###  http://case.example.org/core#totalRam
+:totalRam rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :ComputerSpecifications ;
+          rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#update
@@ -2954,7 +2954,8 @@ TODO: Add properties.""" .
 
 
 ###  http://case.example.org/core#SupportingClasses
-:SupportingClasses rdf:type owl:Class .
+:SupportingClasses rdf:type owl:Class ;
+                   rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#SymbolicLink

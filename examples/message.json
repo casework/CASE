@@ -156,27 +156,54 @@
             "account2"
           ],
           "sentTime": "2010-01-15T17:59:43.25Z"
-        },
-        {
-          "@type": "Attachment",
-          "object": "location1",
-          "url": "http://maps.google.com/maps/@32.5345,-123.4324,11z"
-        },
-        {
-          "@type": "Attachment",
-          "object": "attachment_file1",
-          "url": "http://whatsapp.com/attachments/thumbnails/1.png",
-          "mimeType": "image/png",
-          "size": 35
-        },
-        {
-          "@type": "Attachment",
-          "object": "attachment_file2",
-          "url": "http://whatsapp.com/attachments/1.png",
-          "mimeType": "image/png",
-          "size": 551
         }
       ]
     },
+    {
+      "@id": "attach_relationship1",
+      "@type": "Relationship",
+      "source": "location1",
+      "target": "message1",
+      "kindOfRealtionship": "attachment-of",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Attachment",
+          "url": "http://maps.google.com/maps/@32.5345,-123.4324,11z"
+        }
+      ]
+    },
+    {
+      "@id": "attach_relationship2",
+      "@type": "Relationship",
+      "source": "attachment_file1",
+      "target": "message1",
+      "kindOfRealtionship": "attachment-of",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Attachment",
+          "url": "http://whatsapp.com/attachments/thumbnails/1.png",
+          "mimeType": "image/png",
+          "sizeInBytes": 35
+        }
+      ]
+    },
+    {
+      "@id": "attach_relationship3",
+      "@type": "Relationship",
+      "source": "attachment_file2",
+      "target": "message1",
+      "kindOfRealtionship": "attachment-of",
+      "isDirectional": true,
+      "propertyBundle": [
+        {
+          "@type": "Attachment",
+          "url": "http://whatsapp.com/attachments/1.png",
+          "mimeType": "image/png",
+          "sizeInBytes": 551
+        }
+      ]
+    }
   ]
 }  

@@ -70,26 +70,6 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:comment "Defines the application-like item used by this account." .
 
 
-###  http://case.example.org/core#associatedAccount
-:associatedAccount rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf owl:topObjectProperty ;
-                   rdfs:domain :Identity ;
-                   rdfs:range :Object ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :propertyBundle ;
-                                owl:someValuesFrom [ rdf:type owl:Class ;
-                                                     owl:unionOf ( :Account
-                                                                   :DigitalAccount
-                                                                   :EmailAccount
-                                                                   :PhoneAccount
-                                                                   :UserAccount
-                                                                   :WindowsAccount
-                                                                 )
-                                                   ]
-                              ] ;
-                   rdfs:comment "References objects with an account type property bundle." .
-
-
 ###  http://case.example.org/core#bcc
 :bcc rdf:type owl:ObjectProperty ;
      rdfs:domain :EmailMessage ;
@@ -1704,13 +1684,6 @@ olo:slot rdf:type owl:ObjectProperty .
 :operatingSystemUsed rdf:type owl:DatatypeProperty ;
                      rdfs:domain :EWFImage ;
                      rdfs:range xsd:string .
-
-
-###  http://case.example.org/core#organization
-:organization rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :Identity ;
-              rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#ownerSID

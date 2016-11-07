@@ -364,10 +364,6 @@ Attribute | Range | Comment
 ##### Identity
 
 
-Attribute | Range | Comment
----: | --- | ---
-*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom ([Account](#account) or [DigitalAccount](#digitalaccount) or [EmailAccount](#emailaccount) or [PhoneAccount](#phoneaccount) or [UserAccount](#useraccount) or [WindowsAccount](#windowsaccount))]), [Object](#object) | References objects with an account type property bundle.
-*organization* | xsd:string | 
 
 
 ##### Investigation
@@ -992,7 +988,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 

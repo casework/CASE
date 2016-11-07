@@ -11,10 +11,10 @@
         {
           "@type": "SimpleName",
           "givenName": "William",
-          "familyName": "Smith",
+          "familyName": "Smith"
         },
         {
-          "@type": "BirthInfo",
+          "@type": "BirthInformation",
           "birthdate": "1968-09-25T17:59:43.25Z"
         }
       ]
@@ -74,7 +74,7 @@
           "familyName": "Smith",
         },
         {
-          "@type": "BirthInfo",
+          "@type": "BirthInformation",
           "birthdate": "1968-09-25T17:59:43.25Z",
         }
       ]
@@ -122,7 +122,7 @@
           "familyName": "Smith",
         },
         {
-          "@type": "BirthInfo",
+          "@type": "BirthInformation",
           "birthdate": "1968-09-25T17:59:43.25Z",
         }
       ]

@@ -417,9 +417,10 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://case.example.org/core#location
-:location rdf:type owl:ObjectProperty ;
+:location rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Object ;
-          rdfs:range :Location .
+          rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#messageID
@@ -846,11 +847,10 @@ olo:slot rdf:type owl:ObjectProperty .
              rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#birthday
-:birthday rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain :IdentityO ;
-          rdfs:range xsd:dateTimeStamp .
+###  http://case.example.org/core#birthDate
+:birthDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :BirthInformation ;
+           rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#bitsPerPixel
@@ -1162,6 +1162,13 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:comment "The file extension." .
 
 
+###  http://case.example.org/core#familyName
+:familyName rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :SimpleName ;
+            rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#fileAlignment
 :fileAlignment rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
@@ -1179,13 +1186,6 @@ olo:slot rdf:type owl:ObjectProperty .
 :firstLoginTime rdf:type owl:DatatypeProperty ;
                 rdfs:domain :DigitalAccount ;
                 rdfs:range xsd:dateTimeStamp .
-
-
-###  http://case.example.org/core#firstName
-:firstName rdf:type owl:DatatypeProperty ,
-                    owl:FunctionalProperty ;
-           rdfs:domain :IdentityO ;
-           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#firstRunTime
@@ -1210,6 +1210,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :gid rdf:type owl:DatatypeProperty ;
      rdfs:domain :UNIXAccount ;
      rdfs:range xsd:integer .
+
+
+###  http://case.example.org/core#givenName
+:givenName rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :SimpleName ;
+           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#groupName
@@ -1451,17 +1458,17 @@ olo:slot rdf:type owl:ObjectProperty .
                rdfs:range xsd:dateTimeStamp .
 
 
-###  http://case.example.org/core#lastName
-:lastName rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain :IdentityO ;
-          rdfs:range xsd:string .
-
-
 ###  http://case.example.org/core#lastRunTime
 :lastRunTime rdf:type owl:DatatypeProperty ;
              rdfs:domain :WindowsPrefetch ;
              rdfs:range xsd:dateTimeStamp .
+
+
+###  http://case.example.org/core#latitude
+:latitude rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :LatLongCoordinates ;
+          rdfs:range xsd:float .
 
 
 ###  http://case.example.org/core#length
@@ -1475,6 +1482,20 @@ olo:slot rdf:type owl:ObjectProperty .
                       owl:FunctionalProperty ;
              rdfs:domain :WindowsPEOptionalHeader ;
              rdfs:range xsd:hexBinary .
+
+
+###  http://case.example.org/core#locality
+:locality rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :SimpleAddress ;
+          rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#longitude
+:longitude rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :LatLongCoordinates ;
+           rdfs:range xsd:float .
 
 
 ###  http://case.example.org/core#machine
@@ -1791,6 +1812,13 @@ olo:slot rdf:type owl:ObjectProperty .
                 rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#postalCode
+:postalCode rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :SimpleAddress ;
+            rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#prefetchHash
 :prefetchHash rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
@@ -1852,6 +1880,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :recoveryPassword rdf:type owl:DatatypeProperty ;
                   rdfs:domain :BDEVolume ;
                   rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#region
+:region rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :SimpleAddress ;
+        rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#registryKey
@@ -2080,6 +2115,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :startupKey rdf:type owl:DatatypeProperty ;
             rdfs:domain :BDEVolume ;
             rdfs:range xsd:base64Binary .
+
+
+###  http://case.example.org/core#street
+:street rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :SimpleAddress ;
+        rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#stringValue
@@ -2373,6 +2415,11 @@ Note: This property bundle is different. Instead of putting this as a property b
 ###  http://case.example.org/core#BenevolentRole
 :BenevolentRole rdf:type owl:Class ;
                 rdfs:subClassOf :Role .
+
+
+###  http://case.example.org/core#BirthInformation
+:BirthInformation rdf:type owl:Class ;
+                  rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#BrowserBookmark
@@ -2693,13 +2740,7 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 ###  http://case.example.org/core#Identity
 :Identity rdf:type owl:Class ;
-          owl:equivalentClass :IdentityO ;
           rdfs:subClassOf :Descriptive .
-
-
-###  http://case.example.org/core#IdentityO
-:IdentityO rdf:type owl:Class ;
-           :item "TODO: This is a placeholder class for the standard ontology we decide to use to represent identity." .
 
 
 ###  http://case.example.org/core#Image
@@ -2734,20 +2775,14 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
           rdfs:comment "TODO: We probably can use an already existing schema for this." .
 
 
+###  http://case.example.org/core#LatLongCoordinates
+:LatLongCoordinates rdf:type owl:Class ;
+                    rdfs:subClassOf :PropertyBundle .
+
+
 ###  http://case.example.org/core#LinuxPackage
 :LinuxPackage rdf:type owl:Class ;
               rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#Location
-:Location rdf:type owl:Class ;
-          owl:equivalentClass :LocationO ;
-          rdfs:subClassOf :Descriptive .
-
-
-###  http://case.example.org/core#LocationO
-:LocationO rdf:type owl:Class ;
-           rdfs:comment "TODO: This is a placeholder class for the standard ontology we decide to use to represent locations." .
 
 
 ###  http://case.example.org/core#MACAddress
@@ -2941,6 +2976,16 @@ TODO: Add properties.""" .
 ###  http://case.example.org/core#Servicetype
 :Servicetype rdf:type owl:Class ;
              rdfs:subClassOf :Enumeration .
+
+
+###  http://case.example.org/core#SimpleAddress
+:SimpleAddress rdf:type owl:Class ;
+               rdfs:subClassOf :PropertyBundle .
+
+
+###  http://case.example.org/core#SimpleName
+:SimpleName rdf:type owl:Class ;
+            rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#StartType

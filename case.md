@@ -318,7 +318,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*location* | [Location](#location) | 
+*location* | [Trace](#trace) | 
 *propertyBundle* | [PropertyBundle](#propertybundle) | 
 
 
@@ -382,11 +382,6 @@ Attribute | Range | Comment
 *subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
 *suspectedOffense* | xsd:string | 
 *victim* | ([Identity](#identity) or [Role](#role)) | 
-
-
-##### Location
-
-
 
 
 ##### ProvenanceRecord
@@ -523,6 +518,14 @@ Attribute | Range | Comment
 *password* | xsd:string | 
 *recoveryPassword* | xsd:string | 
 *startupKey* | xsd:base64Binary | 
+
+
+### BirthInformation
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*birthDate* | xsd:dateTimeStamp | 
 
 
 ### BrowserBookmark
@@ -817,6 +820,15 @@ Defines the basic properties associated with a disk image file. (Ie. the full im
 
 
 
+### LatLongCoordinates
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*latitude* | xsd:float | 
+*longitude* | xsd:float | 
+
+
 ### LinuxPackage
 
 
@@ -980,7 +992,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 
@@ -1016,6 +1028,26 @@ Attribute | Range | Comment
 *rowCondition* | xsd:string | 
 *rowIndex* | xsd:positiveInteger | 
 *tableName* | xsd:string | 
+
+
+### SimpleAddress
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*locality* | xsd:string | 
+*postalCode* | xsd:string | 
+*region* | xsd:string | 
+*street* | xsd:string | 
+
+
+### SimpleName
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*familyName* | xsd:string | 
+*givenName* | xsd:string | 
 
 
 ### SupportingClasses

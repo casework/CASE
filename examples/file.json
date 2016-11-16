@@ -99,7 +99,6 @@
               }
             ]
           },
-          // For convenience, you can optionally provide the same information about the decoding of this file found in "relationship1".
           {
             "@type": "Encoding",
             "encodingMethod": "BASE64"
@@ -181,7 +180,6 @@
             }
           ]
         },
-        // For convenience, you can optionally provide the same information about the decryption of this file found in "relationship3".
         {
           "@type": "Encryption",
           "encryptionMethod": "AES",

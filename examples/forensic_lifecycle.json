@@ -63,50 +63,24 @@
       "@id": "case1",
       "@type": "Investigation",
       "description": "John Doe solicited minor (Jane Doe) and exchange contraband (digital photographs)",
-      "startAction": "subject_action1",
-      "endAction": "subject_action2",
-      "suspectedOffense": [
+      "startTime": "2010-01-12T17:59:43.25Z",
+      "endTime": "2010-01-25T13:05:22.10Z",
+      "focus": [
         "Pornography/Obscene Material"
       ],
-      "investigator": [
-        "examiner1"
-      ],
-      "subject": [
-        "actor1"
-      ],
-      "victim": [
-        "actor2"
-      ],
-      "forensicActions": [
-        {
-          "olo:length": 6,
-          "olo:slot": [
-            {
-              "olo:index": 1,
-              "olo:item": "forensic_action1"
-            },
-            {
-              "olo:index": 2,
-              "olo:item": "forensic_action2"
-            },
-            {
-              "olo:index": 3,
-              "olo:item": "forensic_action3"
-            },
-            {
-              "olo:index": 4,
-              "olo:item": "forensic_action4"
-            },
-            {
-              "olo:index": 5,
-              "olo:item": "forensic_action5"
-            },
-            {
-              "olo:index": 6,
-              "olo:item": "forensic-action6"
-            }
-          ]
-        }
+      "object": ["investigator1", "examiner1", "examiner2", "subject1", "victim2", "forensic_action1", "lifecycle_phase1",
+        "annotation2", "forensic_action2","lifecycle_phase2", "annotation3", "forensic_action3", "lifecycle_phase3",
+        "annotation4", "forensic_action4","lifecycle_phase4", "annotation5", "forensic_action5", "lifecycle_phase5"
+        "annotation6", "forensic_action6", "provenance_record1", "provenance_record2", "provenance_record3",
+        "provenance_record4", "provenance_record5", "provenance_record6", "provenance_record7", "provenance_record8",
+        "provenance_record9", "provenance_record10", "provenance_record11", "provenance_record12", "provenance_record13",
+        "provenance_record14", "provenance_record15", "provenance_record16", "provenance_record17", "provenance_record18",
+        "provenance_record19", "provenance_record20", "provenance_record21", "device1", "sd_card1", "android_image",
+        "sd_card1_image", "chat_messages_report", "plaso_storage_file", "os1", "attachment_file", "message_database",
+        "thumbnail_database", "image_partition", "message_action1", "thread1", "message1", "location1", "account1",
+        "account2", "decoded_blob", "decrypted_blob", "sqlite_blob", "tool1", "tool2", "tool3", "fedex_dropoff_location1",
+        "forensic_lab1", "forensic_lab_computer1", "config_file", "log_file", "windows_registries_report", "parser1",
+        "attachment_file"
       ]
     },
 
@@ -116,9 +90,14 @@
       "name": "seized",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T19:59:43.25Z",
-      "performer": "role2",
-      "result": [
-        "provenance_record1"
+      "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "investigator1",
+          "result": [
+            "provenance_record1"
+          ]
+        }
       ]
     },
     {
@@ -143,16 +122,22 @@
     {
       "@id": "forensic_action2",
       "@type": "ForensicAction",
+      "name": "custody-receive",
       "startTime": "2010-01-15T17:59:43.25Z",
-      "performer": "role3",
-      "source": [
-        "provenance_record1"
-      ],
-      "result": [
-        "provenance_record2",
-        "provenance_record3"
-      ],
-      "location": "fedex_dropoff_location1"
+      "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "examiner1",
+          "object": [
+            "device1"
+          ],
+          "result": [
+            "provenance_record2",
+            "provenance_record3"
+          ],
+          "location": "fedex_dropoff_location1"
+        }
+      ]
     },
     {
       "@id": "lifecycle_phase2",
@@ -179,17 +164,20 @@
       "name": "imaged",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T19:59:43.25Z",
-      "performer": "role4",
-      "instrument": "tool1",
-      "source": [
-        "provenance_record2"
-      ],
-      "result": [
-        "provenance_record4"
-      ],
-      "location": "forensic_lab1",
-      "environment": "forensic_lab_computer1",
       "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "examiner1",
+          "instrument": "tool1",
+          "object": [
+            "device1"
+          ],
+          "result": [
+            "provenance_record4"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        },
         {
           "@type": "acme:UFEDArguments",
           "aquisitionType": "Logical",
@@ -222,16 +210,21 @@
       "name": "imaged",
       "startTime": "2010-01-16T17:59:43.25Z",
       "endTime": "2010-01-16T19:59:43.25Z",
-      "performer": "role4",
-      "instrument": "tool2",
-      "source": [
-        "provenance_record3"
-      ],
-      "result": [
-        "provenance_record5"
-      ],
-      "location": "forensic_lab1",
-      "environment": "forensic_lab_computer1",
+      "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "examiner1",
+          "instrument": "tool2",
+          "object": [
+            "sd_card1"
+          ],
+          "result": [
+            "provenance_record5"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        }
+      ]
     },
     {
       "@id": "lifecycle_phase4",
@@ -255,28 +248,31 @@
     {
       "@id": "forensic_action5",
       "@type": "ForensicAction",
-      "name": "executed",
+      "name": "parsed",
       "startTime": "2010-01-20T17:59:43.25Z",
       "endTime": "2010-01-21T17:59:43.25Z",
-      "performer": "role4",
-      "instrument": "tool3",
-      "source": [
-        "provenance_record4",
-        "provenance_record5"
-      ],
-      "result": [
-        "provenance_record6",
-        "provenance_record7",
-        "provenance_record8",
-        "provenance_record9",
-        "provenance_record10",
-        "provenance_record11",
-        "provenance_record12",
-        "forensic_action6"
-      ],
-      "location": "forensic_lab1",
-      "environment": "forensic_lab_computer1",
       "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "examiner2",
+          "instrument": "tool3",
+          "object": [
+            "android_image",
+            "sd_card1_image"
+          ],
+          "result": [
+            "provenance_record6",
+            "provenance_record7",
+            "provenance_record8",
+            "provenance_record9",
+            "provenance_record10",
+            "provenance_record11",
+            "provenance_record12",
+            "forensic_action6"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        },
         {
           "@type": "Process",
           "arguments": "log2timeline C:\\exams\\inbox\\case-123.img C:\\exams\\output\\case-123 --config C:\\plaso\\config.cfg --analysis chat_messages,windows_registries --output xlsx,pstorage --parsers sqlite/android_whatsapp,plist --log C:\\exams\\output\\case-123.log",
@@ -330,27 +326,30 @@
       "name": "executed",
       "startTime": "2010-02-15T17:59:43.25Z",
       "endTime": "2010-02-16T17:59:43.25Z",
-      "performer": "forensic_action5",
-      "instrument": "parser1",
-      "source": [
-        "provenance_record9",
-        "provenance_record10",
-        "provenance_record11"
-      ],
-      "result": [
-        "provenance_record13",
-        "provenance_record14",
-        "provenance_record15",
-        "provenance_record16",
-        "provenance_record17",
-        "provenance_record18",
-        "provenance_record19",
-        "provenance_record20",
-        "provenance_record21"
-      ],
-      "location": "forensic_lab1",
-      "environment": "forensic_lab_computer1",
       "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "examiner2",
+          "instrument": "parser1",
+          "object": [
+            "provenance_record9",
+            "provenance_record10",
+            "provenance_record11"
+          ],
+          "result": [
+            "provenance_record13",
+            "provenance_record14",
+            "provenance_record15",
+            "provenance_record16",
+            "provenance_record17",
+            "provenance_record18",
+            "provenance_record19",
+            "provenance_record20",
+            "provenance_record21"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        },
         {
           "@type": "acme:PlasoParserArguments",
           "parsedFile": "message_database",
@@ -382,7 +381,7 @@
       "@type": "ProvenanceRecord",
       "description": "SD Card",
       "exhibitNumber": "DFL-20140712-001B",
-      "object": "device1"
+      "object": "sd_card1"
     },
     {
       "@id": "provenance_record4",
@@ -396,7 +395,7 @@
       "@type": "ProvenanceRecord",
       "description": "Forensic image of SD Card",
       "exhibitNumber": "DFL-20140712-001D",
-      "object": "sd_card"
+      "object": "sd_card1_image"
     },
     {
       "@id": "provenance_record6",

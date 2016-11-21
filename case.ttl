@@ -70,26 +70,6 @@ xsd:duration rdf:type rdfs:Datatype .
              rdfs:comment "Defines the application-like item used by this account." .
 
 
-###  http://case.example.org/core#associatedAccount
-:associatedAccount rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf owl:topObjectProperty ;
-                   rdfs:domain :Identity ;
-                   rdfs:range :Object ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :propertyBundle ;
-                                owl:someValuesFrom [ rdf:type owl:Class ;
-                                                     owl:unionOf ( :Account
-                                                                   :DigitalAccount
-                                                                   :EmailAccount
-                                                                   :PhoneAccount
-                                                                   :UserAccount
-                                                                   :WindowsAccount
-                                                                 )
-                                                   ]
-                              ] ;
-                   rdfs:comment "References objects with an account type property bundle." .
-
-
 ###  http://case.example.org/core#bcc
 :bcc rdf:type owl:ObjectProperty ;
      rdfs:domain :EmailMessage ;
@@ -324,6 +304,14 @@ xsd:duration rdf:type rdfs:Datatype .
            rdfs:domain :Fragments .
 
 
+###  http://case.example.org/core#from
+:from rdf:type owl:ObjectProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Message ;
+      rdfs:range :Trace ;
+      rdfs:comment "The designated sender of the Message." .
+
+
 ###  http://case.example.org/core#globalFlagList
 :globalFlagList rdf:type owl:ObjectProperty ;
                 rdfs:domain :WindowsComputerSpecification ;
@@ -381,7 +369,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://case.example.org/core#instrument
 :instrument rdf:type owl:ObjectProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain :Action ;
+            rdfs:domain :ActionReferences ;
             rdfs:range :Object ;
             rdfs:comment "The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)" .
 
@@ -409,9 +397,10 @@ xsd:duration rdf:type rdfs:Datatype .
 
 
 ###  http://case.example.org/core#location
-:location rdf:type owl:ObjectProperty ;
+:location rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
           rdfs:domain :Object ;
-          rdfs:range :Location .
+          rdfs:range :Trace .
 
 
 ###  http://case.example.org/core#messageID
@@ -504,11 +493,10 @@ xsd:duration rdf:type rdfs:Datatype .
 
 ###  http://case.example.org/core#participant
 :participant rdf:type owl:ObjectProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Message
-                                         :PhoneCall
-                                       )
-                         ] .
+             rdfs:domain :Message ;
+             rdfs:comment """Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+
+This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.""" .
 
 
 ###  http://case.example.org/core#peType
@@ -522,7 +510,7 @@ xsd:duration rdf:type rdfs:Datatype .
 :performer rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdf:type owl:FunctionalProperty ;
-           rdfs:domain :Action ;
+           rdfs:domain :ActionReferences ;
            rdfs:range :Object ;
            rdfs:comment "Defines the person, action, or thing that caused this action." .
 
@@ -581,7 +569,7 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://case.example.org/core#result
 :result rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf owl:topObjectProperty ;
-        rdfs:domain :Action ;
+        rdfs:domain :ActionReferences ;
         rdfs:range :Object .
 
 
@@ -589,16 +577,6 @@ xsd:duration rdf:type rdfs:Datatype .
 :sections rdf:type owl:ObjectProperty ;
           rdfs:domain :WindowsPEBinaryFile ;
           rdfs:range :WindowsPESection .
-
-
-###  http://case.example.org/core#sender
-:sender rdf:type owl:ObjectProperty ,
-                 owl:FunctionalProperty ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :Message
-                                    :PhoneCall
-                                  )
-                    ] .
 
 
 ###  http://case.example.org/core#serviceStatus
@@ -657,6 +635,14 @@ xsd:duration rdf:type rdfs:Datatype .
                                     :Role
                                   )
                     ] .
+
+
+###  http://case.example.org/core#to
+:to rdf:type owl:ObjectProperty ,
+             owl:FunctionalProperty ;
+    rdfs:domain :Message ;
+    rdfs:range :Trace ;
+    rdfs:comment "The designated recipients of the Message." .
 
 
 ###  http://case.example.org/core#victim
@@ -786,6 +772,13 @@ olo:slot rdf:type owl:ObjectProperty .
                      rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#applicationIdentifier
+:applicationIdentifier rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain :Application ;
+                       rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#applicationName
 :applicationName rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
@@ -834,18 +827,17 @@ olo:slot rdf:type owl:ObjectProperty .
                rdfs:range xsd:boolean .
 
 
-###  http://case.example.org/core#bios
-:bios rdf:type owl:DatatypeProperty ,
-               owl:FunctionalProperty ;
-      rdfs:domain :ComputerSpecifications ;
-      rdfs:range xsd:string .
+###  http://case.example.org/core#biosVersion
+:biosVersion rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :ComputerSpecifications ;
+             rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#birthday
-:birthday rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain :IdentityO ;
-          rdfs:range xsd:dateTimeStamp .
+###  http://case.example.org/core#birthDate
+:birthDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :BirthInformation ;
+           rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#bitsPerPixel
@@ -952,11 +944,11 @@ olo:slot rdf:type owl:ObjectProperty .
          rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#cpu
-:cpu rdf:type owl:DatatypeProperty ,
-              owl:FunctionalProperty ;
-     rdfs:domain :ComputerSpecifications ;
-     rdfs:range xsd:string .
+###  http://case.example.org/core#cpuFamily
+:cpuFamily rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :ComputerSpecifications ;
+           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#createdTime
@@ -979,10 +971,10 @@ olo:slot rdf:type owl:ObjectProperty .
                        rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#data
-:data rdf:type owl:DatatypeProperty ;
-      rdfs:domain :ContentData ;
-      rdfs:range xsd:base64Binary .
+###  http://case.example.org/core#dataPayload
+:dataPayload rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ContentData ;
+             rdfs:range xsd:base64Binary .
 
 
 ###  http://case.example.org/core#delimiter
@@ -1157,6 +1149,13 @@ olo:slot rdf:type owl:ObjectProperty .
            rdfs:comment "The file extension." .
 
 
+###  http://case.example.org/core#familyName
+:familyName rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :SimpleName ;
+            rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#fileAlignment
 :fileAlignment rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
@@ -1174,13 +1173,6 @@ olo:slot rdf:type owl:ObjectProperty .
 :firstLoginTime rdf:type owl:DatatypeProperty ;
                 rdfs:domain :DigitalAccount ;
                 rdfs:range xsd:dateTimeStamp .
-
-
-###  http://case.example.org/core#firstName
-:firstName rdf:type owl:DatatypeProperty ,
-                    owl:FunctionalProperty ;
-           rdfs:domain :IdentityO ;
-           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#firstRunTime
@@ -1205,6 +1197,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :gid rdf:type owl:DatatypeProperty ;
      rdfs:domain :UNIXAccount ;
      rdfs:range xsd:integer .
+
+
+###  http://case.example.org/core#givenName
+:givenName rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :SimpleName ;
+           rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#groupName
@@ -1267,7 +1266,6 @@ olo:slot rdf:type owl:ObjectProperty .
                      owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( :Account
-                                        :Application
                                         :MessageThread
                                       )
                         ] ;
@@ -1446,17 +1444,17 @@ olo:slot rdf:type owl:ObjectProperty .
                rdfs:range xsd:dateTimeStamp .
 
 
-###  http://case.example.org/core#lastName
-:lastName rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain :IdentityO ;
-          rdfs:range xsd:string .
-
-
 ###  http://case.example.org/core#lastRunTime
 :lastRunTime rdf:type owl:DatatypeProperty ;
              rdfs:domain :WindowsPrefetch ;
              rdfs:range xsd:dateTimeStamp .
+
+
+###  http://case.example.org/core#latitude
+:latitude rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :LatLongCoordinates ;
+          rdfs:range xsd:float .
 
 
 ###  http://case.example.org/core#length
@@ -1470,6 +1468,20 @@ olo:slot rdf:type owl:ObjectProperty .
                       owl:FunctionalProperty ;
              rdfs:domain :WindowsPEOptionalHeader ;
              rdfs:range xsd:hexBinary .
+
+
+###  http://case.example.org/core#locality
+:locality rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :SimpleAddress ;
+          rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#longitude
+:longitude rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :LatLongCoordinates ;
+           rdfs:range xsd:float .
 
 
 ###  http://case.example.org/core#machine
@@ -1680,13 +1692,6 @@ olo:slot rdf:type owl:ObjectProperty .
                      rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#organization
-:organization rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :Identity ;
-              rdfs:range xsd:string .
-
-
 ###  http://case.example.org/core#ownerSID
 :ownerSID rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
@@ -1786,6 +1791,13 @@ olo:slot rdf:type owl:ObjectProperty .
                 rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#postalCode
+:postalCode rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :SimpleAddress ;
+            rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#prefetchHash
 :prefetchHash rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
@@ -1818,13 +1830,6 @@ olo:slot rdf:type owl:ObjectProperty .
                                 rdfs:range xsd:dateTimeStamp .
 
 
-###  http://case.example.org/core#ram
-:ram rdf:type owl:DatatypeProperty ,
-              owl:FunctionalProperty ;
-     rdfs:domain :ComputerSpecifications ;
-     rdfs:range xsd:string .
-
-
 ###  http://case.example.org/core#rangeOffset
 :rangeOffset rdf:type owl:DatatypeProperty ;
              rdfs:domain :DataRange ;
@@ -1854,6 +1859,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :recoveryPassword rdf:type owl:DatatypeProperty ;
                   rdfs:domain :BDEVolume ;
                   rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#region
+:region rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :SimpleAddress ;
+        rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#registryKey
@@ -1940,17 +1952,17 @@ olo:slot rdf:type owl:ObjectProperty .
                     rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#size
-:size rdf:type owl:DatatypeProperty ,
-               owl:FunctionalProperty ;
-      rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( :ContentData
-                                  :FileSystem
-                                  :WindowsPESection
-                                )
-                  ] ;
-      rdfs:range xsd:positiveInteger ;
-      rdfs:comment "Size of file in bytes." .
+###  http://case.example.org/core#sizeInBytes
+:sizeInBytes rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :ContentData
+                                         :FileSystem
+                                         :WindowsPESection
+                                       )
+                         ] ;
+             rdfs:range xsd:positiveInteger ;
+             rdfs:comment "Size of file in bytes." .
 
 
 ###  http://case.example.org/core#sizeOfCode
@@ -2084,6 +2096,13 @@ olo:slot rdf:type owl:ObjectProperty .
             rdfs:range xsd:base64Binary .
 
 
+###  http://case.example.org/core#street
+:street rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :SimpleAddress ;
+        rdfs:range xsd:string .
+
+
 ###  http://case.example.org/core#stringValue
 :stringValue rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
@@ -2192,6 +2211,13 @@ olo:slot rdf:type owl:ObjectProperty .
                         owl:FunctionalProperty ;
                rdfs:domain :WindowsPrefetch ;
                rdfs:range xsd:long .
+
+
+###  http://case.example.org/core#totalRam
+:totalRam rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :ComputerSpecifications ;
+          rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#update
@@ -2316,6 +2342,11 @@ olo:slot rdf:type owl:ObjectProperty .
                         rdfs:comment "Defines an ordered list that must contain only Action classes as items." .
 
 
+###  http://case.example.org/core#ActionReferences
+:ActionReferences rdf:type owl:Class ;
+                  rdfs:subClassOf :PropertyBundle .
+
+
 ###  http://case.example.org/core#AndroidPackage
 :AndroidPackage rdf:type owl:Class ;
                 rdfs:subClassOf :PropertyBundle .
@@ -2368,6 +2399,11 @@ Note: This property bundle is different. Instead of putting this as a property b
 ###  http://case.example.org/core#BenevolentRole
 :BenevolentRole rdf:type owl:Class ;
                 rdfs:subClassOf :Role .
+
+
+###  http://case.example.org/core#BirthInformation
+:BirthInformation rdf:type owl:Class ;
+                  rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#BrowserBookmark
@@ -2688,13 +2724,7 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 ###  http://case.example.org/core#Identity
 :Identity rdf:type owl:Class ;
-          owl:equivalentClass :IdentityO ;
           rdfs:subClassOf :Descriptive .
-
-
-###  http://case.example.org/core#IdentityO
-:IdentityO rdf:type owl:Class ;
-           :item "TODO: This is a placeholder class for the standard ontology we decide to use to represent identity." .
 
 
 ###  http://case.example.org/core#Image
@@ -2729,20 +2759,14 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
           rdfs:comment "TODO: We probably can use an already existing schema for this." .
 
 
+###  http://case.example.org/core#LatLongCoordinates
+:LatLongCoordinates rdf:type owl:Class ;
+                    rdfs:subClassOf :PropertyBundle .
+
+
 ###  http://case.example.org/core#LinuxPackage
 :LinuxPackage rdf:type owl:Class ;
               rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#Location
-:Location rdf:type owl:Class ;
-          owl:equivalentClass :LocationO ;
-          rdfs:subClassOf :Descriptive .
-
-
-###  http://case.example.org/core#LocationO
-:LocationO rdf:type owl:Class ;
-           rdfs:comment "TODO: This is a placeholder class for the standard ontology we decide to use to represent locations." .
 
 
 ###  http://case.example.org/core#MACAddress
@@ -2938,6 +2962,16 @@ TODO: Add properties.""" .
              rdfs:subClassOf :Enumeration .
 
 
+###  http://case.example.org/core#SimpleAddress
+:SimpleAddress rdf:type owl:Class ;
+               rdfs:subClassOf :PropertyBundle .
+
+
+###  http://case.example.org/core#SimpleName
+:SimpleName rdf:type owl:Class ;
+            rdfs:subClassOf :PropertyBundle .
+
+
 ###  http://case.example.org/core#StartType
 :StartType rdf:type owl:Class ;
            rdfs:subClassOf :Enumeration .
@@ -2949,7 +2983,8 @@ TODO: Add properties.""" .
 
 
 ###  http://case.example.org/core#SupportingClasses
-:SupportingClasses rdf:type owl:Class .
+:SupportingClasses rdf:type owl:Class ;
+                   rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#SymbolicLink

@@ -2,21 +2,20 @@
   "@context": {
     "@vocab": "http://case.example.org/core#",
     "olo": "http://purl.org/ontology/olo/core#",
-    "schema": "http://schema.org",
     "acme": "http://custompb.acme.org/core#"
   },
   "@graph": [
     {
       "@id": "location1",
       "@type": "Location",
-      "schema:Address": {
-        "@type": "schema:PostalAddress",
-        "schema:addressLocality": "Seattle",
-        "schema:addressRegion": "WA",
-        "schema:postalCode": "98052",
-        "schema:streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
-      },
       "propertyBundle": [
+        {
+          "@type": "SimpleAddress",
+          "locality": "Seattle",
+          "region": "WA",
+          "postalCode": "98052",
+          "street": "20341 Whitworth Institute 405 N. Whitworth"
+        },
         {
           "@type": "acme:InternalLocation",
           "floor": 3,
@@ -27,13 +26,21 @@
     {
       "@id": "location2",
       "@type": "Location",
-      "schema:Address": {
-        "@type": "schema:PostalAddress",
-        "schema:addressLocality": "Paris, France",
-        "schema:addressRegion": "",
-        "schema:postalCode": "F-75002",
-        "schema:streetAddress": "38 Bad Guy Headquarters st."
-      }
+      "propertyBundle": [
+        {
+          "@type": "SimpleAddress",
+          "locality": "Paris",
+          "country": "France",
+          "postalCode": "F-75002",
+          "street": "38 Bad Guy Headquarters st."
+        },
+        {
+          "@type": "LatLongCoordinates",
+          "latitude": 48.860346,
+          "longitude": 2.331199
+        }
+      ]
     }
   ]
 }
+ 

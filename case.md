@@ -276,7 +276,7 @@ Attribute | Range | Comment
 ---: | --- | ---
 *hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
 *name* | xsd:string | The name property defines a common word or phrase that describes the meaning of the object.
-*size* | xsd:positiveInteger | Size of file in bytes.
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### WindowsRegistryValue
@@ -318,7 +318,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*location* | [Location](#location) | 
+*location* | [Trace](#trace) | 
 *propertyBundle* | [PropertyBundle](#propertybundle) | 
 
 
@@ -340,9 +340,6 @@ Attribute | Range | Comment
 *actionLifecyclePhase* | [ActionLifecyclePattern](#actionlifecyclepattern) | 
 *endTime* | xsd:dateTimeStamp | 
 *environment* | [Object](#object) | Defines the environment of an Action. This can point to things like the descriptions of the area the action was performed or information about the computer that was used.
-*instrument* | [Object](#object) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
-*performer* | [Object](#object) | Defines the person, action, or thing that caused this action.
-*result* | [Object](#object) | 
 *source* | [Object](#object) | 
 *startTime* | xsd:dateTimeStamp | 
 
@@ -364,10 +361,6 @@ Attribute | Range | Comment
 ##### Identity
 
 
-Attribute | Range | Comment
----: | --- | ---
-*associatedAccount* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom ([Account](#account) or [DigitalAccount](#digitalaccount) or [EmailAccount](#emailaccount) or [PhoneAccount](#phoneaccount) or [UserAccount](#useraccount) or [WindowsAccount](#windowsaccount))]), [Object](#object) | References objects with an account type property bundle.
-*organization* | xsd:string | 
 
 
 ##### Investigation
@@ -382,11 +375,6 @@ Attribute | Range | Comment
 *subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
 *suspectedOffense* | xsd:string | 
 *victim* | ([Identity](#identity) or [Role](#role)) | 
-
-
-##### Location
-
-
 
 
 ##### ProvenanceRecord
@@ -466,6 +454,16 @@ Attribute | Range | Comment
 *passwordLastChanged* | xsd:dateTimeStamp | 
 
 
+### ActionReferences
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*instrument* | [Object](#object) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
+*performer* | [Object](#object) | Defines the person, action, or thing that caused this action.
+*result* | [Object](#object) | 
+
+
 ### AndroidPackage
 
 
@@ -476,7 +474,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*identifier* | xsd:string | 
+*applicationIdentifier* | xsd:string | 
 *numberOfLaunches* | xsd:positiveInteger | 
 *operatingSystem* | (Restriction on property [propertyBundle](#propertybundle) with [owl:someValuesFrom [OperatingSystem](#operatingsystem)]), [Trace](#trace) | 
 *version* | xsd:string | 
@@ -525,6 +523,14 @@ Attribute | Range | Comment
 *startupKey* | xsd:base64Binary | 
 
 
+### BirthInformation
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*birthDate* | xsd:dateTimeStamp | 
+
+
 ### BrowserBookmark
 
 
@@ -558,9 +564,9 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*bios* | xsd:string | 
-*cpu* | xsd:string | 
-*ram* | xsd:string | 
+*biosVersion* | xsd:string | 
+*cpuFamily* | xsd:string | 
+*totalRam* | xsd:string | 
 
 
 ### Contact
@@ -574,8 +580,8 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *byteOrder* | [ByteOrder](#byteorder) | 
-*data* | xsd:base64Binary | 
-*size* | xsd:positiveInteger | Size of file in bytes.
+*dataPayload* | xsd:base64Binary | 
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### DataRange
@@ -771,7 +777,7 @@ Attribute | Range | Comment
 *fileSystemType* | [FileSystemType](#filesystemtype) | 
 *inode* | xsd:integer | 
 *modifedTime* | xsd:dateTimeStamp | 
-*size* | xsd:positiveInteger | Size of file in bytes.
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### HTTPConnection
@@ -817,6 +823,15 @@ Defines the basic properties associated with a disk image file. (Ie. the full im
 
 
 
+### LatLongCoordinates
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*latitude* | xsd:float | 
+*longitude* | xsd:float | 
+
+
 ### LinuxPackage
 
 
@@ -833,12 +848,15 @@ The properties associated with message (eg. email, sms, whatsapp, etc.)
 Attribute | Range | Comment
 ---: | --- | ---
 *body* | xsd:string | 
+*from* | [Trace](#trace) | The designated sender of the Message.
 *isRead* | xsd:boolean | 
 *modifedTime* | xsd:dateTimeStamp | 
-*participant* |  | 
+*participant* |  | Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+
+This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.
 *received* | [ReceivedEvent](#receivedevent) | 
-*sender* |  | 
 *sentTime* | xsd:dateTimeStamp | 
+*to* | [Trace](#trace) | The designated recipients of the Message.
 
 
 ### MessageThread
@@ -962,8 +980,6 @@ Attribute | Range | Comment
 *callType* | xsd:string | 
 *duration* | xsd:duration | 
 *endTime* | xsd:dateTimeStamp | 
-*participant* |  | 
-*sender* |  | 
 *startTime* | xsd:dateTimeStamp | 
 
 
@@ -979,7 +995,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 
@@ -1015,6 +1031,31 @@ Attribute | Range | Comment
 *rowCondition* | xsd:string | 
 *rowIndex* | xsd:positiveInteger | 
 *tableName* | xsd:string | 
+
+
+### SimpleAddress
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*locality* | xsd:string | 
+*postalCode* | xsd:string | 
+*region* | xsd:string | 
+*street* | xsd:string | 
+
+
+### SimpleName
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*familyName* | xsd:string | 
+*givenName* | xsd:string | 
+
+
+### SupportingClasses
+
+
 
 
 ### SymbolicLink

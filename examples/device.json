@@ -24,14 +24,17 @@
         },
         {
           "@type": "ComputerSpecifications",
-          "bios": "E1762IMS.10M",
-          "cpu": "Intel Pentium i7",
-          "ram": "4GB"
+          "biosVersion": "E1762IMS.10M",
+          "cpuFamily": "Intel Pentium i7",
+          "totalRam": "4GB"
         },
         {
-          "@type": "NetworkLocation",
-          "domain": "dfl.local",
-          "ipAddress": "192.168.1.145"
+          "@type": "DomainName",
+          "value": "dfl.local",
+        },
+        {
+          "@type": "IPv4Address",
+          "value": "192.168.1.145"
         },
         {
           "@type": "acme:InventoryComputer",
@@ -42,3 +45,4 @@
     }
   ]
 }
+ 

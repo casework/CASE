@@ -13,7 +13,7 @@
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "sizeInBytes": 29,
-          "data": "Q0FTRSBpcyBhbiBhd2Vzb21lIG9udG9sb2d5IQ=",
+          "dataPayload": "Q0FTRSBpcyBhbiBhd2Vzb21lIG9udG9sb2d5IQ=",
           "hash": [
             {
               "@type": "Hash",
@@ -47,7 +47,7 @@
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "sizeInBytes": 3500,
-          "data": "<base 64 encoded data of the file>",
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -74,7 +74,7 @@
       "@type": "Relationship",
       "source": "decoded_attachment",
       "target": "tar_archive_file",
-      "kindOfRelationship": "contained-within",
+      "kindOfRelationship": "decoded-from",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -90,7 +90,7 @@
           {
             "@type": "ContentData",
             "sizeInBytes": 23000,
-            "data": "<base 64 encoded data of the file>",
+            "dataPayload": "<base 64 encoded data of the file>",
             "hash": [
               {
                 "@type": "Hash",
@@ -98,6 +98,10 @@
                 "hashValue": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
               }
             ]
+          },
+          {
+            "@type": "Encoding",
+            "encodingMethod": "BASE64"
           }
         ]
     },
@@ -124,9 +128,15 @@
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "File",
+          "isDirectory": false,
+          "magicNumber": "NzUgNzMgNzQgNjEgNzI=",
+          "mimeType": "application/x-tar"
+        },
+        {
           "@type": "ContentData",
           "sizeInBytes": 23000,
-          "data": "<base 64 encoded data of the file>",
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -142,7 +152,7 @@
       "@type": "Relationship",
       "source": "decrypted_blob",
       "target": "sqlite_blob",
-      "kindOfRelationship": "contained-within",
+      "kindOfRelationship": "decrypted-from",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -161,7 +171,7 @@
         {
           "@type": "ContentData",
           "sizeInBytes": 54000,
-          "data": "<base 64 encoded data of the file>",
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -169,6 +179,13 @@
               "hashValue": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
             }
           ]
+        },
+        {
+          "@type": "Encryption",
+          "encryptionMethod": "AES",
+          "encryptionMode": "CBC",
+          "key": "whatsappKEY",
+          "iv": "whatsappIV"
         }
       ]
     },
@@ -195,7 +212,7 @@
           {
             "@type": "ContentData",
             "sizeInBytes": 546000,
-            "data": "<base 64 encoded data of the file>",
+            "dataPayload": "<base 64 encoded data of the file>",
             "hash": [
               {
                 "@type": "Hash",
@@ -226,8 +243,9 @@
           "fileName": "messages.db",
           "extension": "db",
           "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
+          "accessedTime": "2010-01-15T17:59:43.25Z",
+          "createdTime": "2010-01-15T17:59:43.25Z",
+          "sizeInBytes": 546000
         }
       ]
     },
@@ -262,7 +280,6 @@
         }
       ]
     },
-    // Describes that android_image is the image of android_device1.
     {
       "@id": "android_image",
       "@type": "Trace",
@@ -310,9 +327,7 @@
       "source": "android_image",
       "target": "android_device1",
       "kindOfRelationship": "forensic_image_of",
-      "isDirectional": true,
-      "propertyBundle": [
-      ]
+      "isDirectional": true
     },
     {
       "@id": "forensic_lab_computer1",
@@ -332,7 +347,7 @@
           "version": "6.1.7601 Service Pack 1 Build 7601"
         },
         {
-          "@type": "ComputerSpecifications",
+          "@type": "ComputerSpecification",
           "biosVersion": "E1762IMS.10M",
           "cpuFamily": "Intel Pentium i7",
           "totalRam": "4GB"

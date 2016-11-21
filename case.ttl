@@ -830,7 +830,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#biosVersion
 :biosVersion rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
-             rdfs:domain :ComputerSpecifications ;
+             rdfs:domain :ComputerSpecification ;
              rdfs:range xsd:string .
 
 
@@ -947,7 +947,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#cpuFamily
 :cpuFamily rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
-           rdfs:domain :ComputerSpecifications ;
+           rdfs:domain :ComputerSpecification ;
            rdfs:range xsd:string .
 
 
@@ -2216,7 +2216,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#totalRam
 :totalRam rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
-          rdfs:domain :ComputerSpecifications ;
+          rdfs:domain :ComputerSpecification ;
           rdfs:range xsd:string .
 
 
@@ -2441,9 +2441,9 @@ Note: This property bundle is different. Instead of putting this as a property b
                    rdfs:subClassOf :Enumeration .
 
 
-###  http://case.example.org/core#ComputerSpecifications
-:ComputerSpecifications rdf:type owl:Class ;
-                        rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#ComputerSpecification
+:ComputerSpecification rdf:type owl:Class ;
+                       rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#Contact

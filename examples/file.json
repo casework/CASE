@@ -377,7 +377,7 @@
           "version": "4.2.2"
         },
         {
-          "@type": "ComputerSpecifications",
+          "@type": "ComputerSpecification",
           "processorArchitecture": "Octa-core",
           "cpuFamily": "Exynos 5410 Octa",
           "gpuFamily": "Power VR SGX544MP3",

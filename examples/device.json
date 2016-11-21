@@ -23,7 +23,7 @@
           "version": "6.1.7601 Service Pack 1 Build 7601"
         },
         {
-          "@type": "ComputerSpecifications",
+          "@type": "ComputerSpecification",
           "biosVersion": "E1762IMS.10M",
           "cpuFamily": "Intel Pentium i7",
           "totalRam": "4GB"

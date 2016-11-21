@@ -559,7 +559,7 @@ Attribute | Range | Comment
 *compressionMethod* | [CompressionMethod](#compressionmethod) | 
 
 
-### ComputerSpecifications
+### ComputerSpecification
 
 
 Attribute | Range | Comment
@@ -995,7 +995,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 

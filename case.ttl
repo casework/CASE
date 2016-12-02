@@ -259,12 +259,6 @@ xsd:duration rdf:type rdfs:Datatype .
             rdfs:range :WindowsPEFileHeader .
 
 
-###  http://case.example.org/core#filePath
-:filePath rdf:type owl:ObjectProperty ;
-          rdfs:domain :FileSystem ;
-          rdfs:range :FilePath .
-
-
 ###  http://case.example.org/core#filePathSegments
 :filePathSegments rdf:type owl:ObjectProperty ;
                   rdfs:domain :FilePath ;
@@ -321,15 +315,15 @@ xsd:duration rdf:type rdfs:Datatype .
 ###  http://case.example.org/core#hash
 :hash rdf:type owl:ObjectProperty ;
       rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf ( :ExtractedString
+                    owl:unionOf ( :ContentData
+                                  :ExtractedString
                                   :WindowsPEFileHeader
                                   :WindowsPEOptionalHeader
                                   :WindowsPESection
                                   :X509Certificate
                                 )
                   ] ;
-      rdfs:range :Hash ;
-      rdfs:comment "TODO: Remove this use of this property in exchange for using the Hash property bundle." .
+      rdfs:range :Hash .
 
 
 ###  http://case.example.org/core#hashMethod
@@ -431,7 +425,7 @@ xsd:duration rdf:type rdfs:Datatype .
                    owl:FunctionalProperty ;
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :Attachment
-                                      :File
+                                      :ContentData
                                     )
                       ] ;
           rdfs:range :MimeType .
@@ -730,7 +724,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#accessedTime
 :accessedTime rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
-              rdfs:domain :FileSystem ;
+              rdfs:domain :File ;
               rdfs:range xsd:dateTimeStamp .
 
 
@@ -904,6 +898,13 @@ olo:slot rdf:type owl:ObjectProperty .
           rdfs:range xsd:hexBinary .
 
 
+###  http://case.example.org/core#clusterSize
+:clusterSize rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :FileSystem ;
+             rdfs:range xsd:long .
+
+
 ###  http://case.example.org/core#code
 :code rdf:type owl:DatatypeProperty ;
       rdfs:domain :ICMPConnection ;
@@ -957,7 +958,7 @@ olo:slot rdf:type owl:ObjectProperty .
              rdf:type owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Account
-                                         :FileSystem
+                                         :File
                                          :Process
                                        )
                          ] ;
@@ -975,6 +976,13 @@ olo:slot rdf:type owl:ObjectProperty .
 :dataPayload rdf:type owl:DatatypeProperty ;
              rdfs:domain :ContentData ;
              rdfs:range xsd:base64Binary .
+
+
+###  http://case.example.org/core#dataPayloadReferenceURL
+:dataPayloadReferenceURL rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain :ContentData ;
+                         rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#delimiter
@@ -1101,7 +1109,11 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#entropy
 :entropy rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
-         rdfs:domain :WindowsPEOptionalHeader ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :ContentData
+                                     :WindowsPEOptionalHeader
+                                   )
+                     ] ;
          rdfs:range xsd:float .
 
 
@@ -1144,7 +1156,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#extension
 :extension rdf:type owl:DatatypeProperty ;
-           rdfs:domain :FileSystem ;
+           rdfs:domain :File ;
            rdfs:range xsd:string ;
            rdfs:comment "The file extension." .
 
@@ -1165,7 +1177,13 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#fileName
 :fileName rdf:type owl:DatatypeProperty ;
-          rdfs:domain :FileSystem ;
+          rdfs:domain :File ;
+          rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#filePath
+:filePath rdf:type owl:DatatypeProperty ;
+          rdfs:domain :File ;
           rdfs:range xsd:string .
 
 
@@ -1313,12 +1331,6 @@ olo:slot rdf:type owl:ObjectProperty .
                   rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#inode
-:inode rdf:type owl:DatatypeProperty ;
-       rdfs:domain :FileSystem ;
-       rdfs:range xsd:integer .
-
-
 ###  http://case.example.org/core#ipAddress
 :ipAddress rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
@@ -1336,6 +1348,13 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#isDirectory
 :isDirectory rdf:type owl:DatatypeProperty ;
              rdfs:domain :File ;
+             rdfs:range xsd:boolean .
+
+
+###  http://case.example.org/core#isEncrypted
+:isEncrypted rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :ContentData ;
              rdfs:range xsd:boolean .
 
 
@@ -1494,13 +1513,14 @@ olo:slot rdf:type owl:ObjectProperty .
 :magic rdf:type owl:DatatypeProperty ,
                 owl:FunctionalProperty ;
        rdfs:domain :WindowsPEOptionalHeader ;
-       rdfs:range xsd:hexBinary .
+       rdfs:range xsd:hexBinary ;
+       rdfs:comment "TODO: Is this different from the magicNumber propery used by ContentData?" .
 
 
 ###  http://case.example.org/core#magicNumber
 :magicNumber rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
-             rdfs:domain :File ;
+             rdfs:domain :ContentData ;
              rdfs:range xsd:base64Binary .
 
 
@@ -1544,6 +1564,20 @@ olo:slot rdf:type owl:ObjectProperty .
               rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#metadataChangeTime
+:metadataChangeTime rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :File ;
+                    rdfs:range xsd:dateTimeStamp .
+
+
+###  http://case.example.org/core#mimeClass
+:mimeClass rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :ContentData ;
+           rdfs:range xsd:string ;
+           rdfs:comment "TODO: Define proper range." .
+
+
 ###  http://case.example.org/core#minorImageVersion
 :minorImageVersion rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
@@ -1584,7 +1618,7 @@ olo:slot rdf:type owl:ObjectProperty .
              rdfs:subPropertyOf owl:topDataProperty ;
              rdf:type owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :FileSystem
+                           owl:unionOf ( :File
                                          :Message
                                          :WindowsRegistryKey
                                        )
@@ -1738,6 +1772,13 @@ olo:slot rdf:type owl:ObjectProperty .
                               owl:FunctionalProperty ;
                      rdfs:domain :AccountAuthentication ;
                      rdfs:range xsd:dateTimeStamp .
+
+
+###  http://case.example.org/core#path
+:path rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :PathRelation ;
+      rdfs:range xsd:string .
 
 
 ###  http://case.example.org/core#payload
@@ -1957,7 +1998,7 @@ olo:slot rdf:type owl:ObjectProperty .
                       owl:FunctionalProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :ContentData
-                                         :FileSystem
+                                         :File
                                          :WindowsPESection
                                        )
                          ] ;
@@ -2875,6 +2916,13 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
          rdfs:comment """Defines a software application package.
 
 TODO: Determine which of these properties are valid and which need to go into a specific property bundle (AndoridPackage, iOSPackage, LinuxPackage, etc.)""" .
+
+
+###  http://case.example.org/core#PathRelation
+:PathRelation rdf:type owl:Class ;
+              rdfs:subClassOf :PropertyBundle ;
+              rdfs:comment """Defines path relationship between two pieces of data.
+When placed on a Relationship object, the source data is related to the target data by its path.""" .
 
 
 ###  http://case.example.org/core#PhoneAccount

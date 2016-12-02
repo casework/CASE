@@ -221,7 +221,7 @@ Properties of the PE file header, sometimes referred to as the COFF header.
 Attribute | Range | Comment
 ---: | --- | ---
 *characteristics* | xsd:hexBinary | 
-*hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
+*hash* | [Hash](#hash) | 
 *machine* | xsd:hexBinary | 
 *numberOfSections* | xsd:hexBinary | 
 *numberOfSymbols* | xsd:hexBinary | 
@@ -242,10 +242,10 @@ Attribute | Range | Comment
 *dllCharacteristics* | xsd:hexBinary | 
 *entropy* | xsd:float | 
 *fileAlignment* | xsd:hexBinary | 
-*hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
+*hash* | [Hash](#hash) | 
 *imageBase* | xsd:hexBinary | 
 *loaderFlags* | xsd:hexBinary | 
-*magic* | xsd:hexBinary | 
+*magic* | xsd:hexBinary | TODO: Is this different from the magicNumber propery used by ContentData?
 *majorImageVersion* | xsd:hexBinary | 
 *majorOSVersion* | xsd:hexBinary | 
 *majorSubsystemVersion* | xsd:hexBinary | 
@@ -274,7 +274,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
+*hash* | [Hash](#hash) | 
 *name* | xsd:string | The name property defines a common word or phrase that describes the meaning of the object.
 *sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
@@ -581,6 +581,13 @@ Attribute | Range | Comment
 ---: | --- | ---
 *byteOrder* | [ByteOrder](#byteorder) | 
 *dataPayload* | xsd:base64Binary | 
+*dataPayloadReferenceURL* | xsd:string | 
+*entropy* | xsd:float | 
+*hash* | [Hash](#hash) | 
+*isEncrypted* | xsd:boolean | 
+*magicNumber* | xsd:base64Binary | 
+*mimeClass* | xsd:string | TODO: Define proper range.
+*mimeType* | [MimeType](#mimetype) | 
 *sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
@@ -738,7 +745,7 @@ Attribute | Range | Comment
 *byteStringValue* | xsd:base64Binary | 
 *encodingMethod* | [EncodingMethod](#encodingmethod) | 
 *englishTranslation* | xsd:string | 
-*hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
+*hash* | [Hash](#hash) | 
 *language* | [Language](#language) | 
 *length* | xsd:integer | 
 *stringValue* | xsd:string | 
@@ -751,9 +758,15 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
 
 Attribute | Range | Comment
 ---: | --- | ---
+*accessedTime* | xsd:dateTimeStamp | 
+*createdTime* | xsd:dateTimeStamp | 
+*extension* | xsd:string | The file extension.
+*fileName* | xsd:string | 
+*filePath* | xsd:string | 
 *isDirectory* | xsd:boolean | 
-*magicNumber* | xsd:base64Binary | 
-*mimeType* | [MimeType](#mimetype) | 
+*metadataChangeTime* | xsd:dateTimeStamp | 
+*modifedTime* | xsd:dateTimeStamp | 
+*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### FileMetadataMismatch
@@ -769,15 +782,8 @@ Defines the basic properties associated with the storage of data.
 
 Attribute | Range | Comment
 ---: | --- | ---
-*accessedTime* | xsd:dateTimeStamp | 
-*createdTime* | xsd:dateTimeStamp | 
-*extension* | xsd:string | The file extension.
-*fileName* | xsd:string | 
-*filePath* | [FilePath](#filepath) | 
+*clusterSize* | xsd:long | 
 *fileSystemType* | [FileSystemType](#filesystemtype) | 
-*inode* | xsd:integer | 
-*modifedTime* | xsd:dateTimeStamp | 
-*sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
 
 ### HTTPConnection
@@ -961,6 +967,15 @@ Attribute | Range | Comment
 *packageName* | xsd:string | The package name (identifier)
 *packagePermission* | xsd:string | Defines a permission associated with the application.
 *version* | xsd:string | 
+
+
+### PathRelation
+Defines path relationship between two pieces of data.
+When placed on a Relationship object, the source data is related to the target data by its path.
+
+Attribute | Range | Comment
+---: | --- | ---
+*path* | xsd:string | 
 
 
 ### PhoneAccount
@@ -1301,7 +1316,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*hash* | [Hash](#hash) | TODO: Remove this use of this property in exchange for using the Hash property bundle.
+*hash* | [Hash](#hash) | 
 *isSelfSigned* | xsd:boolean | 
 *issuer* | xsd:string | 
 *serialNumber* | xsd:string | 

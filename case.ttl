@@ -293,11 +293,6 @@ xsd:duration rdf:type rdfs:Datatype .
                             ] .
 
 
-###  http://case.example.org/core#fragments
-:fragments rdf:type owl:ObjectProperty ;
-           rdfs:domain :Fragments .
-
-
 ###  http://case.example.org/core#from
 :from rdf:type owl:ObjectProperty ,
                owl:FunctionalProperty ;
@@ -1211,6 +1206,13 @@ olo:slot rdf:type owl:ObjectProperty .
         rdfs:range xsd:string .
 
 
+###  http://case.example.org/core#fragmentIndex
+:fragmentIndex rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Fragment ;
+               rdfs:range xsd:int .
+
+
 ###  http://case.example.org/core#gid
 :gid rdf:type owl:DatatypeProperty ;
      rdfs:domain :UNIXAccount ;
@@ -1564,10 +1566,11 @@ olo:slot rdf:type owl:ObjectProperty .
               rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#metadataChangeTime
-:metadataChangeTime rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :File ;
-                    rdfs:range xsd:dateTimeStamp .
+###  http://case.example.org/core#metadataChangedTime
+:metadataChangedTime rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :File ;
+                     rdfs:range xsd:dateTimeStamp .
 
 
 ###  http://case.example.org/core#mimeClass
@@ -2254,6 +2257,13 @@ olo:slot rdf:type owl:ObjectProperty .
                rdfs:range xsd:long .
 
 
+###  http://case.example.org/core#totalFragments
+:totalFragments rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Fragment ;
+                rdfs:range xsd:int .
+
+
 ###  http://case.example.org/core#totalRam
 :totalRam rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
@@ -2654,9 +2664,7 @@ Note: This property bundle is different. Instead of putting this as a property b
 ###  http://case.example.org/core#File
 :File rdf:type owl:Class ;
       rdfs:subClassOf :PropertyBundle ;
-      rdfs:comment """Represents a file.
-
-TODO: Not sure what properties should be in here versus being in Data or FileSystem.""" .
+      rdfs:comment "Defines the file's metadata." .
 
 
 ###  http://case.example.org/core#FileMetadataMismatch
@@ -2708,8 +2716,9 @@ TODO: Not sure what properties should be in here versus being in Data or FileSys
                 rdfs:comment "A ForensicAction is an Action that must have its results and source properties only be ProvenanceRecords or other ForensicActions." .
 
 
-###  http://case.example.org/core#Fragments
-:Fragments rdf:type owl:Class .
+###  http://case.example.org/core#Fragment
+:Fragment rdf:type owl:Class ;
+          rdfs:subClassOf :PropertyBundle .
 
 
 ###  http://case.example.org/core#GlobalFlagType

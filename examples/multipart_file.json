@@ -1,5 +1,3 @@
-// This example shows how we can represent a multipart file.
-
 {
   "@context": {
     "@vocab": "http://case.example.org/core#",
@@ -60,7 +58,7 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 30,
+          "sizeInBytes": 30,
           "data": "<base 64 encoded data of the file>",
           "hash": [
             {
@@ -76,6 +74,15 @@
       "@id": "data_piece0",
       "@type": "Trace",
       "propertyBundle": [
+        {
+          "@type": "FileSystem",
+          "fileSystemType": "EXT4",
+          "filePath": "/data/data/multipart_file.001",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessedAction": "2010-01-15T17:59:43.25Z",
+          "createdAction": "2010-01-15T17:59:43.25Z",
+          "sizeInBytes": 10
+        },
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
@@ -96,6 +103,15 @@
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "File",
+          "fileSystemType": "EXT4",
+          "filePath": "/data/data/multipart_file.002",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "sizeInBytes": 10
+        },
+        {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "size": 10,
@@ -115,6 +131,15 @@
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "File",
+          "fileSystemType": "EXT4",
+          "filePath": "/data/data/multipart_file.003",
+          "modifiedTime": "2010-01-15T17:59:43.25Z",
+          "accessAction": "2010-01-15T17:59:43.25Z",
+          "createAction": "2010-01-15T17:59:43.25Z",
+          "sizeInBytes": 10
+        },
+        {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "size": 10,
@@ -132,57 +157,42 @@
     {
       "@id": "relationship3",
       "@type": "Relationship",
-      "source": "android_image",
-      "target": "data_piece0",
-      "kindOfRelationship": "contains",
+      "source": "data_piece0",
+      "target": "android_image",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "EXT4",
-          "filePath": "/data/data/multipart_file.001",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 10
+          "@type": "PathRelation",
+          "path": "/data/data/multipart_file.001"
         }
       ]
     },
     {
       "@id": "relationship4",
       "@type": "Relationship",
-      "source": "android_image",
-      "target": "data_piece1",
-      "kindOfRelationship": "contains",
+      "source": "data_piece1",
+      "target": "android_image",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "EXT4",
-          "filePath": "/data/data/multipart_file.002",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 10
+          "@type": "PathRelation",
+          "path": "/data/data/multipart_file.002"
         }
       ]
     },
     {
       "@id": "relationship5",
       "@type": "Relationship",
-      "source": "android_image",
-      "target": "data_piece2",
-      "kindOfRelationship": "contains",
+      "source": "data_piece2",
+      "target": "android_image",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "EXT4",
-          "filePath": "/data/data/multipart_file.003",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z",
-          "size": 10
+          "@type": "PathRelation",
+          "path": "/data/data/multipart_file.003"
         }
       ]
     }

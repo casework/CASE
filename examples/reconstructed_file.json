@@ -77,8 +77,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 14,
-          "data": "w7/DmMO/w6AAEEpGSUY=",
+          "sizeInBytes": 14,
+          "dataPayload": "w7/DmMO/w6AAEEpGSUY=",
           "hash": [
             {
               "@type": "Hash",
@@ -96,8 +96,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 512,
-          "data": "<base 64 encoded data of the file>",
+          "sizeInBytes": 512,
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -115,8 +115,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 248,
-          "data": "<base 64 encoded data of the file>",
+          "sizeInBytes": 248,
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -132,7 +132,7 @@
       "@type": "Relationship",
       "source": "android_image",
       "target": "data_piece1",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -147,7 +147,7 @@
       "@type": "Relationship",
       "source": "android_image",
       "target": "data_piece2",
-      "kindOfRelationship": "contains",
+      "kindOfRelationship": "contained-within",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -162,19 +162,24 @@
     {
       "@id": "forensic_action0",
       "@type": "ForensicAction",
-      "name": "executed",
+      "name": "carved",
       "startTime": "2010-01-20T17:59:43.25Z",
       "endTime": "2010-01-21T17:59:43.25Z",
-      "performer": "role4",
-      "instrument": "carving_tool1",
-      "source": [
-        "provenance_record0"
-      ],
-      "result": [
-        "provenance_record1"
-      ],
-      "location": "forensic_lab1",
-      "environment": "forensic_lab_computer1"
+      "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "role4",
+          "instrument": "carving_tool1",
+          "object": [
+            "provenance_record0"
+          ],
+          "result": [
+            "provenance_record1"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        }
+      ]
     },
     {
       "@id": "provenance_record0",

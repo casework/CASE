@@ -752,9 +752,7 @@ Attribute | Range | Comment
 
 
 ### File
-Represents a file.
-
-TODO: Not sure what properties should be in here versus being in Data or FileSystem.
+Defines the file's metadata.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -764,7 +762,7 @@ Attribute | Range | Comment
 *fileName* | xsd:string | 
 *filePath* | xsd:string | 
 *isDirectory* | xsd:boolean | 
-*metadataChangeTime* | xsd:dateTimeStamp | 
+*metadataChangedTime* | xsd:dateTimeStamp | 
 *modifedTime* | xsd:dateTimeStamp | 
 *sizeInBytes* | xsd:positiveInteger | Size of file in bytes.
 
@@ -784,6 +782,15 @@ Attribute | Range | Comment
 ---: | --- | ---
 *clusterSize* | xsd:long | 
 *fileSystemType* | [FileSystemType](#filesystemtype) | 
+
+
+### Fragment
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*fragmentIndex* | xsd:int | 
+*totalFragments* | xsd:int | 
 
 
 ### HTTPConnection

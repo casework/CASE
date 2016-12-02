@@ -30,8 +30,7 @@ contain raw information about the data like byte order, hashes, size, as well
 as optionally include the data itself.
 
 Another common property bundle used will be **File**. This property bundle will
-contain file format information such as magic number, mime type, and whether or not
-its a directory.
+contain the file's metadata given to the file by the file system where it was found.
 
 ## Relationship objects
 
@@ -41,7 +40,7 @@ represented by a **Relationship** object using one of the special keywords
 property bundles that provide further detail on how the Trace pointed to by the `source` property is related to the Trace pointed to by the `target` property (e.g., where within the target was the source contained).
 
 For the extraction of a file within a [file system](../glossary.md#file-system) (EXT4, NTFS, TAR, etc)
-we use the property bundle **FileSystem**. This proeprty bundle will contain file path
+we use the property bundle **PathRelation**. This property bundle will contain file path
 information needed to extract the file out of the file system.
 
 For encryption steps, we use the **Encryption** property bundle which provide the 

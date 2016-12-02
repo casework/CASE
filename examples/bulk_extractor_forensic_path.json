@@ -79,7 +79,7 @@
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "magicNumber": "H4s=",
-          "mimeType": "application/x-compressed"
+          "mimeType": "application/x-compressed",
           "sizeInBytes": 17605,
           "hash": [
             {

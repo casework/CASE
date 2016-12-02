@@ -24,12 +24,8 @@
       "kindOfRelationship": "contained-within",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "EXT4",
-          "fileName": "IMG_0123.jpg",
-          "filePath": "/sdcard/IMG_0123.jpg",
-          "extension": "jpg",
-          "sizeInBytes": 35002
+          "@type": "PathRelation",
+          "path": "/sdcard/IMG_0123.jpg"
         }
       ]
     },
@@ -37,6 +33,14 @@
       "@id": "digital_photograph1",
       "@type": "Trace",
       "propertyBundle": [
+        {
+          "@type": "File",
+          "fileSystemType": "EXT4",
+          "fileName": "IMG_0123.jpg",
+          "filePath": "/sdcard/IMG_0123.jpg",
+          "extension": "jpg",
+          "sizeInBytes": 35002
+        },
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",

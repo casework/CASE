@@ -136,7 +136,7 @@
           "sizeInBytes": 23000,
           "dataPayload": "<base 64 encoded data of the file>",
           "magicNumber": "NzUgNzMgNzQgNjEgNzI=",
-          "mimeType": "application/x-tar"
+          "mimeType": "application/x-tar",
           "hash": [
             {
               "@type": "Hash",

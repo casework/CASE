@@ -75,7 +75,7 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "FileSystem",
+          "@type": "File",
           "fileSystemType": "EXT4",
           "filePath": "/data/data/multipart_file.001",
           "modifiedTime": "2010-01-15T17:59:43.25Z",

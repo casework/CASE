@@ -59,7 +59,7 @@
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "sizeInBytes": 30,
-          "data": "<base 64 encoded data of the file>",
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -86,8 +86,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 10,
-          "data": "<base 64 encoded data of the file>",
+          "sizeInBytes": 10,
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -114,8 +114,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 10,
-          "data": "<base 64 encoded data of the file>",
+          "sizeInBytes": 10,
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",
@@ -142,8 +142,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 10,
-          "data": "<base 64 encoded data of the file>",
+          "sizeInBytes": 10,
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",

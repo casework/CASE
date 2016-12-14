@@ -47,6 +47,8 @@
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "sizeInBytes": 3500,
+          "magicNumber": "/9j/ww==",
+          "mimeType": "image/jpg",
           "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
@@ -60,12 +62,6 @@
               "hashValue": "8c8b39473c4064f6b4db11a67251ffdf65c42ebadc5c3e02a009f95f6cf7c9e8"
             }
           ]
-        },
-        {
-          "@type": "File",
-          "isDirectory": false,
-          "magicNumber": "/9j/ww==",
-          "mimeType": "image/jpg"
         }
       ]
     },

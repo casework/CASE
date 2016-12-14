@@ -157,6 +157,36 @@
         }
       ]
     },
+    {
+      "@id": "android_image",
+      "@type": "Trace",
+      "propertyBundle": [
+          {
+            "@type": "File",
+            "fileSystemType": "NTFS",
+            "isDirectory": false,
+            "extension": "img",
+            "fileName": "DFL-20140712-001C.img",
+            "filePath": "C:/input_devices/DFL-20140712-001C.img",
+            "modifiedTime": "2010-01-15T17:59:43.25Z",
+            "accessedAction": "2010-01-15T17:59:43.25Z",
+            "createdAction": "2010-01-15T17:59:43.25Z",
+            "metadataChangedTime": "2010-01-15T17:59:43.25Z"
+          },
+          {
+            "@type": "ContentData",
+            "sizeInBytes": 45654000,
+            "hash": [
+              {
+                "@type": "Hash",
+                "hashMethod": "SHA256",
+                "hashValue": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+              }
+            ]
+          }
+        ]
+    },
+
     // TODO: Determine if it's better to group objects together using provenance records
     // or to have a provenance record for each object.
     {
@@ -174,7 +204,9 @@
             "provenance_record0"
           ],
           "result": [
-            "provenance_record1"
+            "provenance_record1",
+            "provenance_record2",
+            "provenance_record3"
           ],
           "location": "forensic_lab1",
           "environment": "forensic_lab_computer1"
@@ -191,17 +223,6 @@
     {
       "@id": "provenance_record1",
       "@type": "ProvenanceRecord",
-      "description": "JPG file reconstruction",
-      "exhibitNumber": "ACME-676553402357",
-      "object": [
-        "provenance_record2",
-        "provenance_record3",
-        "provenance_record4"
-      ]
-    },
-    {
-      "@id": "provenance_record2",
-      "@type": "ProvenanceRecord",
       "description": "Reconstructed JPG File",
       "exhibitNumber": "ACME-676553402357-00",
       "object": [
@@ -212,7 +233,7 @@
       ]
     },
     {
-      "@id": "provenance_record3",
+      "@id": "provenance_record2",
       "@type": "ProvenanceRecord",
       "description": "Carved data fragments",
       "exhibitNumber": "ACME-676553402357-01",
@@ -224,7 +245,7 @@
       ]
     },
     {
-      "@id": "provenance_record4",
+      "@id": "provenance_record3",
       "@type": "ProvenanceRecord",
       "description": "JPG Header",
       "exhibitNumber": "ACME-676553402357-02",

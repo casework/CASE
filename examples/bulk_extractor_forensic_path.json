@@ -96,7 +96,7 @@
       "@type": "Relationship",
       "source": "decompressed_gzip0",
       "target": "compressed_gzip0",
-      "kindOfRelationship": "contained-within",
+      "kindOfRelationship": "decompressed-from",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -161,7 +161,7 @@
       "@type": "Relationship",
       "source": "decompressed_gzip1",
       "target": "compressed_gzip1",
-      "kindOfRelationship": "contained-within",
+      "kindOfRelationship": "decompressed-from",
       "isDirectional": true,
       "propertyBundle": [
         {

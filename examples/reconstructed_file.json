@@ -58,8 +58,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
-          "size": 774,
-          "data": "<base 64 encoded data of the file>",
+          "sizeInBytes": 774,
+          "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
               "@type": "Hash",

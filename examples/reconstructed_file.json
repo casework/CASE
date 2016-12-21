@@ -190,7 +190,7 @@
     // TODO: Determine if it's better to group objects together using provenance records
     // or to have a provenance record for each object.
     {
-      "@id": "forensic_action0",
+      "@id": "forensic_action1",
       "@type": "ForensicAction",
       "name": "carved",
       "startTime": "2010-01-20T17:59:43.25Z",
@@ -201,12 +201,10 @@
           "performer": "role4",
           "instrument": "carving_tool1",
           "object": [
-            "provenance_record0"
+            "android_image"
           ],
           "result": [
-            "provenance_record1",
-            "provenance_record2",
-            "provenance_record3"
+            "provenance_record2"
           ],
           "location": "forensic_lab1",
           "environment": "forensic_lab_computer1"
@@ -214,11 +212,31 @@
       ]
     },
     {
-      "@id": "provenance_record0",
-      "@type": "ProvenanceRecord",
-      "description": "Forensic image of Android Smartphone",
-      "exhibitNumber": "ACME-676553402356",
-      "object": "android_image"
+      "@id": "forensic_action2",
+      "@type": "ForensicAction",
+      "name": "reconstructed",
+      // Start and end times are the same as forensic_action1 because this action was part of the same action that performed the carving.
+      "startTime": "2010-01-20T17:59:43.25Z",
+      "endTime": "2010-01-21T17:59:43.25Z",
+      "propertyBundle": [
+        {
+          "@type": "ActionReferences",
+          "performer": "role4",
+          "instrument": "carving_tool1",
+          "object": [
+            "data_piece1",
+            "data_piece2",
+            "relationship3",
+            "relationship4"
+          ],
+          "result": [
+            "provenance_record1",
+            "provenance_record3"
+          ],
+          "location": "forensic_lab1",
+          "environment": "forensic_lab_computer1"
+        }
+      ]
     },
     {
       "@id": "provenance_record1",

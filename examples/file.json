@@ -47,6 +47,8 @@
           "@type": "ContentData",
           "byteOrder": "BigEndian",
           "sizeInBytes": 3500,
+          "magicNumber": "/9j/ww==",
+          "mimeType": "image/jpg",
           "dataPayload": "<base 64 encoded data of the file>",
           "hash": [
             {
@@ -60,12 +62,6 @@
               "hashValue": "8c8b39473c4064f6b4db11a67251ffdf65c42ebadc5c3e02a009f95f6cf7c9e8"
             }
           ]
-        },
-        {
-          "@type": "File",
-          "isDirectory": false,
-          "magicNumber": "/9j/ww==",
-          "mimeType": "image/jpg"
         }
       ]
     },
@@ -87,23 +83,31 @@
       "@id": "tar_archive_file",
       "@type": "Trace",
       "propertyBundle": [
-          {
-            "@type": "ContentData",
-            "sizeInBytes": 23000,
-            "dataPayload": "<base 64 encoded data of the file>",
-            "hash": [
-              {
-                "@type": "Hash",
-                "hashMethod": "SHA256",
-                "hashValue": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
-              }
-            ]
-          },
-          {
-            "@type": "Encoding",
-            "encodingMethod": "BASE64"
-          }
-        ]
+        {
+          "@type": "File",
+          "fileSystemType": "TAR",
+          "filePath": "/some/files/in/archive/attachment.jpg",
+          "accessedTime": "2009-01-15T17:59:43.25Z",
+          "createdTime": "2009-01-15T17:59:43.25Z",
+          "modifiedTime": "2009-01-15T17:59:43.25Z"
+        },
+        {
+          "@type": "ContentData",
+          "sizeInBytes": 23000,
+          "dataPayload": "<base 64 encoded data of the file>",
+          "hash": [
+            {
+              "@type": "Hash",
+              "hashMethod": "SHA256",
+              "hashValue": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+            }
+          ]
+        },
+        {
+          "@type": "Encoding",
+          "encodingMethod": "BASE64"
+        }
+      ]
     },
     {
       "@id": "relationship2",
@@ -114,12 +118,8 @@
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "TAR",
-          "filePath": "/some/files/in/archive/attachment.jpg",
-          "accessedTime": "2009-01-15T17:59:43.25Z",
-          "createdTime": "2009-01-15T17:59:43.25Z",
-          "modifiedTime": "2009-01-15T17:59:43.25Z"
+          "@type": "PathRelation",
+          "path": "/some/files/in/archive/attachment.jpg"
         }
       ]
     },
@@ -128,15 +128,11 @@
       "@type": "Trace",
       "propertyBundle": [
         {
-          "@type": "File",
-          "isDirectory": false,
-          "magicNumber": "NzUgNzMgNzQgNjEgNzI=",
-          "mimeType": "application/x-tar"
-        },
-        {
           "@type": "ContentData",
           "sizeInBytes": 23000,
           "dataPayload": "<base 64 encoded data of the file>",
+          "magicNumber": "NzUgNzMgNzQgNjEgNzI=",
+          "mimeType": "application/x-tar",
           "hash": [
             {
               "@type": "Hash",
@@ -210,9 +206,22 @@
       "@type": "Trace",
       "propertyBundle": [
           {
+            "@type": "File",
+            "fileSystemType": "EXT4",
+            "isDirectory": false,
+            "filePath": "/data/data/com.whatsapp/cache/messages.db",
+            "fileName": "messages.db",
+            "extension": "db",
+            "modifiedTime": "2010-01-15T17:59:43.25Z",
+            "accessedTime": "2010-01-15T17:59:43.25Z",
+            "createdTime": "2010-01-15T17:59:43.25Z",
+            "sizeInBytes": 546000
+          },
+          {
             "@type": "ContentData",
             "sizeInBytes": 546000,
             "dataPayload": "<base 64 encoded data of the file>",
+            "magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
             "hash": [
               {
                 "@type": "Hash",
@@ -220,11 +229,6 @@
                 "hashValue": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
               }
             ]
-          },
-          {
-            "@type": "File",
-            "isDirectory": false,
-            "magicNumber": "U1FMaXRlIGZvcm1hdCAzAA=="
           }
         ]
     },
@@ -237,15 +241,8 @@
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "EXT4",
-          "filePath": "/data/data/com.whatsapp/cache/messages.db",
-          "fileName": "messages.db",
-          "extension": "db",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessedTime": "2010-01-15T17:59:43.25Z",
-          "createdTime": "2010-01-15T17:59:43.25Z",
-          "sizeInBytes": 546000
+          "@type": "PathRelation",
+          "path": "/data/data/com.whatsapp/cache/messages.db"
         }
       ]
     },
@@ -285,6 +282,18 @@
       "@type": "Trace",
       "propertyBundle": [
           {
+            "@type": "File",
+            "fileSystemType": "NTFS",
+            "isDirectory": false,
+            "extension": "img",
+            "fileName": "DFL-20140712-001C.img",
+            "filePath": "C:/input_devices/DFL-20140712-001C.img",
+            "modifiedTime": "2010-01-15T17:59:43.25Z",
+            "accessedAction": "2010-01-15T17:59:43.25Z",
+            "createdAction": "2010-01-15T17:59:43.25Z",
+            "metadataChangedTime": "2010-01-15T17:59:43.25Z"
+          },
+          {
             "@type": "ContentData",
             "sizeInBytes": 45654000,
             "hash": [
@@ -306,18 +315,8 @@
       "isDirectional": true,
       "propertyBundle": [
         {
-          "@type": "FileSystem",
-          "fileSystemType": "NTFS",
-          "extension": "img",
-          "fileName": "DFL-20140712-001C.img",
-          "filePath": "C:/input_devices/DFL-20140712-001C.img",
-          "modifiedTime": "2010-01-15T17:59:43.25Z",
-          "accessAction": "2010-01-15T17:59:43.25Z",
-          "createAction": "2010-01-15T17:59:43.25Z"
-        },
-        {
-          "@type": "NTFS",
-          "sid": 1
+          "@type": "PathRelation",
+          "path": "C:/input_devices/DFL-20140712-001C.img"
         }
       ]
     },

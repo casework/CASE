@@ -78,6 +78,8 @@
         {
           "@type": "ContentData",
           "byteOrder": "BigEndian",
+          "magicNumber": "H4s=",
+          "mimeType": "application/x-compressed",
           "sizeInBytes": 17605,
           "hash": [
             {
@@ -86,12 +88,6 @@
               "hashValue": "8c8b39473c4064f6b4db11a67251ffdf65c42ebadc5c3e02a009f95f6cf7c9e8"
             }
           ]
-        },
-        {
-          "@type": "File",
-          "isDirectory": false,
-          "magicNumber": "H4s=",
-          "mimeType": "application/x-compressed"
         }
       ]
     },
@@ -100,7 +96,7 @@
       "@type": "Relationship",
       "source": "decompressed_gzip0",
       "target": "compressed_gzip0",
-      "kindOfRelationship": "contained-within",
+      "kindOfRelationship": "decompressed-from",
       "isDirectional": true,
       "propertyBundle": [
         {
@@ -165,7 +161,7 @@
       "@type": "Relationship",
       "source": "decompressed_gzip1",
       "target": "compressed_gzip1",
-      "kindOfRelationship": "contained-within",
+      "kindOfRelationship": "decompressed-from",
       "isDirectional": true,
       "propertyBundle": [
         {

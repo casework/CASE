@@ -10,6 +10,21 @@
 
 
 
+### AccountType
+
+
+
+
+### ActionStatus
+
+
+
+
+### AuthorizationType
+
+
+
+
 ### ByteOrder
 
 
@@ -25,6 +40,21 @@
 
 
 ### DataType
+
+
+
+
+### DeviceType
+
+
+
+
+### DiskPartitionType
+
+
+
+
+### DiskType
 
 
 
@@ -106,6 +136,11 @@ TODO: We probably can use an already existing schema for this.
 
 
 ### PEType
+
+
+
+
+### PasswordType
 
 
 
@@ -316,114 +351,17 @@ Attribute | Range | Comment
 
 
 
-Attribute | Range | Comment
----: | --- | ---
-*location* | [Trace](#trace) | 
-*propertyBundle* | [PropertyBundle](#propertybundle) | 
 
 
 ### Descriptive
 
-A Descriptive object allows the use of the name and description property.
 
-Attribute | Range | Comment
----: | --- | ---
-*description* | xsd:string | 
-*name* | xsd:string | The name property defines a common word or phrase that describes the meaning of the object.
-
-
-##### Action
-
-
-Attribute | Range | Comment
----: | --- | ---
-*actionLifecyclePhase* | [ActionLifecyclePattern](#actionlifecyclepattern) | 
-*endTime* | xsd:dateTimeStamp | 
-*environment* | [Object](#object) | Defines the environment of an Action. This can point to things like the descriptions of the area the action was performed or information about the computer that was used.
-*source* | [Object](#object) | 
-*startTime* | xsd:dateTimeStamp | 
-
-
-##### ActionLifecyclePattern
-Defines an ordered list that must contain only Action classes as items.
-
-
-
-##### Annotation
-
-
-Attribute | Range | Comment
----: | --- | ---
-*object* | [Object](#object) | 
-*tag* | xsd:string | 
-
-
-##### Identity
-
-
-
-
-##### Investigation
-
-
-Attribute | Range | Comment
----: | --- | ---
-*endAction* | [Action](#action) | 
-*forensicActions* | (Restriction on property olo:slot with [owl:allValuesFrom (Restriction on property olo:item with [owl:allValuesFrom [ForensicAction](#forensicaction)])]), olo:OrderedList | 
-*investigator* | ([Identity](#identity) or [Role](#role)) | 
-*startAction* | [Action](#action) | 
-*subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
-*suspectedOffense* | xsd:string | 
-*victim* | ([Identity](#identity) or [Role](#role)) | 
-
-
-##### ProvenanceRecord
-
-
-Attribute | Range | Comment
----: | --- | ---
-*exhibitNumber* | xsd:string | 
-*object* | [Object](#object) | 
-
-
-##### Relationship
-
-
-Attribute | Range | Comment
----: | --- | ---
-*bidirectional* | xsd:boolean | 
-*destination* | [Object](#object) | 
-*endTime* | xsd:dateTimeStamp | 
-*kindOfRelationship* | xsd:string | 
-*source* | [Object](#object) | 
-*startTime* | xsd:dateTimeStamp | 
-
-
-##### Role
-
-
-Attribute | Range | Comment
----: | --- | ---
-*object* | [Object](#object) | 
-
-
-##### Tool
-TODO: How does "Tool", "Software", and "Application" relate to each other?
-
-Attribute | Range | Comment
----: | --- | ---
-*vendor* | xsd:string | 
-*version* | xsd:string | 
-
-
-##### Trace
-An object that must contain at least one property bundle.
 
 
 
 # Property Bundle
 
-
+A grouping of properties characterizing a particular aspect/facet of an object.
 
 
 
@@ -433,35 +371,42 @@ An object that must contain at least one property bundle.
 
 
 ### Account
-
+The fundamental properties of an account.
 
 Attribute | Range | Comment
 ---: | --- | ---
+*accountIdentifier* | xsd:string | 
 *accountIssuer* | xsd:string | 
+*accountType* | [AccountType](#accounttype) | 
 *createdTime* | xsd:dateTimeStamp | 
-*displayName* | xsd:string | 
-*expiredTime* | xsd:dateTimeStamp | 
-*identifier* | xsd:string | 
+*expirationTime* | xsd:dateTimeStamp | 
 *isActive* | xsd:boolean | 
+*owner* | [UcoObject](#ucoobject) | A collection of appointments and meetings.
 
 
 ### AccountAuthentication
-
+The authentication information related to an account.
 
 Attribute | Range | Comment
 ---: | --- | ---
 *password* | xsd:string | 
 *passwordLastChanged* | xsd:dateTimeStamp | 
+*passwordType* | [PasswordType](#passwordtype) | 
 
 
 ### ActionReferences
-
+A grouping of properties characterizing the core elements (who, how, with what, where, etc.) for an action. The properties consist of identifier references to separate UCO objects detailing the particular property.
 
 Attribute | Range | Comment
 ---: | --- | ---
-*instrument* | [Object](#object) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
-*performer* | [Object](#object) | Defines the person, action, or thing that caused this action.
-*result* | [Object](#object) | 
+*instrument* | [UcoObject](#ucoobject) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
+*location* | [Location](#location) | 
+*object* | [UcoObject](#ucoobject) | 
+*participant* |  | Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+
+This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.
+*performer* | [UcoObject](#ucoobject) | Defines the person, action, or thing that caused this action.
+*result* | [UcoObject](#ucoobject) | 
 
 
 ### AndroidPackage
@@ -470,7 +415,7 @@ Attribute | Range | Comment
 
 
 ### Application
-
+Characteristics of a software application.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -481,7 +426,7 @@ Attribute | Range | Comment
 
 
 ### ApplicationAccount
-
+Characteristics of an account within a particular application.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -489,7 +434,7 @@ Attribute | Range | Comment
 
 
 ### ArchiveFile
-Defines the basic properties associated with an archive file system.
+Properties specific to archive files.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -504,13 +449,38 @@ Note: This property bundle is different. Instead of putting this as a property b
 
 Attribute | Range | Comment
 ---: | --- | ---
-*mimeType* | [MimeType](#mimetype) | 
-*object* | [Object](#object) | 
+*object* | [UcoObject](#ucoobject) | 
+*uri* | [URI](#uri) | 
 
 
 ### Audio
 
 
+Attribute | Range | Comment
+---: | --- | ---
+*audioType* | xsd:string | 
+*bitRate* | xsd:long | 
+*duration* | xsd:duration | 
+*format* | xsd:string | 
+
+
+### Authorization
+
+
+Attribute | Range | Comment
+---: | --- | ---
+*authorizationIdentifier* | xsd:string | 
+*authorizationType* | [AuthorizationType](#authorizationtype) | 
+
+
+### AutonomousSystem
+Basic characteristics of an Internet autonomous system.
+
+Attribute | Range | Comment
+---: | --- | ---
+*asHandle* | xsd:string | 
+*number* | xsd:int | 
+*regionalInternetRegistry* |  | 
 
 
 ### BDEVolume
@@ -532,13 +502,32 @@ Attribute | Range | Comment
 
 
 ### BrowserBookmark
+A bookmark to a web pages or files using a web browser.
 
-
+Attribute | Range | Comment
+---: | --- | ---
+*accessedTime* | xsd:dateTimeStamp | 
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
+*bookmarkPath* | xsd:string | 
+*createdTime* | xsd:dateTimeStamp | 
+*modifedTime* | xsd:dateTimeStamp | 
+*urlTargeted* | [URI](#uri) | 
+*visitCount* | xsd:int | 
 
 
 ### BrowserCookie
+A piece of data used by a (remote) web page, stored on the local machine.
 
-
+Attribute | Range | Comment
+---: | --- | ---
+*accessedTime* | xsd:dateTimeStamp | 
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
+*cookieName* | xsd:string | 
+*cookiePath* | xsd:string | 
+*createdTime* | xsd:dateTimeStamp | 
+*domain* | xsd:string | 
+*expirationTime* | xsd:dateTimeStamp | 
+*isSecure* | xsd:boolean | 
 
 
 ### BrowserHistory
@@ -551,16 +540,50 @@ Attribute | Range | Comment
 
 
 
-### Compression
+### Calendar
 
 
 Attribute | Range | Comment
 ---: | --- | ---
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
+*owner* | [UcoObject](#ucoobject) | A collection of appointments and meetings.
+
+
+### CalendarEntry
+Characteristics of an entry (appointment, meeting, event) within a calendar.
+
+Attribute | Range | Comment
+---: | --- | ---
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
+*attendant* | [UcoObject](#ucoobject) | 
+*category* | xsd:string | 
+*createdTime* | xsd:dateTimeStamp | 
+*duration* | xsd:duration | 
+*endTime* | xsd:dateTimeStamp | 
+*eventStatus* | xsd:string | 
+*eventType* | xsd:string | 
+*isPrivate* | xsd:boolean | 
+*label* | xsd:string | 
+*location* | [Location](#location) | 
+*modifedTime* | xsd:dateTimeStamp | 
+*owner* | [UcoObject](#ucoobject) | A collection of appointments and meetings.
+*recurrence* | xsd:string | 
+*remindTime* | xsd:dateTimeStamp | 
+*startTime* | xsd:dateTimeStamp | 
+*subject* | xsd:string | 
+
+
+### Compression
+Characteristics of compression applied to a body of data content.
+
+Attribute | Range | Comment
+---: | --- | ---
 *compressionMethod* | [CompressionMethod](#compressionmethod) | 
+*compressionRatio* | xsd:double | 
 
 
 ### ComputerSpecification
-
+Characterizes a computer system (as a combination of both software and hardware).
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -570,12 +593,24 @@ Attribute | Range | Comment
 
 
 ### Contact
+Contact found in an application, for example an entry in an address book.
 
-
+Attribute | Range | Comment
+---: | --- | ---
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
+*contactIdentifier* | xsd:string | 
+*contactName* | xsd:string | 
+*contactType* | xsd:string | 
+*emailAddress* | xsd:string | 
+*firstName* | xsd:string | 
+*lastName* | xsd:string | 
+*middleName* | xsd:string | 
+*phoneNumber* | xsd:string | 
+*screenName* | xsd:string | 
 
 
 ### ContentData
-
+Characteristics of a block of digital data.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -592,11 +627,12 @@ Attribute | Range | Comment
 
 
 ### DataRange
-
+Bounding characteristics of a range within a block of digital data.
 
 Attribute | Range | Comment
 ---: | --- | ---
 *rangeOffset* | xsd:positiveInteger | 
+*rangeOffsetType* | xsd:string | 
 *rangeSize* | xsd:positiveInteger | 
 
 
@@ -605,6 +641,7 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
+*deviceType* | [DeviceType](#devicetype) | 
 *manufacturer* | xsd:string | 
 *model* | xsd:string | 
 *serialNumber* | xsd:string | 
@@ -616,21 +653,37 @@ Attribute | Range | Comment
 Attribute | Range | Comment
 ---: | --- | ---
 *accountLogin* | xsd:string | 
+*displayName* | xsd:string | 
 *firstLoginTime* | xsd:dateTimeStamp | 
+*isDisabled* | xsd:boolean | 
 *lastLoginTime* | xsd:dateTimeStamp | 
 
 
 ### Disk
-
-
-
-
-### DiskPartition
-
+DC3 needed
 
 Attribute | Range | Comment
 ---: | --- | ---
-*partIndex* | xsd:positiveInteger | 
+*diskSize* | xsd:long | 
+*diskType* | [DiskType](#disktype) | 
+*freeSpace* | xsd:long | 
+*hasPartition* | [Trace](#trace) | 
+
+
+### DiskPartition
+Characteristics of a region on a hard disk or other secondary storage.
+
+Attribute | Range | Comment
+---: | --- | ---
+*createdTime* | xsd:dateTimeStamp | 
+*diskPartitionType* | [DiskPartitionType](#diskpartitiontype) | 
+*mountPoint* | xsd:string | 
+*partitionIdentifier* | xsd:int | 
+*partitionLength* | xsd:int | 
+*partitionOffset* | xsd:long | 
+*spaceLeft* | xsd:long | 
+*spaceUsed* | xsd:long | 
+*totalSpace* | xsd:long | 
 
 
 ### EWFImage
@@ -664,7 +717,7 @@ Attribute | Range | Comment
 
 
 ### EmailAccount
-
+Characteristics of an account within an email domain.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -693,13 +746,12 @@ Attribute | Range | Comment
 *priority* | xsd:string | 
 *receivedLine* | xsd:string | 
 *reference* | [Trace](#trace) | 
-*subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
 *xMailer* | xsd:string | 
 *xOriginatingIP* | [Trace](#trace) | 
 
 
 ### Encoding
-
+Represents the encoding-related properties of some encoded thing.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -707,7 +759,7 @@ Attribute | Range | Comment
 
 
 ### Encryption
-
+Represents the encryption-related properties of some encrypted data.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -727,6 +779,22 @@ Attribute | Range | Comment
 
 
 
+### ExtInode
+Characterizes the details of a single EXT file.
+
+Attribute | Range | Comment
+---: | --- | ---
+*extDeletionTime* | xsd:dateTimeStamp | 
+*extFileType* | xsd:int | 
+*extFlags* | xsd:int | 
+*extHardLinkCount* | xsd:int | 
+*extInodeChangeTime* | xsd:dateTimeStamp | 
+*extInodeID* | xsd:int | 
+*extPermissions* | xsd:int | 
+*extSGID* | xsd:int | 
+*extSUID* | xsd:int | 
+
+
 ### ExtractedFeatures
 
 
@@ -738,7 +806,7 @@ Attribute | Range | Comment
 
 
 ### ExtractedString
-
+A string extracted from a cyber item.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -752,7 +820,7 @@ Attribute | Range | Comment
 
 
 ### File
-Defines the file's metadata.
+The basic properties associated with the storage of a file on a file system.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -775,8 +843,16 @@ Attribute | Range | Comment
 *mismatchType* | [FileMismatchType](#filemismatchtype) | 
 
 
+### FilePermissions
+Characteristics of permissions or access rights for a file.
+
+Attribute | Range | Comment
+---: | --- | ---
+*owner* | [UcoObject](#ucoobject) | A collection of appointments and meetings.
+
+
 ### FileSystem
-Defines the basic properties associated with the storage of data.
+Represents the properties of a file system.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -785,12 +861,38 @@ Attribute | Range | Comment
 
 
 ### Fragment
-
+Characteristics of an individual fragment of a file.
 
 Attribute | Range | Comment
 ---: | --- | ---
 *fragmentIndex* | xsd:int | 
 *totalFragments* | xsd:int | 
+
+
+### GeoLocationEntry
+Characteristics of a single application-specific geolocation entry.
+
+Attribute | Range | Comment
+---: | --- | ---
+*createdTime* | xsd:dateTimeStamp | 
+*location* | [Location](#location) | 
+
+
+### GeoLocationLog
+A log containing geolocation tracks and/or geolocation entries.
+
+Attribute | Range | Comment
+---: | --- | ---
+*createdTime* | xsd:dateTimeStamp | 
+
+
+### GeoLocationTrack
+Characteristics of a set of contiguous geolocation entries representing a path/track taken.
+
+Attribute | Range | Comment
+---: | --- | ---
+*endTime* | xsd:dateTimeStamp | 
+*startTime* | xsd:dateTimeStamp | 
 
 
 ### HTTPConnection
@@ -822,6 +924,11 @@ Attribute | Range | Comment
 
 
 ### IOSPackage
+
+
+
+
+### IdentityPropertyBundle
 
 
 
@@ -905,10 +1012,10 @@ Attribute | Range | Comment
 
 Attribute | Range | Comment
 ---: | --- | ---
-*destination* | [Object](#object) | 
+*destination* | [UcoObject](#ucoobject) | 
 *endTime* | xsd:dateTimeStamp | 
 *protocols* |  | 
-*source* | [Object](#object) | 
+*source* | [UcoObject](#ucoobject) | 
 *startTime* | xsd:dateTimeStamp | 
 
 
@@ -1017,7 +1124,7 @@ Attribute | Range | Comment
 *currentWorkingDirectory* | [FilePath](#filepath) | 
 *environmentVariable* | [DictionaryItem](#dictionaryitem) | 
 *isHidden* | xsd:boolean | 
-*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger), owl:onClass [Process](#process)]), [Trace](#trace) | 
+*parentProcess* | (Restriction on property [propertyBundle](#propertybundle) with [owl:onClass [Process](#process), owl:minQualifiedCardinality (1 : xsd:nonNegativeInteger)]), [Trace](#trace) | 
 *pid* | xsd:integer | 
 
 
@@ -1073,11 +1180,6 @@ Attribute | Range | Comment
 ---: | --- | ---
 *familyName* | xsd:string | 
 *givenName* | xsd:string | 
-
-
-### SupportingClasses
-
-
 
 
 ### SymbolicLink
@@ -1328,7 +1430,6 @@ Attribute | Range | Comment
 *issuer* | xsd:string | 
 *serialNumber* | xsd:string | 
 *signatureAlgorithm* | xsd:string | 
-*subject* | ([Identity](#identity) or [Role](#role)), xsd:string | 
 *subjectPublicKeyAlgorithm* | xsd:string | 
 *subjectPublicKeyExponent* | xsd:integer | 
 *subjectPublicKeyModulus* | xsd:string | 

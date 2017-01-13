@@ -1,6 +1,6 @@
 # Cyber-investigation Analysis Standard Expression (CASE)
 
-[Ontology Spec](case.md) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/casework/case/releases)
+[Experimental Draft Ontology (OWL)](https://github.com/casework/case/tree/master/case.ttl) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/casework/case/releases)
 
 Cyber-investigation Analysis Standard Expression (CASE) is a community-developed standard format, which is intended to serve the needs of the broadest possible range of cyber-investigation domains, including digital forensic science, incident response, and counter-terrorism. 
 
@@ -11,7 +11,7 @@ CASE is specified at a semantic level and supports various serializations. The d
 The purpose of this repository is to provide a foundation for broader community involvement in defining what to represent and how.
 
 
-## Examples
+## Examples (JSON-LD)
 - [Bulk Extractor Forensic Path](https://github.com/casework/case/tree/master/examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](https://github.com/casework/case/tree/master/examples/call_log.json)
 - [Device](https://github.com/casework/case/tree/master/examples/device.json)

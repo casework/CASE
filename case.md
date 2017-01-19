@@ -95,7 +95,7 @@
 ### FileSystemType
 
 
-**SubTypes:**  BDEVolume, CPIO, EWF, EXT4, F2FS, NTFS, SevenZ, TAR, VSSVolume, ZIP
+**SubTypes:**  BDEVolume, CPIO, EWF, EXT4, F2FS, HFS, NTFS, SevenZ, TAR, VSSVolume, ZIP
 
 
 
@@ -107,7 +107,7 @@
 ### HashMethod
 
 
-**SubTypes:**  MD5, SHA, SHA-1, SHA-2
+**SubTypes:**  MD5, SHA, SHA-1, SHA-2, SHA256
 
 
 
@@ -171,6 +171,17 @@ TODO: We probably can use an already existing schema for this.
 
 
 
+
+
+### ConfigurationSetting
+Describes a particular configuration setting for a tool, application or other cyber object.
+
+Attribute | Range | Comment
+---: | --- | ---
+*itemDescription* | xsd:string | 
+*itemName* | xsd:string | 
+*itemType* | xsd:string | 
+*itemValue* | xsd:string | 
 
 
 ### DictionaryItem
@@ -402,9 +413,9 @@ Attribute | Range | Comment
 *instrument* | [UcoObject](#ucoobject) | The instrument the acutator used to perform the action. (This is usually an item that contains a tool property bundle.)
 *location* | [Location](#location) | 
 *object* | [UcoObject](#ucoobject) | 
-*participant* |  | Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+*participant* |  | Describes people who are involved. Participants are not necessarily the sender or recipients of the object.
 
-This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.
+This property is useful if the people involved are known, but the sender cannot be determined.
 *performer* | [UcoObject](#ucoobject) | Defines the person, action, or thing that caused this action.
 *result* | [UcoObject](#ucoobject) | 
 
@@ -531,11 +542,6 @@ Attribute | Range | Comment
 
 
 ### BrowserHistory
-
-
-
-
-### ByteRun
 
 
 
@@ -829,6 +835,7 @@ Attribute | Range | Comment
 *extension* | xsd:string | The file extension.
 *fileName* | xsd:string | 
 *filePath* | xsd:string | 
+*isAllocated* | xsd:boolean | 
 *isDirectory* | xsd:boolean | 
 *metadataChangedTime* | xsd:dateTimeStamp | 
 *modifedTime* | xsd:dateTimeStamp | 
@@ -893,6 +900,14 @@ Attribute | Range | Comment
 ---: | --- | ---
 *endTime* | xsd:dateTimeStamp | 
 *startTime* | xsd:dateTimeStamp | 
+
+
+### HFSFileSystem
+Properties specific to the storage of the file on the HFS file system.
+
+Attribute | Range | Comment
+---: | --- | ---
+*hfsBackupTime* | xsd:dateTimeStamp | 
 
 
 ### HTTPConnection
@@ -963,19 +978,22 @@ Attribute | Range | Comment
 
 
 ### Message
-The properties associated with message (eg. email, sms, whatsapp, etc.)
+Characteristics of an electronic message.
 
 Attribute | Range | Comment
 ---: | --- | ---
-*body* | xsd:string | 
-*from* | [Trace](#trace) | The designated sender of the Message.
+*application* | [Trace](#trace) | Defines the application-like item used by this account.
+*from* | [Trace](#trace) | The designated sender of the object.
 *isRead* | xsd:boolean | 
-*modifedTime* | xsd:dateTimeStamp | 
-*participant* |  | Describes people who are involved in the Message. Participants are not necessarily the sender or recipients of the message.
+*messageID* | [Trace](#trace) | 
+*messageText* | xsd:string | 
+*messageType* | xsd:string | 
+*participant* |  | Describes people who are involved. Participants are not necessarily the sender or recipients of the object.
 
-This property is useful if the people involved with the Message are known, but the sender of the Message cannot be determined.
+This property is useful if the people involved are known, but the sender cannot be determined.
 *received* | [ReceivedEvent](#receivedevent) | 
 *sentTime* | xsd:dateTimeStamp | 
+*sessionID* | xsd:string | 
 *to* | [Trace](#trace) | The designated recipients of the Message.
 
 
@@ -990,6 +1008,25 @@ Attribute | Range | Comment
 *visibility* | [VisibilityType](#visibilitytype) | 
 
 
+### MftRecord
+Characterizes the details of a single NTFS file.
+
+Attribute | Range | Comment
+---: | --- | ---
+*mftFileID* | xsd:integer | 
+*mftFileNameAccessedTime* | xsd:dateTimeStamp | 
+*mftFileNameCreatedTime* | xsd:dateTimeStamp | 
+*mftFileNameLength* | xsd:integer | 
+*mftFileNameModifiedTime* | xsd:dateTimeStamp | 
+*mftFileNameRecordChangeTime* | xsd:dateTimeStamp | 
+*mftFlags* | xsd:integer | 
+*mftParentID* | xsd:integer | 
+*mftRecordChangeTime* | xsd:dateTimeStamp | 
+*ntfsHardLinkCount* | xsd:integer | 
+*ntfsOwnerID* | xsd:string | 
+*ntfsOwnerSID* | xsd:string | 
+
+
 ### Mutex
 
 
@@ -998,8 +1035,8 @@ Attribute | Range | Comment
 *name* | xsd:string | The name property defines a common word or phrase that describes the meaning of the object.
 
 
-### NTFS
-
+### NTFSFileSystem
+Properties specific to the storage of the file on the NTFS file system.
 
 Attribute | Range | Comment
 ---: | --- | ---
@@ -1109,7 +1146,12 @@ Attribute | Range | Comment
 *callType* | xsd:string | 
 *duration* | xsd:duration | 
 *endTime* | xsd:dateTimeStamp | 
+*from* | [Trace](#trace) | The designated sender of the object.
+*participant* |  | Describes people who are involved. Participants are not necessarily the sender or recipients of the object.
+
+This property is useful if the people involved are known, but the sender cannot be determined.
 *startTime* | xsd:dateTimeStamp | 
+*to* | [Trace](#trace) | The designated recipients of the Message.
 
 
 ### Process
@@ -1146,8 +1188,7 @@ Attribute | Range | Comment
 
 
 ### SMSMessage
-The properties uniquely associated with an SMS message.
-TODO: Add properties.
+Characteristics of a Short Message Service (SMS) "text" message.
 
 
 
@@ -1206,6 +1247,14 @@ Attribute | Range | Comment
 ### ToolArguments
 
 
+
+
+### ToolConfiguration
+Characterizes the configuration for a tool.
+
+Attribute | Range | Comment
+---: | --- | ---
+*configurationSetting* | [ConfigurationSetting](#configurationsetting) | 
 
 
 ### UDPConnection

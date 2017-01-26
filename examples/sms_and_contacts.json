@@ -110,7 +110,7 @@
 
     {
       "@id": "phone_account3",
-      "@type": "Item",
+      "@type": "Trace",
       "propertyBundle": [
         {
           "@type": "PhoneAccount",

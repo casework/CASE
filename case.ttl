@@ -428,6 +428,13 @@ xsd:duration rdf:type rdfs:Datatype .
                         rdfs:range :ImageCompressionMethod .
 
 
+###  http://case.example.org/core#imageType
+:imageType rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Image ;
+           rdfs:range :ImageType .
+
+
 ###  http://case.example.org/core#inReplyTo
 :inReplyTo rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
@@ -564,8 +571,7 @@ xsd:duration rdf:type rdfs:Datatype .
                                    :FilePermissions
                                  )
                    ] ;
-       rdfs:range :UcoObject ;
-       rdfs:comment "A collection of appointments and meetings." .
+       rdfs:range :UcoObject .
 
 
 ###  http://case.example.org/core#parentProcess
@@ -789,6 +795,12 @@ This property is useful if the people involved are known, but the sender cannot 
                  owl:FunctionalProperty ;
         rdfs:domain :WindowsPrefetch ;
         rdfs:range :Trace .
+
+
+###  http://case.example.org/core#volumeType
+:volumeType rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Volume .
 
 
 ###  http://case.example.org/core#windowsDirectory
@@ -1163,6 +1175,7 @@ olo:slot rdf:type owl:ObjectProperty .
 ###  http://case.example.org/core#country
 :country rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
+         rdfs:domain :SimpleAddress ;
          rdfs:range xsd:string .
 
 
@@ -1186,6 +1199,8 @@ olo:slot rdf:type owl:ObjectProperty .
                                          :File
                                          :GeoLocationEntry
                                          :GeoLocationLog
+                                         :Message
+                                         :PhoneCall
                                          :Process
                                          :UcoObject
                                        )
@@ -1318,6 +1333,14 @@ olo:slot rdf:type owl:ObjectProperty .
                                         )
                           ] ;
               rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#encryptedRootPlist
+:encryptedRootPlist rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :FVDEEncryption ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "path to the EncryptedRoot.plist.wipekey file" .
 
 
 ###  http://case.example.org/core#encryptionIV
@@ -2319,6 +2342,7 @@ olo:slot rdf:type owl:ObjectProperty .
                         owl:unionOf ( :AccountAuthentication
                                       :BDEVolume
                                       :EWFImage
+                                      :FVDEEncryption
                                     )
                       ] ;
           rdfs:range xsd:string .
@@ -2466,7 +2490,11 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#recoveryPassword
 :recoveryPassword rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :BDEVolume ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :BDEVolume
+                                              :FVDEEncryption
+                                            )
+                              ] ;
                   rdfs:range xsd:string .
 
 
@@ -2674,7 +2702,7 @@ olo:slot rdf:type owl:ObjectProperty .
 
 ###  http://case.example.org/core#snapshotID
 :snapshotID rdf:type owl:DatatypeProperty ;
-            rdfs:domain :VSSVolume ;
+            rdfs:domain :VShadow ;
             rdfs:range xsd:string .
 
 
@@ -2978,6 +3006,13 @@ olo:slot rdf:type owl:ObjectProperty .
                    owl:FunctionalProperty ;
           rdfs:domain :Volume ;
           rdfs:range xsd:string .
+
+
+###  http://case.example.org/core#volumeIndex
+:volumeIndex rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :LVMVolume ;
+             rdfs:range xsd:integer .
 
 
 ###  http://case.example.org/core#win32VersionValue
@@ -3450,6 +3485,12 @@ Note: This property bundle is different. Instead of putting this as a property b
                  rdfs:comment "A string extracted from a cyber item." .
 
 
+###  http://case.example.org/core#FVDEEncryption
+:FVDEEncryption rdf:type owl:Class ;
+                rdfs:subClassOf :PropertyBundle ;
+                rdfs:comment "The FileVault Drive Encryption (FVDE) encryption credentials." .
+
+
 ###  http://case.example.org/core#File
 :File rdf:type owl:Class ;
       rdfs:subClassOf :PropertyBundle ;
@@ -3627,12 +3668,17 @@ A ForensicAction is an Action that must have its results and source properties o
 ###  http://case.example.org/core#Image
 :Image rdf:type owl:Class ;
        rdfs:subClassOf :PropertyBundle ;
-       rdfs:comment "Defines the basic properties associated with a disk image file. (Ie. the full image of a disk, not just specific volumes.)" .
+       rdfs:comment "Characteristics of a complete copy of a hard disk, memory or other digital media." .
 
 
 ###  http://case.example.org/core#ImageCompressionMethod
 :ImageCompressionMethod rdf:type owl:Class ;
                         rdfs:subClassOf :Enumeration .
+
+
+###  http://case.example.org/core#ImageType
+:ImageType rdf:type owl:Class ;
+           rdfs:subClassOf :Enumeration .
 
 
 ###  http://case.example.org/core#Investigation
@@ -3647,7 +3693,8 @@ A ForensicAction is an Action that must have its results and source properties o
 
 ###  http://case.example.org/core#LVMVolume
 :LVMVolume rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle .
+           rdfs:subClassOf :PropertyBundle ;
+           rdfs:comment "the Locaical Volume Manager (LVM) path specification" .
 
 
 ###  http://case.example.org/core#Language
@@ -4010,19 +4057,10 @@ Contains information on who received it and when.""" .
              rdfs:comment "Properties of an instance of a user account on a system." .
 
 
-###  http://case.example.org/core#VHDIImage
-:VHDIImage rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#VMDKImage
-:VMDKImage rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle .
-
-
-###  http://case.example.org/core#VSSVolume
-:VSSVolume rdf:type owl:Class ;
-           rdfs:subClassOf :PropertyBundle .
+###  http://case.example.org/core#VShadow
+:VShadow rdf:type owl:Class ;
+         rdfs:subClassOf :PropertyBundle ;
+         rdfs:comment "Describes a Volume Shadow Snapshot (VSS)." .
 
 
 ###  http://case.example.org/core#Victim
@@ -4187,9 +4225,10 @@ olo:Slot rdf:type owl:Class .
               :EncryptionMethod .
 
 
-###  http://case.example.org/core#BDEVolume
-:BDEVolume rdf:type owl:NamedIndividual ,
-                    :FileSystemType .
+###  http://case.example.org/core#BDE
+:BDE rdf:type owl:NamedIndividual ,
+              :FileSystemType ;
+     rdfs:comment "The Bitlocker Drive Encryption (BDE) credentials." .
 
 
 ###  http://case.example.org/core#BMP
@@ -4274,7 +4313,7 @@ olo:Slot rdf:type owl:Class .
 
 ###  http://case.example.org/core#EWF
 :EWF rdf:type owl:NamedIndividual ,
-              :FileSystemType .
+              :ImageType .
 
 
 ###  http://case.example.org/core#EXT4
@@ -4327,6 +4366,11 @@ olo:Slot rdf:type owl:Class .
                :ImageCompressionMethod .
 
 
+###  http://case.example.org/core#LVM
+:LVM rdf:type owl:NamedIndividual ,
+              :FileSystemType .
+
+
 ###  http://case.example.org/core#LZMA
 :LZMA rdf:type owl:NamedIndividual ,
                :CompressionMethod .
@@ -4370,6 +4414,16 @@ olo:Slot rdf:type owl:Class .
 ###  http://case.example.org/core#Public
 :Public rdf:type owl:NamedIndividual ,
                  :VisibilityType .
+
+
+###  http://case.example.org/core#QCOW
+:QCOW rdf:type owl:NamedIndividual ,
+               :ImageType .
+
+
+###  http://case.example.org/core#RAW
+:RAW rdf:type owl:NamedIndividual ,
+              :ImageType .
 
 
 ###  http://case.example.org/core#RC4
@@ -4417,6 +4471,16 @@ olo:Slot rdf:type owl:Class .
                :ImageCompressionMethod .
 
 
+###  http://case.example.org/core#VHDI
+:VHDI rdf:type owl:NamedIndividual ,
+               :ImageType .
+
+
+###  http://case.example.org/core#VMDK
+:VMDK rdf:type owl:NamedIndividual ,
+               :ImageType .
+
+
 ###  http://case.example.org/core#VSSVolume
 :VSSVolume rdf:type owl:NamedIndividual ,
                     :FileSystemType .
@@ -4451,23 +4515,16 @@ olo:Slot rdf:type owl:Class .
 ] .
 
 #################################################################
-#    Annotations
-#################################################################
-
-:BDEVolume rdfs:comment "The Bitlocker Drive Encryption (BDE) credentials." .
-
-
-#################################################################
 #    General axioms
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AndroidPackage
-                :IOSPackage
-                :LinuxPackage
-                :WindowsPackage
-              )
-] .
+   owl:members ( :AndroidPackage
+                 :IOSPackage
+                 :LinuxPackage
+                 :WindowsPackage
+               )
+ ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
@@ -4482,7 +4539,7 @@ olo:Slot rdf:type owl:Class .
   owl:members ( :BDEVolume
                 :LVMVolume
                 :UNIXVolume
-                :VSSVolume
+                :VShadow
                 :WindowsVolume
               )
 ] .
@@ -4519,14 +4576,6 @@ olo:Slot rdf:type owl:Class .
                 :PropertyBundle
                 olo:OrderedList
                 olo:Slot
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :QCOWImage
-                :VHDIImage
-                :VMDKImage
               )
 ] .
 

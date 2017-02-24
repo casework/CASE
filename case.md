@@ -95,7 +95,7 @@
 ### FileSystemType
 
 
-**SubTypes:**  BDEVolume, CPIO, EWF, EXT4, F2FS, HFS, NTFS, SevenZ, TAR, VSSVolume, ZIP
+**SubTypes:**  BDEVolume, CPIO, EWF, EXT4, F2FS, HFS, NTFS, QCOW, RAW, SevenZ, TAR, VHDI, VMDK, VSSVolume, ZIP
 
 
 
@@ -1302,18 +1302,8 @@ Attribute | Range | Comment
 *isServiceAccount* | xsd:boolean | 
 
 
-### VHDIImage
-
-
-
-
-### VMDKImage
-
-
-
-
-### VSSVolume
-
+### VShadow
+Describes a Volume Shadow Snapshot (VSS).
 
 Attribute | Range | Comment
 ---: | --- | ---

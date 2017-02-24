@@ -4,18 +4,6 @@
     "olo": "http://purl.org/ontology/olo/core#",
   },
   "@graph": [
-    {
-      "@id": "sms_action1",
-      "@type": "Action",
-      "name": "Send Message",
-      "startTime": "2010-01-15T17:59:43.25Z",
-      "propertyBundle": [
-        {
-          "@type": "ActionReferences",
-          "performer": "phone_account3",
-          "instrument": "sms_application1",
-          "result": [ "sms_message1" ]
-    },
 
     {
       "@id": "sms_message1",
@@ -28,15 +16,40 @@
           "from": "phone_account3",
           "to": [
             "phone_account1"
-          ]
+          ],
+          "sentTime": "2010-01-15T17:59:43.25Z"
         }
       ]
     },
 
     {
-      "@id": "actor1",
-      "@type": "Identity",
+      "@id": "contact1",
+      "@type": "Trace",
       "propertyBundle": [
+        {
+          "@type": "Contact",
+          "firstName": "John",
+          "familyName": "Doe",
+          "contactName": "BFF Joe",  // TODO: Should this property be renamed to "displayName"?
+          "application": "android_phonebook1",
+          "emailAddress": [
+            "email_account1"
+          ],
+          // TODO: How do we distingish "Home", "Work", "Mobile", etc?
+          // NOTE: phone_account3 is missing from this because its a new account found in the SMS logs that
+          // was not in the phonebook.
+          "phoneNumber": [
+            "phone_account1",
+            "phone_account2"
+          ],
+          // TODO: How do we represent location information? (example: Home and Work)
+          "screenName": [], // TODO: I assume this property is suppose to point to Digital/Application accounts?
+          // TODO: Determine if these properties are necessary. It seems like these belong to Account propery bundles.
+          "contactType": null,
+          "contactID": null
+        },
+        // TODO: Determine if its better to have a separate property bundle
+        // for name and location info, or to include that info in the contact propery bundle.
         {
           "@type": "SimpleName",
           "givenName": "John",
@@ -48,7 +61,7 @@
     {
       "@id": "associated-account1",
       "@type": "Relationship",
-      "source": "actor1",
+      "source": "contact1",
       "target": ["phone_account1"],
       "kindOfRelationship": "has-account",
       "isDirectional": true
@@ -56,7 +69,7 @@
     {
       "@id": "associated-account2",
       "@type": "Relationship",
-      "source": "actor1",
+      "source": "contact1",
       "target": ["phone_account2"],
       "kindOfRelationship": "has-account",
       "isDirectional": true
@@ -64,7 +77,7 @@
     {
       "@id": "associated-account3",
       "@type": "Relationship",
-      "source": "actor1",
+      "source": "contact1",
       "target": ["email_account1"],
       "kindOfRelationship": "has-account",
       "isDirectional": true
@@ -76,7 +89,7 @@
       "propertyBundle": [
         {
           "@type": "Account",
-          "accountType": "Phone",
+          "accountType": "Phone", // TODO: Is this necessary? We know its phone account due to the existence of "PhoneAccount" (duck type model and all that)
           "isActive": true
         },
         {
@@ -91,6 +104,11 @@
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "Account",
+          "accountType": "Phone",
+          "isActive": true
+        },
+        {
           "@type": "PhoneAccount",
           "phoneNumber": "1234560000"
         }
@@ -102,6 +120,11 @@
       "@type": "Trace",
       "propertyBundle": [
         {
+          "@type": "Account",
+          "accountType": "Email",
+          "isActive": true
+        },
+        {
           "@type": "EmailAccount",
           "emailAddress": "jdoe@example.com"
         }
@@ -112,6 +135,11 @@
       "@id": "phone_account3",
       "@type": "Trace",
       "propertyBundle": [
+        {
+          "@type": "Account",
+          "accountType": "Phone",
+          "isActive": true
+        },
         {
           "@type": "PhoneAccount",
           "phoneNumber": "11235557890"
@@ -132,19 +160,6 @@
           "numberOfLaunches": 323
         }
       ]
-    },
-
-    {
-      "@id": "application_objects1",
-      "@type": "Relationship",
-      "source": "android_phonebook1",
-      "target": [
-        "actor1",
-        "phone_account1",
-        "phone_account2"
-      ],
-      "kindOfRelationship": "contains",
-      "isDirectional": true
     }
   ]
 } 

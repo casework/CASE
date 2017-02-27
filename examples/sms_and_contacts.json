@@ -36,7 +36,7 @@
             "email_account1"
           ],
           // TODO: How do we distingish "Home", "Work", "Mobile", etc?
-          // NOTE: phone_account3 is missing from this because its a new account found in the SMS logs that
+          // NOTE: phone_account3 is missing from this because it's a new account found in the SMS logs that
           // was not in the phonebook.
           "phoneNumber": [
             "phone_account1",
@@ -44,16 +44,6 @@
           ],
           // TODO: How do we represent location information? (example: Home and Work)
           "screenName": [], // TODO: I assume this property is suppose to point to Digital/Application accounts?
-          // TODO: Determine if these properties are necessary. It seems like these belong to Account propery bundles.
-          "contactType": null,
-          "contactID": null
-        },
-        // TODO: Determine if its better to have a separate property bundle
-        // for name and location info, or to include that info in the contact propery bundle.
-        {
-          "@type": "SimpleName",
-          "givenName": "John",
-          "familyName": "Doe"
         }
       ]
     },

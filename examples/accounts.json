@@ -50,7 +50,7 @@
         {
           "@type": "Account",
           "accountIdentifier": "1235556677@facebook.net",
-          "accountIssuer": "Facebook"
+          "accountIssuer": "facebook_org"
         },
         {
           "@type": "DigitalAccount",
@@ -94,7 +94,7 @@
         {
           "@type": "Account",
           "accountIdentifier": "willyROX@gmail.com",
-          "accountIssuer": "Google",
+          "accountIssuer": "google_org",
           "createdTime": "2010-01-15T17:59:43.25Z",
         },
         {

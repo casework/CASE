@@ -135,7 +135,7 @@
         {
           "@type": "Message",
           "application": "application2",
-          "body": "I said some things in a tweet! @sarahsmithtweeter #hashtag",
+          "messageText": "I said some things in a tweet! @sarahsmithtweeter #hashtag",
           "from": "account3",
           "to": [
             "account4"
@@ -150,7 +150,7 @@
         {
           "@type": "Message",
           "application": "application1",
-          "body": "Hey bud!",
+          "messageText": "Hey bud!",
           "from": "account1",
           "to": [
             "account2"

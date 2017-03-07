@@ -12,7 +12,7 @@
         {
           "@type": "Message",
           "application": "sms_application1",
-          "body": "Yo dude! This is my new number.",
+          "messageText": "Yo dude! This is my new number.",
           "from": "phone_account3",
           "to": [
             "phone_account1"

@@ -183,9 +183,7 @@
       "propertyBundle": [
         {
           "@type": "Attachment",
-          "url": "http://whatsapp.com/attachments/thumbnails/1.png",
-          "mimeType": "image/png",
-          "sizeInBytes": 35
+          "url": "http://whatsapp.com/attachments/thumbnails/1.png"
         }
       ]
     },
@@ -199,9 +197,7 @@
       "propertyBundle": [
         {
           "@type": "Attachment",
-          "url": "http://whatsapp.com/attachments/1.png",
-          "mimeType": "image/png",
-          "sizeInBytes": 551
+          "url": "http://whatsapp.com/attachments/1.png"
         }
       ]
     }

@@ -1,6 +1,6 @@
 # Cyber-investigation Analysis Standard Expression (CASE)
 
-[Experimental Draft Ontology (OWL)](https://github.com/casework/case/tree/master/case.ttl) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/casework/case/releases)
+[Experimental Draft Ontology (OWL)](case.ttl) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/ucoProject/CASE/releases)
 
 Cyber-investigation Analysis Standard Expression (CASE) is a community-developed standard format, which is intended to serve the needs of the broadest possible range of cyber-investigation domains, including digital forensic science, incident response, and counter-terrorism. 
 
@@ -12,17 +12,17 @@ The purpose of this repository is to provide a foundation for broader community 
 
 
 ## Examples (JSON-LD)
-- [Bulk Extractor Forensic Path](https://github.com/casework/case/tree/master/examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
-- [Call Log](https://github.com/casework/case/tree/master/examples/call_log.json)
-- [Device](https://github.com/casework/case/tree/master/examples/device.json)
-- [Email](https://github.com/casework/case/tree/master/examples/email.json)
-- [EXIF Data](https://github.com/casework/case/tree/master/examples/exif_data.json)
-- [Files](https://github.com/casework/case/tree/master/examples/file.json) (*[info](examples/file.md)*)
-- [Forensic Lifecycle](https://github.com/casework/case/tree/master/examples/forensic_lifecycle.json)
-- [Location](https://github.com/casework/case/tree/master/examples/location.json)
-- [Message](https://github.com/casework/case/tree/master/examples/message.json)
-- [Multipart File](https://github.com/casework/case/tree/master/examples/multipart_file.json) (*[info](examples/multipart_file.md)*)
-- [Oresteia](https://github.com/casework/case/blob/master/examples/Oresteia.json) (*[info](examples/Oresteia.md)*)
-- [Raw Data](https://github.com/casework/case/tree/master/examples/raw_data.json)
-- [Reconstructed File](https://github.com/casework/case/tree/master/examples/reconstructed_file.json) (*[info](examples/reconstructed_file.md)*)
-- [SMS and Contacts](https://github.com/casework/case/tree/master/examples/sms_and_contacts.json)
+- [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
+- [Call Log](examples/call_log.json)
+- [Device](examples/device.json)
+- [Email](examples/email.json)
+- [EXIF Data](examples/exif_data.json)
+- [Files](examples/file.json) (*[info](examples/file.md)*)
+- [Forensic Lifecycle](examples/forensic_lifecycle.json)
+- [Location](examples/location.json)
+- [Message](examples/message.json)
+- [Multipart File](examples/multipart_file.json) (*[info](examples/multipart_file.md)*)
+- [Oresteia](examples/Oresteia.json) (*[info](examples/Oresteia.md)*)
+- [Raw Data](examples/raw_data.json)
+- [Reconstructed File](examples/reconstructed_file.json) (*[info](examples/reconstructed_file.md)*)
+- [SMS and Contacts](examples/sms_and_contacts.json)

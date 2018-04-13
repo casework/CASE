@@ -5,12 +5,12 @@ Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything
 CASE is defined as a profile of the [Unified Cyber Ontology (UCO)](https://ucoproject.github.io/uco/). CASE leverages contextually relevant components of the UCO extending, constraining or renaming them as appropriate. CASE is specified at a semantic level and supports various serializations, but the default serialization for CASE is JSON-LD.
 
 
-# Some Quick Links
+## Some Quick Links
 
 [Experimental Draft Ontology (OWL)](case.ttl) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/ucoProject/CASE/releases)
 
 
-## Examples (JSON-LD)
+# Examples (JSON-LD)
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)
 - [Device](examples/device.json)

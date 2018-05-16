@@ -86,7 +86,7 @@
 
     {
       "@id": "forensic_action1",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "seized",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T19:59:43.25Z",
@@ -121,7 +121,7 @@
     },
     {
       "@id": "forensic_action2",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "custody-receive",
       "startTime": "2010-01-15T17:59:43.25Z",
       "propertyBundle": [
@@ -160,7 +160,7 @@
     },
     {
       "@id": "forensic_action3",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "imaged",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T19:59:43.25Z",
@@ -206,7 +206,7 @@
     },
     {
       "@id": "forensic_action4",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "imaged",
       "startTime": "2010-01-16T17:59:43.25Z",
       "endTime": "2010-01-16T19:59:43.25Z",
@@ -247,7 +247,7 @@
     },
     {
       "@id": "forensic_action5",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "parsed",
       "startTime": "2010-01-20T17:59:43.25Z",
       "endTime": "2010-01-21T17:59:43.25Z",
@@ -322,7 +322,7 @@
     },
     {
       "@id": "forensic_action6",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "executed",
       "startTime": "2010-02-15T17:59:43.25Z",
       "endTime": "2010-02-16T17:59:43.25Z",

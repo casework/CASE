@@ -545,7 +545,7 @@
    {
    "@id": "trace-relationship3-uuid",
    "@type": "Relationship",
-   "source": "sqlite_database",
+   "source": "cassandra-mobiledevice-mmssms-uuid",
    "target": ["cassandra-image-partition6-uuid"],
    "kindOfRelationship": "contained-within",
    "isDirectional": true,

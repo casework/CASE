@@ -54,7 +54,14 @@
     "name": "Crime E",
     "focus": "Murder",
     "description": "In the Palace of Argos, Agamemnon and Cassandra were killed by Clytemnestra (accomplice Aegisthus)",
-    "object": ["argos-palace-uuid", "cassandra-uuid", "victim5-uuid", "role-relationship5-uuid", "cassandra-device-uuid", "associated-device1-uuid", "device-location-relationship1", "clytemnestra-device-uuid", "investigative-action1-uuid", "annotation1-uuid", "provenance-record1-uuid", "investigative-action2-uuid", "annotation2-uuid", "provenance-record2-uuid", "cassandra-mobiledevice-forensicduplicate-uuid", "tool1-uuid", "provenance-record3-uuid", "provenance-record4-uuid", "cassandra-mobiledevice-mmssms-uuid", "trace-relationship3-uuid", "cassandra-image-partition6-uuid", "trace-relationship4-uuid", "tool2-uuid", "tool3-uuid", "investigative-action4-uuid", "investigative-action5-uuid", "sms-message1-uuid", "sms-message2-uuid"]
+    "object": ["argos-palace-uuid", "aeschylus-uuid", "investigator1-uuid", "role-relationship51-uuid", "euripides-uuid", "investigator2-uuid", "role-relationship52-uuid", "cassandra-uuid", "victim5-uuid", "role-relationship5-uuid", "associated-device1-uuid", "cassandra-device-uuid", "cassandra-mobileaccount-uuid", "device-location-relationship1", "thyestes-uuid", "victim1-uuid", "role-relationship1-uuid", "offender1-uuid", "role-relationship2-uuid", "electra-uuid", "associated-emailaccount1-uuid", "clytemnestra-device-uuid", "clytemnestra-mobileaccount-uuid", "investigative-action1-uuid", "annotation1-uuid", "investigative-action10-uuid", "provenance-record1-uuid", "provenance-record2-uuid", "investigative-action2-uuid", "annotation2-uuid", "provenance-record3-uuid", "tool1-uuid", "provenance-record4-uuid", "trace-relationship3-uuid", "cassandra-image-partition6-uuid", "trace-relationship4-uuid", "tool2-uuid", "tool3-uuid", "investigative-action4-uuid", "investigative-action5-uuid", "sms-message1-uuid", "sms-message2-uuid", "argive-elder1-phoneaccnt-uuid", "argive-elder2-phoneaccnt-uuid", "argive-elder3-phoneaccnt-uuid", "electra-orestes-email-uuid", "annotation3-uuid", "orestes-facebookmsg-uuid", "@id": "attach_relationship1"]
+     "propertyBundle": [
+     {
+       "@type": "Authorization",
+       "authorizationIdentifier": "Warrant12345",
+       "authorizationType": "warrant"
+     }
+   ]
   },
   {
     "@id": "investigation-5aa33dc6-7a39-4731-a754-62a9c41e5220",
@@ -200,9 +207,21 @@
       "@type": "MobileDevice",
       "keypadUnlockCode": "1234",
       "IMEI": "359305065690067",
+      "MSISDN": ["cassandra-mobileaccount-uuid"],
       "clockSetting": "2017-06-22T07:36:24.35Z",
       "timezoneSetting": "UTC+01:01 (Europe/Rome)",
       "storageCapacity": "11 GB"
+    }
+ ]
+ },
+ {
+  "@id": "cassandra-mobileaccount-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountType": "PhoneAccount",
+      "isActive": "true"
     },
     {
       "@type": "MobileAccount",
@@ -304,6 +323,7 @@
       "@type": "MobileDevice",
       "keypadUnlockCode": "123789",
       "IMEI": "359305065690067",
+      "MSISDN": "[clytemnestra-mobileaccount-uuid]",
       "clockSetting": "2017-06-21T06:36:24.35Z",
       "localeLanguage": "en_GR",
       "phoneActivationTime": "2017-05-09T07:36:24.35Z",
@@ -321,10 +341,6 @@
       "version": "10.3"
     },
     {
-      "@type": "MobileAccount",
-      "MSISDN": "1237471334"
-    },
-    {
       "@type": "WiFiAddress",
       "value": "d0:33:11:13:e7:a1"
     },
@@ -334,6 +350,21 @@
     }
   ]
   },
+  {
+  "@id": "clytemnestra-mobileaccount-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountType": "PhoneAccount",
+      "isActive": "true"
+    },
+    {
+      "@type": "MobileAccount",
+      "MSISDN": "1237471334"
+    }
+  ]
+  },	
   {
   "@id": "investigative-action1-uuid",
   "@type": "InvestigativeAction",
@@ -438,7 +469,7 @@
   {
   "@id": "provenance-record3-uuid",
   "@type": "ProvenanceRecord",
-  "description": "Mobile device used by murder victim Cassandra",
+  "description": "Forensic duplicate of mobile device used by murder victim Cassandra",
   "exhibitNumber": "AthensPD-2017220601-02",
   "object": "cassandra-mobiledevice-forensicduplicate-uuid"
   },
@@ -712,7 +743,7 @@
       "@type": "Message",
       "application": "sms-application1",
       "messageText": "A wedded wife, she slays her lord, Helped by another hand!",
-      "from": "cassandra-mobileacct-uuid",
+      "from": "cassandra-mobileaccount-uuid",
       "to": [
         "argive-elder1-phoneaccnt-uuid",
         "argive-elder2-phoneaccnt-uuid",
@@ -730,7 +761,7 @@
       "@type": "Message",
       "application": "sms-application1",
       "messageText": "Low lie the shattered towers whereas they fell, and I--ah burning heart!--shall soon lie low as well.",
-      "from": "cassandra-mobileacct-uuid",
+      "from": "cassandra-mobileaccount-uuid",
       "to": [
         "argive-elder1-phoneaccnt-uuid",
         "argive-elder2-phoneaccnt-uuid",
@@ -745,8 +776,43 @@
   "@type": "Trace",
   "propertyBundle": [
     {
+      "@type": "Account",
+      "accountIssuer": "Olympus",
+      "isActive": "true"
+    },
+    {
       "@type": "PhoneAccount",
       "phoneNumber": "1237771337",
+    }
+   ]
+   },
+   {
+  "@id": "argive-elder2-phoneaccnt-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountIssuer": "Olympus",
+      "isActive": "true"
+    },
+    {
+      "@type": "PhoneAccount",
+      "phoneNumber": "1237772341",
+    }
+   ]
+   },
+   {
+  "@id": "argive-elder3-phoneaccnt-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountIssuer": "Olympus",
+      "isActive": "true"
+    },
+    {
+      "@type": "PhoneAccount",
+      "phoneNumber": "1237775121",
     }
    ]
    },
@@ -767,7 +833,7 @@
    ]
    },
    {
-  "@id": "annotation1",
+  "@id": "annotation3-uuid",
   "@type": "Annotation",
   "tag": ["selfie", "picture"],
   "description": "Digital photograph of corpses taken at crime scene by killer",

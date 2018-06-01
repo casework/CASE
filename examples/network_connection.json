@@ -18,7 +18,7 @@
     "name": "NetTheft1234",
     "focus": "Media Theft",
     "description": "Network traffic of media theft",
-    "object": [""]
+    "object": ["pcap-tool-uuid", "extraction-action-uuid", "pcap-provenancerecord-uuid", "source-host-uuid", "destination-host-uuid", "network-connection1-uuid", "network-connection2-uuid", "network-connection3-uuid", "trace-relationship1-uuid", "trace-relationship2-uuid", "trace-relationship3-uuid"]
      "propertyBundle": [
      {
        "@type": "Authorization",

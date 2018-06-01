@@ -376,11 +376,10 @@
       "instrument": "athens-warrant1-uuid",
       "location": "argos-palace-uuid",
       "performer": "investigator2-uuid",
-      "object": [
-        "cassandra-device-uuid"
-      ],
+      "object": [],
       "result": [
-        "provenance-record1-uuid"
+        "provenance-record1-uuid",
+	"cassandra-device-uuid"
       ]
     }
   ]
@@ -406,7 +405,8 @@
       "location": "athenspd-evidenceroom-uuid",
       "performer": "investigator1-uuid",
       "object": [
-        "provenance-record1-uuid"
+        "provenance-record1-uuid",
+	"cassandra-device-uuid"
       ],
       "result": [
         "provenance-record2-uuid"
@@ -443,11 +443,12 @@
       "instrument": "tool1-uuid",
       "environment": "forensic-computer1-uuid",
       "object": [
-        "provenance-record2-uuid"
+        "provenance-record2-uuid",
+	"cassandra-device-uuid"
       ],
       "result": [
-        "cassandra-mobiledevice-forensicduplicate-uuid",
-        "provenance-record3-uuid"
+        "provenance-record3-uuid",
+        "cassandra-mobiledevice-forensicduplicate-uuid"
       ]
     },
     {
@@ -698,8 +699,8 @@
       "instrument": "tool2-uuid",
       "environment": "forensic-computer1-uuid",
       "object": [
-        "cassandra-mobiledevice-forensicduplicate-uuid",
-        "provenance-record3-uuid"
+        "provenance-record3-uuid",
+        "cassandra-mobiledevice-forensicduplicate-uuid"
       ],
       "result": [
         "investigative-action5-uuid",
@@ -723,6 +724,7 @@
       "instrument": "tool3-uuid",
       "environment": "forensic-computer1-uuid",
       "object": [
+        "provenance-record4-uuid",
         "cassandra-mobiledevice-mmssms-uuid"
       ],
       "result": [

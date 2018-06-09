@@ -8,6 +8,7 @@
  },
 "@id": "bundle-3b13e958a-d975-41aa-b1bb-029d2b6707cd",
 "@type": "Bundle",
+"name": "Greek Case 13",
 "description": [
   "This illustrative scenario imagines The Oresteia in the age mobile devices for the purpose of demonstrating use of CASE to represent digital investigations into multiple related crimes.",
   "To reduce repetitive examples in this illustrative scenario, not all Identity objects are explicitly represented here. Instead, each object that is referenced in this scenario uses the associated person's name in the simplified UUID.",

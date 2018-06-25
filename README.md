@@ -2,8 +2,6 @@
 
 Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything you need to know about CASE.
 
-CASE is defined as a profile of the [Unified Cyber Ontology (UCO)](https://ucoproject.github.io/uco/). CASE leverages contextually relevant components of the UCO extending, constraining or renaming them as appropriate. CASE is specified at a semantic level and supports various serializations, but the default serialization for CASE is JSON-LD.
-
 
 ### Some Quick Links
 

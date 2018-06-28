@@ -4,8 +4,8 @@ Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything
 
 
 # Supporting Tools
-- [Python API](https://github.com/ucoProject/CASE-Python-API)
-- [RDFDiff](https://github.com/ucoProject/RDFDiff)
+- [Python API](https://github.com/ucoProject/CASE-Python-API) - use for adoption
+- [RDFDiff](https://github.com/ucoProject/RDFDiff) - use to compare glossary terms between CASE and custom data models (must be ingestible into Python _rdflib_)
 
 
 # Proof-of-Concept Tool Integrations

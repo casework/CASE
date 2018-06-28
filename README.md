@@ -4,9 +4,10 @@ _Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everythin
 _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https://github.com/ucoProject/UCO)._
 
 
-### Supporting Tools
-- [Python API](https://github.com/ucoProject/CASE-Python-API) - use for adoption
-- [RDFDiff](https://github.com/ucoProject/RDFDiff) - use to compare glossary terms between CASE and custom data models (must be ingestible into Python _rdflib_)
+### Quick Links
+- Supporting Tools
+  - [Python API](https://github.com/ucoProject/CASE-Python-API) - use for adoption
+  - [RDFDiff](https://github.com/ucoProject/RDFDiff) - use to compare glossary terms between CASE and custom data models (must be ingestible into Python _rdflib_)
 
 
 ### Mappings

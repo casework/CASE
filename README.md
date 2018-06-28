@@ -18,6 +18,11 @@ _Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everythin
 - [Volatility](https://github.com/ucoProject/CASE-Volatility-Implementation)
 
 
+### Ontological Exploration Tools
+- Protégé (https://protege.stanford.edu) - graph visualizations, Javadoc generation, etc.
+- Ontospy (https://github.com/lambdamusic/Ontospy) - command line tool for stepping through and tree visualization of ontology objects
+
+
 # Ontological Examples in this Repo (Mapping Notes & Respective JSON-LD Output)
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)

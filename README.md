@@ -26,7 +26,8 @@ _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https:/
   - Core/active members are encouraged to read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) for understanding of roles and workflow/organization. However, if desiring to simply add your two-cents on ontology evolution please visit the [Issues tab](https://github.com/ucoProject/CASE/issues) and filter on the `Community-FeedbackNeeded` and `Community-Vote` labels.
 
 
-# Ontological Examples in this Repo (Mapping Notes & Respective JSON-LD Output)
+# Ontological Examples in this Repo
+Mapping notes & respective JSON-LD output:
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)
 - [Device](examples/device.json)

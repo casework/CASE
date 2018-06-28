@@ -12,7 +12,7 @@ _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https:/
 
 - **Mappings**
   - [All Public Tools](https://github.com/ucoProject/CASE-Mappings)
-  - All Private Tools - email cyberinvestigationexpress@gmail.com for details
+  - All Private Tools - email cyberinvestigationexpress@gmail.com
 
 - **Proof-of-Concept Tool Integrations**
   - [Plaso](https://github.com/ucoProject/CASE-Plaso-Implementation)
@@ -20,7 +20,7 @@ _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https:/
 
 - **Ontological Exploration Tools**
   - Protégé (https://protege.stanford.edu) - graph visualizations, Javadoc generation, etc.
-  - Ontospy (https://github.com/lambdamusic/Ontospy) - command line tool for stepping through and tree visualization of ontology objects
+  - Ontospy (https://github.com/lambdamusic/Ontospy) - CLI interface for stepping through tree visualizations of ontologies
 
 
 # Ontological Examples in this Repo (Mapping Notes & Respective JSON-LD Output)

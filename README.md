@@ -5,24 +5,22 @@ _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https:/
 
 
 ### Quick Links
-- Supporting Tools
+
+- **Supporting Tools**
   - [Python API](https://github.com/ucoProject/CASE-Python-API) - use for adoption
   - [RDFDiff](https://github.com/ucoProject/RDFDiff) - use to compare glossary terms between CASE and custom data models (must be ingestible into Python _rdflib_)
 
+- **Mappings**
+  - [All Public Tools](https://github.com/ucoProject/CASE-Mappings)
+  - All Private Tools - email cyberinvestigationexpress@gmail.com for details
 
-### Mappings
-- [All Public Tools](https://github.com/ucoProject/CASE-Mappings)
-- All Private Tools - email cyberinvestigationexpress@gmail.com for details
+- **Proof-of-Concept Tool Integrations**
+  - [Plaso](https://github.com/ucoProject/CASE-Plaso-Implementation)
+  - [Volatility](https://github.com/ucoProject/CASE-Volatility-Implementation)
 
-
-### Proof-of-Concept Tool Integrations
-- [Plaso](https://github.com/ucoProject/CASE-Plaso-Implementation)
-- [Volatility](https://github.com/ucoProject/CASE-Volatility-Implementation)
-
-
-### Ontological Exploration Tools
-- Protégé (https://protege.stanford.edu) - graph visualizations, Javadoc generation, etc.
-- Ontospy (https://github.com/lambdamusic/Ontospy) - command line tool for stepping through and tree visualization of ontology objects
+- **Ontological Exploration Tools**
+  - Protégé (https://protege.stanford.edu) - graph visualizations, Javadoc generation, etc.
+  - Ontospy (https://github.com/lambdamusic/Ontospy) - command line tool for stepping through and tree visualization of ontology objects
 
 
 # Ontological Examples in this Repo (Mapping Notes & Respective JSON-LD Output)

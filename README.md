@@ -1,6 +1,7 @@
 # Cyber-investigation Analysis Standard Expression (CASE)
 
 _Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything (details/resources) you need to know about CASE._
+_For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https://github.com/ucoProject/UCO)._
 
 
 ### Supporting Tools

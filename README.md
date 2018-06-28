@@ -23,7 +23,7 @@ _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https:/
   - Ontospy (https://github.com/lambdamusic/Ontospy) - CLI interface for stepping through tree visualizations of ontologies
 
 ### Contributing Towards Discussion
-  - Core/active members are encouraged to read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) for understanding of roles and workflow/organization. However, if desiring to simply add your two-cents on ontology evolution please visit the [Issues tab](https://github.com/ucoProject/CASE/issues) and filter on the `Community-FeedbackNeeded` and `Community-Vote` labels.
+  - Core/active members are encouraged to read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) for understanding of roles and workflow/organization. However, if desiring to simply add your two-cents on ontology evolution please visit the [Issues tab](https://github.com/ucoProject/CASE/issues) and filter on the `Community-FeedbackNeeded` and `Community-Vote` labels (all labels found [here](https://github.com/ucoProject/CASE/labels)).
 
 
 # Ontological Examples in this Repo

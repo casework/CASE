@@ -2,12 +2,6 @@
 
 Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything you need to know about CASE.
 
-
-### Some Quick Links
-
-[Experimental Draft Ontology (OWL)](case.ttl) | [Natural Language Glossary](case-v0.1.0-natural-language-glossary.html) | [Releases](https://github.com/ucoProject/CASE/releases)
-
-
 # Examples (JSON-LD)
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)

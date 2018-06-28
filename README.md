@@ -1,26 +1,29 @@
 # Cyber-investigation Analysis Standard Expression (CASE)
 
-_Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything (details/resources) you need to know about CASE._
+_Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn **everything** you need to know about CASE._
 _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https://github.com/ucoProject/UCO)._
 
 
-### Quick Links
+# Quick Start
 
-- **Supporting Tools**
+### Supporting Tools
   - [Python API](https://github.com/ucoProject/CASE-Python-API) - use for adoption
   - [RDFDiff](https://github.com/ucoProject/RDFDiff) - use to compare glossary terms between CASE and custom data models (must be ingestible into Python _rdflib_)
 
-- **Mappings**
+### Mappings
   - [All Public Tools](https://github.com/ucoProject/CASE-Mappings)
   - All Private Tools - email cyberinvestigationexpress@gmail.com
 
-- **Proof-of-Concept Tool Integrations**
+### Proof-of-Concept Tool Integrations
   - [Plaso](https://github.com/ucoProject/CASE-Plaso-Implementation)
   - [Volatility](https://github.com/ucoProject/CASE-Volatility-Implementation)
 
-- **Ontological Exploration Tools**
+### Ontological Exploration Tools
   - Protégé (https://protege.stanford.edu) - graph visualizations, Javadoc generation, etc.
   - Ontospy (https://github.com/lambdamusic/Ontospy) - CLI interface for stepping through tree visualizations of ontologies
+
+### Contributing Towards Discussion
+  - Core/active members are encouraged to read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) for understanding of roles and workflow/organization. However, if desiring to simply add your two-cents on ontology evolution please visit the [Issues tab](https://github.com/ucoProject/CASE/issues) and filter on the `Community-FeedbackNeeded` and `Community-Vote` labels.
 
 
 # Ontological Examples in this Repo (Mapping Notes & Respective JSON-LD Output)

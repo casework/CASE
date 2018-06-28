@@ -3,17 +3,22 @@
 _Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn everything (details/resources) you need to know about CASE._
 
 
-# Supporting Tools
+## Supporting Tools
 - [Python API](https://github.com/ucoProject/CASE-Python-API) - use for adoption
 - [RDFDiff](https://github.com/ucoProject/RDFDiff) - use to compare glossary terms between CASE and custom data models (must be ingestible into Python _rdflib_)
 
 
-# Proof-of-Concept Tool Integrations
+## Mappings
+- [All Public Tools](https://github.com/ucoProject/CASE-Mappings)
+- All Private Tools - email cyberinvestigationexpress@gmail.com for details
+
+
+## Proof-of-Concept Tool Integrations
 - [Plaso](https://github.com/ucoProject/CASE-Plaso-Implementation)
 - [Volatility](https://github.com/ucoProject/CASE-Volatility-Implementation)
 
 
-# Ontological Examples (Mapping Notes & Respective JSON-LD Output)
+## Ontological Examples (Mapping Notes & Respective JSON-LD Output)
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)
 - [Device](examples/device.json)

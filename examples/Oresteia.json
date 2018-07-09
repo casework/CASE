@@ -834,6 +834,14 @@
    ]
    },
    {
+   "@id": "electra-emailaccount-uuid",
+   "@type": "Trace",
+   "propertyBundle": [
+    {
+      "@type": "EmailAccount",
+      "emailAddress": "electra.pleiade@sevensisters.com"
+    },
+   {
    "@id": "electra-orestes-email-uuid",
    "@type": "Trace",
    "propertyBundle": [

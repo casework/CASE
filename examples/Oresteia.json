@@ -564,7 +564,7 @@
    "propertyBundle": [
     {
          "@type": "DiskPartition",
-         "diskPartitionType": "MSDOS",
+         "diskPartitionType": "MBR",
          "partitionID": "06",
          "partitionOffset": 63,
          "partitionLength": 245235063

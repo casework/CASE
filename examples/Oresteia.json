@@ -391,7 +391,7 @@
   "tag": ["forensic"],
   "description": "Forensic preservation of Cassandra mobile device.",
   "object": [
-    "investigativeaction1-uuid"
+    "investigative-action1-uuid"
   ]
   },
   {
@@ -420,16 +420,19 @@
   "@type": "ProvenanceRecord",
   "description": "Mobile device used by murder victim Cassandra",
   "exhibitNumber": "ArgosPD-20170622-001A",
-  "object": "cassandra-device-uuid"
+  "object":   [
+    "cassandra-device-uuid"
+  ]
   },
   {
   "@id": "provenance-record2-uuid",
   "@type": "ProvenanceRecord",
   "description": "Android smartphone seized by Argos PD",
   "exhibitNumber": "AthensPD-2017220601",
-  "objects": "cassandra-device-uuid"
+  "objects":   [
+    "cassandra-device-uuid"
+  ]
   },
-  
   {
   "@id": "investigative-action2-uuid",
   "@type": "InvestigativeAction",
@@ -473,7 +476,9 @@
   "@type": "ProvenanceRecord",
   "description": "Forensic duplicate of mobile device used by murder victim Cassandra",
   "exhibitNumber": "AthensPD-2017220601-02",
-  "object": "cassandra-mobiledevice-forensicduplicate-uuid"
+  "object":  [
+    "cassandra-mobiledevice-forensicduplicate-uuid"
+  ]
   },
   {
       "@type": "Trace",
@@ -515,7 +520,9 @@
    "@type": "ProvenanceRecord",
    "description": "SMS SQLite database on mobile device used by murder victim Cassandra",
    "exhibitNumber": "AthensPD-2017220601-02-03",
-   "object": "cassandra-mobiledevice-mmssms-uuid"
+   "object":   [
+    "cassandra-mobiledevice-mmssms-uuid"
+   ]
    },
    {
       "@type": "Trace",

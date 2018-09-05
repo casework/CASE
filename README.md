@@ -4,7 +4,7 @@ _Read the [Wiki tab](https://github.com/ucoProject/CASE/wiki) to learn **everyth
 _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https://github.com/ucoProject/UCO)._
 
 # Examples in this Repository
-_These will eventually be moved to the Wiki (likely Mapping Guide)._
+_These will eventually be moved to the Wiki (likely [Mapping Guide](https://github.com/ucoProject/CASE/wiki/Mapping-Guide))._
 Mapping notes & respective JSON-LD output:
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)

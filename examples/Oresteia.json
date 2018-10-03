@@ -208,10 +208,12 @@
       "@type": "MobileDevice",
       "keypadUnlockCode": "1234",
       "IMEI": "359305065690067",
-      "MSISDN": ["cassandra-mobileaccount-uuid"],
       "clockSetting": "2017-06-22T07:36:24.35Z",
-      "timezoneSetting": "UTC+01:01 (Europe/Rome)",
-      "storageCapacity": "11 GB"
+      "storageCapacityInBytes": "11000000000"
+    },
+    {
+      "@type": "MobileAccount",
+      "MSISDN": "1239275339",
     }
  ]
  },
@@ -227,6 +229,22 @@
     {
       "@type": "MobileAccount",
       "MSISDN": "1239275339"
+    }
+ ]
+ },
+ {
+  "@id": "device-account-relationship1",
+  "@type": "Relationship",
+  "source": "cassandra-device-uuid",
+  "target": ["cassandra-mobileaccount-uuid"],
+  "kindOfRelationship": "has-account",
+  "startTime": "2017-05-12T15:32:31.09Z",
+  "endTime": "2017-06-25T15:59:43.00Z",
+  "isDirectional": true,
+  "propertyBundle": [
+    {
+      "@type": "Confidence",
+      "confidence": "Probably True"
     }
   ]
   },

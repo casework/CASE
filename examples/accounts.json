@@ -141,6 +141,16 @@
       "propertyBundle": [
         {
           "@type": "EmailAccount",
+          "emailAddress": "email-address1"
+        }
+      ]
+    },
+    {
+      "@id": "email_address1",
+      "@type": "Trace",
+      "propertyBundle": [
+        {
+          "@type": "EmailAddress",
           "emailAddress": "willyROX@gmail.com"
         }
       ]

@@ -127,7 +127,7 @@
     },
     {
       "@id": "forensic_action7",
-      "@type": "ForensicAction",
+      "@type": "InvestigativeAction",
       "name": "annotated",
       "startTime": "2010-01-15T17:59:43.25Z",
       "endTime": "2010-01-15T18:59:43.25Z",

@@ -31,7 +31,7 @@
     "@type": "Tool",
     "@id": "pcap-tool-uuid",
     "creator": "PCAPAnalyser",
-    "toolType": " PCAParser",
+    "toolType": "PCAParser",
     "version": "3.5"
   },
   {

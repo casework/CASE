@@ -30,7 +30,8 @@
   {
     "@type": "Tool",
     "@id": "pcap-tool-uuid",
-    "creator": "PCAPAnalyser",
+    "name": "PCAPAnalyser",
+    "creator": "NetworkAnalyser",
     "toolType": "PCAParser",
     "version": "3.5"
   },

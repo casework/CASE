@@ -8,7 +8,8 @@
  },
 "@id": "bundle-3b13e958a-d975-41aa-b1bb-029d2b6707cd",
 "@type": "Bundle",
-"annos": [
+"name": "Greek Case 13",
+"description": [
   "This illustrative scenario imagines The Oresteia in the age mobile devices for the purpose of demonstrating use of CASE to represent digital investigations into multiple related crimes.",
   "To reduce repetitive examples in this illustrative scenario, not all Identity objects are explicitly represented here. Instead, each object that is referenced in this scenario uses the associated person's name in the simplified UUID.",
   "Thyestes is the victim in Crime A, and the offender in Crime B",
@@ -30,7 +31,7 @@
     "name": "Crime B",
     "focus": "Rape",
     "description": "In Mycenae, Thyestes raped his daughter Pelopia to have a son (Aegisthus)",
-    "object": ["thyestes-uuid", "offender1-uuid", "role-relationship2-uuid", "cctv-recording-uuid", "provenance-record13-uuid"]
+    "object": ["thyestes-uuid", "offender1-uuid", "role-relationship2-uuid", "cctv-recording-uuid", "provenance-record5-uuid"]
   },
   {
     "@id": "investigation-ac9fd560-261e-4cd6-af64-8b83d100b9a8",
@@ -54,7 +55,14 @@
     "name": "Crime E",
     "focus": "Murder",
     "description": "In the Palace of Argos, Agamemnon and Cassandra were killed by Clytemnestra (accomplice Aegisthus)",
-    "object": ["argos-palace-uuid", "cassandra-uuid", "victim5-uuid", "role-relationship5-uuid", "cassandra-device-uuid", "associated-device1-uuid", "device-location-relationship1", "clytemnestra-device-uuid", "forensic-action1-uuid", "annotation1-uuid", "provenance-record1-uuid", "forensic-action2-uuid", "annotation2-uuid", "provenance-record2-uuid", "cassandra-mobiledevice-forensicduplicate-uuid", "tool1-uuid", "provenance-record3-uuid", "cassandra-mobiledevice-mmssms-uuid", "trace-relationship3-uuid", "cassandra-image-partition6-uuid", "trace-relationship4-uuid", "tool2-uuid", "tool3-uuid", "forensic-action4-uuid", "forensic-action5-uuid", "sms-message1-uuid", "sms-message2-uuid"]
+    "object": ["argos-palace-uuid", "aeschylus-uuid", "investigator1-uuid", "role-relationship51-uuid", "euripides-uuid", "investigator2-uuid", "role-relationship52-uuid", "cassandra-uuid", "victim5-uuid", "role-relationship5-uuid", "associated-device1-uuid", "cassandra-device-uuid", "cassandra-mobileaccount-uuid", "device-location-relationship1", "thyestes-uuid", "victim1-uuid", "role-relationship1-uuid", "offender1-uuid", "role-relationship2-uuid", "electra-uuid", "associated-emailaccount1-uuid", "clytemnestra-device-uuid", "clytemnestra-mobileaccount-uuid", "investigative-action1-uuid", "annotation1-uuid", "investigative-action10-uuid", "provenance-record1-uuid", "provenance-record2-uuid", "investigative-action2-uuid", "annotation2-uuid", "provenance-record3-uuid", "tool1-uuid", "provenance-record4-uuid", "trace-relationship3-uuid", "cassandra-image-partition6-uuid", "trace-relationship4-uuid", "tool2-uuid", "tool3-uuid", "investigative-action4-uuid", "investigative-action5-uuid", "provenance-record5-uuid", "sms-message1-uuid", "sms-message2-uuid", "argive-elder1-phoneaccnt-uuid", "argive-elder2-phoneaccnt-uuid", "argive-elder3-phoneaccnt-uuid", "electra-orestes-email-uuid", "annotation3-uuid", "orestes-facebookmsg-uuid", "@id": "attach_relationship1"]
+     "propertyBundle": [
+     {
+       "@type": "Authorization",
+       "authorizationIdentifier": "Warrant12345",
+       "authorizationType": "warrant"
+     }
+   ]
   },
   {
     "@id": "investigation-5aa33dc6-7a39-4731-a754-62a9c41e5220",
@@ -81,6 +89,74 @@
        "longitude": 2.331199
      }
    ]
+ },
+ {
+  "@id": "aeschylus-uuid",
+  "@type": "Identity",
+  "createdBy": "eoghan-uuid",
+  "createdTime": "2017-06-25T12:12:12.12Z",
+  "propertyBundle": [
+   {
+     "@type": "SimpleName",
+     "givenName": "Aeschylus",
+     "familyName": "Bard"
+   },
+   {
+     "@type": "BirthInformation",
+     "birthdate": "1954-03-07T15:34:24.02Z"
+   }
+  ]
+ },
+ {
+  "@id": "investigator1-uuid",
+  "@type": "Role",
+  "createdBy": "eoghan-uuid",
+  "createdTime": "2017-06-25T12:12:12.12Z",
+  "name": "Investigator"
+ },
+ {
+  "@id": "role-relationship51-uuid",
+  "@type": "Relationship",
+  "createdBy": "eoghan-uuid",
+  "createdTime": "2017-06-25T12:12:12.12Z",
+  "source": "aeschylus-uuid",
+  "target": ["investigator1-uuid"],
+  "kindOfRelationship": "has-role",
+  "isDirectional": true
+ },
+ {
+  "@id": "euripides-uuid",
+  "@type": "Identity",
+  "createdBy": "eoghan-uuid",
+  "createdTime": "2017-06-25T12:12:12.12Z",
+  "propertyBundle": [
+   {
+     "@type": "SimpleName",
+     "givenName": "Euripides",
+     "familyName": "Forte"
+   },
+   {
+     "@type": "BirthInformation",
+     "birthdate": "1956-04-08T16:35:23.35Z"
+   }
+  ]
+ },
+ {
+   "@id": "investigator2-uuid",
+   "@type": "Role",
+   "createdBy": "eoghan-uuid",
+   "createdTime": "2017-06-25T12:12:12.12Z",
+   "name": "Investigator"
+ },
+ {
+   "@id": "role-relationship52-uuid",
+   "@type": "Relationship",
+   "createdBy": "eoghan-uuid",
+   "createdTime": "2017-06-25T12:12:12.12Z",
+   "source": "euripides-uuid",
+   "target": ["investigator2-uuid"],
+   "kindOfRelationship": "has-role",
+   "isDirectional": true
  },
  {
   "@id": "cassandra-uuid",
@@ -133,12 +209,42 @@
       "keypadUnlockCode": "1234",
       "IMEI": "359305065690067",
       "clockSetting": "2017-06-22T07:36:24.35Z",
-      "timezoneSetting": "UTC+01:01 (Europe/Rome)",
-      "storageCapacity": "11 GB"
+      "storageCapacityInBytes": "11000000000"
+    },
+    {
+      "@type": "MobileAccount",
+      "MSISDN": "1239275339",
+    }
+ ]
+ },
+ {
+  "@id": "cassandra-mobileaccount-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountType": "PhoneAccount",
+      "isActive": "true"
     },
     {
       "@type": "MobileAccount",
       "MSISDN": "1239275339"
+    }
+ ]
+ },
+ {
+  "@id": "device-account-relationship1",
+  "@type": "Relationship",
+  "source": "cassandra-device-uuid",
+  "target": ["cassandra-mobileaccount-uuid"],
+  "kindOfRelationship": "has-account",
+  "startTime": "2017-05-12T15:32:31.09Z",
+  "endTime": "2017-06-25T15:59:43.00Z",
+  "isDirectional": true,
+  "propertyBundle": [
+    {
+      "@type": "Confidence",
+      "confidence": "Probably True"
     }
   ]
   },
@@ -146,7 +252,7 @@
   "@id": "device-location-relationship1",
   "@type": "Relationship",
   "source": "cassandra-device-uuid",
-  "target": "argos-palace-uuid",
+  "target": ["argos-palace-uuid"],
   "kindOfRelationship": "located-at",
   "startTime": "2017-06-19T13:59:43.25Z",
   "endTime": "2017-06-22T15:59:43.25Z",
@@ -236,6 +342,7 @@
       "@type": "MobileDevice",
       "keypadUnlockCode": "123789",
       "IMEI": "359305065690067",
+      "MSISDN": "[clytemnestra-mobileaccount-uuid]",
       "clockSetting": "2017-06-21T06:36:24.35Z",
       "localeLanguage": "en_GR",
       "phoneActivationTime": "2017-05-09T07:36:24.35Z",
@@ -253,10 +360,6 @@
       "version": "10.3"
     },
     {
-      "@type": "MobileAccount",
-      "MSISDN": "1237471334"
-    },
-    {
       "@type": "WiFiAddress",
       "value": "d0:33:11:13:e7:a1"
     },
@@ -267,8 +370,23 @@
   ]
   },
   {
-  "@id": "forensic-action1-uuid",
-  "@type": "ForensicAction",
+  "@id": "clytemnestra-mobileaccount-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountType": "PhoneAccount",
+      "isActive": "true"
+    },
+    {
+      "@type": "MobileAccount",
+      "MSISDN": "1237471334"
+    }
+  ]
+  },	
+  {
+  "@id": "investigative-action1-uuid",
+  "@type": "InvestigativeAction",
   "name": "preserved",
   "startTime": "2017-06-21T22:36:24.35Z",
   "propertyBundle": [
@@ -276,12 +394,11 @@
       "@type": "ActionReferences",
       "instrument": "athens-warrant1-uuid",
       "location": "argos-palace-uuid",
-      "performer": "euripides-uuid",
-      "object": [
-        "cassandra-device-uuid"
-      ],
+      "performer": "investigator2-uuid",
+      "object": [],
       "result": [
-        "provenance_record1-uuid"
+        "provenance-record1-uuid",
+	"cassandra-device-uuid"
       ]
     }
   ]
@@ -292,12 +409,12 @@
   "tag": ["forensic"],
   "description": "Forensic preservation of Cassandra mobile device.",
   "object": [
-    "forensic_action1-uuid"
+    "investigative-action1-uuid"
   ]
   },
   {
-  "@id": "forensic-action10-uuid",
-  "@type": "ForensicAction",
+  "@id": "investigative-action10-uuid",
+  "@type": "InvestigativeAction",
   "name": "transferred",
   "startTime": "2017-06-22T08:01:23.14Z",
   "propertyBundle": [
@@ -305,12 +422,13 @@
       "@type": "ActionReferences",
       "instrument": "athens-warrant1-uuid",
       "location": "athenspd-evidenceroom-uuid",
-      "performer": "aeschylus-uuid",
+      "performer": "investigator1-uuid",
       "object": [
-        "cassandra-device-uuid"
+        "provenance-record1-uuid",
+	"cassandra-device-uuid"
       ],
       "result": [
-        "provenance_record1-uuid"
+        "provenance-record2-uuid"
       ]
     }
   ]
@@ -320,19 +438,22 @@
   "@type": "ProvenanceRecord",
   "description": "Mobile device used by murder victim Cassandra",
   "exhibitNumber": "ArgosPD-20170622-001A",
-  "object": "cassandra-device-uuid"
+  "object":   [
+    "cassandra-device-uuid"
+  ]
   },
   {
-  "@id": "provenance_record2-uuid",
+  "@id": "provenance-record2-uuid",
   "@type": "ProvenanceRecord",
   "description": "Android smartphone seized by Argos PD",
   "exhibitNumber": "AthensPD-2017220601",
-  "objects": "cassandra-device-uuid"
+  "objects":   [
+    "cassandra-device-uuid"
+  ]
   },
-  
   {
-  "@id": "forensic-action2-uuid",
-  "@type": "ForensicAction",
+  "@id": "investigative-action2-uuid",
+  "@type": "InvestigativeAction",
   "name": "extracted",
   "startTime": "2017-06-22T08:12:19.32Z",
   "endTime": "2017-06-22T08:39:19.24Z",
@@ -340,15 +461,16 @@
     {
       "@type": "ActionReferences",
       "location": "argos-palace-uuid",
-      "performer": "aeschylus-uuid",
+      "performer": "investigator1-uuid",
       "instrument": "tool1-uuid",
       "environment": "forensic-computer1-uuid",
       "object": [
-        "provenance-record1-uuid"
+        "provenance-record2-uuid",
+	"cassandra-device-uuid"
       ],
       "result": [
-        "cassandra-mobiledevice-forensicduplicate-uuid",
-        "provenance_record2-uuid"
+        "provenance-record3-uuid",
+        "cassandra-mobiledevice-forensicduplicate-uuid"
       ]
     },
     {
@@ -364,15 +486,17 @@
   "tag": ["forensic"],
   "description": "Forensic extraction of data from Cassandra mobile device.",
   "object": [
-    "forensic_action2-uuid"
+    "investigative-action2-uuid"
   ]
   },
   {
-  "@id": "provenance-record2-uuid",
+  "@id": "provenance-record3-uuid",
   "@type": "ProvenanceRecord",
-  "description": "Mobile device used by murder victim Cassandra",
+  "description": "Forensic duplicate of mobile device used by murder victim Cassandra",
   "exhibitNumber": "AthensPD-2017220601-02",
-  "object": "cassandra-mobiledevice-forensicduplicate-uuid"
+  "object":  [
+    "cassandra-mobiledevice-forensicduplicate-uuid"
+  ]
   },
   {
       "@type": "Trace",
@@ -410,11 +534,13 @@
    "version": "5.3"
    },
    {
-   "@id": "provenance-record3-uuid",
+   "@id": "provenance-record4-uuid",
    "@type": "ProvenanceRecord",
    "description": "SMS SQLite database on mobile device used by murder victim Cassandra",
    "exhibitNumber": "AthensPD-2017220601-02-03",
-   "object": "cassandra-mobiledevice-mmssms-uuid"
+   "object":   [
+    "cassandra-mobiledevice-mmssms-uuid"
+   ]
    },
    {
       "@type": "Trace",
@@ -446,8 +572,8 @@
    {
    "@id": "trace-relationship3-uuid",
    "@type": "Relationship",
-   "source": "sqlite_database",
-   "target": "cassandra-image-partition6-uuid",
+   "source": "cassandra-mobiledevice-mmssms-uuid",
+   "target": ["cassandra-image-partition6-uuid"],
    "kindOfRelationship": "contained-within",
    "isDirectional": true,
    "propertyBundle": [
@@ -463,14 +589,14 @@
    "propertyBundle": [
     {
          "@type": "DiskPartition",
-         "diskPartitionType": "MSDOS",
+         "diskPartitionType": "MBR",
          "partitionID": "06",
          "partitionOffset": 63,
          "partitionLength": 245235063
     },
 	{
          "@type": "FileSystem",
-         "diskPartitionType": "EXT3"
+         "fileSystemType": "EXT3"
     },
     {
          "@type": "ContentData",
@@ -489,7 +615,7 @@
    "@id": "trace-relationship4-uuid",
    "@type": "Relationship",
    "source": "cassandra-image-partition6-uuid",
-   "target": "cassandra-mobiledevice-forensicduplicate-uuid",
+   "target": ["cassandra-mobiledevice-forensicduplicate-uuid"],
    "kindOfRelationship": "contained-within",
    "isDirectional": true,
    "propertyBundle": [
@@ -586,8 +712,8 @@
    ]
    },
    {
-   "@id": "forensic-action4-uuid",
-   "@type": "ForensicAction",
+   "@id": "investigative-action4-uuid",
+   "@type": "InvestigativeAction",
    "name": "extracted",
    "startTime": "2017-06-22T09:57:23.64Z",
    "endTime": "2017-06-22T10:31:19.24Z",
@@ -595,24 +721,24 @@
     {
       "@type": "ActionReferences",
       "location": "argos-palace-uuid",
-      "performer": "aeschylus-uuid",
+      "performer": "investigator1-uuid",
       "instrument": "tool2-uuid",
       "environment": "forensic-computer1-uuid",
       "object": [
-        "cassandra-mobiledevice-forensicduplicate-uuid",
-        "provenance_record2-uuid"
+        "provenance-record3-uuid",
+        "cassandra-mobiledevice-forensicduplicate-uuid"
       ],
       "result": [
-        "forensic-action5-uuid",
-        "provenance-record3-uuid",
+        "investigative-action5-uuid",
+        "provenance-record4-uuid",
         "cassandra-mobiledevice-mmssms-uuid"
       ]
     }
   ]
    },
    {
-   "@id": "forensic-action5-uuid",
-   "@type": "ForensicAction",
+   "@id": "investigative-action5-uuid",
+   "@type": "InvestigativeAction",
    "name": "parsed",
    "startTime": "2017-06-22T09:57:23.64Z",
    "endTime": "2017-06-22T10:31:19.24Z",
@@ -620,13 +746,15 @@
     {
       "@type": "ActionReferences",
       "location": "argos-palace-uuid",
-      "performer": "forensic-action4-uuid",
+      "performer": "investigative-action4-uuid",
       "instrument": "tool3-uuid",
       "environment": "forensic-computer1-uuid",
       "object": [
+        "provenance-record4-uuid",
         "cassandra-mobiledevice-mmssms-uuid"
       ],
       "result": [
+        "provenance-record5-uuid",
         "sms-message1-uuid",
         "sms-message2-uuid",
         "argive-elder1-phoneaccnt-uuid",
@@ -636,6 +764,19 @@
     }
    ]
    },
+  {
+  "@id": "provenance-record5-uuid",
+  "@type": "ProvenanceRecord",
+  "description": "Parsed messages from mobile device used by murder victim Cassandra",
+  "exhibitNumber": "ArgosPD-20170622-001A-100",
+  "object": [
+        "sms-message1-uuid",
+        "sms-message2-uuid",
+        "argive-elder1-phoneaccnt-uuid",
+        "argive-elder2-phoneaccnt-uuid",
+        "argive-elder3-phoneaccnt-uuid"
+      ]
+   },
    {
    "@id": "sms-message1-uuid",
    "@type": "Trace",
@@ -644,7 +785,7 @@
       "@type": "Message",
       "application": "sms-application1",
       "messageText": "A wedded wife, she slays her lord, Helped by another hand!",
-      "from": "cassandra-mobileacct-uuid",
+      "from": "cassandra-mobileaccount-uuid",
       "to": [
         "argive-elder1-phoneaccnt-uuid",
         "argive-elder2-phoneaccnt-uuid",
@@ -662,7 +803,7 @@
       "@type": "Message",
       "application": "sms-application1",
       "messageText": "Low lie the shattered towers whereas they fell, and I--ah burning heart!--shall soon lie low as well.",
-      "from": "cassandra-mobileacct-uuid",
+      "from": "cassandra-mobileaccount-uuid",
       "to": [
         "argive-elder1-phoneaccnt-uuid",
         "argive-elder2-phoneaccnt-uuid",
@@ -677,11 +818,54 @@
   "@type": "Trace",
   "propertyBundle": [
     {
+      "@type": "Account",
+      "accountIssuer": "Olympus",
+      "isActive": "true"
+    },
+    {
       "@type": "PhoneAccount",
       "phoneNumber": "1237771337",
     }
    ]
    },
+   {
+  "@id": "argive-elder2-phoneaccnt-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountIssuer": "Olympus",
+      "isActive": "true"
+    },
+    {
+      "@type": "PhoneAccount",
+      "phoneNumber": "1237772341",
+    }
+   ]
+   },
+   {
+  "@id": "argive-elder3-phoneaccnt-uuid",
+  "@type": "Trace",
+  "propertyBundle": [
+    {
+      "@type": "Account",
+      "accountIssuer": "Olympus",
+      "isActive": "true"
+    },
+    {
+      "@type": "PhoneAccount",
+      "phoneNumber": "1237775121",
+    }
+   ]
+   },
+   {
+   "@id": "electra-emailaccount-uuid",
+   "@type": "Trace",
+   "propertyBundle": [
+    {
+      "@type": "EmailAccount",
+      "emailAddress": "electra.pleiade@sevensisters.com"
+    },
    {
    "@id": "electra-orestes-email-uuid",
    "@type": "Trace",
@@ -699,7 +883,7 @@
    ]
    },
    {
-  "@id": "annotation1",
+  "@id": "annotation3-uuid",
   "@type": "Annotation",
   "tag": ["selfie", "picture"],
   "description": "Digital photograph of corpses taken at crime scene by killer",
@@ -722,7 +906,7 @@
       "@id": "attach_relationship1",
       "@type": "Relationship",
       "source": "location1",
-      "target": "orestes-facebookmsg-uuid",
+      "target": ["orestes-facebookmsg-uuid"],
       "kindOfRealtionship": "attachment-of",
       "isDirectional": true,
       "propertyBundle": [

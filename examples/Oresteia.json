@@ -596,7 +596,7 @@
     },
 	{
          "@type": "FileSystem",
-         "diskPartitionType": "EXT3"
+         "fileSystemType": "EXT3"
     },
     {
          "@type": "ContentData",

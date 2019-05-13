@@ -20,3 +20,12 @@ Mapping notes & respective JSON-LD output:
 - [Raw Data](examples/raw_data.json)
 - [Reconstructed File](examples/reconstructed_file.json) (*[info](examples/reconstructed_file.md)*)
 - [SMS and Contacts](examples/sms_and_contacts.json)
+
+# I have a question!
+
+Before you post a Github issue or send an email ensure you've done this checklist:
+
+1. [Determined scope](https://caseontology.org/ontology/start.html#scope) of your task. It is not necessary for most parties to understand all aspects of the ontology, mapping methods, and supporting tools.
+
+2. Familiarize yourself with the [labels](https://github.com/casework/CASE/labels) and search the [Issues tab](https://github.com/casework/CASE/issues). Typically, only light-blue and red labels should be used by non-admin Github users while the others should be used by CASE Github admins.
+*All but the red `Project` labels are found in every [`casework`](https://github.com/casework) repository.*

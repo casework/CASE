@@ -15,7 +15,7 @@
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
 	owl:imports
-		<https://https://unifiedcyberontology.org/ontology/uco/uco>
+		<https://unifiedcyberontology.org/ontology/uco/uco>
 		;
 	.
 

@@ -1,8 +1,8 @@
 # baseURI: https://caseontology.org/ontology/case/case
+# imports: https://caseontology.org/ontology/case/core
 # imports: https://unifiedcyberontology.org/ontology/uco/uco
 
 @base <https://caseontology.org/ontology/case/case> .
-@prefix case: <https://caseontology.org/ontology/case/case#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,20 +13,9 @@
 <https://caseontology.org/ontology/case/case>
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
-	owl:imports <https://unifiedcyberontology.org/ontology/uco/uco> ;
-	.
-
-case:PropertyBundle
-	a owl:Class ;
-	rdfs:label "Property Bundle" ;
-	rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object." ;
-	owl:equivalentClass <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
-	.
-
-case:Trace
-	a owl:Class ;
-	rdfs:label "Trace" ;
-	rdfs:comment "A distinct entity observed within a digital investigation." ;
-	owl:equivalentClass <https://unifiedcyberontology.org/ontology/uco/observable#CyberItem> ;
+	owl:imports
+		<https://caseontology.org/ontology/case/core> ,
+		<https://unifiedcyberontology.org/ontology/uco/uco>
+		;
 	.
 

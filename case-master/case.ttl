@@ -3,6 +3,7 @@
 # imports: https://unifiedcyberontology.org/ontology/uco/uco
 
 @base <https://caseontology.org/ontology/case/case> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,6 +14,7 @@
 <https://caseontology.org/ontology/case/case>
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
+	dc:title "Cyber-investigation Analysis Schema Expression (CASE)" ;
 	owl:imports
 		<https://caseontology.org/ontology/case/core> ,
 		<https://unifiedcyberontology.org/ontology/uco/uco>

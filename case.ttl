@@ -1,7 +1,6 @@
 # baseURI: https://caseontology.org/ontology/case/case
 # imports: https://unifiedcyberontology.org/ontology/uco/uco
 
-
 @base <https://caseontology.org/ontology/case/case> .
 @prefix case: <https://caseontology.org/ontology/case/case#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,21 +13,20 @@
 <https://caseontology.org/ontology/case/case>
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
-	owl:imports
-		<https://unifiedcyberontology.org/ontology/uco/uco>
-		;
+	owl:imports <https://unifiedcyberontology.org/ontology/uco/uco> ;
+	.
+
+case:PropertyBundle
+	a owl:Class ;
+	rdfs:label "Property Bundle" ;
+	rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object." ;
+	owl:equivalentClass <https://unifiedcyberontology.org/ontology/uco/core#Facet> ;
 	.
 
 case:Trace
-  a owl:Class ;
-  rdfs:label "Trace" ;
-  rdfs:comment "A distinct entity observed within a digital investigation." ;
-.
-case:Trace owl:equivalentClass <https://unifiedcyberontology.org/ontology/uco/observable#CyberItem> .
+	a owl:Class ;
+	rdfs:label "Trace" ;
+	rdfs:comment "A distinct entity observed within a digital investigation." ;
+	owl:equivalentClass <https://unifiedcyberontology.org/ontology/uco/observable#CyberItem> ;
+	.
 
-case:PropertyBundle
-  a owl:Class ;
-  rdfs:label "Property Bundle" ;
-  rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object." ;
-  .
-case:PropertyBundle owl:equivalentClass <https://unifiedcyberontology.org/ontology/uco/core#Facet> .

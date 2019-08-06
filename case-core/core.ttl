@@ -28,6 +28,6 @@ case-core:Trace
 	a owl:Class ;
 	rdfs:label "Trace" ;
 	rdfs:comment "A distinct entity observed within a digital investigation." ;
-	owl:equivalentClass uco-core:CyberItem ;
+	owl:equivalentClass uco-core:UcoObject ;
 	.
 

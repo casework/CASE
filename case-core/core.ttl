@@ -31,3 +31,8 @@ case-core:Trace
 	owl:equivalentClass uco-core:UcoObject ;
 	.
 
+case-core:propertyBundle
+	a owl:ObjectProperty ;
+	owl:equivalentProperty uco-core:facet ;
+	.
+

@@ -19,15 +19,15 @@
 
 case-core:PropertyBundle
 	a owl:Class ;
-	rdfs:label "Property Bundle" ;
-	rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object." ;
+	rdfs:label "Property Bundle"@en ;
+	rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object."@en ;
 	owl:equivalentClass uco-core:Facet ;
 	.
 
 case-core:Trace
 	a owl:Class ;
-	rdfs:label "Trace" ;
-	rdfs:comment "A distinct entity observed within a digital investigation." ;
+	rdfs:label "Trace"@en ;
+	rdfs:comment "A distinct entity observed within a digital investigation."@en ;
 	owl:equivalentClass uco-core:UcoObject ;
 	.
 

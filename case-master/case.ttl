@@ -17,5 +17,7 @@
 		<https://caseontology.org/ontology/case/core> ,
 		<https://unifiedcyberontology.org/ontology/uco/uco>
 		;
+	owl:priorVersion "0.1" ;
+	owl:versionInfo "0.2.0" ;
 	.
 

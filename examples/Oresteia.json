@@ -170,7 +170,10 @@
             "@id": ":aeschylus-uuid",
             "@type": "uco-identity:Identity",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": "2017-06-25T12:12:12.12Z",
+            "createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T12:12:12.12Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
@@ -179,7 +182,10 @@
                 },
                 {
                     "@type": "uco-identity:BirthInformation",
-                    "uco-identity:birthdate": "1954-03-07T15:34:24.02Z"
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1954-03-07T15:34:24.02Z"
+                    }
                 }
             ]
         },
@@ -187,14 +193,20 @@
             "@id": ":investigator1-uuid",
             "@type": "uco-role:Role",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": "2017-06-25T12:12:12.12Z",
+            "createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T12:12:12.12Z"
+            },
             "uco-core:name": "Investigator"
         },
         {
             "@id": ":role-relationship51-uuid",
             "@type": "uco-core:Relationship",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": "2017-06-25T12:12:12.12Z",
+            "createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T12:12:12.12Z"
+            },
             "uco-core:source": ":aeschylus-uuid",
             "uco-core:target": [
                 ":investigator1-uuid"
@@ -206,7 +218,10 @@
             "@id": ":euripides-uuid",
             "@type": "uco-identity:Identity",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": "2017-06-25T12:12:12.12Z",
+            "createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T12:12:12.12Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
@@ -215,7 +230,10 @@
                 },
                 {
                     "@type": "uco-identity:BirthInformation",
-                    "uco-identity:birthdate": "1956-04-08T16:35:23.35Z"
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1956-04-08T16:35:23.35Z"
+                    }
                 }
             ]
         },
@@ -223,14 +241,20 @@
             "@id": ":investigator2-uuid",
             "@type": "uco-role:Role",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": "2017-06-25T12:12:12.12Z",
+            "createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T12:12:12.12Z"
+            },
             "uco-core:name": "Investigator"
         },
         {
             "@id": ":role-relationship52-uuid",
             "@type": "uco-core:Relationship",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": "2017-06-25T12:12:12.12Z",
+            "createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T12:12:12.12Z"
+            },
             "uco-core:source": ":euripides-uuid",
             "uco-core:target": [
                 ":investigator2-uuid"
@@ -249,7 +273,10 @@
                 },
                 {
                     "@type": "uco-identity:BirthInformation",
-                    "uco-identity:birthdate": "1968-09-25T17:59:43.25Z"
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1968-09-25T17:59:43.25Z"
+                    }
                 }
             ]
         },
@@ -324,8 +351,14 @@
                 ":cassandra-mobileaccount-uuid"
             ],
             "uco-core:kindOfRelationship": "has-account",
-            "startTime": "2017-05-12T15:32:31.09Z",
-            "endTime": "2017-06-25T15:59:43.00Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-05-12T15:32:31.09Z"
+            },
+            "endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-25T15:59:43.00Z"
+            },
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
@@ -342,8 +375,14 @@
                 ":argos-palace-uuid"
             ],
             "uco-core:kindOfRelationship": "located-at",
-            "startTime": "2017-06-19T13:59:43.25Z",
-            "endTime": "2017-06-22T15:59:43.25Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-19T13:59:43.25Z"
+            },
+            "endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T15:59:43.25Z"
+            },
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
@@ -363,7 +402,10 @@
                 },
                 {
                     "@type": "uco-identity:BirthInformation",
-                    "uco-identity:birthdate": "1964-10-03T14:39:23.15Z"
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1964-10-03T14:39:23.15Z"
+                    }
                 }
             ]
         },
@@ -408,7 +450,10 @@
                 },
                 {
                     "@type": "uco-identity:BirthInformation",
-                    "uco-identity:birthdate": "1998-03-02T14:23:42.23Z"
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1998-03-02T14:23:42.23Z"
+                    }
                 }
             ]
         },
@@ -439,7 +484,10 @@
                     "uco-observable:MSISDN": "[clytemnestra-mobileaccount-uuid]",
                     "uco-observable:clockSetting": "2017-06-21T06:36:24.35Z",
                     "localeLanguage": "en_GR",
-                    "uco-observable:phoneActivationTime": "2017-05-09T07:36:24.35Z",
+                    "uco-observable:phoneActivationTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-05-09T07:36:24.35Z"
+                    },
                     "storageCapacity": "11 GB"
                 },
                 {
@@ -482,7 +530,10 @@
             "@id": ":investigative-action1-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "preserved",
-            "startTime": "2017-06-21T22:36:24.35Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-21T22:36:24.35Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
@@ -512,7 +563,10 @@
             "@id": ":investigative-action10-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "startTime": "2017-06-22T08:01:23.14Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T08:01:23.14Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
@@ -551,8 +605,14 @@
             "@id": ":investigative-action2-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "extracted",
-            "startTime": "2017-06-22T08:12:19.32Z",
-            "endTime": "2017-06-22T08:39:19.24Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T08:12:19.32Z"
+            },
+            "endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T08:39:19.24Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
@@ -602,7 +662,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
-                    "createdTime": "2017-06-22T08:12:19.32Z",
+                    "createdTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-22T08:12:19.32Z"
+                    },
                     "uco-observable:extension": "dd",
                     "uco-observable:fileName": "AthensPD-2017220601-01.dd",
                     "uco-observable:fileSystemType": "NTFS",
@@ -646,7 +709,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
-                    "createdTime": "2017-06-22T08:12:19.32Z",
+                    "createdTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-22T08:12:19.32Z"
+                    },
                     "uco-observable:fileSystemType": "EXT3",
                     "uco-observable:extension": "db",
                     "uco-observable:fileName": "/data/data/com.android.providers.telephony/mmssms.db",
@@ -816,8 +882,14 @@
             "@id": ":investigative-action4-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "extracted",
-            "startTime": "2017-06-22T09:57:23.64Z",
-            "endTime": "2017-06-22T10:31:19.24Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T09:57:23.64Z"
+            },
+            "endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T10:31:19.24Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
@@ -841,8 +913,14 @@
             "@id": ":investigative-action5-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "parsed",
-            "startTime": "2017-06-22T09:57:23.64Z",
-            "endTime": "2017-06-22T10:31:19.24Z",
+            "startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T09:57:23.64Z"
+            },
+            "endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2017-06-22T10:31:19.24Z"
+            },
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
@@ -892,7 +970,10 @@
                         ":argive-elder2-phoneaccnt-uuid",
                         ":argive-elder3-phoneaccnt-uuid"
                     ],
-                    "uco-observable:sentTime": "2017-06-20T09:34:42.12Z"
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-20T09:34:42.12Z"
+                    }
                 }
             ]
         },
@@ -910,7 +991,10 @@
                         ":argive-elder2-phoneaccnt-uuid",
                         ":argive-elder3-phoneaccnt-uuid"
                     ],
-                    "uco-observable:sentTime": "2017-06-20T09:37:35.13Z"
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-20T09:37:35.13Z"
+                    }
                 }
             ]
         },
@@ -981,8 +1065,14 @@
                     "uco-observable:from": ":electra-emailaccount-uuid",
                     "uco-observable:subject": "Revenge our father",
                     "uco-observable:body": "To me, too, grant this boon-dark death to deal unto Aegisthus, and to 'scape my doom.",
-                    "uco-observable:receivedTime": "2017-06-21T13:44:23.40Z",
-                    "uco-observable:sentTime": "2017-06-21T13:44:22.19Z",
+                    "uco-observable:receivedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-21T13:44:23.40Z"
+                    },
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-21T13:44:22.19Z"
+                    },
                     "uco-observable:messageID": "CAKBqNfyKo+ZXtkz6DUjWpvHy6O82jTbkNA@mail.gmail.com"
                 }
             ]
@@ -1012,7 +1102,10 @@
                         ":friends"
                     ],
                     "uco-observable:body": "There lies our country's twofold tyranny, My father's slayers, spoilers of my home.",
-                    "uco-observable:sentTime": "2017-06-21T14:44:54.19Z"
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-06-21T14:44:54.19Z"
+                    }
                 }
             ]
         },

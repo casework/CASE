@@ -1,12 +1,13 @@
 {
     "@context": {
-        "@vocab": "http://case.example.org/core#",
+        "@vocab": "urn:example:local:",
+        "": "urn:example:kb:",
         "case": "http://case.example.org/core#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "bundle-3b13e958a-d975-41aa-b1bb-029d2b6707cd",
+    "@id": ":bundle-3b13e958a-d975-41aa-b1bb-029d2b6707cd",
     "@type": "Bundle",
     "name": "Greek Case 13",
     "description": [
@@ -18,33 +19,33 @@
     ],
     "content": [
         {
-            "@id": "investigation-4586742a-710a-454f-bcb8-b60e230ec1b2",
+            "@id": ":investigation-4586742a-710a-454f-bcb8-b60e230ec1b2",
             "@type": "Investigation",
             "name": "Crime A",
             "focus": "Murder",
             "description": "In Mycenae, Atreus killed two sons of Thyestes, cooked them (except for their hands and heads), fed them to Thyestes, and then taunted Thyestes with his murdered sons' hands and heads.",
             "object": [
-                "thyestes-uuid",
-                "victim1-uuid",
-                "role-relationship1-uuid"
+                ":thyestes-uuid",
+                ":victim1-uuid",
+                ":role-relationship1-uuid"
             ]
         },
         {
-            "@id": "investigation-b05226da-eaef-4bc5-a139-ca12c94dbdfd",
+            "@id": ":investigation-b05226da-eaef-4bc5-a139-ca12c94dbdfd",
             "@type": "Investigation",
             "name": "Crime B",
             "focus": "Rape",
             "description": "In Mycenae, Thyestes raped his daughter Pelopia to have a son (Aegisthus)",
             "object": [
-                "thyestes-uuid",
-                "offender1-uuid",
-                "role-relationship2-uuid",
-                "cctv-recording-uuid",
-                "provenance-record5-uuid"
+                ":thyestes-uuid",
+                ":offender1-uuid",
+                ":role-relationship2-uuid",
+                ":cctv-recording-uuid",
+                ":provenance-record5-uuid"
             ]
         },
         {
-            "@id": "investigation-ac9fd560-261e-4cd6-af64-8b83d100b9a8",
+            "@id": ":investigation-ac9fd560-261e-4cd6-af64-8b83d100b9a8",
             "@type": "Investigation",
             "name": "Crime C",
             "focus": "Murder",
@@ -52,7 +53,7 @@
             "object": []
         },
         {
-            "@id": "investigation-2545442b-321c-754d-bcb8-c40d321ce2c2",
+            "@id": ":investigation-2545442b-321c-754d-bcb8-c40d321ce2c2",
             "@type": "Investigation",
             "name": "Crime D",
             "focus": "Murder",
@@ -60,62 +61,62 @@
             "object": []
         },
         {
-            "@id": "investigation-952d677d-6b62-4e53-9bac-1b113d268ac5",
+            "@id": ":investigation-952d677d-6b62-4e53-9bac-1b113d268ac5",
             "@type": "Investigation",
             "name": "Crime E",
             "focus": "Murder",
             "description": "In the Palace of Argos, Agamemnon and Cassandra were killed by Clytemnestra (accomplice Aegisthus)",
             "object": [
-                "argos-palace-uuid",
-                "aeschylus-uuid",
-                "investigator1-uuid",
-                "role-relationship51-uuid",
-                "euripides-uuid",
-                "investigator2-uuid",
-                "role-relationship52-uuid",
-                "cassandra-uuid",
-                "victim5-uuid",
-                "role-relationship5-uuid",
-                "associated-device1-uuid",
-                "cassandra-device-uuid",
-                "cassandra-mobileaccount-uuid",
-                "device-location-relationship1",
-                "thyestes-uuid",
-                "victim1-uuid",
-                "role-relationship1-uuid",
-                "offender1-uuid",
-                "role-relationship2-uuid",
-                "electra-uuid",
-                "associated-emailaccount1-uuid",
-                "clytemnestra-device-uuid",
-                "clytemnestra-mobileaccount-uuid",
-                "investigative-action1-uuid",
-                "annotation1-uuid",
-                "investigative-action10-uuid",
-                "provenance-record1-uuid",
-                "provenance-record2-uuid",
-                "investigative-action2-uuid",
-                "annotation2-uuid",
-                "provenance-record3-uuid",
-                "tool1-uuid",
-                "provenance-record4-uuid",
-                "trace-relationship3-uuid",
-                "cassandra-image-partition6-uuid",
-                "trace-relationship4-uuid",
-                "tool2-uuid",
-                "tool3-uuid",
-                "investigative-action4-uuid",
-                "investigative-action5-uuid",
-                "provenance-record5-uuid",
-                "sms-message1-uuid",
-                "sms-message2-uuid",
-                "argive-elder1-phoneaccnt-uuid",
-                "argive-elder2-phoneaccnt-uuid",
-                "argive-elder3-phoneaccnt-uuid",
-                "electra-orestes-email-uuid",
-                "annotation3-uuid",
-                "orestes-facebookmsg-uuid",
-                "attach_relationship1"
+                ":argos-palace-uuid",
+                ":aeschylus-uuid",
+                ":investigator1-uuid",
+                ":role-relationship51-uuid",
+                ":euripides-uuid",
+                ":investigator2-uuid",
+                ":role-relationship52-uuid",
+                ":cassandra-uuid",
+                ":victim5-uuid",
+                ":role-relationship5-uuid",
+                ":associated-device1-uuid",
+                ":cassandra-device-uuid",
+                ":cassandra-mobileaccount-uuid",
+                ":device-location-relationship1",
+                ":thyestes-uuid",
+                ":victim1-uuid",
+                ":role-relationship1-uuid",
+                ":offender1-uuid",
+                ":role-relationship2-uuid",
+                ":electra-uuid",
+                ":associated-emailaccount1-uuid",
+                ":clytemnestra-device-uuid",
+                ":clytemnestra-mobileaccount-uuid",
+                ":investigative-action1-uuid",
+                ":annotation1-uuid",
+                ":investigative-action10-uuid",
+                ":provenance-record1-uuid",
+                ":provenance-record2-uuid",
+                ":investigative-action2-uuid",
+                ":annotation2-uuid",
+                ":provenance-record3-uuid",
+                ":tool1-uuid",
+                ":provenance-record4-uuid",
+                ":trace-relationship3-uuid",
+                ":cassandra-image-partition6-uuid",
+                ":trace-relationship4-uuid",
+                ":tool2-uuid",
+                ":tool3-uuid",
+                ":investigative-action4-uuid",
+                ":investigative-action5-uuid",
+                ":provenance-record5-uuid",
+                ":sms-message1-uuid",
+                ":sms-message2-uuid",
+                ":argive-elder1-phoneaccnt-uuid",
+                ":argive-elder2-phoneaccnt-uuid",
+                ":argive-elder3-phoneaccnt-uuid",
+                ":electra-orestes-email-uuid",
+                ":annotation3-uuid",
+                ":orestes-facebookmsg-uuid",
+                ":attach_relationship1"
             ],
             "propertyBundle": [
                 {
@@ -126,20 +127,20 @@
             ]
         },
         {
-            "@id": "investigation-5aa33dc6-7a39-4731-a754-62a9c41e5220",
+            "@id": ":investigation-5aa33dc6-7a39-4731-a754-62a9c41e5220",
             "@type": "Investigation",
             "name": "Crime F",
             "focus": "Murder",
             "description": "In the Palace of Argos, Clytemnestra and Aegisthus were killed by Orestes (accomplice Electra)",
             "object": [
-                "electra-uuid",
-                "argos-palace-uuid",
-                "electra-orestes-email-uuid",
-                "orestes-facebookmsg-uuid"
+                ":electra-uuid",
+                ":argos-palace-uuid",
+                ":electra-orestes-email-uuid",
+                ":orestes-facebookmsg-uuid"
             ]
         },
         {
-            "@id": "argos-palace-uuid",
+            "@id": ":argos-palace-uuid",
             "@type": "Location",
             "propertyBundle": [
                 {
@@ -157,9 +158,9 @@
             ]
         },
         {
-            "@id": "aeschylus-uuid",
+            "@id": ":aeschylus-uuid",
             "@type": "Identity",
-            "createdBy": "eoghan-uuid",
+            "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
             "propertyBundle": [
                 {
@@ -174,28 +175,28 @@
             ]
         },
         {
-            "@id": "investigator1-uuid",
+            "@id": ":investigator1-uuid",
             "@type": "Role",
-            "createdBy": "eoghan-uuid",
+            "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
             "name": "Investigator"
         },
         {
-            "@id": "role-relationship51-uuid",
+            "@id": ":role-relationship51-uuid",
             "@type": "Relationship",
-            "createdBy": "eoghan-uuid",
+            "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "source": "aeschylus-uuid",
+            "source": ":aeschylus-uuid",
             "target": [
-                "investigator1-uuid"
+                ":investigator1-uuid"
             ],
             "kindOfRelationship": "has-role",
             "isDirectional": true
         },
         {
-            "@id": "euripides-uuid",
+            "@id": ":euripides-uuid",
             "@type": "Identity",
-            "createdBy": "eoghan-uuid",
+            "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
             "propertyBundle": [
                 {
@@ -210,26 +211,26 @@
             ]
         },
         {
-            "@id": "investigator2-uuid",
+            "@id": ":investigator2-uuid",
             "@type": "Role",
-            "createdBy": "eoghan-uuid",
+            "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
             "name": "Investigator"
         },
         {
-            "@id": "role-relationship52-uuid",
+            "@id": ":role-relationship52-uuid",
             "@type": "Relationship",
-            "createdBy": "eoghan-uuid",
+            "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "source": "euripides-uuid",
+            "source": ":euripides-uuid",
             "target": [
-                "investigator2-uuid"
+                ":investigator2-uuid"
             ],
             "kindOfRelationship": "has-role",
             "isDirectional": true
         },
         {
-            "@id": "cassandra-uuid",
+            "@id": ":cassandra-uuid",
             "@type": "Identity",
             "propertyBundle": [
                 {
@@ -244,32 +245,32 @@
             ]
         },
         {
-            "@id": "victim5-uuid",
+            "@id": ":victim5-uuid",
             "@type": "Role",
             "name": "Victim"
         },
         {
-            "@id": "role-relationship5-uuid",
+            "@id": ":role-relationship5-uuid",
             "@type": "Relationship",
-            "source": "cassandra-uuid",
+            "source": ":cassandra-uuid",
             "target": [
-                "victim5-uuid"
+                ":victim5-uuid"
             ],
             "kindOfRelationship": "has-role",
             "isDirectional": true
         },
         {
-            "@id": "associated-device1-uuid",
+            "@id": ":associated-device1-uuid",
             "@type": "Relationship",
-            "source": "victim5-uuid",
+            "source": ":victim5-uuid",
             "target": [
-                "cassandra-device-uuid"
+                ":cassandra-device-uuid"
             ],
             "kindOfRelationship": "has-device",
             "isDirectional": true
         },
         {
-            "@id": "cassandra-device-uuid",
+            "@id": ":cassandra-device-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -292,7 +293,7 @@
             ]
         },
         {
-            "@id": "cassandra-mobileaccount-uuid",
+            "@id": ":cassandra-mobileaccount-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -307,11 +308,11 @@
             ]
         },
         {
-            "@id": "device-account-relationship1",
+            "@id": ":device-account-relationship1",
             "@type": "Relationship",
-            "source": "cassandra-device-uuid",
+            "source": ":cassandra-device-uuid",
             "target": [
-                "cassandra-mobileaccount-uuid"
+                ":cassandra-mobileaccount-uuid"
             ],
             "kindOfRelationship": "has-account",
             "startTime": "2017-05-12T15:32:31.09Z",
@@ -325,11 +326,11 @@
             ]
         },
         {
-            "@id": "device-location-relationship1",
+            "@id": ":device-location-relationship1",
             "@type": "Relationship",
-            "source": "cassandra-device-uuid",
+            "source": ":cassandra-device-uuid",
             "target": [
-                "argos-palace-uuid"
+                ":argos-palace-uuid"
             ],
             "kindOfRelationship": "located-at",
             "startTime": "2017-06-19T13:59:43.25Z",
@@ -343,7 +344,7 @@
             ]
         },
         {
-            "@id": "thyestes-uuid",
+            "@id": ":thyestes-uuid",
             "@type": "Identity",
             "propertyBundle": [
                 {
@@ -358,37 +359,37 @@
             ]
         },
         {
-            "@id": "victim1-uuid",
+            "@id": ":victim1-uuid",
             "@type": "Role",
             "name": "Victim"
         },
         {
-            "@id": "role-relationship1-uuid",
+            "@id": ":role-relationship1-uuid",
             "@type": "Relationship",
-            "source": "thyestes-uuid",
+            "source": ":thyestes-uuid",
             "target": [
-                "victim1-uuid"
+                ":victim1-uuid"
             ],
             "kindOfRelationship": "has-role",
             "isDirectional": true
         },
         {
-            "@id": "offender1-uuid",
+            "@id": ":offender1-uuid",
             "@type": "Role",
             "name": "Offender"
         },
         {
-            "@id": "role-relationship2-uuid",
+            "@id": ":role-relationship2-uuid",
             "@type": "Relationship",
-            "source": "thyestes-uuid",
+            "source": ":thyestes-uuid",
             "target": [
-                "offender1-uuid"
+                ":offender1-uuid"
             ],
             "kindOfRelationship": "has-role",
             "isDirectional": true
         },
         {
-            "@id": "electra-uuid",
+            "@id": ":electra-uuid",
             "@type": "Identity",
             "propertyBundle": [
                 {
@@ -403,17 +404,17 @@
             ]
         },
         {
-            "@id": "associated-emailaccount1-uuid",
+            "@id": ":associated-emailaccount1-uuid",
             "@type": "Relationship",
-            "source": "electra-uuid",
+            "source": ":electra-uuid",
             "target": [
-                "electra-emailaccount-uuid"
+                ":electra-emailaccount-uuid"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
         },
         {
-            "@id": "clytemnestra-device-uuid",
+            "@id": ":clytemnestra-device-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -454,7 +455,7 @@
             ]
         },
         {
-            "@id": "clytemnestra-mobileaccount-uuid",
+            "@id": ":clytemnestra-mobileaccount-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -469,67 +470,67 @@
             ]
         },
         {
-            "@id": "investigative-action1-uuid",
+            "@id": ":investigative-action1-uuid",
             "@type": "InvestigativeAction",
             "name": "preserved",
             "startTime": "2017-06-21T22:36:24.35Z",
             "propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "instrument": "athens-warrant1-uuid",
-                    "location": "argos-palace-uuid",
-                    "performer": "investigator2-uuid",
+                    "instrument": ":athens-warrant1-uuid",
+                    "location": ":argos-palace-uuid",
+                    "performer": ":investigator2-uuid",
                     "object": [],
                     "result": [
-                        "provenance-record1-uuid",
-                        "cassandra-device-uuid"
+                        ":provenance-record1-uuid",
+                        ":cassandra-device-uuid"
                     ]
                 }
             ]
         },
         {
-            "@id": "annotation1-uuid",
+            "@id": ":annotation1-uuid",
             "@type": "Annotation",
             "tag": [
                 "forensic"
             ],
             "description": "Forensic preservation of Cassandra mobile device.",
             "object": [
-                "investigative-action1-uuid"
+                ":investigative-action1-uuid"
             ]
         },
         {
-            "@id": "investigative-action10-uuid",
+            "@id": ":investigative-action10-uuid",
             "@type": "InvestigativeAction",
             "name": "transferred",
             "startTime": "2017-06-22T08:01:23.14Z",
             "propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "instrument": "athens-warrant1-uuid",
-                    "location": "athenspd-evidenceroom-uuid",
-                    "performer": "investigator1-uuid",
+                    "instrument": ":athens-warrant1-uuid",
+                    "location": ":athenspd-evidenceroom-uuid",
+                    "performer": ":investigator1-uuid",
                     "object": [
-                        "provenance-record1-uuid",
-                        "cassandra-device-uuid"
+                        ":provenance-record1-uuid",
+                        ":cassandra-device-uuid"
                     ],
                     "result": [
-                        "provenance-record2-uuid"
+                        ":provenance-record2-uuid"
                     ]
                 }
             ]
         },
         {
-            "@id": "provenance-record1-uuid",
+            "@id": ":provenance-record1-uuid",
             "@type": "ProvenanceRecord",
             "description": "Mobile device used by murder victim Cassandra",
             "exhibitNumber": "ArgosPD-20170622-001A",
             "object": [
-                "cassandra-device-uuid"
+                ":cassandra-device-uuid"
             ]
         },
         {
-            "@id": "provenance-record2-uuid",
+            "@id": ":provenance-record2-uuid",
             "@type": "ProvenanceRecord",
             "description": "Android smartphone seized by Argos PD",
             "exhibitNumber": "AthensPD-2017220601",
@@ -538,7 +539,7 @@
             ]
         },
         {
-            "@id": "investigative-action2-uuid",
+            "@id": ":investigative-action2-uuid",
             "@type": "InvestigativeAction",
             "name": "extracted",
             "startTime": "2017-06-22T08:12:19.32Z",
@@ -546,17 +547,17 @@
             "propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "location": "argos-palace-uuid",
-                    "performer": "investigator1-uuid",
-                    "instrument": "tool1-uuid",
-                    "environment": "forensic-computer1-uuid",
+                    "location": ":argos-palace-uuid",
+                    "performer": ":investigator1-uuid",
+                    "instrument": ":tool1-uuid",
+                    "environment": ":forensic-computer1-uuid",
                     "object": [
-                        "provenance-record2-uuid",
-                        "cassandra-device-uuid"
+                        ":provenance-record2-uuid",
+                        ":cassandra-device-uuid"
                     ],
                     "result": [
-                        "provenance-record3-uuid",
-                        "cassandra-mobiledevice-forensicduplicate-uuid"
+                        ":provenance-record3-uuid",
+                        ":cassandra-mobiledevice-forensicduplicate-uuid"
                     ]
                 },
                 {
@@ -567,28 +568,28 @@
             ]
         },
         {
-            "@id": "annotation2-uuid",
+            "@id": ":annotation2-uuid",
             "@type": "Annotation",
             "tag": [
                 "forensic"
             ],
             "description": "Forensic extraction of data from Cassandra mobile device.",
             "object": [
-                "investigative-action2-uuid"
+                ":investigative-action2-uuid"
             ]
         },
         {
-            "@id": "provenance-record3-uuid",
+            "@id": ":provenance-record3-uuid",
             "@type": "ProvenanceRecord",
             "description": "Forensic duplicate of mobile device used by murder victim Cassandra",
             "exhibitNumber": "AthensPD-2017220601-02",
             "object": [
-                "cassandra-mobiledevice-forensicduplicate-uuid"
+                ":cassandra-mobiledevice-forensicduplicate-uuid"
             ]
         },
         {
             "@type": "Trace",
-            "@id": "cassandra-mobiledevice-forensicduplicate-uuid",
+            "@id": ":cassandra-mobiledevice-forensicduplicate-uuid",
             "propertyBundle": [
                 {
                     "@type": "File",
@@ -614,7 +615,7 @@
             ]
         },
         {
-            "@id": "tool1-uuid",
+            "@id": ":tool1-uuid",
             "@type": "Tool",
             "name": "MobileExtractor",
             "toolType": "Extraction",
@@ -622,17 +623,17 @@
             "version": "5.3"
         },
         {
-            "@id": "provenance-record4-uuid",
+            "@id": ":provenance-record4-uuid",
             "@type": "ProvenanceRecord",
             "description": "SMS SQLite database on mobile device used by murder victim Cassandra",
             "exhibitNumber": "AthensPD-2017220601-02-03",
             "object": [
-                "cassandra-mobiledevice-mmssms-uuid"
+                ":cassandra-mobiledevice-mmssms-uuid"
             ]
         },
         {
             "@type": "Trace",
-            "@id": "cassandra-mobiledevice-mmssms-uuid",
+            "@id": ":cassandra-mobiledevice-mmssms-uuid",
             "propertyBundle": [
                 {
                     "@type": "File",
@@ -658,11 +659,11 @@
             ]
         },
         {
-            "@id": "trace-relationship3-uuid",
+            "@id": ":trace-relationship3-uuid",
             "@type": "Relationship",
-            "source": "cassandra-mobiledevice-mmssms-uuid",
+            "source": ":cassandra-mobiledevice-mmssms-uuid",
             "target": [
-                "cassandra-image-partition6-uuid"
+                ":cassandra-image-partition6-uuid"
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
@@ -674,7 +675,7 @@
             ]
         },
         {
-            "@id": "cassandra-image-partition6-uuid",
+            "@id": ":cassandra-image-partition6-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -702,11 +703,11 @@
             ]
         },
         {
-            "@id": "trace-relationship4-uuid",
+            "@id": ":trace-relationship4-uuid",
             "@type": "Relationship",
-            "source": "cassandra-image-partition6-uuid",
+            "source": ":cassandra-image-partition6-uuid",
             "target": [
-                "cassandra-mobiledevice-forensicduplicate-uuid"
+                ":cassandra-mobiledevice-forensicduplicate-uuid"
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
@@ -719,7 +720,7 @@
             ]
         },
         {
-            "@id": "tool2-uuid",
+            "@id": ":tool2-uuid",
             "@type": "Tool",
             "name": "Plaso",
             "toolType": "Extraction",
@@ -779,7 +780,7 @@
             ]
         },
         {
-            "@id": "tool3-uuid",
+            "@id": ":tool3-uuid",
             "@type": "Tool",
             "name": "sqlite/android_sms",
             "toolType": "Parser",
@@ -803,7 +804,7 @@
             ]
         },
         {
-            "@id": "investigative-action4-uuid",
+            "@id": ":investigative-action4-uuid",
             "@type": "InvestigativeAction",
             "name": "extracted",
             "startTime": "2017-06-22T09:57:23.64Z",
@@ -811,24 +812,24 @@
             "propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "location": "argos-palace-uuid",
-                    "performer": "investigator1-uuid",
-                    "instrument": "tool2-uuid",
-                    "environment": "forensic-computer1-uuid",
+                    "location": ":argos-palace-uuid",
+                    "performer": ":investigator1-uuid",
+                    "instrument": ":tool2-uuid",
+                    "environment": ":forensic-computer1-uuid",
                     "object": [
-                        "provenance-record3-uuid",
-                        "cassandra-mobiledevice-forensicduplicate-uuid"
+                        ":provenance-record3-uuid",
+                        ":cassandra-mobiledevice-forensicduplicate-uuid"
                     ],
                     "result": [
-                        "investigative-action5-uuid",
-                        "provenance-record4-uuid",
-                        "cassandra-mobiledevice-mmssms-uuid"
+                        ":investigative-action5-uuid",
+                        ":provenance-record4-uuid",
+                        ":cassandra-mobiledevice-mmssms-uuid"
                     ]
                 }
             ]
         },
         {
-            "@id": "investigative-action5-uuid",
+            "@id": ":investigative-action5-uuid",
             "@type": "InvestigativeAction",
             "name": "parsed",
             "startTime": "2017-06-22T09:57:23.64Z",
@@ -836,76 +837,76 @@
             "propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "location": "argos-palace-uuid",
-                    "performer": "investigative-action4-uuid",
-                    "instrument": "tool3-uuid",
-                    "environment": "forensic-computer1-uuid",
+                    "location": ":argos-palace-uuid",
+                    "performer": ":investigative-action4-uuid",
+                    "instrument": ":tool3-uuid",
+                    "environment": ":forensic-computer1-uuid",
                     "object": [
-                        "provenance-record4-uuid",
-                        "cassandra-mobiledevice-mmssms-uuid"
+                        ":provenance-record4-uuid",
+                        ":cassandra-mobiledevice-mmssms-uuid"
                     ],
                     "result": [
-                        "provenance-record5-uuid",
-                        "sms-message1-uuid",
-                        "sms-message2-uuid",
-                        "argive-elder1-phoneaccnt-uuid",
-                        "argive-elder2-phoneaccnt-uuid",
-                        "argive-elder3-phoneaccnt-uuid"
+                        ":provenance-record5-uuid",
+                        ":sms-message1-uuid",
+                        ":sms-message2-uuid",
+                        ":argive-elder1-phoneaccnt-uuid",
+                        ":argive-elder2-phoneaccnt-uuid",
+                        ":argive-elder3-phoneaccnt-uuid"
                     ]
                 }
             ]
         },
         {
-            "@id": "provenance-record5-uuid",
+            "@id": ":provenance-record5-uuid",
             "@type": "ProvenanceRecord",
             "description": "Parsed messages from mobile device used by murder victim Cassandra",
             "exhibitNumber": "ArgosPD-20170622-001A-100",
             "object": [
-                "sms-message1-uuid",
-                "sms-message2-uuid",
-                "argive-elder1-phoneaccnt-uuid",
-                "argive-elder2-phoneaccnt-uuid",
-                "argive-elder3-phoneaccnt-uuid"
+                ":sms-message1-uuid",
+                ":sms-message2-uuid",
+                ":argive-elder1-phoneaccnt-uuid",
+                ":argive-elder2-phoneaccnt-uuid",
+                ":argive-elder3-phoneaccnt-uuid"
             ]
         },
         {
-            "@id": "sms-message1-uuid",
+            "@id": ":sms-message1-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
                     "@type": "Message",
-                    "application": "sms-application1",
+                    "application": ":sms-application1",
                     "messageText": "A wedded wife, she slays her lord, Helped by another hand!",
-                    "from": "cassandra-mobileaccount-uuid",
+                    "from": ":cassandra-mobileaccount-uuid",
                     "to": [
-                        "argive-elder1-phoneaccnt-uuid",
-                        "argive-elder2-phoneaccnt-uuid",
-                        "argive-elder3-phoneaccnt-uuid"
+                        ":argive-elder1-phoneaccnt-uuid",
+                        ":argive-elder2-phoneaccnt-uuid",
+                        ":argive-elder3-phoneaccnt-uuid"
                     ],
                     "sentTime": "2017-06-20T09:34:42.12Z"
                 }
             ]
         },
         {
-            "@id": "sms-message2-uuid",
+            "@id": ":sms-message2-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
                     "@type": "Message",
-                    "application": "sms-application1",
+                    "application": ":sms-application1",
                     "messageText": "Low lie the shattered towers whereas they fell, and I--ah burning heart!--shall soon lie low as well.",
-                    "from": "cassandra-mobileaccount-uuid",
+                    "from": ":cassandra-mobileaccount-uuid",
                     "to": [
-                        "argive-elder1-phoneaccnt-uuid",
-                        "argive-elder2-phoneaccnt-uuid",
-                        "argive-elder3-phoneaccnt-uuid"
+                        ":argive-elder1-phoneaccnt-uuid",
+                        ":argive-elder2-phoneaccnt-uuid",
+                        ":argive-elder3-phoneaccnt-uuid"
                     ],
                     "sentTime": "2017-06-20T09:37:35.13Z"
                 }
             ]
         },
         {
-            "@id": "argive-elder1-phoneaccnt-uuid",
+            "@id": ":argive-elder1-phoneaccnt-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -920,7 +921,7 @@
             ]
         },
         {
-            "@id": "argive-elder2-phoneaccnt-uuid",
+            "@id": ":argive-elder2-phoneaccnt-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -935,7 +936,7 @@
             ]
         },
         {
-            "@id": "argive-elder3-phoneaccnt-uuid",
+            "@id": ":argive-elder3-phoneaccnt-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -950,7 +951,7 @@
             ]
         },
         {
-            "@id": "electra-emailaccount-uuid",
+            "@id": ":electra-emailaccount-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
@@ -960,15 +961,15 @@
             ]
         },
         {
-            "@id": "electra-orestes-email-uuid",
+            "@id": ":electra-orestes-email-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
                     "@type": "EmailMessage",
                     "to": [
-                        "orestes-emailaccount-uuid"
+                        ":orestes-emailaccount-uuid"
                     ],
-                    "from": "electra-emailaccount-uuid",
+                    "from": ":electra-emailaccount-uuid",
                     "subject": "Revenge our father",
                     "body": "To me, too, grant this boon-dark death to deal unto Aegisthus, and to 'scape my doom.",
                     "receivedTime": "2017-06-21T13:44:23.40Z",
@@ -978,7 +979,7 @@
             ]
         },
         {
-            "@id": "annotation3-uuid",
+            "@id": ":annotation3-uuid",
             "@type": "Annotation",
             "tag": [
                 "selfie",
@@ -986,20 +987,20 @@
             ],
             "description": "Digital photograph of corpses taken at crime scene by killer",
             "object": [
-                "orestes-selfie-photograph-uuid"
+                ":orestes-selfie-photograph-uuid"
             ]
         },
         {
-            "@id": "orestes-facebookmsg-uuid",
+            "@id": ":orestes-facebookmsg-uuid",
             "@type": "Trace",
             "propertyBundle": [
                 {
                     "@type": "FacebookMessage",
                     "from": [
-                        "orestes-facebookaccount-uuid"
+                        ":orestes-facebookaccount-uuid"
                     ],
                     "to": [
-                        "friends"
+                        ":friends"
                     ],
                     "body": "There lies our country's twofold tyranny, My father's slayers, spoilers of my home.",
                     "sentTime": "2017-06-21T14:44:54.19Z"
@@ -1007,11 +1008,11 @@
             ]
         },
         {
-            "@id": "attach_relationship1",
+            "@id": ":attach_relationship1",
             "@type": "Relationship",
-            "source": "location1",
+            "source": ":location1",
             "target": [
-                "orestes-facebookmsg-uuid"
+                ":orestes-facebookmsg-uuid"
             ],
             "kindOfRealtionship": "attachment-of",
             "isDirectional": true,

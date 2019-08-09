@@ -503,7 +503,7 @@
                     "uco-observable:version": "10.3"
                 },
                 {
-                    "@type": "uco-observable:WiFiAddress",
+                    "@type": "uco-observable:WifiAddress",
                     "uco-observable:value": "d0:33:11:13:e7:a1"
                 },
                 {

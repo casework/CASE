@@ -821,50 +821,50 @@
             "version": "1.5.2_201701013",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ToolConfiguration",
-                    "configurationSetting": [
+                    "@type": "uco-tool:ToolConfigurationType",
+                    "uco-tool:configurationSettings": [
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "identifier",
                             "uco-tool:itemValue": "624f2636e65e451e8dd7cb044ec44b69"
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "filter_file",
                             "uco-tool:itemValue": ""
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "filter_expression",
                             "uco-tool:itemValue": ""
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "preferred_encoding",
                             "uco-tool:itemValue": "cp1252"
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "parser_filter_expression",
                             "uco-tool:itemValue": "sqlite"
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "preferred_year",
                             "uco-tool:itemValue": ""
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "enabled_parser_names",
                             "uco-tool:itemValue": "sqlite, sqlite/twitter_ios, sqlite/kik_messenger, sqlite/android_sms, sqlite/android_gmail, sqlite/android_facebook"
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "debug_mode",
                             "uco-tool:itemValue": "False"
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "command_line_arguments",
                             "uco-tool:itemValue": "C:/Python27/Scripts/log2timeline.py C:/evidence/AthensPD-2017220601-01.dd.plaso C:/evidence/AthensPD-2017220601-01.dd --no-dependencies-check --parsers sqlite"
                         }
@@ -880,15 +880,15 @@
             "creator": "Joachim Metz",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ToolConfiguration",
-                    "configurationSetting": [
+                    "@type": "uco-tool:ToolConfigurationType",
+                    "uco-tool:configurationSettings": [
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "query",
                             "uco-tool:itemValue": "SELECT _id AS id, address, date, read, type, body FROM sms"
                         },
                         {
-                            "@type": "ConfigurationSetting",
+                            "@type": "uco-tool:ConfigurationSettingType",
                             "uco-tool:itemName": "schema_match",
                             "uco-tool:itemValue": "True"
                         }

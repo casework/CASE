@@ -57,7 +57,7 @@
           "accountLogin": "xXWillyRocksXx",
           "firstLoginTime": "2010-01-21T17:59:43.25Z",
           "lastLoginTime": "2010-03-12T17:59:43.25Z",
-          "displayName": "WILLY THE KID",
+          "displayName": "WILLY THE KID"
         },
         {
           "@type": "AccountAuthentication",
@@ -75,7 +75,7 @@
         },
         {
           "@type": "BirthInformation",
-          "birthdate": "1968-09-25T17:59:43.25Z",
+          "birthdate": "1968-09-25T17:59:43.25Z"
         }
       ]
     },
@@ -95,7 +95,7 @@
           "@type": "Account",
           "accountIdentifier": "willyROX@gmail.com",
           "accountIssuer": "google_org",
-          "createdTime": "2010-01-15T17:59:43.25Z",
+          "createdTime": "2010-01-15T17:59:43.25Z"
         },
         {
           "@type": "DigitalAccount",
@@ -105,7 +105,7 @@
           ],
           "firstLoginTime": "2010-01-21T17:59:43.25Z",
           "lastLoginTime": "2010-03-12T17:59:43.25Z",
-          "displayName": "William Smith",
+          "displayName": "William Smith"
         },
         {
           "@type": "AccountAuthentication",
@@ -119,11 +119,11 @@
         {
           "@type": "SimpleName",
           "givenName": "William",
-          "familyName": "Smith",
+          "familyName": "Smith"
         },
         {
           "@type": "BirthInformation",
-          "birthdate": "1968-09-25T17:59:43.25Z",
+          "birthdate": "1968-09-25T17:59:43.25Z"
         }
       ]
     },

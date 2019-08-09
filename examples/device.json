@@ -30,7 +30,7 @@
         },
         {
           "@type": "DomainName",
-          "value": "dfl.local",
+          "value": "dfl.local"
         },
         {
           "@type": "IPv4Address",

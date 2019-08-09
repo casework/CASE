@@ -55,7 +55,7 @@
     "name": "Crime E",
     "focus": "Murder",
     "description": "In the Palace of Argos, Agamemnon and Cassandra were killed by Clytemnestra (accomplice Aegisthus)",
-    "object": ["argos-palace-uuid", "aeschylus-uuid", "investigator1-uuid", "role-relationship51-uuid", "euripides-uuid", "investigator2-uuid", "role-relationship52-uuid", "cassandra-uuid", "victim5-uuid", "role-relationship5-uuid", "associated-device1-uuid", "cassandra-device-uuid", "cassandra-mobileaccount-uuid", "device-location-relationship1", "thyestes-uuid", "victim1-uuid", "role-relationship1-uuid", "offender1-uuid", "role-relationship2-uuid", "electra-uuid", "associated-emailaccount1-uuid", "clytemnestra-device-uuid", "clytemnestra-mobileaccount-uuid", "investigative-action1-uuid", "annotation1-uuid", "investigative-action10-uuid", "provenance-record1-uuid", "provenance-record2-uuid", "investigative-action2-uuid", "annotation2-uuid", "provenance-record3-uuid", "tool1-uuid", "provenance-record4-uuid", "trace-relationship3-uuid", "cassandra-image-partition6-uuid", "trace-relationship4-uuid", "tool2-uuid", "tool3-uuid", "investigative-action4-uuid", "investigative-action5-uuid", "provenance-record5-uuid", "sms-message1-uuid", "sms-message2-uuid", "argive-elder1-phoneaccnt-uuid", "argive-elder2-phoneaccnt-uuid", "argive-elder3-phoneaccnt-uuid", "electra-orestes-email-uuid", "annotation3-uuid", "orestes-facebookmsg-uuid", "@id": "attach_relationship1"]
+    "object": ["argos-palace-uuid", "aeschylus-uuid", "investigator1-uuid", "role-relationship51-uuid", "euripides-uuid", "investigator2-uuid", "role-relationship52-uuid", "cassandra-uuid", "victim5-uuid", "role-relationship5-uuid", "associated-device1-uuid", "cassandra-device-uuid", "cassandra-mobileaccount-uuid", "device-location-relationship1", "thyestes-uuid", "victim1-uuid", "role-relationship1-uuid", "offender1-uuid", "role-relationship2-uuid", "electra-uuid", "associated-emailaccount1-uuid", "clytemnestra-device-uuid", "clytemnestra-mobileaccount-uuid", "investigative-action1-uuid", "annotation1-uuid", "investigative-action10-uuid", "provenance-record1-uuid", "provenance-record2-uuid", "investigative-action2-uuid", "annotation2-uuid", "provenance-record3-uuid", "tool1-uuid", "provenance-record4-uuid", "trace-relationship3-uuid", "cassandra-image-partition6-uuid", "trace-relationship4-uuid", "tool2-uuid", "tool3-uuid", "investigative-action4-uuid", "investigative-action5-uuid", "provenance-record5-uuid", "sms-message1-uuid", "sms-message2-uuid", "argive-elder1-phoneaccnt-uuid", "argive-elder2-phoneaccnt-uuid", "argive-elder3-phoneaccnt-uuid", "electra-orestes-email-uuid", "annotation3-uuid", "orestes-facebookmsg-uuid", "attach_relationship1"],
      "propertyBundle": [
      {
        "@type": "Authorization",
@@ -213,7 +213,7 @@
     },
     {
       "@type": "MobileAccount",
-      "MSISDN": "1239275339",
+      "MSISDN": "1239275339"
     }
  ]
  },
@@ -824,7 +824,7 @@
     },
     {
       "@type": "PhoneAccount",
-      "phoneNumber": "1237771337",
+      "phoneNumber": "1237771337"
     }
    ]
    },
@@ -839,7 +839,7 @@
     },
     {
       "@type": "PhoneAccount",
-      "phoneNumber": "1237772341",
+      "phoneNumber": "1237772341"
     }
    ]
    },
@@ -854,7 +854,7 @@
     },
     {
       "@type": "PhoneAccount",
-      "phoneNumber": "1237775121",
+      "phoneNumber": "1237775121"
     }
    ]
    },
@@ -865,7 +865,9 @@
     {
       "@type": "EmailAccount",
       "emailAddress": "electra.pleiade@sevensisters.com"
-    },
+    }
+   ]
+   },
    {
    "@id": "electra-orestes-email-uuid",
    "@type": "Trace",
@@ -901,6 +903,8 @@
       "to": ["friends"],
       "body": "There lies our country's twofold tyranny, My father's slayers, spoilers of my home.",
       "sentTime": "2017-06-21T14:44:54.19Z"
+    }
+    ]
     },
     {
       "@id": "attach_relationship1",
@@ -916,7 +920,5 @@
         }
       ]
     }
-   ]
-   }
 ]
 }

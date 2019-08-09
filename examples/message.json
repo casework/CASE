@@ -1,7 +1,7 @@
 {
   "@context": {
     "@vocab": "http://case.example.org/core#",
-    "olo": "http://purl.org/ontology/olo/core#",
+    "olo": "http://purl.org/ontology/olo/core#"
   },
   "@graph": [
     {

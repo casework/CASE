@@ -2,7 +2,8 @@
   "@context": {
     "@vocab": "http://case.example.org/core#",
     "olo": "http://purl.org/ontology/olo/core#",
-    "acme": "http://custompb.acme.org/core#"
+    "acme": "http://custompb.acme.org/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
     {
@@ -186,12 +187,10 @@
           }
         ]
     },
-
-    // TODO: Determine if it's better to group objects together using provenance records
-    // or to have a provenance record for each object.
     {
       "@id": "investigative_action1",
       "@type": "InvestigativeAction",
+      "rdfs:comment": "TODO: Determine if it's better to group objects together using provenance records or to have a provenance record for each object.",
       "name": "carved",
       "startTime": "2010-01-20T17:59:43.25Z",
       "endTime": "2010-01-21T17:59:43.25Z",
@@ -218,8 +217,8 @@
     {
       "@id": "investigative_action2",
       "@type": "Investigative",
+      "rdfs:comment": "Start and end times are the same as investigative_action1 because this action was part of the same action that performed the carving.",
       "name": "reconstructed",
-      // Start and end times are the same as investigative_action1 because this action was part of the same action that performed the carving.
       "startTime": "2010-01-20T17:59:43.25Z",
       "endTime": "2010-01-21T17:59:43.25Z",
       "propertyBundle": [

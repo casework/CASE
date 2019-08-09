@@ -2,6 +2,7 @@
   "@context": {
     "@vocab": "http://case.example.org/core#",
     "olo": "http://purl.org/ontology/olo/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "@graph": [
 
@@ -28,22 +29,25 @@
       "propertyBundle": [
         {
           "@type": "Contact",
+          "rdfs:comment": [
+            "TODO: Should the contactName property be renamed to 'displayName'?",
+            "TODO: How do we distingish 'Home', 'Work', 'Mobile', etc?",
+            "NOTE: phone_account3 is missing from this because it's a new account found in the SMS logs that was not in the phonebook.",
+            "TODO: How do we represent location information? (example: Home and Work)",
+            "TODO: I assume the screenName property is supposed to point to Digital/Application accounts?"
+          ],
           "firstName": "John",
           "familyName": "Doe",
-          "contactName": "BFF Joe",  // TODO: Should this property be renamed to "displayName"?
+          "contactName": "BFF Joe",
           "application": "android_phonebook1",
           "emailAddress": [
             "email_account1"
           ],
-          // TODO: How do we distingish "Home", "Work", "Mobile", etc?
-          // NOTE: phone_account3 is missing from this because it's a new account found in the SMS logs that
-          // was not in the phonebook.
           "phoneNumber": [
             "phone_account1",
             "phone_account2"
           ],
-          // TODO: How do we represent location information? (example: Home and Work)
-          "screenName": [], // TODO: I assume this property is suppose to point to Digital/Application accounts?
+          "screenName": []
         }
       ]
     },
@@ -79,12 +83,13 @@
       "propertyBundle": [
         {
           "@type": "Account",
-          "accountType": "Phone", // TODO: Is this necessary? We know its phone account due to the existence of "PhoneAccount" (duck type model and all that)
+          "rdfs:comment": "TODO: Is the accountType necessary? We know its phone account due to the existence of 'PhoneAccount' (duck type model and all that)",
+          "accountType": "Phone",
           "isActive": true
         },
         {
           "@type": "PhoneAccount",
-          "phoneNumber": "1237771337",
+          "phoneNumber": "1237771337"
         }
       ]
     },
@@ -152,4 +157,4 @@
       ]
     }
   ]
-} 
+}

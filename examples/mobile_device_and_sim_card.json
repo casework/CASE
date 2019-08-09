@@ -30,7 +30,7 @@
           "@type": "MobileDevice",
           "keypadUnlockCode": "123456",
           "IMEI": "35540607448XXXX",
-          "MSISDN": ["mobile-account1-uuid"]
+          "MSISDN": ["mobile-account1-uuid"],
           "clockSetting": "2018-02-24T07:36:24.35Z",
           "timezoneSetting": "UTC+01:01 (Europe/Rome)",
           "storageCapacity": "16 GB"
@@ -38,7 +38,7 @@
       {
           "@type": "BluetoothAddress",
           "address": "DC:41:5F:44:48:24"
-      }
+      },
       {
           "@type": "WiFiAddress",
           "address": "DC:41:5F:44:48:25"

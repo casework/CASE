@@ -9,7 +9,7 @@
 "@id": "bundle-2a13e958a-d975-41aa-b1bb-029d2b6707ab",
 "@type": "Bundle",
 "description": [
-  "This example of representing network connections in captured network traffic (e.g., PCAP).",
+  "This example of representing network connections in captured network traffic (e.g., PCAP)."
 ],
 "content": [
   {
@@ -18,7 +18,7 @@
     "name": "NetTheft1234",
     "focus": "Media Theft",
     "description": "Network traffic of media theft",
-    "object": ["pcap-tool-uuid", "extraction-action-uuid", "pcap-provenancerecord-uuid", "source-host-uuid", "destination-host-uuid", "network-connection1-uuid", "network-connection2-uuid", "network-connection3-uuid", "trace-relationship1-uuid", "trace-relationship2-uuid", "trace-relationship3-uuid"]
+    "object": ["pcap-tool-uuid", "extraction-action-uuid", "pcap-provenancerecord-uuid", "source-host-uuid", "destination-host-uuid", "network-connection1-uuid", "network-connection2-uuid", "network-connection3-uuid", "trace-relationship1-uuid", "trace-relationship2-uuid", "trace-relationship3-uuid"],
      "propertyBundle": [
      {
        "@type": "Authorization",
@@ -93,7 +93,7 @@
           "hashMethod": "MD5",
           "hashValue": "dd7558b16eae4d582d7b4608e85d862a"
          }
-       ],
+       ]
      }
    ]
   },
@@ -195,9 +195,8 @@
        "sourcePort": 52962,
        "protocols": "TCP, NETBIOSSESSIONSERVICE",
        "connectionState": "APSF"
-     },
     }
-   ]
+    ]
   },
   {
     "@id": "trace-relationship1-uuid",
@@ -205,34 +204,40 @@
     "source": "network-connection1-uuid",
     "target": ["pcap-file-uuid"],
     "kindOfRelationship": "contained-within",
-    "isDirectional": "true"
+    "isDirectional": "true",
     "propertyBundle": [
+       {
        "@type": "StarttimeRelation",
        "startTime": "2009-04-03T02:29:25.6256260Z"
+       }
     ]
-  }
+  },
   {
     "@id": "trace-relationship2-uuid",
     "@type": "Relationship",
     "source": "network-connection3-uuid",
     "target": ["pcap-file-uuid"],
     "kindOfRelationship": "contained-within",
-    "isDirectional": "true"
+    "isDirectional": "true",
     "propertyBundle": [
+       {
        "@type": "StarttimeRelation",
        "startTime": "2009-04-03T02:29:25.6264620Z"
+       }
     ]
-  }
+  },
   {
     "@id": "trace-relationship3-uuid",
     "@type": "Relationship",
     "source": "network-connection3-uuid",
     "target": ["pcap-file-uuid"],
     "kindOfRelationship": "contained-within",
-    "isDirectional": "true"
+    "isDirectional": "true",
     "propertyBundle": [
+       {
        "@type": "StarttimeRelation",
        "startTime": "2009-04-03T02:29:25.6370540Z"
+       }
     ]
   }
  ]

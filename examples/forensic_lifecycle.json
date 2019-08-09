@@ -70,7 +70,7 @@
       ],
       "object": ["investigator1", "examiner1", "examiner2", "subject1", "victim2", "forensic_action1", "lifecycle_phase1",
         "annotation2", "forensic_action2","lifecycle_phase2", "annotation3", "forensic_action3", "lifecycle_phase3",
-        "annotation4", "forensic_action4","lifecycle_phase4", "annotation5", "forensic_action5", "lifecycle_phase5"
+        "annotation4", "forensic_action4","lifecycle_phase4", "annotation5", "forensic_action5", "lifecycle_phase5",
         "annotation6", "forensic_action6", "provenance_record1", "provenance_record2", "provenance_record3",
         "provenance_record4", "provenance_record5", "provenance_record6", "provenance_record7", "provenance_record8",
         "provenance_record9", "provenance_record10", "provenance_record11", "provenance_record12", "provenance_record13",

@@ -1022,7 +1022,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Account",
-                    "uco-observable:accountIssuer": "Olympus",
+                    "uco-observable:accountIssuer": ":olympus-uuid",
                     "uco-observable:isActive": "true"
                 },
                 {
@@ -1037,7 +1037,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Account",
-                    "uco-observable:accountIssuer": "Olympus",
+                    "uco-observable:accountIssuer": ":olympus-uuid",
                     "uco-observable:isActive": "true"
                 },
                 {
@@ -1052,7 +1052,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Account",
-                    "uco-observable:accountIssuer": "Olympus",
+                    "uco-observable:accountIssuer": ":olympus-uuid",
                     "uco-observable:isActive": "true"
                 },
                 {

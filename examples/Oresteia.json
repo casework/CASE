@@ -662,7 +662,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
-                    "createdTime": {
+                    "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-06-22T08:12:19.32Z"
                     },
@@ -715,7 +715,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
-                    "createdTime": {
+                    "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-06-22T08:12:19.32Z"
                     },

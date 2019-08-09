@@ -211,7 +211,8 @@
             "uco-core:target": [
                 ":investigator1-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-role",
+            "rdfs:comment": "TODO: 'Has_Role' is not in uco-observable:CyberItemRelationshipEnum.",
+            "uco-core:kindOfRelationship": "Has_Role",
             "uco-core:isDirectional": true
         },
         {
@@ -259,7 +260,7 @@
             "uco-core:target": [
                 ":investigator2-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:kindOfRelationship": "Has_Role",
             "uco-core:isDirectional": true
         },
         {
@@ -292,7 +293,7 @@
             "uco-core:target": [
                 ":victim5-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:kindOfRelationship": "Has_Role",
             "uco-core:isDirectional": true
         },
         {
@@ -302,7 +303,8 @@
             "uco-core:target": [
                 ":cassandra-device-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-device",
+            "rdfs:comment": "TODO: 'Has_Device' is not in uco-observable:CyberItemRelationshipEnum.",
+            "uco-core:kindOfRelationship": "Has_Device",
             "uco-core:isDirectional": true
         },
         {
@@ -350,7 +352,8 @@
             "uco-core:target": [
                 ":cassandra-mobileaccount-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-account",
+            "rdfs:comment": "TODO: 'Has_Account' is not in uco-observable:CyberItemRelationshipEnum.",
+            "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-05-12T15:32:31.09Z"
@@ -374,7 +377,8 @@
             "uco-core:target": [
                 ":argos-palace-uuid"
             ],
-            "uco-core:kindOfRelationship": "located-at",
+            "rdfs:comment": "TODO: 'Located_At' is not in uco-observable:CyberItemRelationshipEnum.",
+            "uco-core:kindOfRelationship": "Located_At",
             "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-19T13:59:43.25Z"
@@ -421,7 +425,7 @@
             "uco-core:target": [
                 ":victim1-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:kindOfRelationship": "Has_Role",
             "uco-core:isDirectional": true
         },
         {
@@ -436,7 +440,7 @@
             "uco-core:target": [
                 ":offender1-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:kindOfRelationship": "Has_Role",
             "uco-core:isDirectional": true
         },
         {
@@ -464,7 +468,7 @@
             "uco-core:target": [
                 ":electra-emailaccount-uuid"
             ],
-            "uco-core:kindOfRelationship": "has-account",
+            "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:isDirectional": true
         },
         {
@@ -1139,11 +1143,15 @@
         {
             "@id": ":attach_relationship1",
             "@type": "uco-core:Relationship",
+            "rdfs:comment": [
+                "TODO: This Relationship node is confusing to interpret, particularly with :location1 not defined in the document.  Is this supposed to be an investigator interpretation of the location of the depicted corpses?",
+                "TODO: 'Attachment_Of' is not in uco-observable:CyberItemRelationshipEnum."
+            ],
             "uco-core:source": ":location1",
             "uco-core:target": [
                 ":orestes-facebookmsg-uuid"
             ],
-            "uco-core:kindOfRelationship": "attachment-of",
+            "uco-core:kindOfRelationship": "Attachment_Of",
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {

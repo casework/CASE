@@ -1,160 +1,158 @@
 {
-  "@context": {
-    "@vocab": "http://case.example.org/core#",
-    "olo": "http://purl.org/ontology/olo/core#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
-  },
-  "@graph": [
-
-    {
-      "@id": "sms_message1",
-      "@type": "Trace",
-      "propertyBundle": [
+    "@context": {
+        "@vocab": "http://case.example.org/core#",
+        "olo": "http://purl.org/ontology/olo/core#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "@graph": [
         {
-          "@type": "Message",
-          "application": "sms_application1",
-          "messageText": "Yo dude! This is my new number.",
-          "from": "phone_account3",
-          "to": [
-            "phone_account1"
-          ],
-          "sentTime": "2010-01-15T17:59:43.25Z"
-        }
-      ]
-    },
-
-    {
-      "@id": "contact1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Contact",
-          "rdfs:comment": [
-            "TODO: Should the contactName property be renamed to 'displayName'?",
-            "TODO: How do we distingish 'Home', 'Work', 'Mobile', etc?",
-            "NOTE: phone_account3 is missing from this because it's a new account found in the SMS logs that was not in the phonebook.",
-            "TODO: How do we represent location information? (example: Home and Work)",
-            "TODO: I assume the screenName property is supposed to point to Digital/Application accounts?"
-          ],
-          "firstName": "John",
-          "familyName": "Doe",
-          "contactName": "BFF Joe",
-          "application": "android_phonebook1",
-          "emailAddress": [
-            "email_account1"
-          ],
-          "phoneNumber": [
-            "phone_account1",
-            "phone_account2"
-          ],
-          "screenName": []
-        }
-      ]
-    },
-
-    {
-      "@id": "associated-account1",
-      "@type": "Relationship",
-      "source": "contact1",
-      "target": ["phone_account1"],
-      "kindOfRelationship": "has-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "associated-account2",
-      "@type": "Relationship",
-      "source": "contact1",
-      "target": ["phone_account2"],
-      "kindOfRelationship": "has-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "associated-account3",
-      "@type": "Relationship",
-      "source": "contact1",
-      "target": ["email_account1"],
-      "kindOfRelationship": "has-account",
-      "isDirectional": true
-    },
-
-    {
-      "@id": "phone_account1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Account",
-          "rdfs:comment": "TODO: Is the accountType necessary? We know its phone account due to the existence of 'PhoneAccount' (duck type model and all that)",
-          "accountType": "Phone",
-          "isActive": true
+            "@id": "sms_message1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Message",
+                    "application": "sms_application1",
+                    "messageText": "Yo dude! This is my new number.",
+                    "from": "phone_account3",
+                    "to": [
+                        "phone_account1"
+                    ],
+                    "sentTime": "2010-01-15T17:59:43.25Z"
+                }
+            ]
         },
         {
-          "@type": "PhoneAccount",
-          "phoneNumber": "1237771337"
-        }
-      ]
-    },
-
-    {
-      "@id": "phone_account2",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Account",
-          "accountType": "Phone",
-          "isActive": true
+            "@id": "contact1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Contact",
+                    "rdfs:comment": [
+                        "TODO: Should the contactName property be renamed to 'displayName'?",
+                        "TODO: How do we distingish 'Home', 'Work', 'Mobile', etc?",
+                        "NOTE: phone_account3 is missing from this because it's a new account found in the SMS logs that was not in the phonebook.",
+                        "TODO: How do we represent location information? (example: Home and Work)",
+                        "TODO: I assume the screenName property is supposed to point to Digital/Application accounts?"
+                    ],
+                    "firstName": "John",
+                    "familyName": "Doe",
+                    "contactName": "BFF Joe",
+                    "application": "android_phonebook1",
+                    "emailAddress": [
+                        "email_account1"
+                    ],
+                    "phoneNumber": [
+                        "phone_account1",
+                        "phone_account2"
+                    ],
+                    "screenName": []
+                }
+            ]
         },
         {
-          "@type": "PhoneAccount",
-          "phoneNumber": "1234560000"
-        }
-      ]
-    },
-
-    {
-      "@id": "email_account1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Account",
-          "accountType": "Email",
-          "isActive": true
+            "@id": "associated-account1",
+            "@type": "Relationship",
+            "source": "contact1",
+            "target": [
+                "phone_account1"
+            ],
+            "kindOfRelationship": "has-account",
+            "isDirectional": true
         },
         {
-          "@type": "EmailAccount",
-          "emailAddress": "jdoe@example.com"
-        }
-      ]
-    },
-
-    {
-      "@id": "phone_account3",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Account",
-          "accountType": "Phone",
-          "isActive": true
+            "@id": "associated-account2",
+            "@type": "Relationship",
+            "source": "contact1",
+            "target": [
+                "phone_account2"
+            ],
+            "kindOfRelationship": "has-account",
+            "isDirectional": true
         },
         {
-          "@type": "PhoneAccount",
-          "phoneNumber": "11235557890"
-        }
-      ]
-    },
-
-    {
-      "@id": "android_phonebook1",
-      "@type": "Trace",
-      "propertyBundle": [
+            "@id": "associated-account3",
+            "@type": "Relationship",
+            "source": "contact1",
+            "target": [
+                "email_account1"
+            ],
+            "kindOfRelationship": "has-account",
+            "isDirectional": true
+        },
         {
-          "@type": "Application",
-          "name": "Android Phonebook",
-          "applicationIdentifier": "com.android.providers.telephony",
-          "operatingSystem": "os1",
-          "version": "2.3.4",
-          "numberOfLaunches": 323
+            "@id": "phone_account1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Account",
+                    "rdfs:comment": "TODO: Is the accountType necessary? We know its phone account due to the existence of 'PhoneAccount' (duck type model and all that)",
+                    "accountType": "Phone",
+                    "isActive": true
+                },
+                {
+                    "@type": "PhoneAccount",
+                    "phoneNumber": "1237771337"
+                }
+            ]
+        },
+        {
+            "@id": "phone_account2",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Account",
+                    "accountType": "Phone",
+                    "isActive": true
+                },
+                {
+                    "@type": "PhoneAccount",
+                    "phoneNumber": "1234560000"
+                }
+            ]
+        },
+        {
+            "@id": "email_account1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Account",
+                    "accountType": "Email",
+                    "isActive": true
+                },
+                {
+                    "@type": "EmailAccount",
+                    "emailAddress": "jdoe@example.com"
+                }
+            ]
+        },
+        {
+            "@id": "phone_account3",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Account",
+                    "accountType": "Phone",
+                    "isActive": true
+                },
+                {
+                    "@type": "PhoneAccount",
+                    "phoneNumber": "11235557890"
+                }
+            ]
+        },
+        {
+            "@id": "android_phonebook1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Application",
+                    "name": "Android Phonebook",
+                    "applicationIdentifier": "com.android.providers.telephony",
+                    "operatingSystem": "os1",
+                    "version": "2.3.4",
+                    "numberOfLaunches": 323
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

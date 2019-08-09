@@ -1,159 +1,169 @@
 {
-  "@context": {
-    "@vocab": "http://case.example.org/core#",
-    "olo": "http://purl.org/ontology/olo/core#"
-  },
-  "@graph": [
-    {
-      "@id": "actor1",
-      "@type": "Identity",
-      "propertyBundle": [
+    "@context": {
+        "@vocab": "http://case.example.org/core#",
+        "olo": "http://purl.org/ontology/olo/core#"
+    },
+    "@graph": [
         {
-          "@type": "SimpleName",
-          "givenName": "William",
-          "familyName": "Smith"
+            "@id": "actor1",
+            "@type": "Identity",
+            "propertyBundle": [
+                {
+                    "@type": "SimpleName",
+                    "givenName": "William",
+                    "familyName": "Smith"
+                },
+                {
+                    "@type": "BirthInformation",
+                    "birthdate": "1968-09-25T17:59:43.25Z"
+                }
+            ]
         },
         {
-          "@type": "BirthInformation",
-          "birthdate": "1968-09-25T17:59:43.25Z"
+            "@id": "associated-account1",
+            "@type": "Relationship",
+            "source": "actor1",
+            "target": [
+                "facebook_account1"
+            ],
+            "kindOfRelationship": "has-account",
+            "isDirectional": true
+        },
+        {
+            "@id": "associated-account2",
+            "@type": "Relationship",
+            "source": "actor1",
+            "target": [
+                "google_account1"
+            ],
+            "kindOfRelationship": "has-account",
+            "isDirectional": true
+        },
+        {
+            "@id": "associated-account3",
+            "@type": "Relationship",
+            "source": "actor1",
+            "target": [
+                "email_account1"
+            ],
+            "kindOfRelationship": "has-account",
+            "isDirectional": true
+        },
+        {
+            "@id": "facebook_account1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Account",
+                    "accountIdentifier": "1235556677@facebook.net",
+                    "accountIssuer": "facebook_org"
+                },
+                {
+                    "@type": "DigitalAccount",
+                    "accountLogin": "xXWillyRocksXx",
+                    "firstLoginTime": "2010-01-21T17:59:43.25Z",
+                    "lastLoginTime": "2010-03-12T17:59:43.25Z",
+                    "displayName": "WILLY THE KID"
+                },
+                {
+                    "@type": "AccountAuthentication",
+                    "password": "123secretpassword456",
+                    "passwordLastChanged": "2010-01-15T17:59:43.25Z"
+                },
+                {
+                    "@type": "ApplicationAccount",
+                    "application": "application1"
+                },
+                {
+                    "@type": "SimpleName",
+                    "givenName": "Willy",
+                    "familyName": "Smith"
+                },
+                {
+                    "@type": "BirthInformation",
+                    "birthdate": "1968-09-25T17:59:43.25Z"
+                }
+            ]
+        },
+        {
+            "@id": "associated-account4",
+            "@type": "Relationship",
+            "source": "facebook_account1",
+            "target": [
+                "email_account1"
+            ],
+            "kindOfRelationship": "associated-account",
+            "isDirectional": true
+        },
+        {
+            "@id": "google_account1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "Account",
+                    "accountIdentifier": "willyROX@gmail.com",
+                    "accountIssuer": "google_org",
+                    "createdTime": "2010-01-15T17:59:43.25Z"
+                },
+                {
+                    "@type": "DigitalAccount",
+                    "accountLogin": [
+                        "willyROX",
+                        "willyROX@gmail.com"
+                    ],
+                    "firstLoginTime": "2010-01-21T17:59:43.25Z",
+                    "lastLoginTime": "2010-03-12T17:59:43.25Z",
+                    "displayName": "William Smith"
+                },
+                {
+                    "@type": "AccountAuthentication",
+                    "password": "1337_P@ZZW0RD",
+                    "passwordLastChanged": "2010-01-15T17:59:43.25Z"
+                },
+                {
+                    "@type": "ApplicationAccount",
+                    "application": "application2"
+                },
+                {
+                    "@type": "SimpleName",
+                    "givenName": "William",
+                    "familyName": "Smith"
+                },
+                {
+                    "@type": "BirthInformation",
+                    "birthdate": "1968-09-25T17:59:43.25Z"
+                }
+            ]
+        },
+        {
+            "@id": "associated-account4",
+            "@type": "Relationship",
+            "source": "google_account1",
+            "target": [
+                "email_account1"
+            ],
+            "kindOfRelationship": "associated-account",
+            "isDirectional": true
+        },
+        {
+            "@id": "email_account1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "EmailAccount",
+                    "emailAddress": "email-address1"
+                }
+            ]
+        },
+        {
+            "@id": "email_address1",
+            "@type": "Trace",
+            "propertyBundle": [
+                {
+                    "@type": "EmailAddress",
+                    "emailAddress": "willyROX@gmail.com"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@id": "associated-account1",
-      "@type": "Relationship",
-      "source": "actor1",
-      "target": ["facebook_account1"],
-      "kindOfRelationship": "has-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "associated-account2",
-      "@type": "Relationship",
-      "source": "actor1",
-      "target": ["google_account1"],
-      "kindOfRelationship": "has-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "associated-account3",
-      "@type": "Relationship",
-      "source": "actor1",
-      "target": ["email_account1"],
-      "kindOfRelationship": "has-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "facebook_account1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Account",
-          "accountIdentifier": "1235556677@facebook.net",
-          "accountIssuer": "facebook_org"
-        },
-        {
-          "@type": "DigitalAccount",
-          "accountLogin": "xXWillyRocksXx",
-          "firstLoginTime": "2010-01-21T17:59:43.25Z",
-          "lastLoginTime": "2010-03-12T17:59:43.25Z",
-          "displayName": "WILLY THE KID"
-        },
-        {
-          "@type": "AccountAuthentication",
-          "password": "123secretpassword456",
-          "passwordLastChanged": "2010-01-15T17:59:43.25Z"
-        },
-        {
-          "@type": "ApplicationAccount",
-          "application": "application1"
-        },
-        {
-          "@type": "SimpleName",
-          "givenName": "Willy",
-          "familyName": "Smith"
-        },
-        {
-          "@type": "BirthInformation",
-          "birthdate": "1968-09-25T17:59:43.25Z"
-        }
-      ]
-    },
-    {
-      "@id": "associated-account4",
-      "@type": "Relationship",
-      "source": "facebook_account1",
-      "target": ["email_account1"],
-      "kindOfRelationship": "associated-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "google_account1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "Account",
-          "accountIdentifier": "willyROX@gmail.com",
-          "accountIssuer": "google_org",
-          "createdTime": "2010-01-15T17:59:43.25Z"
-        },
-        {
-          "@type": "DigitalAccount",
-          "accountLogin": [
-              "willyROX",
-              "willyROX@gmail.com"
-          ],
-          "firstLoginTime": "2010-01-21T17:59:43.25Z",
-          "lastLoginTime": "2010-03-12T17:59:43.25Z",
-          "displayName": "William Smith"
-        },
-        {
-          "@type": "AccountAuthentication",
-          "password": "1337_P@ZZW0RD",
-          "passwordLastChanged": "2010-01-15T17:59:43.25Z"
-        },
-        {
-          "@type": "ApplicationAccount",
-          "application": "application2"
-        },
-        {
-          "@type": "SimpleName",
-          "givenName": "William",
-          "familyName": "Smith"
-        },
-        {
-          "@type": "BirthInformation",
-          "birthdate": "1968-09-25T17:59:43.25Z"
-        }
-      ]
-    },
-    {
-      "@id": "associated-account4",
-      "@type": "Relationship",
-      "source": "google_account1",
-      "target": ["email_account1"],
-      "kindOfRelationship": "associated-account",
-      "isDirectional": true
-    },
-    {
-      "@id": "email_account1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "EmailAccount",
-          "emailAddress": "email-address1"
-        }
-      ]
-    },
-    {
-      "@id": "email_address1",
-      "@type": "Trace",
-      "propertyBundle": [
-        {
-          "@type": "EmailAddress",
-          "emailAddress": "willyROX@gmail.com"
-        }
-      ]
-    }
-  ]
+    ]
 }

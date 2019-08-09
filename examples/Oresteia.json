@@ -17,9 +17,9 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@id": ":bundle-3b13e958a-d975-41aa-b1bb-029d2b6707cd",
-    "@type": "Bundle",
-    "name": "Greek Case 13",
-    "description": [
+    "@type": "uco-core:Bundle",
+    "uco-core:name": "Greek Case 13",
+    "uco-core:description": [
         "This illustrative scenario imagines The Oresteia in the age mobile devices for the purpose of demonstrating use of CASE to represent digital investigations into multiple related crimes.",
         "To reduce repetitive examples in this illustrative scenario, not all Identity objects are explicitly represented here. Instead, each object that is referenced in this scenario uses the associated person's name in the simplified UUID.",
         "Thyestes is the victim in Crime A, and the offender in Crime B",
@@ -29,10 +29,10 @@
     "content": [
         {
             "@id": ":investigation-4586742a-710a-454f-bcb8-b60e230ec1b2",
-            "@type": "Investigation",
-            "name": "Crime A",
-            "focus": "Murder",
-            "description": "In Mycenae, Atreus killed two sons of Thyestes, cooked them (except for their hands and heads), fed them to Thyestes, and then taunted Thyestes with his murdered sons' hands and heads.",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "Crime A",
+            "uco-investigation:focus": "Murder",
+            "uco-core:description": "In Mycenae, Atreus killed two sons of Thyestes, cooked them (except for their hands and heads), fed them to Thyestes, and then taunted Thyestes with his murdered sons' hands and heads.",
             "object": [
                 ":thyestes-uuid",
                 ":victim1-uuid",
@@ -41,10 +41,10 @@
         },
         {
             "@id": ":investigation-b05226da-eaef-4bc5-a139-ca12c94dbdfd",
-            "@type": "Investigation",
-            "name": "Crime B",
-            "focus": "Rape",
-            "description": "In Mycenae, Thyestes raped his daughter Pelopia to have a son (Aegisthus)",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "Crime B",
+            "uco-investigation:focus": "Rape",
+            "uco-core:description": "In Mycenae, Thyestes raped his daughter Pelopia to have a son (Aegisthus)",
             "object": [
                 ":thyestes-uuid",
                 ":offender1-uuid",
@@ -55,26 +55,26 @@
         },
         {
             "@id": ":investigation-ac9fd560-261e-4cd6-af64-8b83d100b9a8",
-            "@type": "Investigation",
-            "name": "Crime C",
-            "focus": "Murder",
-            "description": "In Mycenae, Aegisthus killed Atreus (Agamemnon's father)",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "Crime C",
+            "uco-investigation:focus": "Murder",
+            "uco-core:description": "In Mycenae, Aegisthus killed Atreus (Agamemnon's father)",
             "object": []
         },
         {
             "@id": ":investigation-2545442b-321c-754d-bcb8-c40d321ce2c2",
-            "@type": "Investigation",
-            "name": "Crime D",
-            "focus": "Murder",
-            "description": "In Aulis, Agamemnon killed his daughter Iphigenia as a sacrifice to the gods",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "Crime D",
+            "uco-investigation:focus": "Murder",
+            "uco-core:description": "In Aulis, Agamemnon killed his daughter Iphigenia as a sacrifice to the gods",
             "object": []
         },
         {
             "@id": ":investigation-952d677d-6b62-4e53-9bac-1b113d268ac5",
-            "@type": "Investigation",
-            "name": "Crime E",
-            "focus": "Murder",
-            "description": "In the Palace of Argos, Agamemnon and Cassandra were killed by Clytemnestra (accomplice Aegisthus)",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "Crime E",
+            "uco-investigation:focus": "Murder",
+            "uco-core:description": "In the Palace of Argos, Agamemnon and Cassandra were killed by Clytemnestra (accomplice Aegisthus)",
             "object": [
                 ":argos-palace-uuid",
                 ":aeschylus-uuid",
@@ -129,18 +129,18 @@
             ],
             "case-core:propertyBundle": [
                 {
-                    "@type": "Authorization",
-                    "authorizationIdentifier": "Warrant12345",
-                    "authorizationType": "warrant"
+                    "@type": "uco-investigation:Authorization",
+                    "uco-investigation:authorizationIdentifier": "Warrant12345",
+                    "uco-investigation:authorizationType": "warrant"
                 }
             ]
         },
         {
             "@id": ":investigation-5aa33dc6-7a39-4731-a754-62a9c41e5220",
-            "@type": "Investigation",
-            "name": "Crime F",
-            "focus": "Murder",
-            "description": "In the Palace of Argos, Clytemnestra and Aegisthus were killed by Orestes (accomplice Electra)",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "Crime F",
+            "uco-investigation:focus": "Murder",
+            "uco-core:description": "In the Palace of Argos, Clytemnestra and Aegisthus were killed by Orestes (accomplice Electra)",
             "object": [
                 ":electra-uuid",
                 ":argos-palace-uuid",
@@ -150,154 +150,154 @@
         },
         {
             "@id": ":argos-palace-uuid",
-            "@type": "Location",
+            "@type": "uco-location:Location",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleAddress",
-                    "locality": "Argos",
-                    "region": "Greece",
-                    "postalCode": "98052",
-                    "street": "Palace Blvd"
+                    "@type": "uco-location:SimpleAddress",
+                    "uco-location:locality": "Argos",
+                    "uco-location:region": "Greece",
+                    "uco-location:postalCode": "98052",
+                    "uco-location:street": "Palace Blvd"
                 },
                 {
-                    "@type": "LatLongCoordinates",
-                    "latitude": 48.860346,
-                    "longitude": 2.331199
+                    "@type": "uco-location:LatLongCoordinates",
+                    "uco-location:latitude": 48.860346,
+                    "uco-location:longitude": 2.331199
                 }
             ]
         },
         {
             "@id": ":aeschylus-uuid",
-            "@type": "Identity",
-            "createdBy": ":eoghan-uuid",
+            "@type": "uco-identity:Identity",
+            "uco-core:createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleName",
-                    "givenName": "Aeschylus",
-                    "familyName": "Bard"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "Aeschylus",
+                    "uco-identity:familyName": "Bard"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1954-03-07T15:34:24.02Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": "1954-03-07T15:34:24.02Z"
                 }
             ]
         },
         {
             "@id": ":investigator1-uuid",
-            "@type": "Role",
-            "createdBy": ":eoghan-uuid",
+            "@type": "uco-role:Role",
+            "uco-core:createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "name": "Investigator"
+            "uco-core:name": "Investigator"
         },
         {
             "@id": ":role-relationship51-uuid",
-            "@type": "Relationship",
-            "createdBy": ":eoghan-uuid",
+            "@type": "uco-core:Relationship",
+            "uco-core:createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "source": ":aeschylus-uuid",
-            "target": [
+            "uco-core:source": ":aeschylus-uuid",
+            "uco-core:target": [
                 ":investigator1-uuid"
             ],
-            "kindOfRelationship": "has-role",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":euripides-uuid",
-            "@type": "Identity",
-            "createdBy": ":eoghan-uuid",
+            "@type": "uco-identity:Identity",
+            "uco-core:createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleName",
-                    "givenName": "Euripides",
-                    "familyName": "Forte"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "Euripides",
+                    "uco-identity:familyName": "Forte"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1956-04-08T16:35:23.35Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": "1956-04-08T16:35:23.35Z"
                 }
             ]
         },
         {
             "@id": ":investigator2-uuid",
-            "@type": "Role",
-            "createdBy": ":eoghan-uuid",
+            "@type": "uco-role:Role",
+            "uco-core:createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "name": "Investigator"
+            "uco-core:name": "Investigator"
         },
         {
             "@id": ":role-relationship52-uuid",
-            "@type": "Relationship",
-            "createdBy": ":eoghan-uuid",
+            "@type": "uco-core:Relationship",
+            "uco-core:createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "source": ":euripides-uuid",
-            "target": [
+            "uco-core:source": ":euripides-uuid",
+            "uco-core:target": [
                 ":investigator2-uuid"
             ],
-            "kindOfRelationship": "has-role",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":cassandra-uuid",
-            "@type": "Identity",
+            "@type": "uco-identity:Identity",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleName",
-                    "givenName": "Cassandra",
-                    "familyName": "Troy"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "Cassandra",
+                    "uco-identity:familyName": "Troy"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1968-09-25T17:59:43.25Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": "1968-09-25T17:59:43.25Z"
                 }
             ]
         },
         {
             "@id": ":victim5-uuid",
-            "@type": "Role",
-            "name": "Victim"
+            "@type": "uco-role:Role",
+            "uco-core:name": "Victim"
         },
         {
             "@id": ":role-relationship5-uuid",
-            "@type": "Relationship",
-            "source": ":cassandra-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":cassandra-uuid",
+            "uco-core:target": [
                 ":victim5-uuid"
             ],
-            "kindOfRelationship": "has-role",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":associated-device1-uuid",
-            "@type": "Relationship",
-            "source": ":victim5-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":victim5-uuid",
+            "uco-core:target": [
                 ":cassandra-device-uuid"
             ],
-            "kindOfRelationship": "has-device",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-device",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":cassandra-device-uuid",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Device",
-                    "manufacturer": "Samsung",
-                    "model": "SM-G925F Galaxy S6 Edge",
-                    "serialNumber": "FDG344657"
+                    "@type": "uco-observable:Device",
+                    "uco-observable:manufacturer": "Samsung",
+                    "uco-observable:model": "SM-G925F Galaxy S6 Edge",
+                    "uco-observable:serialNumber": "FDG344657"
                 },
                 {
-                    "@type": "MobileDevice",
-                    "keypadUnlockCode": "1234",
-                    "IMEI": "359305065690067",
-                    "clockSetting": "2017-06-22T07:36:24.35Z",
-                    "storageCapacityInBytes": "11000000000"
+                    "@type": "uco-observable:MobileDevice",
+                    "uco-observable:keypadUnlockCode": "1234",
+                    "uco-observable:IMEI": "359305065690067",
+                    "uco-observable:clockSetting": "2017-06-22T07:36:24.35Z",
+                    "uco-observable:storageCapacityInBytes": "11000000000"
                 },
                 {
-                    "@type": "MobileAccount",
-                    "MSISDN": "1239275339"
+                    "@type": "uco-observable:MobileAccount",
+                    "uco-observable:MSISDN": "1239275339"
                 }
             ]
         },
@@ -306,140 +306,140 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountType": "PhoneAccount",
-                    "isActive": "true"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountType": "PhoneAccount",
+                    "uco-observable:isActive": "true"
                 },
                 {
-                    "@type": "MobileAccount",
-                    "MSISDN": "1239275339"
+                    "@type": "uco-observable:MobileAccount",
+                    "uco-observable:MSISDN": "1239275339"
                 }
             ]
         },
         {
             "@id": ":device-account-relationship1",
-            "@type": "Relationship",
-            "source": ":cassandra-device-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":cassandra-device-uuid",
+            "uco-core:target": [
                 ":cassandra-mobileaccount-uuid"
             ],
-            "kindOfRelationship": "has-account",
+            "uco-core:kindOfRelationship": "has-account",
             "startTime": "2017-05-12T15:32:31.09Z",
             "endTime": "2017-06-25T15:59:43.00Z",
-            "isDirectional": true,
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "Confidence",
-                    "confidence": "Probably True"
+                    "@type": "uco-core:Confidence",
+                    "uco-core:confidence": "Probably True"
                 }
             ]
         },
         {
             "@id": ":device-location-relationship1",
-            "@type": "Relationship",
-            "source": ":cassandra-device-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":cassandra-device-uuid",
+            "uco-core:target": [
                 ":argos-palace-uuid"
             ],
-            "kindOfRelationship": "located-at",
+            "uco-core:kindOfRelationship": "located-at",
             "startTime": "2017-06-19T13:59:43.25Z",
             "endTime": "2017-06-22T15:59:43.25Z",
-            "isDirectional": true,
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "Confidence",
-                    "confidence": "Probably True"
+                    "@type": "uco-core:Confidence",
+                    "uco-core:confidence": "Probably True"
                 }
             ]
         },
         {
             "@id": ":thyestes-uuid",
-            "@type": "Identity",
+            "@type": "uco-identity:Identity",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleName",
-                    "givenName": "Thyestes",
-                    "familyName": "Mycenae"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "Thyestes",
+                    "uco-identity:familyName": "Mycenae"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1964-10-03T14:39:23.15Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": "1964-10-03T14:39:23.15Z"
                 }
             ]
         },
         {
             "@id": ":victim1-uuid",
-            "@type": "Role",
-            "name": "Victim"
+            "@type": "uco-role:Role",
+            "uco-core:name": "Victim"
         },
         {
             "@id": ":role-relationship1-uuid",
-            "@type": "Relationship",
-            "source": ":thyestes-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":thyestes-uuid",
+            "uco-core:target": [
                 ":victim1-uuid"
             ],
-            "kindOfRelationship": "has-role",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":offender1-uuid",
-            "@type": "Role",
-            "name": "Offender"
+            "@type": "uco-role:Role",
+            "uco-core:name": "Offender"
         },
         {
             "@id": ":role-relationship2-uuid",
-            "@type": "Relationship",
-            "source": ":thyestes-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":thyestes-uuid",
+            "uco-core:target": [
                 ":offender1-uuid"
             ],
-            "kindOfRelationship": "has-role",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-role",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":electra-uuid",
-            "@type": "Identity",
+            "@type": "uco-identity:Identity",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleName",
-                    "givenName": "Electra",
-                    "familyName": "Argos"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "Electra",
+                    "uco-identity:familyName": "Argos"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1998-03-02T14:23:42.23Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": "1998-03-02T14:23:42.23Z"
                 }
             ]
         },
         {
             "@id": ":associated-emailaccount1-uuid",
-            "@type": "Relationship",
-            "source": ":electra-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":electra-uuid",
+            "uco-core:target": [
                 ":electra-emailaccount-uuid"
             ],
-            "kindOfRelationship": "has-account",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-account",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":clytemnestra-device-uuid",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Device",
-                    "manufacturer": "iPhone",
-                    "model": "MG552",
-                    "serialNumber": "F18Q4LGRG5MD"
+                    "@type": "uco-observable:Device",
+                    "uco-observable:manufacturer": "iPhone",
+                    "uco-observable:model": "MG552",
+                    "uco-observable:serialNumber": "F18Q4LGRG5MD"
                 },
                 {
-                    "@type": "MobileDevice",
-                    "keypadUnlockCode": "123789",
-                    "IMEI": "359305065690067",
-                    "MSISDN": "[clytemnestra-mobileaccount-uuid]",
-                    "clockSetting": "2017-06-21T06:36:24.35Z",
+                    "@type": "uco-observable:MobileDevice",
+                    "uco-observable:keypadUnlockCode": "123789",
+                    "uco-observable:IMEI": "359305065690067",
+                    "uco-observable:MSISDN": "[clytemnestra-mobileaccount-uuid]",
+                    "uco-observable:clockSetting": "2017-06-21T06:36:24.35Z",
                     "localeLanguage": "en_GR",
-                    "phoneActivationTime": "2017-05-09T07:36:24.35Z",
+                    "uco-observable:phoneActivationTime": "2017-05-09T07:36:24.35Z",
                     "storageCapacity": "11 GB"
                 },
                 {
@@ -448,9 +448,9 @@
                     "ownerName": "Clytemnestras iPhone"
                 },
                 {
-                    "@type": "OperatingSystem",
-                    "name": "iOS",
-                    "manufacturer": "Apple",
+                    "@type": "uco-observable:OperatingSystem",
+                    "uco-core:name": "iOS",
+                    "uco-observable:manufacturer": "Apple",
                     "version": "10.3"
                 },
                 {
@@ -458,7 +458,7 @@
                     "value": "d0:33:11:13:e7:a1"
                 },
                 {
-                    "@type": "BluetoothAddress",
+                    "@type": "uco-observable:BluetoothAddress",
                     "value": "d0:33:11:13:e7:a2"
                 }
             ]
@@ -468,29 +468,29 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountType": "PhoneAccount",
-                    "isActive": "true"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountType": "PhoneAccount",
+                    "uco-observable:isActive": "true"
                 },
                 {
-                    "@type": "MobileAccount",
-                    "MSISDN": "1237471334"
+                    "@type": "uco-observable:MobileAccount",
+                    "uco-observable:MSISDN": "1237471334"
                 }
             ]
         },
         {
             "@id": ":investigative-action1-uuid",
-            "@type": "InvestigativeAction",
-            "name": "preserved",
+            "@type": "uco-investigation:InvestigativeAction",
+            "uco-core:name": "preserved",
             "startTime": "2017-06-21T22:36:24.35Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
-                    "instrument": ":athens-warrant1-uuid",
+                    "@type": "uco-action:ActionReferences",
+                    "uco-action:instrument": ":athens-warrant1-uuid",
                     "location": ":argos-palace-uuid",
-                    "performer": ":investigator2-uuid",
+                    "uco-action:performer": ":investigator2-uuid",
                     "object": [],
-                    "result": [
+                    "uco-action:result": [
                         ":provenance-record1-uuid",
                         ":cassandra-device-uuid"
                     ]
@@ -499,31 +499,31 @@
         },
         {
             "@id": ":annotation1-uuid",
-            "@type": "Annotation",
-            "tag": [
+            "@type": "uco-core:Annotation",
+            "uco-core:tag": [
                 "forensic"
             ],
-            "description": "Forensic preservation of Cassandra mobile device.",
+            "uco-core:description": "Forensic preservation of Cassandra mobile device.",
             "object": [
                 ":investigative-action1-uuid"
             ]
         },
         {
             "@id": ":investigative-action10-uuid",
-            "@type": "InvestigativeAction",
-            "name": "transferred",
+            "@type": "uco-investigation:InvestigativeAction",
+            "uco-core:name": "transferred",
             "startTime": "2017-06-22T08:01:23.14Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
-                    "instrument": ":athens-warrant1-uuid",
+                    "@type": "uco-action:ActionReferences",
+                    "uco-action:instrument": ":athens-warrant1-uuid",
                     "location": ":athenspd-evidenceroom-uuid",
-                    "performer": ":investigator1-uuid",
+                    "uco-action:performer": ":investigator1-uuid",
                     "object": [
                         ":provenance-record1-uuid",
                         ":cassandra-device-uuid"
                     ],
-                    "result": [
+                    "uco-action:result": [
                         ":provenance-record2-uuid"
                     ]
                 }
@@ -531,40 +531,40 @@
         },
         {
             "@id": ":provenance-record1-uuid",
-            "@type": "ProvenanceRecord",
-            "description": "Mobile device used by murder victim Cassandra",
-            "exhibitNumber": "ArgosPD-20170622-001A",
+            "@type": "uco-investigation:ProvenanceRecord",
+            "uco-core:description": "Mobile device used by murder victim Cassandra",
+            "uco-investigation:exhibitNumber": "ArgosPD-20170622-001A",
             "object": [
                 ":cassandra-device-uuid"
             ]
         },
         {
             "@id": ":provenance-record2-uuid",
-            "@type": "ProvenanceRecord",
-            "description": "Android smartphone seized by Argos PD",
-            "exhibitNumber": "AthensPD-2017220601",
+            "@type": "uco-investigation:ProvenanceRecord",
+            "uco-core:description": "Android smartphone seized by Argos PD",
+            "uco-investigation:exhibitNumber": "AthensPD-2017220601",
             "objects": [
                 "cassandra-device-uuid"
             ]
         },
         {
             "@id": ":investigative-action2-uuid",
-            "@type": "InvestigativeAction",
-            "name": "extracted",
+            "@type": "uco-investigation:InvestigativeAction",
+            "uco-core:name": "extracted",
             "startTime": "2017-06-22T08:12:19.32Z",
             "endTime": "2017-06-22T08:39:19.24Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
+                    "@type": "uco-action:ActionReferences",
                     "location": ":argos-palace-uuid",
-                    "performer": ":investigator1-uuid",
-                    "instrument": ":tool1-uuid",
-                    "environment": ":forensic-computer1-uuid",
+                    "uco-action:performer": ":investigator1-uuid",
+                    "uco-action:instrument": ":tool1-uuid",
+                    "uco-action:environment": ":forensic-computer1-uuid",
                     "object": [
                         ":provenance-record2-uuid",
                         ":cassandra-device-uuid"
                     ],
-                    "result": [
+                    "uco-action:result": [
                         ":provenance-record3-uuid",
                         ":cassandra-mobiledevice-forensicduplicate-uuid"
                     ]
@@ -578,20 +578,20 @@
         },
         {
             "@id": ":annotation2-uuid",
-            "@type": "Annotation",
-            "tag": [
+            "@type": "uco-core:Annotation",
+            "uco-core:tag": [
                 "forensic"
             ],
-            "description": "Forensic extraction of data from Cassandra mobile device.",
+            "uco-core:description": "Forensic extraction of data from Cassandra mobile device.",
             "object": [
                 ":investigative-action2-uuid"
             ]
         },
         {
             "@id": ":provenance-record3-uuid",
-            "@type": "ProvenanceRecord",
-            "description": "Forensic duplicate of mobile device used by murder victim Cassandra",
-            "exhibitNumber": "AthensPD-2017220601-02",
+            "@type": "uco-investigation:ProvenanceRecord",
+            "uco-core:description": "Forensic duplicate of mobile device used by murder victim Cassandra",
+            "uco-investigation:exhibitNumber": "AthensPD-2017220601-02",
             "object": [
                 ":cassandra-mobiledevice-forensicduplicate-uuid"
             ]
@@ -601,41 +601,41 @@
             "@id": ":cassandra-mobiledevice-forensicduplicate-uuid",
             "case-core:propertyBundle": [
                 {
-                    "@type": "File",
+                    "@type": "uco-observable:File",
                     "createdTime": "2017-06-22T08:12:19.32Z",
-                    "extension": "dd",
-                    "fileName": "AthensPD-2017220601-01.dd",
-                    "fileSystemType": "NTFS",
-                    "filePath": "C:/evidence/AthensPD-2017220601-01.dd",
-                    "isDirectory": false,
-                    "sizeInBytes": 90080500
+                    "uco-observable:extension": "dd",
+                    "uco-observable:fileName": "AthensPD-2017220601-01.dd",
+                    "uco-observable:fileSystemType": "NTFS",
+                    "uco-observable:filePath": "C:/evidence/AthensPD-2017220601-01.dd",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 90080500
                 },
                 {
-                    "@type": "ContentData",
-                    "hash": [
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "7ea081166336119da78ee4bbdbd06840b94efe28988a2bdb0bcf2387a481e283"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": "SHA256",
+                            "uco-types:hashValue": "7ea081166336119da78ee4bbdbd06840b94efe28988a2bdb0bcf2387a481e283"
                         }
                     ],
-                    "sizeInBytes": 9080500
+                    "uco-observable:sizeInBytes": 9080500
                 }
             ]
         },
         {
             "@id": ":tool1-uuid",
-            "@type": "Tool",
-            "name": "MobileExtractor",
-            "toolType": "Extraction",
+            "@type": "uco-tool:Tool",
+            "uco-core:name": "MobileExtractor",
+            "uco-tool:toolType": "Extraction",
             "creator": "Zeus",
             "version": "5.3"
         },
         {
             "@id": ":provenance-record4-uuid",
-            "@type": "ProvenanceRecord",
-            "description": "SMS SQLite database on mobile device used by murder victim Cassandra",
-            "exhibitNumber": "AthensPD-2017220601-02-03",
+            "@type": "uco-investigation:ProvenanceRecord",
+            "uco-core:description": "SMS SQLite database on mobile device used by murder victim Cassandra",
+            "uco-investigation:exhibitNumber": "AthensPD-2017220601-02-03",
             "object": [
                 ":cassandra-mobiledevice-mmssms-uuid"
             ]
@@ -645,23 +645,23 @@
             "@id": ":cassandra-mobiledevice-mmssms-uuid",
             "case-core:propertyBundle": [
                 {
-                    "@type": "File",
+                    "@type": "uco-observable:File",
                     "createdTime": "2017-06-22T08:12:19.32Z",
-                    "fileSystemType": "EXT3",
-                    "extension": "db",
-                    "fileName": "/data/data/com.android.providers.telephony/mmssms.db",
-                    "isDirectory": false,
-                    "sizeInBytes": 122925
+                    "uco-observable:fileSystemType": "EXT3",
+                    "uco-observable:extension": "db",
+                    "uco-observable:fileName": "/data/data/com.android.providers.telephony/mmssms.db",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 122925
                 },
                 {
-                    "@type": "ContentData",
-                    "sizeInBytes": 122925,
-                    "magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
-                    "hash": [
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:sizeInBytes": 122925,
+                    "uco-observable:magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": "SHA256",
+                            "uco-types:hashValue": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
                         }
                     ]
                 }
@@ -669,17 +669,17 @@
         },
         {
             "@id": ":trace-relationship3-uuid",
-            "@type": "Relationship",
-            "source": ":cassandra-mobiledevice-mmssms-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":cassandra-mobiledevice-mmssms-uuid",
+            "uco-core:target": [
                 ":cassandra-image-partition6-uuid"
             ],
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "PathRelation",
-                    "path": "/data/data/com.android.providers.telephony/mmssms.db"
+                    "@type": "uco-observable:PathRelation",
+                    "uco-observable:path": "/data/data/com.android.providers.telephony/mmssms.db"
                 }
             ]
         },
@@ -688,24 +688,24 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "DiskPartition",
-                    "diskPartitionType": "MBR",
-                    "partitionID": "06",
-                    "partitionOffset": 63,
-                    "partitionLength": 245235063
+                    "@type": "uco-observable:DiskPartition",
+                    "uco-observable:diskPartitionType": "MBR",
+                    "uco-observable:partitionID": "06",
+                    "uco-observable:partitionOffset": 63,
+                    "uco-observable:partitionLength": 245235063
                 },
                 {
-                    "@type": "FileSystem",
-                    "fileSystemType": "EXT3"
+                    "@type": "uco-observable:FileSystem",
+                    "uco-observable:fileSystemType": "EXT3"
                 },
                 {
-                    "@type": "ContentData",
-                    "sizeInBytes": 245235000,
-                    "hash": [
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:sizeInBytes": 245235000,
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": "SHA256",
+                            "uco-types:hashValue": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
                         }
                     ]
                 }
@@ -713,26 +713,26 @@
         },
         {
             "@id": ":trace-relationship4-uuid",
-            "@type": "Relationship",
-            "source": ":cassandra-image-partition6-uuid",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":cassandra-image-partition6-uuid",
+            "uco-core:target": [
                 ":cassandra-mobiledevice-forensicduplicate-uuid"
             ],
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 234909233,
-                    "rangeSize": 120000000000
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 234909233,
+                    "uco-observable:rangeSize": 120000000000
                 }
             ]
         },
         {
             "@id": ":tool2-uuid",
-            "@type": "Tool",
-            "name": "Plaso",
-            "toolType": "Extraction",
+            "@type": "uco-tool:Tool",
+            "uco-core:name": "Plaso",
+            "uco-tool:toolType": "Extraction",
             "creator": "Joachim Metz",
             "version": "1.5.2_201701013",
             "case-core:propertyBundle": [
@@ -741,48 +741,48 @@
                     "configurationSetting": [
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "identifier",
-                            "itemValue": "624f2636e65e451e8dd7cb044ec44b69"
+                            "uco-tool:itemName": "identifier",
+                            "uco-tool:itemValue": "624f2636e65e451e8dd7cb044ec44b69"
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "filter_file",
-                            "itemValue": ""
+                            "uco-tool:itemName": "filter_file",
+                            "uco-tool:itemValue": ""
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "filter_expression",
-                            "itemValue": ""
+                            "uco-tool:itemName": "filter_expression",
+                            "uco-tool:itemValue": ""
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "preferred_encoding",
-                            "itemValue": "cp1252"
+                            "uco-tool:itemName": "preferred_encoding",
+                            "uco-tool:itemValue": "cp1252"
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "parser_filter_expression",
-                            "itemValue": "sqlite"
+                            "uco-tool:itemName": "parser_filter_expression",
+                            "uco-tool:itemValue": "sqlite"
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "preferred_year",
-                            "itemValue": ""
+                            "uco-tool:itemName": "preferred_year",
+                            "uco-tool:itemValue": ""
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "enabled_parser_names",
-                            "itemValue": "sqlite, sqlite/twitter_ios, sqlite/kik_messenger, sqlite/android_sms, sqlite/android_gmail, sqlite/android_facebook"
+                            "uco-tool:itemName": "enabled_parser_names",
+                            "uco-tool:itemValue": "sqlite, sqlite/twitter_ios, sqlite/kik_messenger, sqlite/android_sms, sqlite/android_gmail, sqlite/android_facebook"
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "debug_mode",
-                            "itemValue": "False"
+                            "uco-tool:itemName": "debug_mode",
+                            "uco-tool:itemValue": "False"
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "command_line_arguments",
-                            "itemValue": "C:/Python27/Scripts/log2timeline.py C:/evidence/AthensPD-2017220601-01.dd.plaso C:/evidence/AthensPD-2017220601-01.dd --no-dependencies-check --parsers sqlite"
+                            "uco-tool:itemName": "command_line_arguments",
+                            "uco-tool:itemValue": "C:/Python27/Scripts/log2timeline.py C:/evidence/AthensPD-2017220601-01.dd.plaso C:/evidence/AthensPD-2017220601-01.dd --no-dependencies-check --parsers sqlite"
                         }
                     ]
                 }
@@ -790,9 +790,9 @@
         },
         {
             "@id": ":tool3-uuid",
-            "@type": "Tool",
-            "name": "sqlite/android_sms",
-            "toolType": "Parser",
+            "@type": "uco-tool:Tool",
+            "uco-core:name": "sqlite/android_sms",
+            "uco-tool:toolType": "Parser",
             "creator": "Joachim Metz",
             "case-core:propertyBundle": [
                 {
@@ -800,13 +800,13 @@
                     "configurationSetting": [
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "query",
-                            "itemValue": "SELECT _id AS id, address, date, read, type, body FROM sms"
+                            "uco-tool:itemName": "query",
+                            "uco-tool:itemValue": "SELECT _id AS id, address, date, read, type, body FROM sms"
                         },
                         {
                             "@type": "ConfigurationSetting",
-                            "itemName": "schema_match",
-                            "itemValue": "True"
+                            "uco-tool:itemName": "schema_match",
+                            "uco-tool:itemValue": "True"
                         }
                     ]
                 }
@@ -814,22 +814,22 @@
         },
         {
             "@id": ":investigative-action4-uuid",
-            "@type": "InvestigativeAction",
-            "name": "extracted",
+            "@type": "uco-investigation:InvestigativeAction",
+            "uco-core:name": "extracted",
             "startTime": "2017-06-22T09:57:23.64Z",
             "endTime": "2017-06-22T10:31:19.24Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
+                    "@type": "uco-action:ActionReferences",
                     "location": ":argos-palace-uuid",
-                    "performer": ":investigator1-uuid",
-                    "instrument": ":tool2-uuid",
-                    "environment": ":forensic-computer1-uuid",
+                    "uco-action:performer": ":investigator1-uuid",
+                    "uco-action:instrument": ":tool2-uuid",
+                    "uco-action:environment": ":forensic-computer1-uuid",
                     "object": [
                         ":provenance-record3-uuid",
                         ":cassandra-mobiledevice-forensicduplicate-uuid"
                     ],
-                    "result": [
+                    "uco-action:result": [
                         ":investigative-action5-uuid",
                         ":provenance-record4-uuid",
                         ":cassandra-mobiledevice-mmssms-uuid"
@@ -839,22 +839,22 @@
         },
         {
             "@id": ":investigative-action5-uuid",
-            "@type": "InvestigativeAction",
-            "name": "parsed",
+            "@type": "uco-investigation:InvestigativeAction",
+            "uco-core:name": "parsed",
             "startTime": "2017-06-22T09:57:23.64Z",
             "endTime": "2017-06-22T10:31:19.24Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
+                    "@type": "uco-action:ActionReferences",
                     "location": ":argos-palace-uuid",
-                    "performer": ":investigative-action4-uuid",
-                    "instrument": ":tool3-uuid",
-                    "environment": ":forensic-computer1-uuid",
+                    "uco-action:performer": ":investigative-action4-uuid",
+                    "uco-action:instrument": ":tool3-uuid",
+                    "uco-action:environment": ":forensic-computer1-uuid",
                     "object": [
                         ":provenance-record4-uuid",
                         ":cassandra-mobiledevice-mmssms-uuid"
                     ],
-                    "result": [
+                    "uco-action:result": [
                         ":provenance-record5-uuid",
                         ":sms-message1-uuid",
                         ":sms-message2-uuid",
@@ -867,9 +867,9 @@
         },
         {
             "@id": ":provenance-record5-uuid",
-            "@type": "ProvenanceRecord",
-            "description": "Parsed messages from mobile device used by murder victim Cassandra",
-            "exhibitNumber": "ArgosPD-20170622-001A-100",
+            "@type": "uco-investigation:ProvenanceRecord",
+            "uco-core:description": "Parsed messages from mobile device used by murder victim Cassandra",
+            "uco-investigation:exhibitNumber": "ArgosPD-20170622-001A-100",
             "object": [
                 ":sms-message1-uuid",
                 ":sms-message2-uuid",
@@ -883,16 +883,16 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Message",
-                    "application": ":sms-application1",
-                    "messageText": "A wedded wife, she slays her lord, Helped by another hand!",
-                    "from": ":cassandra-mobileaccount-uuid",
-                    "to": [
+                    "@type": "uco-observable:Message",
+                    "uco-observable:application": ":sms-application1",
+                    "uco-observable:messageText": "A wedded wife, she slays her lord, Helped by another hand!",
+                    "uco-observable:from": ":cassandra-mobileaccount-uuid",
+                    "uco-observable:to": [
                         ":argive-elder1-phoneaccnt-uuid",
                         ":argive-elder2-phoneaccnt-uuid",
                         ":argive-elder3-phoneaccnt-uuid"
                     ],
-                    "sentTime": "2017-06-20T09:34:42.12Z"
+                    "uco-observable:sentTime": "2017-06-20T09:34:42.12Z"
                 }
             ]
         },
@@ -901,16 +901,16 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Message",
-                    "application": ":sms-application1",
-                    "messageText": "Low lie the shattered towers whereas they fell, and I--ah burning heart!--shall soon lie low as well.",
-                    "from": ":cassandra-mobileaccount-uuid",
-                    "to": [
+                    "@type": "uco-observable:Message",
+                    "uco-observable:application": ":sms-application1",
+                    "uco-observable:messageText": "Low lie the shattered towers whereas they fell, and I--ah burning heart!--shall soon lie low as well.",
+                    "uco-observable:from": ":cassandra-mobileaccount-uuid",
+                    "uco-observable:to": [
                         ":argive-elder1-phoneaccnt-uuid",
                         ":argive-elder2-phoneaccnt-uuid",
                         ":argive-elder3-phoneaccnt-uuid"
                     ],
-                    "sentTime": "2017-06-20T09:37:35.13Z"
+                    "uco-observable:sentTime": "2017-06-20T09:37:35.13Z"
                 }
             ]
         },
@@ -919,13 +919,13 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIssuer": "Olympus",
-                    "isActive": "true"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIssuer": "Olympus",
+                    "uco-observable:isActive": "true"
                 },
                 {
-                    "@type": "PhoneAccount",
-                    "phoneNumber": "1237771337"
+                    "@type": "uco-observable:PhoneAccount",
+                    "uco-observable:phoneNumber": "1237771337"
                 }
             ]
         },
@@ -934,13 +934,13 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIssuer": "Olympus",
-                    "isActive": "true"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIssuer": "Olympus",
+                    "uco-observable:isActive": "true"
                 },
                 {
-                    "@type": "PhoneAccount",
-                    "phoneNumber": "1237772341"
+                    "@type": "uco-observable:PhoneAccount",
+                    "uco-observable:phoneNumber": "1237772341"
                 }
             ]
         },
@@ -949,13 +949,13 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIssuer": "Olympus",
-                    "isActive": "true"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIssuer": "Olympus",
+                    "uco-observable:isActive": "true"
                 },
                 {
-                    "@type": "PhoneAccount",
-                    "phoneNumber": "1237775121"
+                    "@type": "uco-observable:PhoneAccount",
+                    "uco-observable:phoneNumber": "1237775121"
                 }
             ]
         },
@@ -964,8 +964,8 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "EmailAccount",
-                    "emailAddress": "electra.pleiade@sevensisters.com"
+                    "@type": "uco-observable:EmailAccount",
+                    "uco-observable:emailAddress": "electra.pleiade@sevensisters.com"
                 }
             ]
         },
@@ -974,27 +974,27 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "EmailMessage",
-                    "to": [
+                    "@type": "uco-observable:EmailMessage",
+                    "uco-observable:to": [
                         ":orestes-emailaccount-uuid"
                     ],
-                    "from": ":electra-emailaccount-uuid",
-                    "subject": "Revenge our father",
-                    "body": "To me, too, grant this boon-dark death to deal unto Aegisthus, and to 'scape my doom.",
-                    "receivedTime": "2017-06-21T13:44:23.40Z",
-                    "sentTime": "2017-06-21T13:44:22.19Z",
-                    "messageID": "CAKBqNfyKo+ZXtkz6DUjWpvHy6O82jTbkNA@mail.gmail.com"
+                    "uco-observable:from": ":electra-emailaccount-uuid",
+                    "uco-observable:subject": "Revenge our father",
+                    "uco-observable:body": "To me, too, grant this boon-dark death to deal unto Aegisthus, and to 'scape my doom.",
+                    "uco-observable:receivedTime": "2017-06-21T13:44:23.40Z",
+                    "uco-observable:sentTime": "2017-06-21T13:44:22.19Z",
+                    "uco-observable:messageID": "CAKBqNfyKo+ZXtkz6DUjWpvHy6O82jTbkNA@mail.gmail.com"
                 }
             ]
         },
         {
             "@id": ":annotation3-uuid",
-            "@type": "Annotation",
-            "tag": [
+            "@type": "uco-core:Annotation",
+            "uco-core:tag": [
                 "selfie",
                 "picture"
             ],
-            "description": "Digital photograph of corpses taken at crime scene by killer",
+            "uco-core:description": "Digital photograph of corpses taken at crime scene by killer",
             "object": [
                 ":orestes-selfie-photograph-uuid"
             ]
@@ -1005,30 +1005,30 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "FacebookMessage",
-                    "from": [
+                    "uco-observable:from": [
                         ":orestes-facebookaccount-uuid"
                     ],
-                    "to": [
+                    "uco-observable:to": [
                         ":friends"
                     ],
-                    "body": "There lies our country's twofold tyranny, My father's slayers, spoilers of my home.",
-                    "sentTime": "2017-06-21T14:44:54.19Z"
+                    "uco-observable:body": "There lies our country's twofold tyranny, My father's slayers, spoilers of my home.",
+                    "uco-observable:sentTime": "2017-06-21T14:44:54.19Z"
                 }
             ]
         },
         {
             "@id": ":attach_relationship1",
-            "@type": "Relationship",
-            "source": ":location1",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":location1",
+            "uco-core:target": [
                 ":orestes-facebookmsg-uuid"
             ],
             "kindOfRealtionship": "attachment-of",
-            "isDirectional": true,
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "Attachment",
-                    "url": "http://www.facebook.com/corpses.jpg"
+                    "@type": "uco-observable:Attachment",
+                    "uco-observable:url": "http://www.facebook.com/corpses.jpg"
                 }
             ]
         }

@@ -500,7 +500,7 @@
                     "@type": "uco-observable:OperatingSystem",
                     "uco-core:name": "iOS",
                     "uco-observable:manufacturer": "Apple",
-                    "version": "10.3"
+                    "uco-observable:version": "10.3"
                 },
                 {
                     "@type": "WiFiAddress",
@@ -698,8 +698,8 @@
             "@type": "uco-tool:Tool",
             "uco-core:name": "MobileExtractor",
             "uco-tool:toolType": "Extraction",
-            "creator": "Zeus",
-            "version": "5.3"
+            "uco-tool:creator": "Zeus",
+            "uco-tool:version": "5.3"
         },
         {
             "@id": ":provenance-record4-uuid",
@@ -818,8 +818,8 @@
             "@type": "uco-tool:Tool",
             "uco-core:name": "Plaso",
             "uco-tool:toolType": "Extraction",
-            "creator": "Joachim Metz",
-            "version": "1.5.2_201701013",
+            "uco-tool:creator": "Joachim Metz",
+            "uco-tool:version": "1.5.2_201701013",
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-tool:ToolConfigurationType",
@@ -878,7 +878,7 @@
             "@type": "uco-tool:Tool",
             "uco-core:name": "sqlite/android_sms",
             "uco-tool:toolType": "Parser",
-            "creator": "Joachim Metz",
+            "uco-tool:creator": "Joachim Metz",
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-tool:ToolConfigurationType",

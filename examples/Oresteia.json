@@ -598,7 +598,7 @@
             "@type": "uco-investigation:ProvenanceRecord",
             "uco-core:description": "Android smartphone seized by Argos PD",
             "uco-investigation:exhibitNumber": "AthensPD-2017220601",
-            "objects": [
+            "uco-core:object": [
                 "cassandra-device-uuid"
             ]
         },
@@ -1142,7 +1142,7 @@
             "uco-core:target": [
                 ":orestes-facebookmsg-uuid"
             ],
-            "kindOfRealtionship": "attachment-of",
+            "uco-core:kindOfRelationship": "attachment-of",
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {

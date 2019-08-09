@@ -1,14 +1,15 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "camera1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "Canon",
@@ -22,7 +23,7 @@
             "source": "digital_photograph1",
             "target": "device_partition3",
             "kindOfRelationship": "contained-within",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "PathRelation",
                     "path": "/sdcard/IMG_0123.jpg"
@@ -31,8 +32,8 @@
         },
         {
             "@id": "digital_photograph1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "fileSystemType": "EXT4",
@@ -107,7 +108,7 @@
             "@type": "Action",
             "name": "photo_taken",
             "startTime": "2010-01-15T17:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "instrument": "camera1",
@@ -135,7 +136,7 @@
             "name": "annotated",
             "startTime": "2010-01-15T17:59:43.25Z",
             "endTime": "2010-01-15T18:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "examiner1",

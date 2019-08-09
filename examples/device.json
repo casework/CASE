@@ -1,15 +1,16 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "acme": "http://custompb.acme.org/core#"
     },
     "@graph": [
         {
             "@id": "forensic_lab_computer1",
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "location": "forensic_lab1",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "Dell",

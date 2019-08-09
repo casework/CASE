@@ -1,6 +1,7 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "acme": "http://custompb.acme.org/core#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
@@ -13,7 +14,7 @@
             "target": "data_piece0",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Fragment",
                     "fragmentIndex": 0,
@@ -28,7 +29,7 @@
             "target": "data_piece1",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Fragment",
                     "fragmentIndex": 1,
@@ -43,7 +44,7 @@
             "target": "data_piece2",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Fragment",
                     "fragmentIndex": 2,
@@ -53,8 +54,8 @@
         },
         {
             "@id": "reconstructed_file",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -72,8 +73,8 @@
         },
         {
             "@id": "data_piece0",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -91,8 +92,8 @@
         },
         {
             "@id": "data_piece1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -110,8 +111,8 @@
         },
         {
             "@id": "data_piece2",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -134,7 +135,7 @@
             "target": "android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 45156,
@@ -149,7 +150,7 @@
             "target": "android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 57984,
@@ -159,8 +160,8 @@
         },
         {
             "@id": "android_image",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "fileSystemType": "NTFS",
@@ -193,7 +194,7 @@
             "name": "carved",
             "startTime": "2010-01-20T17:59:43.25Z",
             "endTime": "2010-01-21T17:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "role4",
@@ -220,7 +221,7 @@
             "name": "reconstructed",
             "startTime": "2010-01-20T17:59:43.25Z",
             "endTime": "2010-01-21T17:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "role4",

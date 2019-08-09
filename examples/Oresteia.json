@@ -2,7 +2,7 @@
     "@context": {
         "@vocab": "urn:example:local:",
         "": "urn:example:kb:",
-        "case": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
@@ -118,7 +118,7 @@
                 ":orestes-facebookmsg-uuid",
                 ":attach_relationship1"
             ],
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Authorization",
                     "authorizationIdentifier": "Warrant12345",
@@ -142,7 +142,7 @@
         {
             "@id": ":argos-palace-uuid",
             "@type": "Location",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleAddress",
                     "locality": "Argos",
@@ -162,7 +162,7 @@
             "@type": "Identity",
             "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleName",
                     "givenName": "Aeschylus",
@@ -198,7 +198,7 @@
             "@type": "Identity",
             "createdBy": ":eoghan-uuid",
             "createdTime": "2017-06-25T12:12:12.12Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleName",
                     "givenName": "Euripides",
@@ -232,7 +232,7 @@
         {
             "@id": ":cassandra-uuid",
             "@type": "Identity",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleName",
                     "givenName": "Cassandra",
@@ -271,8 +271,8 @@
         },
         {
             "@id": ":cassandra-device-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "Samsung",
@@ -294,8 +294,8 @@
         },
         {
             "@id": ":cassandra-mobileaccount-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "PhoneAccount",
@@ -318,7 +318,7 @@
             "startTime": "2017-05-12T15:32:31.09Z",
             "endTime": "2017-06-25T15:59:43.00Z",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Confidence",
                     "confidence": "Probably True"
@@ -336,7 +336,7 @@
             "startTime": "2017-06-19T13:59:43.25Z",
             "endTime": "2017-06-22T15:59:43.25Z",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Confidence",
                     "confidence": "Probably True"
@@ -346,7 +346,7 @@
         {
             "@id": ":thyestes-uuid",
             "@type": "Identity",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleName",
                     "givenName": "Thyestes",
@@ -391,7 +391,7 @@
         {
             "@id": ":electra-uuid",
             "@type": "Identity",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleName",
                     "givenName": "Electra",
@@ -415,8 +415,8 @@
         },
         {
             "@id": ":clytemnestra-device-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "iPhone",
@@ -456,8 +456,8 @@
         },
         {
             "@id": ":clytemnestra-mobileaccount-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "PhoneAccount",
@@ -474,7 +474,7 @@
             "@type": "InvestigativeAction",
             "name": "preserved",
             "startTime": "2017-06-21T22:36:24.35Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "instrument": ":athens-warrant1-uuid",
@@ -504,7 +504,7 @@
             "@type": "InvestigativeAction",
             "name": "transferred",
             "startTime": "2017-06-22T08:01:23.14Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "instrument": ":athens-warrant1-uuid",
@@ -544,7 +544,7 @@
             "name": "extracted",
             "startTime": "2017-06-22T08:12:19.32Z",
             "endTime": "2017-06-22T08:39:19.24Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "location": ":argos-palace-uuid",
@@ -588,9 +588,9 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": ":cassandra-mobiledevice-forensicduplicate-uuid",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "createdTime": "2017-06-22T08:12:19.32Z",
@@ -632,9 +632,9 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": ":cassandra-mobiledevice-mmssms-uuid",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "createdTime": "2017-06-22T08:12:19.32Z",
@@ -667,7 +667,7 @@
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "PathRelation",
                     "path": "/data/data/com.android.providers.telephony/mmssms.db"
@@ -676,8 +676,8 @@
         },
         {
             "@id": ":cassandra-image-partition6-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "DiskPartition",
                     "diskPartitionType": "MBR",
@@ -711,7 +711,7 @@
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 234909233,
@@ -726,7 +726,7 @@
             "toolType": "Extraction",
             "creator": "Joachim Metz",
             "version": "1.5.2_201701013",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ToolConfiguration",
                     "configurationSetting": [
@@ -785,7 +785,7 @@
             "name": "sqlite/android_sms",
             "toolType": "Parser",
             "creator": "Joachim Metz",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ToolConfiguration",
                     "configurationSetting": [
@@ -809,7 +809,7 @@
             "name": "extracted",
             "startTime": "2017-06-22T09:57:23.64Z",
             "endTime": "2017-06-22T10:31:19.24Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "location": ":argos-palace-uuid",
@@ -834,7 +834,7 @@
             "name": "parsed",
             "startTime": "2017-06-22T09:57:23.64Z",
             "endTime": "2017-06-22T10:31:19.24Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "location": ":argos-palace-uuid",
@@ -871,8 +871,8 @@
         },
         {
             "@id": ":sms-message1-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Message",
                     "application": ":sms-application1",
@@ -889,8 +889,8 @@
         },
         {
             "@id": ":sms-message2-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Message",
                     "application": ":sms-application1",
@@ -907,8 +907,8 @@
         },
         {
             "@id": ":argive-elder1-phoneaccnt-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIssuer": "Olympus",
@@ -922,8 +922,8 @@
         },
         {
             "@id": ":argive-elder2-phoneaccnt-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIssuer": "Olympus",
@@ -937,8 +937,8 @@
         },
         {
             "@id": ":argive-elder3-phoneaccnt-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIssuer": "Olympus",
@@ -952,8 +952,8 @@
         },
         {
             "@id": ":electra-emailaccount-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "EmailAccount",
                     "emailAddress": "electra.pleiade@sevensisters.com"
@@ -962,8 +962,8 @@
         },
         {
             "@id": ":electra-orestes-email-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "EmailMessage",
                     "to": [
@@ -992,8 +992,8 @@
         },
         {
             "@id": ":orestes-facebookmsg-uuid",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "FacebookMessage",
                     "from": [
@@ -1016,7 +1016,7 @@
             ],
             "kindOfRealtionship": "attachment-of",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Attachment",
                     "url": "http://www.facebook.com/corpses.jpg"

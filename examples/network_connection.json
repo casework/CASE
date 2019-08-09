@@ -1,7 +1,7 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
-        "case": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
@@ -31,7 +31,7 @@
                 "trace-relationship2-uuid",
                 "trace-relationship3-uuid"
             ],
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Authorization",
                     "authorizationIdentifier": "Warrant3554",
@@ -52,7 +52,7 @@
             "@id": "extraction-action-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "instrument": "pcap-tool-uuid",
@@ -82,11 +82,11 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": "pcap-file-uuid",
             "createdBy": "81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "createdTime": "2009-04-03T02:28:42.0086110Z",
@@ -122,11 +122,11 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": "source-host-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "IPv4Address",
                     "value": "10.10.10.2"
@@ -138,11 +138,11 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": "destination-host-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "IPv4Address",
                     "value": "10.10.10.50"
@@ -154,11 +154,11 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": "network-connection1-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6256260Z",
@@ -173,11 +173,11 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": "network-connection2-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6264620Z",
@@ -192,11 +192,11 @@
             ]
         },
         {
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "@id": "network-connection3-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6370540Z",
@@ -219,7 +219,7 @@
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": "true",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
                     "startTime": "2009-04-03T02:29:25.6256260Z"
@@ -235,7 +235,7 @@
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": "true",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
                     "startTime": "2009-04-03T02:29:25.6264620Z"
@@ -251,7 +251,7 @@
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": "true",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
                     "startTime": "2009-04-03T02:29:25.6370540Z"

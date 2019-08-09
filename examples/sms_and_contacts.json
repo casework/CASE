@@ -1,14 +1,15 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
     },
     "@graph": [
         {
             "@id": "sms_message1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Message",
                     "application": "sms_application1",
@@ -23,8 +24,8 @@
         },
         {
             "@id": "contact1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Contact",
                     "rdfs:comment": [
@@ -81,8 +82,8 @@
         },
         {
             "@id": "phone_account1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "rdfs:comment": "TODO: Is the accountType necessary? We know its phone account due to the existence of 'PhoneAccount' (duck type model and all that)",
@@ -97,8 +98,8 @@
         },
         {
             "@id": "phone_account2",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Phone",
@@ -112,8 +113,8 @@
         },
         {
             "@id": "email_account1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Email",
@@ -127,8 +128,8 @@
         },
         {
             "@id": "phone_account3",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Phone",
@@ -142,8 +143,8 @@
         },
         {
             "@id": "android_phonebook1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Application",
                     "name": "Android Phonebook",

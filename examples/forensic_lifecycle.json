@@ -1,6 +1,7 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "acme": "http://custompb.acme.org/core#"
     },
@@ -149,7 +150,7 @@
             "name": "seized",
             "startTime": "2010-01-15T17:59:43.25Z",
             "endTime": "2010-01-15T19:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "investigator1",
@@ -183,7 +184,7 @@
             "@type": "InvestigativeAction",
             "name": "custody-receive",
             "startTime": "2010-01-15T17:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "examiner1",
@@ -223,7 +224,7 @@
             "name": "imaged",
             "startTime": "2010-01-15T17:59:43.25Z",
             "endTime": "2010-01-15T19:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "examiner1",
@@ -269,7 +270,7 @@
             "name": "imaged",
             "startTime": "2010-01-16T17:59:43.25Z",
             "endTime": "2010-01-16T19:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "examiner1",
@@ -310,7 +311,7 @@
             "name": "parsed",
             "startTime": "2010-01-20T17:59:43.25Z",
             "endTime": "2010-01-21T17:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "examiner2",
@@ -385,7 +386,7 @@
             "name": "executed",
             "startTime": "2010-02-15T17:59:43.25Z",
             "endTime": "2010-02-16T17:59:43.25Z",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": "examiner2",

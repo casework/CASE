@@ -1,12 +1,13 @@
 {
     "@context": {
-        "@vocab": "http://case.example.org/core#"
+        "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#"
     },
     "@graph": [
         {
             "@id": "extracted_email_address0",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -29,7 +30,7 @@
             "target": "decompressed_gzip0",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 1600,
@@ -39,8 +40,8 @@
         },
         {
             "@id": "extracted_email_address1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -63,7 +64,7 @@
             "target": "decompressed_gzip0",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 16095,
@@ -73,8 +74,8 @@
         },
         {
             "@id": "decompressed_gzip0",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -98,7 +99,7 @@
             "target": "compressed_gzip0",
             "kindOfRelationship": "decompressed-from",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Compression",
                     "compressionMethod": "GZIP"
@@ -107,8 +108,8 @@
         },
         {
             "@id": "compressed_gzip0",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 4598,
@@ -130,7 +131,7 @@
             "target": "decompressed_gzip1",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 64000,
@@ -140,8 +141,8 @@
         },
         {
             "@id": "decompressed_gzip1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 54564465,
@@ -163,7 +164,7 @@
             "target": "compressed_gzip1",
             "kindOfRelationship": "decompressed-from",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Compression",
                     "compressionMethod": "GZIP"
@@ -172,8 +173,8 @@
         },
         {
             "@id": "compressed_gzip1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 23564465,
@@ -195,7 +196,7 @@
             "target": "disk_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 946315592,
@@ -205,8 +206,8 @@
         },
         {
             "@id": "disk_image",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 2000000000,

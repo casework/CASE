@@ -1,14 +1,15 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "acme": "http://custompb.acme.org/core#"
     },
     "@graph": [
         {
             "@id": "chunk_of_data",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -31,7 +32,7 @@
             "target": "decoded_attachment",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 45,
@@ -41,8 +42,8 @@
         },
         {
             "@id": "decoded_attachment",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -72,7 +73,7 @@
             "target": "tar_archive_file",
             "kindOfRelationship": "decoded-from",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Encoding",
                     "encodingMethod": "BASE64"
@@ -81,8 +82,8 @@
         },
         {
             "@id": "tar_archive_file",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "fileSystemType": "TAR",
@@ -116,7 +117,7 @@
             "target": "decrypted_blob",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "PathRelation",
                     "path": "/some/files/in/archive/attachment.jpg"
@@ -125,8 +126,8 @@
         },
         {
             "@id": "decrypted_blob",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 23000,
@@ -150,7 +151,7 @@
             "target": "sqlite_blob",
             "kindOfRelationship": "decrypted-from",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Encryption",
                     "encryptionMethod": "AES",
@@ -162,8 +163,8 @@
         },
         {
             "@id": "sqlite_blob",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 54000,
@@ -192,7 +193,7 @@
             "target": "sqlite_database",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SQLiteBlob",
                     "tableName": "AttachmentTable",
@@ -203,8 +204,8 @@
         },
         {
             "@id": "sqlite_database",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "fileSystemType": "EXT4",
@@ -239,7 +240,7 @@
             "target": "image_partition",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "PathRelation",
                     "path": "/data/data/com.whatsapp/cache/messages.db"
@@ -248,8 +249,8 @@
         },
         {
             "@id": "image_partition",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "sizeInBytes": 45654000,
@@ -270,7 +271,7 @@
             "target": "android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DiskPartition",
                     "partIndex": 3
@@ -279,8 +280,8 @@
         },
         {
             "@id": "android_image",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "File",
                     "fileSystemType": "NTFS",
@@ -313,7 +314,7 @@
             "target": "forensic_lab_computer1",
             "kindOfRelationship": "stored-on",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "PathRelation",
                     "path": "C:/input_devices/DFL-20140712-001C.img"
@@ -330,9 +331,9 @@
         },
         {
             "@id": "forensic_lab_computer1",
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "location": "forensic_lab1",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "Dell",
@@ -360,9 +361,9 @@
         },
         {
             "@id": "android_device1",
-            "@type": "Trace",
+            "@type": "case-core:Trace",
             "location": "forensic_lab1",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "Samsung",

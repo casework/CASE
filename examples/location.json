@@ -1,6 +1,7 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#",
         "acme": "http://custompb.acme.org/core#"
     },
@@ -8,7 +9,7 @@
         {
             "@id": "location1",
             "@type": "Location",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleAddress",
                     "locality": "Seattle",
@@ -26,7 +27,7 @@
         {
             "@id": "location2",
             "@type": "Location",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleAddress",
                     "locality": "Paris",

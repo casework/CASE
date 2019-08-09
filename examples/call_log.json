@@ -1,13 +1,14 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#"
     },
     "@graph": [
         {
             "@id": "phone_account1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIssuer": "AT&T",
@@ -21,8 +22,8 @@
         },
         {
             "@id": "phone_account2",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIssuer": "Sprint",
@@ -36,8 +37,8 @@
         },
         {
             "@id": "phone_call1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "PhoneCall",
                     "callType": "mobile",

@@ -1,13 +1,14 @@
 {
     "@context": {
         "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
         "olo": "http://purl.org/ontology/olo/core#"
     },
     "@graph": [
         {
             "@id": "actor1",
             "@type": "Identity",
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "SimpleName",
                     "givenName": "William",
@@ -51,8 +52,8 @@
         },
         {
             "@id": "facebook_account1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIdentifier": "1235556677@facebook.net",
@@ -97,8 +98,8 @@
         },
         {
             "@id": "google_account1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "Account",
                     "accountIdentifier": "willyROX@gmail.com",
@@ -147,8 +148,8 @@
         },
         {
             "@id": "email_account1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "EmailAccount",
                     "emailAddress": "email-address1"
@@ -157,8 +158,8 @@
         },
         {
             "@id": "email_address1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "EmailAddress",
                     "emailAddress": "willyROX@gmail.com"

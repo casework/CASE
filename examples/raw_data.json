@@ -1,12 +1,13 @@
 {
     "@context": {
-        "@vocab": "http://case.example.org/core#"
+        "@vocab": "http://case.example.org/core#",
+        "case-core": "https://caseontology.org/ontology/case/core#"
     },
     "@graph": [
         {
             "@id": "digital_photograph_thumbnail1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "magicNumber": "/9j/4AAQSkZ",
@@ -30,7 +31,7 @@
             "target": "digital_photograph1",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
-            "propertyBundle": [
+            "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
                     "rangeOffset": 224,
@@ -40,8 +41,8 @@
         },
         {
             "@id": "digital_photograph1",
-            "@type": "Trace",
-            "propertyBundle": [
+            "@type": "case-core:Trace",
+            "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
                     "magicNumber": "/9j/4AAQSkZ",

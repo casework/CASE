@@ -473,7 +473,8 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Device",
-                    "uco-observable:manufacturer": "iPhone",
+                    "uco-observable:manufacturer": "Apple",
+                    "uco-observable:deviceType": "iPhone",
                     "uco-observable:model": "MG552",
                     "uco-observable:serialNumber": "F18Q4LGRG5MD"
                 },

@@ -170,7 +170,7 @@
             "@id": ":aeschylus-uuid",
             "@type": "uco-identity:Identity",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": {
+            "uco-core:createdTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
@@ -193,7 +193,7 @@
             "@id": ":investigator1-uuid",
             "@type": "uco-role:Role",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": {
+            "uco-core:createdTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
@@ -203,7 +203,7 @@
             "@id": ":role-relationship51-uuid",
             "@type": "uco-core:Relationship",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": {
+            "uco-core:createdTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
@@ -218,7 +218,7 @@
             "@id": ":euripides-uuid",
             "@type": "uco-identity:Identity",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": {
+            "uco-core:createdTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
@@ -241,7 +241,7 @@
             "@id": ":investigator2-uuid",
             "@type": "uco-role:Role",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": {
+            "uco-core:createdTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
@@ -251,7 +251,7 @@
             "@id": ":role-relationship52-uuid",
             "@type": "uco-core:Relationship",
             "uco-core:createdBy": ":eoghan-uuid",
-            "createdTime": {
+            "uco-core:createdTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },

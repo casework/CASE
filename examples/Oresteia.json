@@ -508,7 +508,8 @@
                 },
                 {
                     "@type": "uco-observable:BluetoothAddress",
-                    "value": "d0:33:11:13:e7:a2"
+                    "rdfs:comment": "TODO: uco-observable:value only applies to IPv4 address.  ( https://github.com/ucoProject/UCO/issues/145 )",
+                    "uco-observable:value": "d0:33:11:13:e7:a2"
                 }
             ]
         },

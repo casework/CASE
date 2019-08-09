@@ -530,7 +530,7 @@
             "@id": ":investigative-action1-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "preserved",
-            "startTime": {
+            "uco-action:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-21T22:36:24.35Z"
             },
@@ -563,7 +563,7 @@
             "@id": ":investigative-action10-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "startTime": {
+            "uco-action:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T08:01:23.14Z"
             },
@@ -605,11 +605,11 @@
             "@id": ":investigative-action2-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "extracted",
-            "startTime": {
+            "uco-action:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T08:12:19.32Z"
             },
-            "endTime": {
+            "uco-action:endTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T08:39:19.24Z"
             },
@@ -900,11 +900,11 @@
             "@id": ":investigative-action4-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "extracted",
-            "startTime": {
+            "uco-action:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T09:57:23.64Z"
             },
-            "endTime": {
+            "uco-action:endTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T10:31:19.24Z"
             },
@@ -931,11 +931,11 @@
             "@id": ":investigative-action5-uuid",
             "@type": "uco-investigation:InvestigativeAction",
             "uco-core:name": "parsed",
-            "startTime": {
+            "uco-action:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T09:57:23.64Z"
             },
-            "endTime": {
+            "uco-action:endTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T10:31:19.24Z"
             },

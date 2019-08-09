@@ -351,11 +351,11 @@
                 ":cassandra-mobileaccount-uuid"
             ],
             "uco-core:kindOfRelationship": "has-account",
-            "startTime": {
+            "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-05-12T15:32:31.09Z"
             },
-            "endTime": {
+            "uco-core:endTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T15:59:43.00Z"
             },
@@ -375,11 +375,11 @@
                 ":argos-palace-uuid"
             ],
             "uco-core:kindOfRelationship": "located-at",
-            "startTime": {
+            "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-19T13:59:43.25Z"
             },
-            "endTime": {
+            "uco-core:endTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T15:59:43.25Z"
             },

@@ -753,7 +753,11 @@
             "uco-core:target": [
                 ":cassandra-image-partition6-uuid"
             ],
-            "uco-core:kindOfRelationship": "contained-within",
+            "rdfs:comment": "TODO: CyberItemRelationshipEnum does not seem to be tied to uco-core:ControlledVocabulary.  ( https://github.com/ucoProject/UCO/issues/146 )",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
@@ -803,7 +807,10 @@
             "uco-core:target": [
                 ":cassandra-mobiledevice-forensicduplicate-uuid"
             ],
-            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {

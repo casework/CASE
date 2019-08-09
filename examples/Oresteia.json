@@ -3,6 +3,7 @@
         "@vocab": "urn:example:local:",
         "": "urn:example:kb:",
         "case-core": "https://caseontology.org/ontology/case/core#",
+        "draft": "urn:example:draft:",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
@@ -18,6 +19,10 @@
     },
     "@id": ":bundle-3b13e958a-d975-41aa-b1bb-029d2b6707cd",
     "@type": "uco-core:Bundle",
+    "rdfs:comment": [
+        "TODO: uco-core:description has a maxCardinality of one.  Something will need to be tweaked about this description text that benefits from being multiple lines.",
+        "TODO: The long list of contained objects was previously related with a draft property 'content', which is not defined in UCO.  Is that name desired?"
+    ],
     "uco-core:name": "Greek Case 13",
     "uco-core:description": [
         "This illustrative scenario imagines The Oresteia in the age mobile devices for the purpose of demonstrating use of CASE to represent digital investigations into multiple related crimes.",
@@ -26,7 +31,7 @@
         "Clock on Clytemnestra's device is one day and one hour slow (offet -25 hours)",
         "There will be an action for each successful parsing of a file and file objects for each collected file."
     ],
-    "content": [
+    "uco-core:object": [
         {
             "@id": ":investigation-4586742a-710a-454f-bcb8-b60e230ec1b2",
             "@type": "uco-investigation:Investigation",
@@ -319,6 +324,10 @@
                 },
                 {
                     "@type": "uco-observable:MobileDevice",
+                    "rdfs:comment": [
+                        "TODO: Should uco-observable:clockSetting be a datetime instead of a string?",
+                        "TODO: An earlier version of Oresteia had a timezoneSetting property.  This can apparently now be either uco-observable property 'timezoneDST' or 'timezoneStandard', both a xsd:string type.  Is there an option, such as drawing data from the IANA time zones database, to simplify this?"
+                    ],
                     "uco-observable:keypadUnlockCode": "1234",
                     "uco-observable:IMEI": "359305065690067",
                     "uco-observable:clockSetting": "2017-06-22T07:36:24.35Z",
@@ -366,6 +375,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-core:Confidence",
+                    "rdfs:comment": "TODO This no longer matches the type prescription in UCO.",
                     "uco-core:confidence": "Probably True"
                 }
             ]
@@ -391,6 +401,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-core:Confidence",
+                    "rdfs:comment": "TODO This no longer matches the type prescription in UCO.",
                     "uco-core:confidence": "Probably True"
                 }
             ]
@@ -484,11 +495,16 @@
                 },
                 {
                     "@type": "uco-observable:MobileDevice",
+                    "rdfs:comment": [
+                        "TODO: Should clockSetting be a xsd:dateTime?",
+                        "TODO: MSISDN here may be the wrong type.  Why is a uuid indicated?",
+                        "TODO: clockSetting as a time-point somewhat illustrates the scenario's specified skew of 25 hours, but might need a reference time-point."
+                    ],
                     "uco-observable:keypadUnlockCode": "123789",
                     "uco-observable:IMEI": "359305065690067",
                     "uco-observable:MSISDN": "[clytemnestra-mobileaccount-uuid]",
                     "uco-observable:clockSetting": "2017-06-21T06:36:24.35Z",
-                    "localeLanguage": "en_GR",
+                    "draft:localeLanguage": "en_GR",
                     "uco-observable:phoneActivationTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-05-09T07:36:24.35Z"
@@ -496,12 +512,13 @@
                     "uco-observable:storageCapacityInBytes": 11000000000
                 },
                 {
-                    "@type": "iPhoneDevice",
-                    "uniqueID": "B3858A69A29375E6C706226B3633A3A11EB2A774",
-                    "ownerName": "Clytemnestras iPhone"
+                    "@type": "draft:iPhoneDevice",
+                    "draft:uniqueID": "B3858A69A29375E6C706226B3633A3A11EB2A774",
+                    "draft:ownerName": "Clytemnestras iPhone"
                 },
                 {
                     "@type": "uco-observable:OperatingSystem",
+                    "rdfs:comment": "TODO: uco-observable:version doesn't have OS in its domain.  ( https://github.com/ucoProject/UCO/issues/144 )",
                     "uco-core:name": "iOS",
                     "uco-observable:manufacturer": "Apple",
                     "uco-observable:version": "10.3"
@@ -637,8 +654,8 @@
                 },
                 {
                     "@type": "MobileExtractor:ToolArguments",
-                    "aquisitionType": "Physical Extraction",
-                    "method": "Boot Loader"
+                    "draft:aquisitionType": "Physical Extraction",
+                    "draft:method": "Boot Loader"
                 }
             ]
         },
@@ -777,6 +794,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:DiskPartition",
+                    "rdfs:comment": [
+                        "TODO: partitionOffset should be in bytes.  Nothing in this example specifies the sector size of the device's storage.",
+                        "TODO: diskPartitionType in UCO 0.3.0 is supposed to describe the type of partition (per documenting rdfs:comment), not the type of the containing partition system.  However, further clarification is needed on the range of this property - the numeric type?  There does not appear to be a consistent dictionary labeling these numeric types, and tools frequently provide multiple guesses (e.g. TSK's mmls reports exfat and ntfs for one code)."
+                    ],
                     "uco-observable:diskPartitionType": "MBR",
                     "uco-observable:partitionID": "06",
                     "uco-observable:partitionOffset": 63,
@@ -993,6 +1014,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Message",
+                    "rdfs:comment": [
+                        "TODO: uco-observable:to only has a domain of uco-observable:PhoneCall.",
+                        "TODO: uco-observable:sentTime only has a domain of uco-observable:EmailMessage."
+                    ],
                     "uco-observable:application": ":sms-application1",
                     "uco-observable:messageText": "A wedded wife, she slays her lord, Helped by another hand!",
                     "uco-observable:from": ":cassandra-mobileaccount-uuid",
@@ -1125,7 +1150,7 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "FacebookMessage",
+                    "@type": "draft:FacebookMessage",
                     "uco-observable:from": [
                         ":orestes-facebookaccount-uuid"
                     ],
@@ -1156,6 +1181,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Attachment",
+                    "rdfs:comment": "TODO: uco-observable:Attachment seems ill-defined.",
                     "uco-observable:url": "http://www.facebook.com/corpses.jpg"
                 }
             ]

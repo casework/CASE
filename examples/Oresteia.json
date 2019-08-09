@@ -539,7 +539,7 @@
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:instrument": ":athens-warrant1-uuid",
-                    "location": ":argos-palace-uuid",
+                    "uco-action:location": ":argos-palace-uuid",
                     "uco-action:performer": ":investigator2-uuid",
                     "uco-action:object": [],
                     "uco-action:result": [
@@ -572,7 +572,7 @@
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:instrument": ":athens-warrant1-uuid",
-                    "location": ":athenspd-evidenceroom-uuid",
+                    "uco-action:location": ":athenspd-evidenceroom-uuid",
                     "uco-action:performer": ":investigator1-uuid",
                     "uco-action:object": [
                         ":provenance-record1-uuid",
@@ -617,7 +617,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
-                    "location": ":argos-palace-uuid",
+                    "uco-action:location": ":argos-palace-uuid",
                     "uco-action:performer": ":investigator1-uuid",
                     "uco-action:instrument": ":tool1-uuid",
                     "uco-action:environment": ":forensic-computer1-uuid",
@@ -912,7 +912,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
-                    "location": ":argos-palace-uuid",
+                    "uco-action:location": ":argos-palace-uuid",
                     "uco-action:performer": ":investigator1-uuid",
                     "uco-action:instrument": ":tool2-uuid",
                     "uco-action:environment": ":forensic-computer1-uuid",
@@ -943,7 +943,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
-                    "location": ":argos-palace-uuid",
+                    "uco-action:location": ":argos-palace-uuid",
                     "uco-action:performer": ":investigative-action4-uuid",
                     "uco-action:instrument": ":tool3-uuid",
                     "uco-action:environment": ":forensic-computer1-uuid",

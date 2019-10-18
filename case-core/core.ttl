@@ -33,6 +33,6 @@ case-core:Trace
 
 case-core:propertyBundle
 	a owl:ObjectProperty ;
-	owl:equivalentProperty uco-core:facet ;
+	owl:equivalentProperty uco-core:facets ;
 	.
 

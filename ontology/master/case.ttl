@@ -14,7 +14,7 @@
 <https://caseontology.org/ontology/case/case>
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
-	dc:title "Cyber-investigation Analysis Schema Expression (CASE)" ;
+	dc:title "Cyber-investigation Analysis Standard Expression (CASE)" ;
 	owl:imports
 		<https://caseontology.org/ontology/case/core> ,
 		<https://unifiedcyberontology.org/ontology/uco/uco>

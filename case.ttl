@@ -1172,13 +1172,6 @@ olo:slot rdf:type owl:ObjectProperty .
             rdfs:range xsd:string .
 
 
-###  http://case.example.org/core#country
-:country rdf:type owl:DatatypeProperty ,
-                  owl:FunctionalProperty ;
-         rdfs:domain :SimpleAddress ;
-         rdfs:range xsd:string .
-
-
 ###  http://case.example.org/core#cpuFamily
 :cpuFamily rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;

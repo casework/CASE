@@ -3713,12 +3713,6 @@ A ForensicAction is an Action that must have its results and source properties o
               rdfs:subClassOf :PropertyBundle .
 
 
-###  http://case.example.org/core#Location
-:Location rdf:type owl:Class ;
-          rdfs:subClassOf :UcoObject ;
-          rdfs:comment "A geophysical place, site or position." .
-
-
 ###  http://case.example.org/core#MACAddress
 :MACAddress rdf:type owl:Class ;
             rdfs:subClassOf :SupportingClasses .

@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "relationship0",
+            "@id": ":relationship0",
             "@type": "Relationship",
             "source": "multipart_file",
             "target": "data_piece0",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "@id": "relationship1",
+            "@id": ":relationship1",
             "@type": "Relationship",
             "source": "multipart_file",
             "target": "data_piece1",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "@id": "relationship2",
+            "@id": ":relationship2",
             "@type": "Relationship",
             "source": "multipart_file",
             "target": "data_piece2",
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "@id": "multipart_file",
+            "@id": ":multipart_file",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -71,7 +71,7 @@
             ]
         },
         {
-            "@id": "data_piece0",
+            "@id": ":data_piece0",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -99,7 +99,7 @@
             ]
         },
         {
-            "@id": "data_piece1",
+            "@id": ":data_piece1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -127,7 +127,7 @@
             ]
         },
         {
-            "@id": "data_piece2",
+            "@id": ":data_piece2",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -155,7 +155,7 @@
             ]
         },
         {
-            "@id": "relationship3",
+            "@id": ":relationship3",
             "@type": "Relationship",
             "source": "data_piece0",
             "target": "android_image",
@@ -169,7 +169,7 @@
             ]
         },
         {
-            "@id": "relationship4",
+            "@id": ":relationship4",
             "@type": "Relationship",
             "source": "data_piece1",
             "target": "android_image",
@@ -183,7 +183,7 @@
             ]
         },
         {
-            "@id": "relationship5",
+            "@id": ":relationship5",
             "@type": "Relationship",
             "source": "data_piece2",
             "target": "android_image",

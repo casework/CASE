@@ -5,7 +5,7 @@
     },
     "@graph": [
         {
-            "@id": "digital_photograph_thumbnail1",
+            "@id": ":digital_photograph_thumbnail1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -25,7 +25,7 @@
             ]
         },
         {
-            "@id": "relationship0",
+            "@id": ":relationship0",
             "@type": "Relationship",
             "source": "digital_photograph_thumbnail1",
             "target": "digital_photograph1",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "@id": "digital_photograph1",
+            "@id": ":digital_photograph1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {

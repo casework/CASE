@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "sms_message1",
+            "@id": ":sms_message1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "@id": "contact1",
+            "@id": ":contact1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "@id": "associated-account1",
+            "@id": ":associated-account1",
             "@type": "Relationship",
             "source": "contact1",
             "target": [
@@ -61,7 +61,7 @@
             "isDirectional": true
         },
         {
-            "@id": "associated-account2",
+            "@id": ":associated-account2",
             "@type": "Relationship",
             "source": "contact1",
             "target": [
@@ -71,7 +71,7 @@
             "isDirectional": true
         },
         {
-            "@id": "associated-account3",
+            "@id": ":associated-account3",
             "@type": "Relationship",
             "source": "contact1",
             "target": [
@@ -81,7 +81,7 @@
             "isDirectional": true
         },
         {
-            "@id": "phone_account1",
+            "@id": ":phone_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -97,7 +97,7 @@
             ]
         },
         {
-            "@id": "phone_account2",
+            "@id": ":phone_account2",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -112,7 +112,7 @@
             ]
         },
         {
-            "@id": "email_account1",
+            "@id": ":email_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -127,7 +127,7 @@
             ]
         },
         {
-            "@id": "phone_account3",
+            "@id": ":phone_account3",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -142,7 +142,7 @@
             ]
         },
         {
-            "@id": "android_phonebook1",
+            "@id": ":android_phonebook1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {

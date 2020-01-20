@@ -6,7 +6,7 @@
     },
     "@graph": [
         {
-            "@id": "actor1",
+            "@id": ":actor1",
             "@type": "Identity",
             "case-core:propertyBundle": [
                 {
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "@id": "associated-account1",
+            "@id": ":associated-account1",
             "@type": "Relationship",
             "source": "actor1",
             "target": [
@@ -31,7 +31,7 @@
             "isDirectional": true
         },
         {
-            "@id": "associated-account2",
+            "@id": ":associated-account2",
             "@type": "Relationship",
             "source": "actor1",
             "target": [
@@ -41,7 +41,7 @@
             "isDirectional": true
         },
         {
-            "@id": "associated-account3",
+            "@id": ":associated-account3",
             "@type": "Relationship",
             "source": "actor1",
             "target": [
@@ -51,7 +51,7 @@
             "isDirectional": true
         },
         {
-            "@id": "facebook_account1",
+            "@id": ":facebook_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -87,7 +87,7 @@
             ]
         },
         {
-            "@id": "associated-account4",
+            "@id": ":associated-account4",
             "@type": "Relationship",
             "source": "facebook_account1",
             "target": [
@@ -97,7 +97,7 @@
             "isDirectional": true
         },
         {
-            "@id": "google_account1",
+            "@id": ":google_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -137,7 +137,7 @@
             ]
         },
         {
-            "@id": "associated-account4",
+            "@id": ":associated-account4",
             "@type": "Relationship",
             "source": "google_account1",
             "target": [
@@ -147,7 +147,7 @@
             "isDirectional": true
         },
         {
-            "@id": "email_account1",
+            "@id": ":email_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -157,7 +157,7 @@
             ]
         },
         {
-            "@id": "email_address1",
+            "@id": ":email_address1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {

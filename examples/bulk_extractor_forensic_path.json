@@ -5,7 +5,7 @@
     },
     "@graph": [
         {
-            "@id": "extracted_email_address0",
+            "@id": ":extracted_email_address0",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -24,7 +24,7 @@
             ]
         },
         {
-            "@id": "relationship0",
+            "@id": ":relationship0",
             "@type": "Relationship",
             "source": "extracted_email_address0",
             "target": "decompressed_gzip0",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "@id": "extracted_email_address1",
+            "@id": ":extracted_email_address1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -58,7 +58,7 @@
             ]
         },
         {
-            "@id": "relationship1",
+            "@id": ":relationship1",
             "@type": "Relationship",
             "source": "extracted_email_address1",
             "target": "decompressed_gzip0",
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "@id": "decompressed_gzip0",
+            "@id": ":decompressed_gzip0",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -93,7 +93,7 @@
             ]
         },
         {
-            "@id": "relationship3",
+            "@id": ":relationship3",
             "@type": "Relationship",
             "source": "decompressed_gzip0",
             "target": "compressed_gzip0",
@@ -107,7 +107,7 @@
             ]
         },
         {
-            "@id": "compressed_gzip0",
+            "@id": ":compressed_gzip0",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -125,7 +125,7 @@
             ]
         },
         {
-            "@id": "relationship4",
+            "@id": ":relationship4",
             "@type": "Relationship",
             "source": "compressed_gzip0",
             "target": "decompressed_gzip1",
@@ -140,7 +140,7 @@
             ]
         },
         {
-            "@id": "decompressed_gzip1",
+            "@id": ":decompressed_gzip1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -158,7 +158,7 @@
             ]
         },
         {
-            "@id": "relationship5",
+            "@id": ":relationship5",
             "@type": "Relationship",
             "source": "decompressed_gzip1",
             "target": "compressed_gzip1",
@@ -172,7 +172,7 @@
             ]
         },
         {
-            "@id": "compressed_gzip1",
+            "@id": ":compressed_gzip1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -190,7 +190,7 @@
             ]
         },
         {
-            "@id": "relationship6",
+            "@id": ":relationship6",
             "@type": "Relationship",
             "source": "compressed_gzip1",
             "target": "disk_image",
@@ -205,7 +205,7 @@
             ]
         },
         {
-            "@id": "disk_image",
+            "@id": ":disk_image",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {

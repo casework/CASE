@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "mobile-device-uuid",
+            "@id": ":mobile-device-uuid",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -49,7 +49,7 @@
             ]
         },
         {
-            "@id": "trace-relationship1-uuid",
+            "@id": ":trace-relationship1-uuid",
             "@type": "Relationship",
             "source": "sim-card-uuid",
             "target": [
@@ -59,7 +59,7 @@
             "isDirectional": "true"
         },
         {
-            "@id": "sim-card-uuid",
+            "@id": ":sim-card-uuid",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -75,7 +75,7 @@
             ]
         },
         {
-            "@id": "mobile-account1-uuid",
+            "@id": ":mobile-account1-uuid",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "@id": "mobile-account2-uuid",
+            "@id": ":mobile-account2-uuid",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {

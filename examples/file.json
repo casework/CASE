@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "chunk_of_data",
+            "@id": ":chunk_of_data",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "@id": "relationship0",
+            "@id": ":relationship0",
             "@type": "Relationship",
             "source": "chunk_of_data",
             "target": "decoded_attachment",
@@ -41,7 +41,7 @@
             ]
         },
         {
-            "@id": "decoded_attachment",
+            "@id": ":decoded_attachment",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "@id": "relationship1",
+            "@id": ":relationship1",
             "@type": "Relationship",
             "source": "decoded_attachment",
             "target": "tar_archive_file",
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "@id": "tar_archive_file",
+            "@id": ":tar_archive_file",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -111,7 +111,7 @@
             ]
         },
         {
-            "@id": "relationship2",
+            "@id": ":relationship2",
             "@type": "Relationship",
             "source": "tar_archive_file",
             "target": "decrypted_blob",
@@ -125,7 +125,7 @@
             ]
         },
         {
-            "@id": "decrypted_blob",
+            "@id": ":decrypted_blob",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -145,7 +145,7 @@
             ]
         },
         {
-            "@id": "relationship3",
+            "@id": ":relationship3",
             "@type": "Relationship",
             "source": "decrypted_blob",
             "target": "sqlite_blob",
@@ -162,7 +162,7 @@
             ]
         },
         {
-            "@id": "sqlite_blob",
+            "@id": ":sqlite_blob",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -187,7 +187,7 @@
             ]
         },
         {
-            "@id": "relationship4",
+            "@id": ":relationship4",
             "@type": "Relationship",
             "source": "sqlite_blob",
             "target": "sqlite_database",
@@ -203,7 +203,7 @@
             ]
         },
         {
-            "@id": "sqlite_database",
+            "@id": ":sqlite_database",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -234,7 +234,7 @@
             ]
         },
         {
-            "@id": "relationship5",
+            "@id": ":relationship5",
             "@type": "Relationship",
             "source": "sqlite_database",
             "target": "image_partition",
@@ -248,7 +248,7 @@
             ]
         },
         {
-            "@id": "image_partition",
+            "@id": ":image_partition",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -265,7 +265,7 @@
             ]
         },
         {
-            "@id": "relationship6",
+            "@id": ":relationship6",
             "@type": "Relationship",
             "source": "image_partition",
             "target": "android_image",
@@ -279,7 +279,7 @@
             ]
         },
         {
-            "@id": "android_image",
+            "@id": ":android_image",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -308,7 +308,7 @@
             ]
         },
         {
-            "@id": "relationship7",
+            "@id": ":relationship7",
             "@type": "Relationship",
             "source": "android_image",
             "target": "forensic_lab_computer1",
@@ -322,7 +322,7 @@
             ]
         },
         {
-            "@id": "relationship8",
+            "@id": ":relationship8",
             "@type": "Relationship",
             "source": "android_image",
             "target": "android_device1",
@@ -330,7 +330,7 @@
             "isDirectional": true
         },
         {
-            "@id": "forensic_lab_computer1",
+            "@id": ":forensic_lab_computer1",
             "@type": "case-core:Trace",
             "location": "forensic_lab1",
             "case-core:propertyBundle": [
@@ -360,7 +360,7 @@
             ]
         },
         {
-            "@id": "android_device1",
+            "@id": ":android_device1",
             "@type": "case-core:Trace",
             "location": "forensic_lab1",
             "case-core:propertyBundle": [

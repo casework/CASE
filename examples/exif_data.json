@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "camera1",
+            "@id": ":camera1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -18,7 +18,7 @@
             ]
         },
         {
-            "@id": "relationship1",
+            "@id": ":relationship1",
             "@type": "Relationship",
             "source": "digital_photograph1",
             "target": "device_partition3",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "@id": "digital_photograph1",
+            "@id": ":digital_photograph1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -104,7 +104,7 @@
             ]
         },
         {
-            "@id": "camera_action1",
+            "@id": ":camera_action1",
             "@type": "Action",
             "name": "photo_taken",
             "startTime": "2010-01-15T17:59:43.25Z",
@@ -120,7 +120,7 @@
             ]
         },
         {
-            "@id": "annotation1",
+            "@id": ":annotation1",
             "@type": "Annotation",
             "description": "Photo was taken by a Canon digital camera.",
             "tag": [
@@ -131,7 +131,7 @@
             "object": "camera_action1"
         },
         {
-            "@id": "forensic_action7",
+            "@id": ":forensic_action7",
             "@type": "InvestigativeAction",
             "name": "annotated",
             "startTime": "2010-01-15T17:59:43.25Z",

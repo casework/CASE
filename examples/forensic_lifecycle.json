@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "forensic_lifecycle1",
+            "@id": ":forensic_lifecycle1",
             "@type": "ActionLifecycle",
             "description": "Describes the forensic lifecycle.",
             "olo:length": 5,
@@ -35,32 +35,32 @@
             ]
         },
         {
-            "@id": "phase1",
+            "@id": ":phase1",
             "@type": "Action",
             "name": "Survey"
         },
         {
-            "@id": "phase2",
+            "@id": ":phase2",
             "@type": "Action",
             "name": "Preservation"
         },
         {
-            "@id": "phase3",
+            "@id": ":phase3",
             "@type": "Action",
             "name": "Examination"
         },
         {
-            "@id": "phase4",
+            "@id": ":phase4",
             "@type": "Action",
             "name": "Analysis"
         },
         {
-            "@id": "phase5",
+            "@id": ":phase5",
             "@type": "Action",
             "name": "Report"
         },
         {
-            "@id": "case1",
+            "@id": ":case1",
             "@type": "Investigation",
             "description": "John Doe solicited minor (Jane Doe) and exchange contraband (digital photographs)",
             "startTime": "2010-01-12T17:59:43.25Z",
@@ -145,7 +145,7 @@
             ]
         },
         {
-            "@id": "forensic_action1",
+            "@id": ":forensic_action1",
             "@type": "InvestigativeAction",
             "name": "seized",
             "startTime": "2010-01-15T17:59:43.25Z",
@@ -161,7 +161,7 @@
             ]
         },
         {
-            "@id": "lifecycle_phase1",
+            "@id": ":lifecycle_phase1",
             "@type": "Relationship",
             "source": "forensic_action1",
             "target": "phase1",
@@ -169,7 +169,7 @@
             "isDirectional": true
         },
         {
-            "@id": "annotation2",
+            "@id": ":annotation2",
             "@type": "Annotation",
             "description": "Receive evidence via FedEx from Jon Graves.",
             "tag": [
@@ -180,7 +180,7 @@
             ]
         },
         {
-            "@id": "forensic_action2",
+            "@id": ":forensic_action2",
             "@type": "InvestigativeAction",
             "name": "custody-receive",
             "startTime": "2010-01-15T17:59:43.25Z",
@@ -200,7 +200,7 @@
             ]
         },
         {
-            "@id": "lifecycle_phase2",
+            "@id": ":lifecycle_phase2",
             "@type": "Relationship",
             "source": "forensic_action2",
             "target": "phase2",
@@ -208,7 +208,7 @@
             "isDirectional": true
         },
         {
-            "@id": "annotation3",
+            "@id": ":annotation3",
             "@type": "Annotation",
             "description": "Make forensic image of suspect's cell phone",
             "tags": [
@@ -219,7 +219,7 @@
             ]
         },
         {
-            "@id": "forensic_action3",
+            "@id": ":forensic_action3",
             "@type": "InvestigativeAction",
             "name": "imaged",
             "startTime": "2010-01-15T17:59:43.25Z",
@@ -246,7 +246,7 @@
             ]
         },
         {
-            "@id": "lifecycle_phase3",
+            "@id": ":lifecycle_phase3",
             "@type": "Relationship",
             "source": "forensic_action3",
             "target": "phase2",
@@ -254,7 +254,7 @@
             "isDirectional": true
         },
         {
-            "@id": "annotation4",
+            "@id": ":annotation4",
             "@type": "Annotation",
             "description": "Make forensic image of SD card from suspect's cell phone.",
             "tags": [
@@ -265,7 +265,7 @@
             ]
         },
         {
-            "@id": "forensic_action4",
+            "@id": ":forensic_action4",
             "@type": "InvestigativeAction",
             "name": "imaged",
             "startTime": "2010-01-16T17:59:43.25Z",
@@ -287,7 +287,7 @@
             ]
         },
         {
-            "@id": "lifecycle_phase4",
+            "@id": ":lifecycle_phase4",
             "@type": "Relationship",
             "source": "forensic_action4",
             "target": "phase2",
@@ -295,7 +295,7 @@
             "isDirectional": true
         },
         {
-            "@id": "annotation5",
+            "@id": ":annotation5",
             "@type": "Annotation",
             "tags": [
                 "forensic"
@@ -306,7 +306,7 @@
             ]
         },
         {
-            "@id": "forensic_action5",
+            "@id": ":forensic_action5",
             "@type": "InvestigativeAction",
             "name": "parsed",
             "startTime": "2010-01-20T17:59:43.25Z",
@@ -362,7 +362,7 @@
             ]
         },
         {
-            "@id": "lifecycle_phase5",
+            "@id": ":lifecycle_phase5",
             "@type": "Relationship",
             "source": "forensic_action5",
             "target": "phase3",
@@ -370,7 +370,7 @@
             "isDirectional": true
         },
         {
-            "@id": "annotation6",
+            "@id": ":annotation6",
             "@type": "Annotation",
             "description": "Plaso tool runs WhatsApp parser",
             "tag": [
@@ -381,7 +381,7 @@
             ]
         },
         {
-            "@id": "forensic_action6",
+            "@id": ":forensic_action6",
             "@type": "InvestigativeAction",
             "name": "executed",
             "startTime": "2010-02-15T17:59:43.25Z",
@@ -423,147 +423,147 @@
             ]
         },
         {
-            "@id": "provenance_record1",
+            "@id": ":provenance_record1",
             "@type": "ProvenanceRecord",
             "description": "Android Smartphone",
             "exhibitNumber": "ACME-676553402357",
             "object": "device1"
         },
         {
-            "@id": "provenance_record2",
+            "@id": ":provenance_record2",
             "@type": "ProvenanceRecord",
             "description": "Android Smartphone",
             "exhibitNumber": "DFL-20140712-001A",
             "object": "device1"
         },
         {
-            "@id": "provenance_record3",
+            "@id": ":provenance_record3",
             "@type": "ProvenanceRecord",
             "description": "SD Card",
             "exhibitNumber": "DFL-20140712-001B",
             "object": "sd_card1"
         },
         {
-            "@id": "provenance_record4",
+            "@id": ":provenance_record4",
             "@type": "ProvenanceRecord",
             "description": "Forensic image of Android Smartphone",
             "exhibitNumber": "DFL-20140712-001C",
             "object": "android_image"
         },
         {
-            "@id": "provenance_record5",
+            "@id": ":provenance_record5",
             "@type": "ProvenanceRecord",
             "description": "Forensic image of SD Card",
             "exhibitNumber": "DFL-20140712-001D",
             "object": "sd_card1_image"
         },
         {
-            "@id": "provenance_record6",
+            "@id": ":provenance_record6",
             "@type": "ProvenanceRecord",
             "description": "Chat Messages Report",
             "exhibitNumber": "DFL-20140712-001E",
             "object": "chat_messages_report"
         },
         {
-            "@id": "provenance_record7",
+            "@id": ":provenance_record7",
             "@type": "ProvenanceRecord",
             "description": "Plaso Storage File",
             "exhibitNumber": "DFL-20140712-001F",
             "object": "plaso_storage_file"
         },
         {
-            "@id": "provenance_record8",
+            "@id": ":provenance_record8",
             "@type": "ProvenanceRecord",
             "description": "Android OS Information",
             "exhibitNumber": "DFL-20140712-0020",
             "object": "os1"
         },
         {
-            "@id": "provenance_record9",
+            "@id": ":provenance_record9",
             "@type": "ProvenanceRecord",
             "description": "Contraband photograph",
             "exhibitNumber": "DFL-20140712-0021",
             "object": "attachment_file"
         },
         {
-            "@id": "provenance_record10",
+            "@id": ":provenance_record10",
             "@type": "ProvenanceRecord",
             "description": "WhatsApp message database",
             "exhibitNumber": "DFL-20140712-0022",
             "object": "message_database"
         },
         {
-            "@id": "provenance_record11",
+            "@id": ":provenance_record11",
             "@type": "ProvenanceRecord",
             "description": "WhatsApp thumbnail database",
             "exhibitNumber": "DFL-20140712-0023",
             "object": "thumbnail_database"
         },
         {
-            "@id": "provenance_record12",
+            "@id": ":provenance_record12",
             "@type": "ProvenanceRecord",
             "description": "Android data partition",
             "exhibitNumber": "DFL-20140712-0024",
             "object": "image_partition"
         },
         {
-            "@id": "provenance_record13",
+            "@id": ":provenance_record13",
             "@type": "ProvenanceRecord",
             "description": "WhatsApp message being sent from subject to victim",
             "exhibitNumber": "DFL-20140712-0025",
             "object": "message_action1"
         },
         {
-            "@id": "provenance_record14",
+            "@id": ":provenance_record14",
             "@type": "ProvenanceRecord",
             "description": "WhatsApp chat message thread between subject and victim",
             "exhibitNumber": "DFL-20140712-0026",
             "object": "thread1"
         },
         {
-            "@id": "provenance_record15",
+            "@id": ":provenance_record15",
             "@type": "ProvenanceRecord",
             "description": "WhatsApp chat message containing contraband attachment",
             "exhibitNumber": "DFL-20140712-0027",
             "object": "message1"
         },
         {
-            "@id": "provenance_record16",
+            "@id": ":provenance_record16",
             "@type": "ProvenanceRecord",
             "description": "Location of subject when using WhatsApp",
             "exhibitNumber": "DFL-20140712-0028",
             "object": "location1"
         },
         {
-            "@id": "provenance_record17",
+            "@id": ":provenance_record17",
             "@type": "ProvenanceRecord",
             "description": "Subject's WhatsApp account",
             "exhibitNumber": "DFL-20140712-0029",
             "object": "account1"
         },
         {
-            "@id": "provenance_record18",
+            "@id": ":provenance_record18",
             "@type": "ProvenanceRecord",
             "description": "Victim's WhatsApp account",
             "exhibitNumber": "DFL-20140712-002A",
             "object": "account2"
         },
         {
-            "@id": "provenance_record19",
+            "@id": ":provenance_record19",
             "@type": "ProvenanceRecord",
             "description": "Thumbnail of contraband picture",
             "exhibitNumber": "DFL-20140712-002B",
             "object": "decoded_blob"
         },
         {
-            "@id": "provenance_record20",
+            "@id": ":provenance_record20",
             "@type": "ProvenanceRecord",
             "description": "Encoded thumbnail of contraband picture",
             "exhibitNumber": "DFL-20140712-002C",
             "object": "decrypted_blob"
         },
         {
-            "@id": "provenance_record21",
+            "@id": ":provenance_record21",
             "@type": "ProvenanceRecord",
             "description": "Encrypted thumbnail of contraband picture",
             "exhibitNumber": "DFL-20140712-002D",

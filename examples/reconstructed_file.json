@@ -8,7 +8,7 @@
     },
     "@graph": [
         {
-            "@id": "relationship0",
+            "@id": ":relationship0",
             "@type": "Relationship",
             "source": "reconstructed_file",
             "target": "data_piece0",
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "@id": "relationship1",
+            "@id": ":relationship1",
             "@type": "Relationship",
             "source": "reconstructed_file",
             "target": "data_piece1",
@@ -38,7 +38,7 @@
             ]
         },
         {
-            "@id": "relationship2",
+            "@id": ":relationship2",
             "@type": "Relationship",
             "source": "reconstructed_file",
             "target": "data_piece2",
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "@id": "reconstructed_file",
+            "@id": ":reconstructed_file",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -72,7 +72,7 @@
             ]
         },
         {
-            "@id": "data_piece0",
+            "@id": ":data_piece0",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -91,7 +91,7 @@
             ]
         },
         {
-            "@id": "data_piece1",
+            "@id": ":data_piece1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -110,7 +110,7 @@
             ]
         },
         {
-            "@id": "data_piece2",
+            "@id": ":data_piece2",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -129,7 +129,7 @@
             ]
         },
         {
-            "@id": "relationship3",
+            "@id": ":relationship3",
             "@type": "Relationship",
             "source": "data_piece1",
             "target": "android_image",
@@ -144,7 +144,7 @@
             ]
         },
         {
-            "@id": "relationship4",
+            "@id": ":relationship4",
             "@type": "Relationship",
             "source": "data_piece2",
             "target": "android_image",
@@ -159,7 +159,7 @@
             ]
         },
         {
-            "@id": "android_image",
+            "@id": ":android_image",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -188,7 +188,7 @@
             ]
         },
         {
-            "@id": "investigative_action1",
+            "@id": ":investigative_action1",
             "@type": "InvestigativeAction",
             "rdfs:comment": "TODO: Determine if it's better to group objects together using provenance records or to have a provenance record for each object.",
             "name": "carved",
@@ -215,7 +215,7 @@
             ]
         },
         {
-            "@id": "investigative_action2",
+            "@id": ":investigative_action2",
             "@type": "Investigative",
             "rdfs:comment": "Start and end times are the same as investigative_action1 because this action was part of the same action that performed the carving.",
             "name": "reconstructed",
@@ -244,7 +244,7 @@
             ]
         },
         {
-            "@id": "provenance_record1",
+            "@id": ":provenance_record1",
             "@type": "ProvenanceRecord",
             "description": "Reconstructed JPG File",
             "exhibitNumber": "ACME-676553402357-00",
@@ -256,7 +256,7 @@
             ]
         },
         {
-            "@id": "provenance_record2",
+            "@id": ":provenance_record2",
             "@type": "ProvenanceRecord",
             "description": "Carved data fragments",
             "exhibitNumber": "ACME-676553402357-01",
@@ -268,7 +268,7 @@
             ]
         },
         {
-            "@id": "provenance_record3",
+            "@id": ":provenance_record3",
             "@type": "ProvenanceRecord",
             "description": "JPG Header",
             "exhibitNumber": "ACME-676553402357-02",

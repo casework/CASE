@@ -6,14 +6,14 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": "bundle-2a13e958a-d975-41aa-b1bb-029d2b6707ab",
+    "@id": ":bundle-2a13e958a-d975-41aa-b1bb-029d2b6707ab",
     "@type": "Bundle",
     "description": [
         "This example of representing network connections in captured network traffic (e.g., PCAP)."
     ],
     "content": [
         {
-            "@id": "investigation-952d677d-6b62-4e53-9bac-1b113d268ac5",
+            "@id": ":investigation-952d677d-6b62-4e53-9bac-1b113d268ac5",
             "@type": "Investigation",
             "name": "NetTheft1234",
             "focus": "Media Theft",
@@ -41,7 +41,7 @@
         },
         {
             "@type": "Tool",
-            "@id": "pcap-tool-uuid",
+            "@id": ":pcap-tool-uuid",
             "name": "PCAPAnalyser",
             "creator": "NetworkAnalyser",
             "toolType": "PCAParser",
@@ -49,7 +49,7 @@
         },
         {
             "@type": "InvestigativeAction",
-            "@id": "extraction-action-uuid",
+            "@id": ":extraction-action-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -73,7 +73,7 @@
         },
         {
             "@type": "ProvenanceRecord",
-            "@id": "pcap-provenancerecord-uuid",
+            "@id": ":pcap-provenancerecord-uuid",
             "createdBy": "81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "description": "Parsed packet capture files",
@@ -83,7 +83,7 @@
         },
         {
             "@type": "case-core:Trace",
-            "@id": "pcap-file-uuid",
+            "@id": ":pcap-file-uuid",
             "createdBy": "81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -111,7 +111,7 @@
         },
         {
             "@type": "ProvenanceRecord",
-            "@id": "extracted-connections-provenancerecord-uuid",
+            "@id": ":extracted-connections-provenancerecord-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "description": "Network connections and files parsed with PCAParser",
@@ -123,7 +123,7 @@
         },
         {
             "@type": "case-core:Trace",
-            "@id": "source-host-uuid",
+            "@id": ":source-host-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -139,7 +139,7 @@
         },
         {
             "@type": "case-core:Trace",
-            "@id": "destination-host-uuid",
+            "@id": ":destination-host-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -155,7 +155,7 @@
         },
         {
             "@type": "case-core:Trace",
-            "@id": "network-connection1-uuid",
+            "@id": ":network-connection1-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -174,7 +174,7 @@
         },
         {
             "@type": "case-core:Trace",
-            "@id": "network-connection2-uuid",
+            "@id": ":network-connection2-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -193,7 +193,7 @@
         },
         {
             "@type": "case-core:Trace",
-            "@id": "network-connection3-uuid",
+            "@id": ":network-connection3-uuid",
             "createdBy": "investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
@@ -211,7 +211,7 @@
             ]
         },
         {
-            "@id": "trace-relationship1-uuid",
+            "@id": ":trace-relationship1-uuid",
             "@type": "Relationship",
             "source": "network-connection1-uuid",
             "target": [
@@ -227,7 +227,7 @@
             ]
         },
         {
-            "@id": "trace-relationship2-uuid",
+            "@id": ":trace-relationship2-uuid",
             "@type": "Relationship",
             "source": "network-connection3-uuid",
             "target": [
@@ -243,7 +243,7 @@
             ]
         },
         {
-            "@id": "trace-relationship3-uuid",
+            "@id": ":trace-relationship3-uuid",
             "@type": "Relationship",
             "source": "network-connection3-uuid",
             "target": [

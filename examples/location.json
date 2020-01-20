@@ -7,7 +7,7 @@
     },
     "@graph": [
         {
-            "@id": "location1",
+            "@id": ":location1",
             "@type": "Location",
             "case-core:propertyBundle": [
                 {
@@ -25,7 +25,7 @@
             ]
         },
         {
-            "@id": "location2",
+            "@id": ":location2",
             "@type": "Location",
             "case-core:propertyBundle": [
                 {

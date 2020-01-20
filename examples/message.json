@@ -6,7 +6,7 @@
     },
     "@graph": [
         {
-            "@id": "os1",
+            "@id": ":os1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -18,7 +18,7 @@
             ]
         },
         {
-            "@id": "application1",
+            "@id": ":application1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -32,7 +32,7 @@
             ]
         },
         {
-            "@id": "account1",
+            "@id": ":account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "@id": "account2",
+            "@id": ":account2",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "@id": "account3",
+            "@id": ":account3",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -62,7 +62,7 @@
             ]
         },
         {
-            "@id": "account4",
+            "@id": ":account4",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -72,7 +72,7 @@
             ]
         },
         {
-            "@id": "thread1",
+            "@id": ":thread1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -105,7 +105,7 @@
             ]
         },
         {
-            "@id": "thread2",
+            "@id": ":thread2",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -130,7 +130,7 @@
             ]
         },
         {
-            "@id": "post1",
+            "@id": ":post1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -145,7 +145,7 @@
             ]
         },
         {
-            "@id": "message1",
+            "@id": ":message1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -161,7 +161,7 @@
             ]
         },
         {
-            "@id": "attach_relationship1",
+            "@id": ":attach_relationship1",
             "@type": "Relationship",
             "source": "location1",
             "target": "message1",
@@ -175,7 +175,7 @@
             ]
         },
         {
-            "@id": "attach_relationship2",
+            "@id": ":attach_relationship2",
             "@type": "Relationship",
             "source": "attachment_file1",
             "target": "message1",
@@ -189,7 +189,7 @@
             ]
         },
         {
-            "@id": "attach_relationship3",
+            "@id": ":attach_relationship3",
             "@type": "Relationship",
             "source": "attachment_file2",
             "target": "message1",

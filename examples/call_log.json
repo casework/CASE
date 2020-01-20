@@ -6,7 +6,7 @@
     },
     "@graph": [
         {
-            "@id": "phone_account1",
+            "@id": ":phone_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "@id": "phone_account2",
+            "@id": ":phone_account2",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "@id": "phone_call1",
+            "@id": ":phone_call1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {

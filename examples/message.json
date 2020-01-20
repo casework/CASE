@@ -165,7 +165,7 @@
             "@type": "Relationship",
             "source": "location1",
             "target": "message1",
-            "kindOfRealtionship": "attachment-of",
+            "kindOfRelationship": "attachment-of",
             "isDirectional": true,
             "case-core:propertyBundle": [
                 {
@@ -179,7 +179,7 @@
             "@type": "Relationship",
             "source": "attachment_file1",
             "target": "message1",
-            "kindOfRealtionship": "attachment-of",
+            "kindOfRelationship": "attachment-of",
             "isDirectional": true,
             "case-core:propertyBundle": [
                 {
@@ -193,7 +193,7 @@
             "@type": "Relationship",
             "source": "attachment_file2",
             "target": "message1",
-            "kindOfRealtionship": "attachment-of",
+            "kindOfRelationship": "attachment-of",
             "isDirectional": true,
             "case-core:propertyBundle": [
                 {

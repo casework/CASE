@@ -346,7 +346,7 @@
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountType": "PhoneAccount",
-                    "uco-observable:isActive": "true"
+                    "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:MobileAccount",
@@ -541,7 +541,7 @@
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountType": "PhoneAccount",
-                    "uco-observable:isActive": "true"
+                    "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:MobileAccount",
@@ -1061,7 +1061,7 @@
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":olympus-uuid",
-                    "uco-observable:isActive": "true"
+                    "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:PhoneAccount",
@@ -1076,7 +1076,7 @@
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":olympus-uuid",
-                    "uco-observable:isActive": "true"
+                    "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:PhoneAccount",
@@ -1091,7 +1091,7 @@
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":olympus-uuid",
-                    "uco-observable:isActive": "true"
+                    "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:PhoneAccount",

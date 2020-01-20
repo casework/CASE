@@ -218,7 +218,7 @@
                 "pcap-file-uuid"
             ],
             "kindOfRelationship": "contained-within",
-            "isDirectional": "true",
+            "isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
@@ -234,7 +234,7 @@
                 "pcap-file-uuid"
             ],
             "kindOfRelationship": "contained-within",
-            "isDirectional": "true",
+            "isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
@@ -250,7 +250,7 @@
                 "pcap-file-uuid"
             ],
             "kindOfRelationship": "contained-within",
-            "isDirectional": "true",
+            "isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",

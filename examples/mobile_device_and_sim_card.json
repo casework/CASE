@@ -56,7 +56,7 @@
                 "mobile-device-uuid"
             ],
             "kindOfRelationship": "contained-within",
-            "isDirectional": "true"
+            "isDirectional": true
         },
         {
             "@id": ":sim-card-uuid",

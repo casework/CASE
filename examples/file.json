@@ -28,8 +28,8 @@
         {
             "@id": ":relationship0",
             "@type": "Relationship",
-            "source": "chunk_of_data",
-            "target": "decoded_attachment",
+            "source": ":chunk_of_data",
+            "target": ":decoded_attachment",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -69,8 +69,8 @@
         {
             "@id": ":relationship1",
             "@type": "Relationship",
-            "source": "decoded_attachment",
-            "target": "tar_archive_file",
+            "source": ":decoded_attachment",
+            "target": ":tar_archive_file",
             "kindOfRelationship": "decoded-from",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -113,8 +113,8 @@
         {
             "@id": ":relationship2",
             "@type": "Relationship",
-            "source": "tar_archive_file",
-            "target": "decrypted_blob",
+            "source": ":tar_archive_file",
+            "target": ":decrypted_blob",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -147,8 +147,8 @@
         {
             "@id": ":relationship3",
             "@type": "Relationship",
-            "source": "decrypted_blob",
-            "target": "sqlite_blob",
+            "source": ":decrypted_blob",
+            "target": ":sqlite_blob",
             "kindOfRelationship": "decrypted-from",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -189,8 +189,8 @@
         {
             "@id": ":relationship4",
             "@type": "Relationship",
-            "source": "sqlite_blob",
-            "target": "sqlite_database",
+            "source": ":sqlite_blob",
+            "target": ":sqlite_database",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -236,8 +236,8 @@
         {
             "@id": ":relationship5",
             "@type": "Relationship",
-            "source": "sqlite_database",
-            "target": "image_partition",
+            "source": ":sqlite_database",
+            "target": ":image_partition",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -267,8 +267,8 @@
         {
             "@id": ":relationship6",
             "@type": "Relationship",
-            "source": "image_partition",
-            "target": "android_image",
+            "source": ":image_partition",
+            "target": ":android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -310,8 +310,8 @@
         {
             "@id": ":relationship7",
             "@type": "Relationship",
-            "source": "android_image",
-            "target": "forensic_lab_computer1",
+            "source": ":android_image",
+            "target": ":forensic_lab_computer1",
             "kindOfRelationship": "stored-on",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -324,15 +324,15 @@
         {
             "@id": ":relationship8",
             "@type": "Relationship",
-            "source": "android_image",
-            "target": "android_device1",
+            "source": ":android_image",
+            "target": ":android_device1",
             "kindOfRelationship": "forensic_image_of",
             "isDirectional": true
         },
         {
             "@id": ":forensic_lab_computer1",
             "@type": "case-core:Trace",
-            "location": "forensic_lab1",
+            "location": ":forensic_lab1",
             "case-core:propertyBundle": [
                 {
                     "@type": "Device",
@@ -362,7 +362,7 @@
         {
             "@id": ":android_device1",
             "@type": "case-core:Trace",
-            "location": "forensic_lab1",
+            "location": ":forensic_lab1",
             "case-core:propertyBundle": [
                 {
                     "@type": "Device",

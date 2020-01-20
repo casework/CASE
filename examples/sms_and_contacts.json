@@ -12,11 +12,11 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "Message",
-                    "application": "sms_application1",
+                    "application": ":sms_application1",
                     "messageText": "Yo dude! This is my new number.",
-                    "from": "phone_account3",
+                    "from": ":phone_account3",
                     "to": [
-                        "phone_account1"
+                        ":phone_account1"
                     ],
                     "sentTime": "2010-01-15T17:59:43.25Z"
                 }
@@ -38,13 +38,13 @@
                     "firstName": "John",
                     "familyName": "Doe",
                     "contactName": "BFF Joe",
-                    "application": "android_phonebook1",
+                    "application": ":android_phonebook1",
                     "emailAddress": [
-                        "email_account1"
+                        ":email_account1"
                     ],
                     "phoneNumber": [
-                        "phone_account1",
-                        "phone_account2"
+                        ":phone_account1",
+                        ":phone_account2"
                     ],
                     "screenName": []
                 }
@@ -53,9 +53,9 @@
         {
             "@id": ":associated-account1",
             "@type": "Relationship",
-            "source": "contact1",
+            "source": ":contact1",
             "target": [
-                "phone_account1"
+                ":phone_account1"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
@@ -63,9 +63,9 @@
         {
             "@id": ":associated-account2",
             "@type": "Relationship",
-            "source": "contact1",
+            "source": ":contact1",
             "target": [
-                "phone_account2"
+                ":phone_account2"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
@@ -73,9 +73,9 @@
         {
             "@id": ":associated-account3",
             "@type": "Relationship",
-            "source": "contact1",
+            "source": ":contact1",
             "target": [
-                "email_account1"
+                ":email_account1"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
@@ -149,7 +149,7 @@
                     "@type": "Application",
                     "name": "Android Phonebook",
                     "applicationIdentifier": "com.android.providers.telephony",
-                    "operatingSystem": "os1",
+                    "operatingSystem": ":os1",
                     "version": "2.3.4",
                     "numberOfLaunches": 323
                 }

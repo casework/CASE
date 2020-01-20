@@ -19,17 +19,17 @@
             "focus": "Media Theft",
             "description": "Network traffic of media theft",
             "object": [
-                "pcap-tool-uuid",
-                "extraction-action-uuid",
-                "pcap-provenancerecord-uuid",
-                "source-host-uuid",
-                "destination-host-uuid",
-                "network-connection1-uuid",
-                "network-connection2-uuid",
-                "network-connection3-uuid",
-                "trace-relationship1-uuid",
-                "trace-relationship2-uuid",
-                "trace-relationship3-uuid"
+                ":pcap-tool-uuid",
+                ":extraction-action-uuid",
+                ":pcap-provenancerecord-uuid",
+                ":source-host-uuid",
+                ":destination-host-uuid",
+                ":network-connection1-uuid",
+                ":network-connection2-uuid",
+                ":network-connection3-uuid",
+                ":trace-relationship1-uuid",
+                ":trace-relationship2-uuid",
+                ":trace-relationship3-uuid"
             ],
             "case-core:propertyBundle": [
                 {
@@ -43,28 +43,28 @@
             "@type": "Tool",
             "@id": ":pcap-tool-uuid",
             "name": "PCAPAnalyser",
-            "creator": "NetworkAnalyser",
+            "creator": ":NetworkAnalyser",
             "toolType": "PCAParser",
             "version": "3.5"
         },
         {
             "@type": "InvestigativeAction",
             "@id": ":extraction-action-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "instrument": "pcap-tool-uuid",
+                    "instrument": ":pcap-tool-uuid",
                     "object": [
-                        "pcap-provenancerecord-uuid",
-                        "pcap-file-uuid"
+                        ":pcap-provenancerecord-uuid",
+                        ":pcap-file-uuid"
                     ],
                     "result": [
-                        "extracted-connections-provenancerecord-uuid",
-                        "network-connection1-uuid",
-                        "network-connection2-uuid",
-                        "network-connection3-uuid"
+                        ":extracted-connections-provenancerecord-uuid",
+                        ":network-connection1-uuid",
+                        ":network-connection2-uuid",
+                        ":network-connection3-uuid"
                     ]
                 }
             ],
@@ -74,17 +74,17 @@
         {
             "@type": "ProvenanceRecord",
             "@id": ":pcap-provenancerecord-uuid",
-            "createdBy": "81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
+            "createdBy": ":81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "description": "Parsed packet capture files",
             "object": [
-                "pcap-file-uuid"
+                ":pcap-file-uuid"
             ]
         },
         {
             "@type": "case-core:Trace",
             "@id": ":pcap-file-uuid",
-            "createdBy": "81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
+            "createdBy": ":81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
@@ -112,19 +112,19 @@
         {
             "@type": "ProvenanceRecord",
             "@id": ":extracted-connections-provenancerecord-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "description": "Network connections and files parsed with PCAParser",
             "object": [
-                "network-connection1-uuid",
-                "network-connection2-uuid",
-                "network-connection3-uuid"
+                ":network-connection1-uuid",
+                ":network-connection2-uuid",
+                ":network-connection3-uuid"
             ]
         },
         {
             "@type": "case-core:Trace",
             "@id": ":source-host-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
@@ -140,7 +140,7 @@
         {
             "@type": "case-core:Trace",
             "@id": ":destination-host-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
@@ -156,16 +156,16 @@
         {
             "@type": "case-core:Trace",
             "@id": ":network-connection1-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6256260Z",
                     "endTime": "2009-04-03T02:29:25.6365510Z",
-                    "dst": "destination-host-uuid",
+                    "dst": ":destination-host-uuid",
                     "destinationPort": 139,
-                    "src": "source-host-uuid",
+                    "src": ":source-host-uuid",
                     "sourcePort": 52960,
                     "protocols": "TCP, NETBIOSSESSIONSERVICE",
                     "connectionState": "APSF"
@@ -175,16 +175,16 @@
         {
             "@type": "case-core:Trace",
             "@id": ":network-connection2-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6264620Z",
                     "endTime": "2009-04-03T02:29:25.6369450Z",
-                    "dst": "destination-host-uuid",
+                    "dst": ":destination-host-uuid",
                     "destinationPort": 139,
-                    "src": "source-host-uuid",
+                    "src": ":source-host-uuid",
                     "sourcePort": 52961,
                     "protocols": "TCP, NETBIOSSESSIONSERVICE",
                     "connectionState": "APSF"
@@ -194,16 +194,16 @@
         {
             "@type": "case-core:Trace",
             "@id": ":network-connection3-uuid",
-            "createdBy": "investigator1-uuid",
+            "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6370540Z",
                     "endTime": "2009-04-03T02:29:25.6475500Z",
-                    "dst": "destination-host-uuid",
+                    "dst": ":destination-host-uuid",
                     "destinationPort": 139,
-                    "src": "source-host-uuid",
+                    "src": ":source-host-uuid",
                     "sourcePort": 52962,
                     "protocols": "TCP, NETBIOSSESSIONSERVICE",
                     "connectionState": "APSF"
@@ -213,9 +213,9 @@
         {
             "@id": ":trace-relationship1-uuid",
             "@type": "Relationship",
-            "source": "network-connection1-uuid",
+            "source": ":network-connection1-uuid",
             "target": [
-                "pcap-file-uuid"
+                ":pcap-file-uuid"
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
@@ -229,9 +229,9 @@
         {
             "@id": ":trace-relationship2-uuid",
             "@type": "Relationship",
-            "source": "network-connection3-uuid",
+            "source": ":network-connection3-uuid",
             "target": [
-                "pcap-file-uuid"
+                ":pcap-file-uuid"
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
@@ -245,9 +245,9 @@
         {
             "@id": ":trace-relationship3-uuid",
             "@type": "Relationship",
-            "source": "network-connection3-uuid",
+            "source": ":network-connection3-uuid",
             "target": [
-                "pcap-file-uuid"
+                ":pcap-file-uuid"
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true,

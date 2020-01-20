@@ -9,8 +9,8 @@
         {
             "@id": ":relationship0",
             "@type": "Relationship",
-            "source": "multipart_file",
-            "target": "data_piece0",
+            "source": ":multipart_file",
+            "target": ":data_piece0",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -24,8 +24,8 @@
         {
             "@id": ":relationship1",
             "@type": "Relationship",
-            "source": "multipart_file",
-            "target": "data_piece1",
+            "source": ":multipart_file",
+            "target": ":data_piece1",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -39,8 +39,8 @@
         {
             "@id": ":relationship2",
             "@type": "Relationship",
-            "source": "multipart_file",
-            "target": "data_piece2",
+            "source": ":multipart_file",
+            "target": ":data_piece2",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -157,8 +157,8 @@
         {
             "@id": ":relationship3",
             "@type": "Relationship",
-            "source": "data_piece0",
-            "target": "android_image",
+            "source": ":data_piece0",
+            "target": ":android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -171,8 +171,8 @@
         {
             "@id": ":relationship4",
             "@type": "Relationship",
-            "source": "data_piece1",
-            "target": "android_image",
+            "source": ":data_piece1",
+            "target": ":android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -185,8 +185,8 @@
         {
             "@id": ":relationship5",
             "@type": "Relationship",
-            "source": "data_piece2",
-            "target": "android_image",
+            "source": ":data_piece2",
+            "target": ":android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [

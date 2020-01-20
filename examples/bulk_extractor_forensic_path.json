@@ -26,8 +26,8 @@
         {
             "@id": ":relationship0",
             "@type": "Relationship",
-            "source": "extracted_email_address0",
-            "target": "decompressed_gzip0",
+            "source": ":extracted_email_address0",
+            "target": ":decompressed_gzip0",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -60,8 +60,8 @@
         {
             "@id": ":relationship1",
             "@type": "Relationship",
-            "source": "extracted_email_address1",
-            "target": "decompressed_gzip0",
+            "source": ":extracted_email_address1",
+            "target": ":decompressed_gzip0",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -95,8 +95,8 @@
         {
             "@id": ":relationship3",
             "@type": "Relationship",
-            "source": "decompressed_gzip0",
-            "target": "compressed_gzip0",
+            "source": ":decompressed_gzip0",
+            "target": ":compressed_gzip0",
             "kindOfRelationship": "decompressed-from",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -127,8 +127,8 @@
         {
             "@id": ":relationship4",
             "@type": "Relationship",
-            "source": "compressed_gzip0",
-            "target": "decompressed_gzip1",
+            "source": ":compressed_gzip0",
+            "target": ":decompressed_gzip1",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -160,8 +160,8 @@
         {
             "@id": ":relationship5",
             "@type": "Relationship",
-            "source": "decompressed_gzip1",
-            "target": "compressed_gzip1",
+            "source": ":decompressed_gzip1",
+            "target": ":compressed_gzip1",
             "kindOfRelationship": "decompressed-from",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -192,8 +192,8 @@
         {
             "@id": ":relationship6",
             "@type": "Relationship",
-            "source": "compressed_gzip1",
-            "target": "disk_image",
+            "source": ":compressed_gzip1",
+            "target": ":disk_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [

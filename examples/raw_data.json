@@ -27,8 +27,8 @@
         {
             "@id": ":relationship0",
             "@type": "Relationship",
-            "source": "digital_photograph_thumbnail1",
-            "target": "digital_photograph1",
+            "source": ":digital_photograph_thumbnail1",
+            "target": ":digital_photograph1",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [

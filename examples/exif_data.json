@@ -20,8 +20,8 @@
         {
             "@id": ":relationship1",
             "@type": "Relationship",
-            "source": "digital_photograph1",
-            "target": "device_partition3",
+            "source": ":digital_photograph1",
+            "target": ":device_partition3",
             "kindOfRelationship": "contained-within",
             "case-core:propertyBundle": [
                 {
@@ -111,11 +111,11 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "instrument": "camera1",
+                    "instrument": ":camera1",
                     "result": [
-                        "digital_photograph1"
+                        ":digital_photograph1"
                     ],
-                    "location": "location1"
+                    "location": ":location1"
                 }
             ]
         },
@@ -128,7 +128,7 @@
                 "user_added",
                 "extracted"
             ],
-            "object": "camera_action1"
+            "object": ":camera_action1"
         },
         {
             "@id": ":forensic_action7",
@@ -139,13 +139,13 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "performer": "examiner1",
-                    "instrument": "annotator_tool1",
+                    "performer": ":examiner1",
+                    "instrument": ":annotator_tool1",
                     "result": [
-                        "annotation1"
+                        ":annotation1"
                     ],
-                    "location": "forensic_lab1",
-                    "environment": "forensic_lab_computer1"
+                    "location": ":forensic_lab1",
+                    "environment": ":forensic_lab_computer1"
                 }
             ]
         }

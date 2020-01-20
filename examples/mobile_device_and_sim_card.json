@@ -32,7 +32,7 @@
                     "keypadUnlockCode": "123456",
                     "IMEI": "35540607448XXXX",
                     "MSISDN": [
-                        "mobile-account1-uuid"
+                        ":mobile-account1-uuid"
                     ],
                     "clockSetting": "2018-02-24T07:36:24.35Z",
                     "timezoneSetting": "UTC+01:01 (Europe/Rome)",
@@ -51,9 +51,9 @@
         {
             "@id": ":trace-relationship1-uuid",
             "@type": "Relationship",
-            "source": "sim-card-uuid",
+            "source": ":sim-card-uuid",
             "target": [
-                "mobile-device-uuid"
+                ":mobile-device-uuid"
             ],
             "kindOfRelationship": "contained-within",
             "isDirectional": true
@@ -66,7 +66,7 @@
                     "@type": "SIMCard",
                     "ICCID": "456673345673436xxx",
                     "IMSI": [
-                        "mobile-account2-uuid"
+                        ":mobile-account2-uuid"
                     ],
                     "SIMType": "USIM",
                     "SIMForm": "micro",

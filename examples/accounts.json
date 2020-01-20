@@ -23,9 +23,9 @@
         {
             "@id": ":associated-account1",
             "@type": "Relationship",
-            "source": "actor1",
+            "source": ":actor1",
             "target": [
-                "facebook_account1"
+                ":facebook_account1"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
@@ -33,9 +33,9 @@
         {
             "@id": ":associated-account2",
             "@type": "Relationship",
-            "source": "actor1",
+            "source": ":actor1",
             "target": [
-                "google_account1"
+                ":google_account1"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
@@ -43,9 +43,9 @@
         {
             "@id": ":associated-account3",
             "@type": "Relationship",
-            "source": "actor1",
+            "source": ":actor1",
             "target": [
-                "email_account1"
+                ":email_account1"
             ],
             "kindOfRelationship": "has-account",
             "isDirectional": true
@@ -57,7 +57,7 @@
                 {
                     "@type": "Account",
                     "accountIdentifier": "1235556677@facebook.net",
-                    "accountIssuer": "facebook_org"
+                    "accountIssuer": ":facebook_org"
                 },
                 {
                     "@type": "DigitalAccount",
@@ -73,7 +73,7 @@
                 },
                 {
                     "@type": "ApplicationAccount",
-                    "application": "application1"
+                    "application": ":application1"
                 },
                 {
                     "@type": "SimpleName",
@@ -89,9 +89,9 @@
         {
             "@id": ":associated-account4",
             "@type": "Relationship",
-            "source": "facebook_account1",
+            "source": ":facebook_account1",
             "target": [
-                "email_account1"
+                ":email_account1"
             ],
             "kindOfRelationship": "associated-account",
             "isDirectional": true
@@ -103,7 +103,7 @@
                 {
                     "@type": "Account",
                     "accountIdentifier": "willyROX@gmail.com",
-                    "accountIssuer": "google_org",
+                    "accountIssuer": ":google_org",
                     "createdTime": "2010-01-15T17:59:43.25Z"
                 },
                 {
@@ -123,7 +123,7 @@
                 },
                 {
                     "@type": "ApplicationAccount",
-                    "application": "application2"
+                    "application": ":application2"
                 },
                 {
                     "@type": "SimpleName",
@@ -139,9 +139,9 @@
         {
             "@id": ":associated-account4",
             "@type": "Relationship",
-            "source": "google_account1",
+            "source": ":google_account1",
             "target": [
-                "email_account1"
+                ":email_account1"
             ],
             "kindOfRelationship": "associated-account",
             "isDirectional": true
@@ -152,7 +152,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "EmailAccount",
-                    "emailAddress": "email-address1"
+                    "emailAddress": ":email-address1"
                 }
             ]
         },

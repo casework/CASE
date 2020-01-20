@@ -10,8 +10,8 @@
         {
             "@id": ":relationship0",
             "@type": "Relationship",
-            "source": "reconstructed_file",
-            "target": "data_piece0",
+            "source": ":reconstructed_file",
+            "target": ":data_piece0",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -25,8 +25,8 @@
         {
             "@id": ":relationship1",
             "@type": "Relationship",
-            "source": "reconstructed_file",
-            "target": "data_piece1",
+            "source": ":reconstructed_file",
+            "target": ":data_piece1",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -40,8 +40,8 @@
         {
             "@id": ":relationship2",
             "@type": "Relationship",
-            "source": "reconstructed_file",
-            "target": "data_piece2",
+            "source": ":reconstructed_file",
+            "target": ":data_piece2",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -131,8 +131,8 @@
         {
             "@id": ":relationship3",
             "@type": "Relationship",
-            "source": "data_piece1",
-            "target": "android_image",
+            "source": ":data_piece1",
+            "target": ":android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -146,8 +146,8 @@
         {
             "@id": ":relationship4",
             "@type": "Relationship",
-            "source": "data_piece2",
-            "target": "android_image",
+            "source": ":data_piece2",
+            "target": ":android_image",
             "kindOfRelationship": "contained-within",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -197,20 +197,20 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "performer": "role4",
-                    "instrument": "carving_tool1",
+                    "performer": ":role4",
+                    "instrument": ":carving_tool1",
                     "object": [
-                        "android_image"
+                        ":android_image"
                     ],
                     "result": [
-                        "data_piece1",
-                        "data_piece2",
-                        "relationship3",
-                        "relationship4",
-                        "provenance_record2"
+                        ":data_piece1",
+                        ":data_piece2",
+                        ":relationship3",
+                        ":relationship4",
+                        ":provenance_record2"
                     ],
-                    "location": "forensic_lab1",
-                    "environment": "forensic_lab_computer1"
+                    "location": ":forensic_lab1",
+                    "environment": ":forensic_lab_computer1"
                 }
             ]
         },
@@ -224,22 +224,22 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ActionReferences",
-                    "performer": "role4",
-                    "instrument": "carving_tool1",
+                    "performer": ":role4",
+                    "instrument": ":carving_tool1",
                     "object": [
-                        "data_piece0",
-                        "data_piece1",
-                        "data_piece2"
+                        ":data_piece0",
+                        ":data_piece1",
+                        ":data_piece2"
                     ],
                     "result": [
-                        "reconstructed_file",
-                        "relationship0",
-                        "relationship1",
-                        "relationship2",
-                        "provenance_record1"
+                        ":reconstructed_file",
+                        ":relationship0",
+                        ":relationship1",
+                        ":relationship2",
+                        ":provenance_record1"
                     ],
-                    "location": "forensic_lab1",
-                    "environment": "forensic_lab_computer1"
+                    "location": ":forensic_lab1",
+                    "environment": ":forensic_lab_computer1"
                 }
             ]
         },
@@ -249,10 +249,10 @@
             "description": "Reconstructed JPG File",
             "exhibitNumber": "ACME-676553402357-00",
             "object": [
-                "relationship0",
-                "relationship1",
-                "relationship2",
-                "reconstructed_file"
+                ":relationship0",
+                ":relationship1",
+                ":relationship2",
+                ":reconstructed_file"
             ]
         },
         {
@@ -261,10 +261,10 @@
             "description": "Carved data fragments",
             "exhibitNumber": "ACME-676553402357-01",
             "object": [
-                "data_piece1",
-                "data_piece2",
-                "relationship3",
-                "relationship4"
+                ":data_piece1",
+                ":data_piece2",
+                ":relationship3",
+                ":relationship4"
             ]
         },
         {
@@ -273,7 +273,7 @@
             "description": "JPG Header",
             "exhibitNumber": "ACME-676553402357-02",
             "object": [
-                "data_piece0"
+                ":data_piece0"
             ]
         }
     ]

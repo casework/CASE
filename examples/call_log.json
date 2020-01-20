@@ -11,7 +11,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "Account",
-                    "accountIssuer": "AT&T",
+                    "accountIssuer": ":ATT",
                     "isActive": true
                 },
                 {
@@ -26,7 +26,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "Account",
-                    "accountIssuer": "Sprint",
+                    "accountIssuer": ":Sprint",
                     "isActive": true
                 },
                 {
@@ -44,8 +44,8 @@
                     "callType": "mobile",
                     "startTime": "2010-01-15T17:59:43.25Z",
                     "endTime": "2010-01-15T18:30:41.25Z",
-                    "from": "phone_account1",
-                    "to": "phone_account2",
+                    "from": ":phone_account1",
+                    "to": ":phone_account2",
                     "duration": "PT31M2S"
                 }
             ]

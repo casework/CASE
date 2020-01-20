@@ -37,7 +37,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ApplicationAccount",
-                    "application": "application1"
+                    "application": ":application1"
                 }
             ]
         },
@@ -47,7 +47,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ApplicationAccount",
-                    "application": "application1"
+                    "application": ":application1"
                 }
             ]
         },
@@ -57,7 +57,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ApplicationAccount",
-                    "application": "application2"
+                    "application": ":application2"
                 }
             ]
         },
@@ -67,7 +67,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ApplicationAccount",
-                    "application": "application2"
+                    "application": ":application2"
                 }
             ]
         },
@@ -85,21 +85,21 @@
                         "olo:slot": [
                             {
                                 "olo:index": 1,
-                                "olo:item": "message1"
+                                "olo:item": ":message1"
                             },
                             {
                                 "olo:index": 2,
-                                "olo:item": "message2"
+                                "olo:item": ":message2"
                             },
                             {
                                 "olo:index": 3,
-                                "olo:item": "message3"
+                                "olo:item": ":message3"
                             }
                         ]
                     },
                     "participant": [
-                        "account1",
-                        "account2"
+                        ":account1",
+                        ":account2"
                     ]
                 }
             ]
@@ -118,13 +118,13 @@
                         "olo:slot": [
                             {
                                 "olo:index": 1,
-                                "olo:item": "post1"
+                                "olo:item": ":post1"
                             }
                         ]
                     },
                     "participant": [
-                        "account3",
-                        "account4"
+                        ":account3",
+                        ":account4"
                     ]
                 }
             ]
@@ -135,11 +135,11 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "Message",
-                    "application": "application2",
+                    "application": ":application2",
                     "messageText": "I said some things in a tweet! @sarahsmithtweeter #hashtag",
-                    "from": "account3",
+                    "from": ":account3",
                     "to": [
-                        "account4"
+                        ":account4"
                     ]
                 }
             ]
@@ -150,11 +150,11 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "Message",
-                    "application": "application1",
+                    "application": ":application1",
                     "messageText": "Hey bud!",
-                    "from": "account1",
+                    "from": ":account1",
                     "to": [
-                        "account2"
+                        ":account2"
                     ],
                     "sentTime": "2010-01-15T17:59:43.25Z"
                 }
@@ -163,8 +163,8 @@
         {
             "@id": ":attach_relationship1",
             "@type": "Relationship",
-            "source": "location1",
-            "target": "message1",
+            "source": ":location1",
+            "target": ":message1",
             "kindOfRelationship": "attachment-of",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -177,8 +177,8 @@
         {
             "@id": ":attach_relationship2",
             "@type": "Relationship",
-            "source": "attachment_file1",
-            "target": "message1",
+            "source": ":attachment_file1",
+            "target": ":message1",
             "kindOfRelationship": "attachment-of",
             "isDirectional": true,
             "case-core:propertyBundle": [
@@ -191,8 +191,8 @@
         {
             "@id": ":attach_relationship3",
             "@type": "Relationship",
-            "source": "attachment_file2",
-            "target": "message1",
+            "source": ":attachment_file2",
+            "target": ":message1",
             "kindOfRelationship": "attachment-of",
             "isDirectional": true,
             "case-core:propertyBundle": [

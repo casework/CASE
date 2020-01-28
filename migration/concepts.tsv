@@ -1,1 +1,12 @@
-#Location	uco-location:Location
+ComputerSpecification	uco-observable:ComputerSpecification
+ContentData	uco-observable:ContentData
+DataRange	uco-observable:DataRange
+Device	uco-observable:Device
+DiskPartition	uco-observable:DiskPartition
+Encoding	uco-observable:EncodedStream
+Encryption	uco-observable:EncryptedStream
+Hash	uco-types:Hash
+Location	uco-location:Location
+PathRelation	uco-observable:PathRelation
+PropertyBundle	case-core:PropertyBundle
+Trace	case-core:Trace

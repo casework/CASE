@@ -1,1 +1,29 @@
-#country	uco-location:country
+accessedTime	uco-observable:accessedTime	xsd:dateTime
+byteOrder	uco-observable:byteOrder
+country	uco-location:country
+cpuFamily	uco-observable:cpuFamily
+createdTime	uco-observable:createdTime	xsd:dateTime
+dataPayload	uco-observable:dataPayload
+encodingMethod	uco-observable:encodingMethod
+encryptionMethod	uco-observable:encryptionMethod
+encryptionMode	uco-observable:encryptionMode
+fileName	uco-observable:fileName
+filePath	uco-observable:filePath
+fileSystemType	uco-observable:fileSystemType
+hash	uco-observable:hash
+hashMethod	uco-types:hashMethod	uco-core:HashNameEnum
+hashValue	uco-types:hashValue	xsd:hexBinary
+isDirectory	uco-observable:isDirectory
+kindOfRelationship	uco-core:kindOfRelationship
+isDirectional	uco-core:isDirectional
+magicNumber	uco-observable:magicNumber
+metadataChangedTime	uco-observable:metadataChangedTime	xsd:dateTime
+modifiedTime	uco-observable:modifiedTime	xsd:dateTime
+path	uco-observable:path
+processorArchitecture	uco-observable:processorArchitecture
+propertyBundle	case-core:propertyBundle
+rangeOffset	uco-observable:rangeOffset
+rangeSize	uco-observable:rangeSize	xsd:long
+sizeInBytes	uco-observable:sizeInBytes
+source	uco-core:source
+target	uco-core:target

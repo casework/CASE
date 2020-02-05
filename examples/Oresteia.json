@@ -1,9 +1,9 @@
 {
     "@context": {
-        "@vocab": "urn:example:local:",
-        "": "urn:example:kb:",
+        "@vocab": "http://example.org/local#",
+        "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
-        "draft": "urn:example:draft:",
+        "draft": "http://example.org/draft#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",

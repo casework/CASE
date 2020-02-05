@@ -1,9 +1,11 @@
 {
     "@context": {
-        "@vocab": "http://case.example.org/core#",
+        "@vocab": "http://example.org/local#",
+        "": "http://example.org/kb#",
+        "acme": "http://custompb.acme.org/core#",
         "case-core": "https://caseontology.org/ontology/case/core#",
-        "olo": "http://purl.org/ontology/olo/core#",
-        "acme": "http://custompb.acme.org/core#"
+        "draft": "http://example.org/draft#",
+        "olo": "http://purl.org/ontology/olo/core#"
     },
     "@graph": [
         {

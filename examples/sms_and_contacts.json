@@ -1,7 +1,9 @@
 {
     "@context": {
-        "@vocab": "http://case.example.org/core#",
+        "@vocab": "http://example.org/local#",
+        "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
+        "draft": "http://example.org/draft#",
         "olo": "http://purl.org/ontology/olo/core#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
     },

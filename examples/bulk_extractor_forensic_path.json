@@ -1,7 +1,9 @@
 {
     "@context": {
-        "@vocab": "http://case.example.org/core#",
-        "case-core": "https://caseontology.org/ontology/case/core#"
+        "@vocab": "http://example.org/local#",
+        "": "http://example.org/kb#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
+        "draft": "http://example.org/draft#"
     },
     "@graph": [
         {

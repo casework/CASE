@@ -706,7 +706,7 @@
                                 "@value": "SHA256"
                             },
                             "uco-types:hashValue": {
-                                "@type": "xsd:hexbinary",
+                                "@type": "xsd:hexBinary",
                                 "@value": "7ea081166336119da78ee4bbdbd06840b94efe28988a2bdb0bcf2387a481e283"
                             }
                         }
@@ -760,7 +760,7 @@
                                 "@value": "SHA256"
                             },
                             "uco-types:hashValue": {
-                                "@type": "xsd:hexbinary",
+                                "@type": "xsd:hexBinary",
                                 "@value": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
                             }
                         }
@@ -818,7 +818,7 @@
                                 "@value": "SHA256"
                             },
                             "uco-types:hashValue": {
-                                "@type": "xsd:hexbinary",
+                                "@type": "xsd:hexBinary",
                                 "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
                             }
                         }

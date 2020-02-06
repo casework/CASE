@@ -194,11 +194,11 @@
                         "@type": "xsd:dateTime",
                         "@value": "2010-01-15T17:59:43.25Z"
                     },
-                    "uco-observable:accessAction": {
+                    "accessAction": {
                         "@type": "xsd:dateTime",
                         "@value": "2010-01-15T17:59:43.25Z"
                     },
-                    "uco-observable:createAction": {
+                    "createAction": {
                         "@type": "xsd:dateTime",
                         "@value": "2010-01-15T17:59:43.25Z"
                     },

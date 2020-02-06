@@ -4,7 +4,9 @@
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "olo": "http://purl.org/ontology/olo/core#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -21,14 +23,17 @@
         },
         {
             "@id": ":relationship1",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "source": ":digital_photograph1",
             "target": ":device_partition3",
-            "kindOfRelationship": "contained-within",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
             "case-core:propertyBundle": [
                 {
-                    "@type": "PathRelation",
-                    "path": "/sdcard/IMG_0123.jpg"
+                    "@type": "uco-observable:PathRelation",
+                    "uco-observable:path": "/sdcard/IMG_0123.jpg"
                 }
             ]
         },
@@ -37,25 +42,37 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "File",
-                    "fileSystemType": "EXT4",
-                    "fileName": "IMG_0123.jpg",
-                    "filePath": "/sdcard/IMG_0123.jpg",
-                    "extension": "jpg",
-                    "sizeInBytes": 35002
+                    "@type": "uco-observable:File",
+                    "uco-observable:fileSystemType": "EXT4",
+                    "uco-observable:fileName": "IMG_0123.jpg",
+                    "uco-observable:filePath": "/sdcard/IMG_0123.jpg",
+                    "uco-observable:extension": "jpg",
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 35002
+                    }
                 },
                 {
-                    "@type": "ContentData",
-                    "byteOrder": "BigEndian",
-                    "magicNumber": "/9j/ww==",
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:byteOrder": "BigEndian",
+                    "uco-observable:magicNumber": "/9j/ww==",
                     "mimeType": "image/jpg",
-                    "sizeInBytes": 35000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 35000
+                    },
                     "dataPayload": "<base 64 encoded data of the file>",
-                    "hash": [
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+                            }
                         }
                     ]
                 },

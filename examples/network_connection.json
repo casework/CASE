@@ -4,8 +4,9 @@
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@id": ":bundle-2a13e958a-d975-41aa-b1bb-029d2b6707ab",
@@ -84,28 +85,43 @@
             ]
         },
         {
-            "@type": "case-core:Trace",
             "@id": ":pcap-file-uuid",
+            "@type": "case-core:Trace",
             "createdBy": ":81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
             "case-core:propertyBundle": [
                 {
-                    "@type": "File",
-                    "createdTime": "2009-04-03T02:28:42.0086110Z",
-                    "extension": "pcap",
-                    "fileName": "20090402-scenario.pcap",
-                    "isDirectory": false,
-                    "modifiedTime": "2009-04-03T03:31:26.0521980Z",
-                    "sizeInBytes": 6337357
+                    "@type": "uco-observable:File",
+                    "uco-observable:createdTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2009-04-03T02:28:42.0086110Z"
+                    },
+                    "uco-observable:extension": "pcap",
+                    "uco-observable:fileName": "20090402-scenario.pcap",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2009-04-03T03:31:26.0521980Z"
+                    },
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 6337357
+                    }
                 },
                 {
-                    "@type": "ContentData",
+                    "@type": "uco-observable:ContentData",
                     "dataPayloadReferenceURL": "E:\\Traffic\\20090402-scenario.pcap",
-                    "hash": [
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "MD5",
-                            "hashValue": "dd7558b16eae4d582d7b4608e85d862a"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "MD5"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "dd7558b16eae4d582d7b4608e85d862a"
+                            }
                         }
                     ]
                 }
@@ -214,13 +230,16 @@
         },
         {
             "@id": ":trace-relationship1-uuid",
-            "@type": "Relationship",
-            "source": ":network-connection1-uuid",
-            "target": [
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":network-connection1-uuid",
+            "uco-core:target": [
                 ":pcap-file-uuid"
             ],
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": "true",
             "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
@@ -230,13 +249,16 @@
         },
         {
             "@id": ":trace-relationship2-uuid",
-            "@type": "Relationship",
-            "source": ":network-connection3-uuid",
-            "target": [
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":network-connection3-uuid",
+            "uco-core:target": [
                 ":pcap-file-uuid"
             ],
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": "true",
             "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",
@@ -246,13 +268,16 @@
         },
         {
             "@id": ":trace-relationship3-uuid",
-            "@type": "Relationship",
-            "source": ":network-connection3-uuid",
-            "target": [
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":network-connection3-uuid",
+            "uco-core:target": [
                 ":pcap-file-uuid"
             ],
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": "true",
             "case-core:propertyBundle": [
                 {
                     "@type": "StarttimeRelation",

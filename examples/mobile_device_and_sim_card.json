@@ -5,7 +5,9 @@
         "acme": "http://custompb.acme.org/core#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "olo": "http://purl.org/ontology/olo/core#"
+        "olo": "http://purl.org/ontology/olo/core#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#"
     },
     "@graph": [
         {
@@ -52,13 +54,16 @@
         },
         {
             "@id": ":trace-relationship1-uuid",
-            "@type": "Relationship",
-            "source": ":sim-card-uuid",
-            "target": [
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":sim-card-uuid",
+            "uco-core:target": [
                 ":mobile-device-uuid"
             ],
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":sim-card-uuid",

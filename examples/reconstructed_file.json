@@ -5,8 +5,11 @@
         "acme": "http://custompb.acme.org/core#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "olo": "http://purl.org/ontology/olo/core#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
@@ -132,31 +135,43 @@
         },
         {
             "@id": ":relationship3",
-            "@type": "Relationship",
-            "source": ":data_piece1",
-            "target": ":android_image",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":data_piece1",
+            "uco-core:target": ":android_image",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 45156,
-                    "rangeSize": 512
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 45156,
+                    "uco-observable:rangeSize": {
+                        "@type": "xsd:long",
+                        "@value": 512
+                    }
                 }
             ]
         },
         {
             "@id": ":relationship4",
-            "@type": "Relationship",
-            "source": ":data_piece2",
-            "target": ":android_image",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":data_piece2",
+            "uco-core:target": ":android_image",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 57984,
-                    "rangeSize": 248
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 57984,
+                    "uco-observable:rangeSize": {
+                        "@type": "xsd:long",
+                        "@value": 248
+                    }
                 }
             ]
         },
@@ -165,25 +180,46 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "File",
-                    "fileSystemType": "NTFS",
-                    "isDirectory": false,
-                    "extension": "img",
-                    "fileName": "DFL-20140712-001C.img",
-                    "filePath": "C:/input_devices/DFL-20140712-001C.img",
-                    "modifiedTime": "2010-01-15T17:59:43.25Z",
-                    "accessedAction": "2010-01-15T17:59:43.25Z",
-                    "createdAction": "2010-01-15T17:59:43.25Z",
-                    "metadataChangedTime": "2010-01-15T17:59:43.25Z"
+                    "@type": "uco-observable:File",
+                    "uco-observable:fileSystemType": "NTFS",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:extension": "img",
+                    "uco-observable:fileName": "DFL-20140712-001C.img",
+                    "uco-observable:filePath": "C:/input_devices/DFL-20140712-001C.img",
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    },
+                    "uco-observable:accessedAction": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    },
+                    "uco-observable:createdAction": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    },
+                    "uco-observable:metadataChangeTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    }
                 },
                 {
-                    "@type": "ContentData",
-                    "sizeInBytes": 45654000,
-                    "hash": [
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 45654000
+                    },
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+                            }
                         }
                     ]
                 }

@@ -3,7 +3,10 @@
         "@vocab": "http://example.org/local#",
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
-        "draft": "http://example.org/draft#"
+        "draft": "http://example.org/draft#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
@@ -13,7 +16,10 @@
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
-                    "sizeInBytes": 17,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 17
+                    },
                     "data": "bmVsc29uQGNyeW53ci5jb20=",
                     "hash": [
                         {
@@ -27,11 +33,14 @@
         },
         {
             "@id": ":relationship0",
-            "@type": "Relationship",
-            "source": ":extracted_email_address0",
-            "target": ":decompressed_gzip0",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":extracted_email_address0",
+            "uco-core:target": ":decompressed_gzip0",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
@@ -47,7 +56,10 @@
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
-                    "sizeInBytes": 15,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 15
+                    },
                     "data": "c3Rya0BrZXliaXQubmV0",
                     "hash": [
                         {
@@ -61,11 +73,14 @@
         },
         {
             "@id": ":relationship1",
-            "@type": "Relationship",
-            "source": ":extracted_email_address1",
-            "target": ":decompressed_gzip0",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":extracted_email_address1",
+            "uco-core:target": ":decompressed_gzip0",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
@@ -83,7 +98,10 @@
                     "byteOrder": "BigEndian",
                     "magicNumber": "H4s=",
                     "mimeType": "application/x-compressed",
-                    "sizeInBytes": 17605,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 17605
+                    },
                     "hash": [
                         {
                             "@type": "Hash",
@@ -97,10 +115,10 @@
         {
             "@id": ":relationship3",
             "@type": "Relationship",
-            "source": ":decompressed_gzip0",
-            "target": ":compressed_gzip0",
-            "kindOfRelationship": "decompressed-from",
-            "isDirectional": true,
+            "uco-core:source": ":decompressed_gzip0",
+            "uco-core:target": ":compressed_gzip0",
+            "uco-core:kindOfRelationship": "decompressed-from",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "Compression",
@@ -114,7 +132,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
-                    "sizeInBytes": 4598,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 4598
+                    },
                     "data": "<base 64 encoded data of the file>",
                     "hash": [
                         {
@@ -128,11 +149,14 @@
         },
         {
             "@id": ":relationship4",
-            "@type": "Relationship",
-            "source": ":compressed_gzip0",
-            "target": ":decompressed_gzip1",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":compressed_gzip0",
+            "uco-core:target": ":decompressed_gzip1",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
@@ -147,7 +171,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
-                    "sizeInBytes": 54564465,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 54564465
+                    },
                     "data": "<base 64 encoded data of the file>",
                     "hash": [
                         {
@@ -162,10 +189,10 @@
         {
             "@id": ":relationship5",
             "@type": "Relationship",
-            "source": ":decompressed_gzip1",
-            "target": ":compressed_gzip1",
-            "kindOfRelationship": "decompressed-from",
-            "isDirectional": true,
+            "uco-core:source": ":decompressed_gzip1",
+            "uco-core:target": ":compressed_gzip1",
+            "uco-core:kindOfRelationship": "decompressed-from",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "Compression",
@@ -179,7 +206,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
-                    "sizeInBytes": 23564465,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 23564465
+                    },
                     "data": "<base 64 encoded data of the file>",
                     "hash": [
                         {
@@ -193,11 +223,14 @@
         },
         {
             "@id": ":relationship6",
-            "@type": "Relationship",
-            "source": ":compressed_gzip1",
-            "target": ":disk_image",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":compressed_gzip1",
+            "uco-core:target": ":disk_image",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",
@@ -212,7 +245,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "ContentData",
-                    "sizeInBytes": 2000000000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 2000000000
+                    },
                     "data": "<base 64 encoded data of the file>",
                     "hash": [
                         {

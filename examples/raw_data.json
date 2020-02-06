@@ -3,7 +3,9 @@
         "@vocab": "http://example.org/local#",
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
-        "draft": "http://example.org/draft#"
+        "draft": "http://example.org/draft#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#"
     },
     "@graph": [
         {
@@ -28,11 +30,14 @@
         },
         {
             "@id": ":relationship0",
-            "@type": "Relationship",
-            "source": ":digital_photograph_thumbnail1",
-            "target": ":digital_photograph1",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":digital_photograph_thumbnail1",
+            "uco-core:target": ":digital_photograph1",
+            "uco-core:kindOfRelationship": {
+                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@value": "Contained_Within"
+            },
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
                     "@type": "DataRange",

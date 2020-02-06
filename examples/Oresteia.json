@@ -680,8 +680,8 @@
             ]
         },
         {
-            "@type": "case-core:Trace",
             "@id": ":cassandra-mobiledevice-forensicduplicate-uuid",
+            "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
@@ -694,7 +694,10 @@
                     "uco-observable:fileSystemType": "NTFS",
                     "uco-observable:filePath": "C:/evidence/AthensPD-2017220601-01.dd",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": 90080500
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 90080500
+                    }
                 },
                 {
                     "@type": "uco-observable:ContentData",
@@ -711,7 +714,10 @@
                             }
                         }
                     ],
-                    "uco-observable:sizeInBytes": 9080500
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 9080500
+                    }
                 }
             ]
         },
@@ -746,11 +752,17 @@
                     "uco-observable:extension": "db",
                     "uco-observable:fileName": "/data/data/com.android.providers.telephony/mmssms.db",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": 122925
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 122925
+                    }
                 },
                 {
                     "@type": "uco-observable:ContentData",
-                    "uco-observable:sizeInBytes": 122925,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 122925
+                    },
                     "uco-observable:magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
                     "uco-observable:hash": [
                         {
@@ -770,7 +782,7 @@
         },
         {
             "@id": ":trace-relationship3-uuid",
-            "@type": "uco-core:Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":cassandra-mobiledevice-mmssms-uuid",
             "uco-core:target": [
                 ":cassandra-image-partition6-uuid"
@@ -809,7 +821,10 @@
                 },
                 {
                     "@type": "uco-observable:ContentData",
-                    "uco-observable:sizeInBytes": 245235000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 245235000
+                    },
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",

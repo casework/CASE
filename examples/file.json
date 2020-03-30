@@ -5,6 +5,7 @@
         "acme": "http://custompb.acme.org/core#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
         "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
@@ -18,7 +19,10 @@
                 {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:byteOrder": "BigEndian",
-                    "uco-observable:sizeInBytes": 29,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": "29"
+                    },
                     "uco-observable:dataPayload": "Q0FTRSBpcyBhbiBhd2Vzb21lIG9udG9sb2d5IQ=",
                     "uco-observable:hash": [
                         {
@@ -64,9 +68,12 @@
                 {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:byteOrder": "BigEndian",
-                    "uco-observable:sizeInBytes": 3500,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": "3500"
+                    },
                     "uco-observable:magicNumber": "/9j/ww==",
-                    "mimeType": "image/jpg",
+                    "uco-observable:mimeType": "image/jpg",
                     "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
@@ -97,7 +104,7 @@
         },
         {
             "@id": ":relationship1",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":decoded_attachment",
             "uco-core:target": ":tar_archive_file",
             "uco-core:kindOfRelationship": "decoded-from",
@@ -180,10 +187,13 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:ContentData",
-                    "uco-observable:sizeInBytes": 23000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": "23000"
+                    },
                     "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:magicNumber": "NzUgNzMgNzQgNjEgNzI=",
-                    "mimeType": "application/x-tar",
+                    "uco-observable:mimeType": "application/x-tar",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -202,7 +212,7 @@
         },
         {
             "@id": ":relationship3",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":decrypted_blob",
             "uco-core:target": ":sqlite_blob",
             "uco-core:kindOfRelationship": "decrypted-from",
@@ -212,8 +222,8 @@
                     "@type": "uco-observable:EncryptedStream",
                     "uco-observable:encryptionMethod": "AES",
                     "uco-observable:encryptionMode": "CBC",
-                    "key": "whatsappKEY",
-                    "iv": "whatsappIV"
+                    "uco-observable:encryptionKey": "whatsappKEY",
+                    "uco-observable:encryptionIV": "whatsappIV"
                 }
             ]
         },
@@ -223,7 +233,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:ContentData",
-                    "uco-observable:sizeInBytes": 54000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": "54000"
+                    },
                     "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
@@ -243,8 +256,8 @@
                     "@type": "uco-observable:EncryptedStream",
                     "uco-observable:encryptionMethod": "AES",
                     "uco-observable:encryptionMode": "CBC",
-                    "key": "whatsappKEY",
-                    "iv": "whatsappIV"
+                    "uco-observable:encryptionKey": "whatsappKEY",
+                    "uco-observable:encryptionIV": "whatsappIV"
                 }
             ]
         },
@@ -260,10 +273,10 @@
             "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "SQLiteBlob",
-                    "tableName": "AttachmentTable",
-                    "columnName": "data",
-                    "rowCondition": "pk_id == 5"
+                    "@type": "uco-observable:SQLiteBlob",
+                    "uco-observable:tableName": "AttachmentTable",
+                    "uco-observable:columnName": "data",
+                    "uco-observable:rowCondition": "pk_id == 5"
                 }
             ]
         },
@@ -273,7 +286,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
-                    "fileSystemType": "EXT4",
+                    "uco-observable:fileSystemType": "EXT4",
                     "uco-observable:isDirectory": false,
                     "uco-observable:filePath": "/data/data/com.whatsapp/cache/messages.db",
                     "uco-observable:fileName": "messages.db",
@@ -342,7 +355,10 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:ContentData",
-                    "uco-observable:sizeInBytes": 45654000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": "45654000"
+                    },
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -372,7 +388,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:DiskPartition",
-                    "partIndex": 3
+                    "uco-observable:partitionID": 3
                 }
             ]
         },
@@ -382,7 +398,7 @@
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:File",
-                    "fileSystemType": "NTFS",
+                    "uco-observable:fileSystemType": "NTFS",
                     "uco-observable:isDirectory": false,
                     "uco-observable:extension": "img",
                     "uco-observable:fileName": "DFL-20140712-001C.img",
@@ -400,7 +416,10 @@
                 },
                 {
                     "@type": "uco-observable:ContentData",
-                    "uco-observable:sizeInBytes": 45654000,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": "45654000"
+                    },
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -419,7 +438,7 @@
         },
         {
             "@id": ":relationship7",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":android_image",
             "uco-core:target": ":forensic_lab_computer1",
             "uco-core:kindOfRelationship": "stored-on",
@@ -433,65 +452,73 @@
         },
         {
             "@id": ":relationship8",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":android_image",
             "uco-core:target": ":android_device1",
-            "uco-core:kindOfRelationship": ":forensic_image_of",
+            "uco-core:kindOfRelationship": "forensic_image_of",
             "uco-core:isDirectional": true
         },
         {
             "@id": ":forensic_lab_computer1",
             "@type": "case-core:Trace",
-            "location": ":forensic_lab1",
+            "rdfs:comment": "TODO: This is an inappropriate placement for the location property (both uco-action:location and uco-observable:location).  Need another way to attach :forensic_lab1.",
+            "uco-observable:location": ":forensic_lab1",
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Device",
-                    "manufacturer": "Dell",
-                    "model": "Inspiron 5000",
-                    "serialNumber": "D1234567"
+                    "uco-observable:manufacturer": "Dell",
+                    "uco-observable:model": "Inspiron 5000",
+                    "uco-observable:serialNumber": "D1234567"
                 },
                 {
-                    "@type": "OperatingSystem",
-                    "name": "Windows 7 Ultimate Edition",
-                    "manufacturer": "Microsoft",
-                    "version": "6.1.7601 Service Pack 1 Build 7601"
+                    "@type": "uco-observable:OperatingSystem",
+                    "uco-core:name": "Windows 7 Ultimate Edition",
+                    "uco-observable:manufacturer": "Microsoft",
+                    "uco-observable:version": "6.1.7601 Service Pack 1 Build 7601"
                 },
                 {
                     "@type": "uco-observable:ComputerSpecification",
-                    "biosVersion": "E1762IMS.10M",
+                    "uco-observable:biosVersion": "E1762IMS.10M",
                     "uco-observable:cpuFamily": "Intel Pentium i7",
-                    "totalRam": "4GB"
+                    "uco-observable:totalRam": {
+                        "@type": "xsd:long",
+                        "@value": "4294967296"
+                    }
                 },
                 {
                     "@type": "acme:InventoryComputer",
-                    "name": "DFL-03",
-                    "inventoryNumber": "10503"
+                    "acme:name": "DFL-03",
+                    "acme:inventoryNumber": "10503"
                 }
             ]
         },
         {
             "@id": ":android_device1",
             "@type": "case-core:Trace",
-            "location": ":forensic_lab1",
+            "rdfs:comment": "TODO: This is an inappropriate placement for the location property (both uco-action:location and uco-observable:location).  Need another way to attach :forensic_lab1.",
+            "uco-observable:location": ":forensic_lab1",
             "case-core:propertyBundle": [
                 {
                     "@type": "uco-observable:Device",
-                    "manufacturer": "Samsung",
-                    "model": "I9500 Galaxy S4",
-                    "serialNumber": "123456SAM"
+                    "uco-observable:manufacturer": "Samsung",
+                    "uco-observable:model": "I9500 Galaxy S4",
+                    "uco-observable:serialNumber": "123456SAM"
                 },
                 {
-                    "@type": "OperatingSystem",
-                    "name": "Android",
-                    "manufacturer": "Google",
-                    "version": "4.2.2"
+                    "@type": "uco-observable:OperatingSystem",
+                    "uco-core:name": "Android",
+                    "uco-observable:manufacturer": "Google",
+                    "uco-observable:version": "4.2.2"
                 },
                 {
                     "@type": "uco-observable:ComputerSpecification",
                     "uco-observable:processorArchitecture": "Octa-core",
                     "uco-observable:cpuFamily": "Exynos 5410 Octa",
-                    "gpuFamily": "Power VR SGX544MP3",
-                    "totalRam": "2GB"
+                    "uco-observable:gpuFamily": "Power VR SGX544MP3",
+                    "uco-observable:totalRam": {
+                        "@type": "xsd:long",
+                        "@value": "2147483648"
+                    }
                 }
             ]
         }

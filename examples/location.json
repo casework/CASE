@@ -5,42 +5,49 @@
         "acme": "http://custompb.acme.org/core#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "olo": "http://purl.org/ontology/olo/core#"
+        "olo": "http://purl.org/ontology/olo/core#",
+        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#"
     },
     "@graph": [
         {
             "@id": ":location1",
-            "@type": "Location",
+            "@type": "uco-location:Location",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleAddress",
-                    "locality": "Seattle",
-                    "region": "WA",
-                    "postalCode": "98052",
-                    "street": "20341 Whitworth Institute 405 N. Whitworth"
+                    "@type": "uco-location:SimpleAddress",
+                    "uco-location:locality": "Seattle",
+                    "uco-location:region": "WA",
+                    "uco-location:postalCode": "98052",
+                    "uco-location:street": "20341 Whitworth Institute 405 N. Whitworth"
                 },
                 {
                     "@type": "acme:InternalLocation",
-                    "floor": 3,
-                    "roomNumber": 345
+                    "acme:floor": 3,
+                    "acme:roomNumber": 345
                 }
             ]
         },
         {
             "@id": ":location2",
-            "@type": "Location",
+            "@type": "uco-location:Location",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleAddress",
-                    "locality": "Paris",
-                    "country": "France",
-                    "postalCode": "F-75002",
-                    "street": "38 Bad Guy Headquarters st."
+                    "@type": "uco-location:SimpleAddress",
+                    "uco-location:locality": "Paris",
+                    "uco-location:country": "France",
+                    "uco-location:postalCode": "F-75002",
+                    "uco-location:street": "38 Bad Guy Headquarters st."
                 },
                 {
-                    "@type": "LatLongCoordinates",
-                    "latitude": 48.860346,
-                    "longitude": 2.331199
+                    "@type": "uco-location:LatLongCoordinates",
+                    "uco-location:latitude": {
+                        "@type": "xsd:decimal",
+                        "@value": "48.860346"
+                    },
+                    "uco-location:longitude": {
+                        "@type": "xsd:decimal",
+                        "@value": "2.331199"
+                    }
                 }
             ]
         }

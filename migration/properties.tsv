@@ -1,29 +1,61 @@
+accessedAction
 accessedTime	uco-observable:accessedTime	xsd:dateTime
+biosVersion	uco-observable:biosVersion
+bitsPerPixel	uco-observable:bitsPerPixel
 byteOrder	uco-observable:byteOrder
+columnName	uco-observable:columnName
 country	uco-location:country
+createdAction
 cpuFamily	uco-observable:cpuFamily
 createdTime	uco-observable:createdTime	xsd:dateTime
 dataPayload	uco-observable:dataPayload
+description	uco-core:description
 encodingMethod	uco-observable:encodingMethod
 encryptionMethod	uco-observable:encryptionMethod
 encryptionMode	uco-observable:encryptionMode
+environment	uco-action:environment
+exifData	uco-observable:exifData
 fileName	uco-observable:fileName
 filePath	uco-observable:filePath
 fileSystemType	uco-observable:fileSystemType
+gpuFamily	uco-observable:gpuFamily
 hash	uco-observable:hash
 hashMethod	uco-types:hashMethod	uco-core:HashNameEnum
 hashValue	uco-types:hashValue	xsd:hexBinary
+instrument	uco-action:instrument
 isDirectory	uco-observable:isDirectory
-kindOfRelationship	uco-core:kindOfRelationship
+iv	uco-observable:encryptionIV
 isDirectional	uco-core:isDirectional
+kindOfRelationship	uco-core:kindOfRelationship
+latitude	uco-location:latitude	xsd:decimal
+locality	uco-location:locality
+longitude	uco-location:longitude	xsd:decimal
 magicNumber	uco-observable:magicNumber
+manufacturer	uco-observable:manufacturer
 metadataChangedTime	uco-observable:metadataChangedTime	xsd:dateTime
+mimeType	uco-observable:mimeType
+model	uco-observable:model
 modifiedTime	uco-observable:modifiedTime	xsd:dateTime
+name	uco-core:name
+partIndex	uco-observable:partitionID
 path	uco-observable:path
+performer	uco-action:performer
+pictureType	uco-observable:picturetype
+pictureheight	uco-observable:pictureHeight
+picturewidth	uco-observable:pictureWidth
+postalCode	uco-location:postalCode
 processorArchitecture	uco-observable:processorArchitecture
 propertyBundle	case-core:propertyBundle
 rangeOffset	uco-observable:rangeOffset
 rangeSize	uco-observable:rangeSize	xsd:long
+region	uco-location:region
+result	uco-action:result
+rowCondition	uco-observable:rowCondition
+serialNumber	uco-observable:serialNumber
 sizeInBytes	uco-observable:sizeInBytes
 source	uco-core:source
+street	uco-location:street
+tableName	uco-observable:tableName
+tag	uco-core:tag
 target	uco-core:target
+totalRam	uco-observable:totalRam	xsd:long

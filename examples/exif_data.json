@@ -4,7 +4,9 @@
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
+        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-investigation": "https://unifiedcyberontology.org/ontology/uco/investigation#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
         "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
@@ -15,17 +17,17 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Device",
-                    "manufacturer": "Canon",
-                    "model": "PowerShot SX540"
+                    "@type": "uco-observable:Device",
+                    "uco-observable:manufacturer": "Canon",
+                    "uco-observable:model": "PowerShot SX540"
                 }
             ]
         },
         {
             "@id": ":relationship1",
             "@type": "uco-observable:CyberRelationship",
-            "source": ":digital_photograph1",
-            "target": ":device_partition3",
+            "uco-core:source": ":digital_photograph1",
+            "uco-core:target": ":device_partition3",
             "uco-core:kindOfRelationship": {
                 "@type": "uco-observable:CyberItemRelationshipEnum",
                 "@value": "Contained_Within"
@@ -56,12 +58,12 @@
                     "@type": "uco-observable:ContentData",
                     "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:magicNumber": "/9j/ww==",
-                    "mimeType": "image/jpg",
+                    "uco-observable:mimeType": "image/jpg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 35000
                     },
-                    "dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -77,94 +79,114 @@
                     ]
                 },
                 {
-                    "@type": "RasterPicture",
-                    "pictureType": "jpg",
-                    "pictureheight": 12345,
-                    "picturewidth": 12345,
-                    "bitsPerPixel": 2
+                    "@type": "uco-observable:RasterPicture",
+                    "uco-observable:picturetype": "jpg",
+                    "uco-observable:pictureHeight": 12345,
+                    "uco-observable:pictureWidth": 12345,
+                    "uco-observable:bitsPerPixel": 2
                 },
                 {
-                    "@type": "EXIF",
-                    "exifData": [
-                        {
-                            "key": "Make",
-                            "value": "Canon"
-                        },
-                        {
-                            "key": "Model",
-                            "value": "PowerShot SX540"
-                        },
-                        {
-                            "key": "Orientation",
-                            "value": "Horizontal (normal)"
-                        },
-                        {
-                            "key": "DateTimeDigitized",
-                            "value": "2010-01-15T17:59:43.25Z"
-                        },
-                        {
-                            "key": "Latitude",
-                            "value": "15.8235"
-                        },
-                        {
-                            "key": "LatitudeRef",
-                            "value": "S"
-                        },
-                        {
-                            "key": "Longitude",
-                            "value": "47.9941"
-                        },
-                        {
-                            "key": "LongitudeRef",
-                            "value": "W"
-                        }
-                    ]
+                    "@type": "uco-observable:EXIF",
+                    "uco-observable:exifData": {
+                        "@type": "uco-types:ControlledDictionary",
+                        "uco-types:entry": [
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Make",
+                                "uco-types:value": "Canon"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Model",
+                                "uco-types:value": "PowerShot SX540"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Orientation",
+                                "uco-types:value": "Horizontal (normal)"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "DateTimeDigitized",
+                                "uco-types:value": "2010-01-15T17:59:43.25Z"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Latitude",
+                                "uco-types:value": "15.8235"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "LatitudeRef",
+                                "uco-types:value": "S"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Longitude",
+                                "uco-types:value": "47.9941"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "LongitudeRef",
+                                "uco-types:value": "W"
+                            }
+                        ]
+                    }
                 }
             ]
         },
         {
             "@id": ":camera_action1",
-            "@type": "Action",
-            "name": "photo_taken",
-            "startTime": "2010-01-15T17:59:43.25Z",
+            "@type": "uco-action:Action",
+            "uco-core:name": "photo_taken",
+            "uco-action:startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2010-01-15T17:59:43.25Z"
+            },
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
-                    "instrument": ":camera1",
-                    "result": [
+                    "@type": "uco-action:ActionReferences",
+                    "uco-action:instrument": ":camera1",
+                    "uco-action:result": [
                         ":digital_photograph1"
                     ],
-                    "location": ":location1"
+                    "uco-action:location": ":location1"
                 }
             ]
         },
         {
             "@id": ":annotation1",
-            "@type": "Annotation",
-            "description": "Photo was taken by a Canon digital camera.",
-            "tag": [
+            "@type": "uco-core:Annotation",
+            "uco-core:description": "Photo was taken by a Canon digital camera.",
+            "uco-core:tag": [
                 "photo",
                 "user_added",
                 "extracted"
             ],
-            "object": ":camera_action1"
+            "uco-action:object": ":camera_action1"
         },
         {
             "@id": ":forensic_action7",
-            "@type": "InvestigativeAction",
-            "name": "annotated",
-            "startTime": "2010-01-15T17:59:43.25Z",
-            "endTime": "2010-01-15T18:59:43.25Z",
+            "@type": "uco-investigation:InvestigativeAction",
+            "uco-core:name": "annotated",
+            "uco-action:startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2010-01-15T17:59:43.25Z"
+            },
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2010-01-15T18:59:43.25Z"
+            },
             "case-core:propertyBundle": [
                 {
-                    "@type": "ActionReferences",
-                    "performer": ":examiner1",
-                    "instrument": ":annotator_tool1",
-                    "result": [
+                    "@type": "uco-action:ActionReferences",
+                    "uco-action:performer": ":examiner1",
+                    "uco-action:instrument": ":annotator_tool1",
+                    "uco-action:result": [
                         ":annotation1"
                     ],
-                    "location": ":forensic_lab1",
-                    "environment": ":forensic_lab_computer1"
+                    "uco-action:location": ":forensic_lab1",
+                    "uco-action:environment": ":forensic_lab_computer1"
                 }
             ]
         }

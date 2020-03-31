@@ -13,45 +13,45 @@
     "@graph": [
         {
             "@id": ":relationship0",
-            "@type": "Relationship",
-            "source": ":multipart_file",
-            "target": ":data_piece0",
-            "kindOfRelationship": "has-fragment",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":multipart_file",
+            "uco-core:target": ":data_piece0",
+            "uco-core:kindOfRelationship": "has-fragment",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "Fragment",
-                    "fragmentIndex": 0,
+                    "@type": "uco-observable:Fragment",
+                    "uco-observable:fragmentIndex": 0,
                     "totalFragments": 3
                 }
             ]
         },
         {
             "@id": ":relationship1",
-            "@type": "Relationship",
-            "source": ":multipart_file",
-            "target": ":data_piece1",
-            "kindOfRelationship": "has-fragment",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":multipart_file",
+            "uco-core:target": ":data_piece1",
+            "uco-core:kindOfRelationship": "has-fragment",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "Fragment",
-                    "fragmentIndex": 1,
+                    "@type": "uco-observable:Fragment",
+                    "uco-observable:fragmentIndex": 1,
                     "totalFragments": 3
                 }
             ]
         },
         {
             "@id": ":relationship2",
-            "@type": "Relationship",
-            "source": ":multipart_file",
-            "target": ":data_piece2",
-            "kindOfRelationship": "has-fragment",
-            "isDirectional": true,
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":multipart_file",
+            "uco-core:target": ":data_piece2",
+            "uco-core:kindOfRelationship": "has-fragment",
+            "uco-core:isDirectional": true,
             "case-core:propertyBundle": [
                 {
-                    "@type": "Fragment",
-                    "fragmentIndex": 2,
+                    "@type": "uco-observable:Fragment",
+                    "uco-observable:fragmentIndex": 2,
                     "totalFragments": 3
                 }
             ]
@@ -61,13 +61,13 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "ContentData",
-                    "byteOrder": "BigEndian",
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 30
                     },
-                    "dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -111,12 +111,12 @@
                 },
                 {
                     "@type": "uco-observable:ContentData",
-                    "byteOrder": "BigEndian",
+                    "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 10
                     },
-                    "dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -160,12 +160,12 @@
                 },
                 {
                     "@type": "uco-observable:ContentData",
-                    "byteOrder": "BigEndian",
+                    "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 10
                     },
-                    "dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -209,12 +209,12 @@
                 },
                 {
                     "@type": "uco-observable:ContentData",
-                    "byteOrder": "BigEndian",
+                    "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 10
                     },
-                    "dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",

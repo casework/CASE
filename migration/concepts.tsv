@@ -9,6 +9,7 @@ DiskPartition	uco-observable:DiskPartition
 EXIF	uco-observable:EXIF
 Encoding	uco-observable:EncodedStream
 Encryption	uco-observable:EncryptedStream
+Fragment	uco-observable:Fragment
 Hash	uco-types:Hash
 InvestigativeAction	uco-investigation:InvestigativeAction
 LatLongCoordinates	uco-location:LatLongCoordinates

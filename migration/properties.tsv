@@ -1,3 +1,4 @@
+accessAction
 accessedAction
 accessedTime	uco-observable:accessedTime	xsd:dateTime
 biosVersion	uco-observable:biosVersion
@@ -5,6 +6,7 @@ bitsPerPixel	uco-observable:bitsPerPixel
 byteOrder	uco-observable:byteOrder
 columnName	uco-observable:columnName
 country	uco-location:country
+createAction
 createdAction
 cpuFamily	uco-observable:cpuFamily
 createdTime	uco-observable:createdTime	xsd:dateTime
@@ -18,6 +20,7 @@ exifData	uco-observable:exifData
 fileName	uco-observable:fileName
 filePath	uco-observable:filePath
 fileSystemType	uco-observable:fileSystemType
+fragmentIndex	uco-observable:fragmentIndex
 gpuFamily	uco-observable:gpuFamily
 hash	uco-observable:hash
 hashMethod	uco-types:hashMethod	uco-core:HashNameEnum

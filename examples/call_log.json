@@ -4,7 +4,7 @@
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "olo": "http://purl.org/ontology/olo/core#"
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#"
     },
     "@graph": [
         {
@@ -12,13 +12,13 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIssuer": ":ATT",
-                    "isActive": true
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIssuer": ":ATT",
+                    "uco-observable:isActive": true
                 },
                 {
-                    "@type": "PhoneAccount",
-                    "phoneNumber": "1237771337"
+                    "@type": "uco-observable:PhoneAccount",
+                    "uco-observable:phoneNumber": "1237771337"
                 }
             ]
         },
@@ -27,12 +27,12 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIssuer": ":Sprint",
-                    "isActive": true
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIssuer": ":Sprint",
+                    "uco-observable:isActive": true
                 },
                 {
-                    "@type": "PhoneAccount",
+                    "@type": "uco-observable:PhoneAccount",
                     "identifier": "1234560000"
                 }
             ]
@@ -42,13 +42,22 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "PhoneCall",
-                    "callType": "mobile",
-                    "startTime": "2010-01-15T17:59:43.25Z",
-                    "endTime": "2010-01-15T18:30:41.25Z",
-                    "from": ":phone_account1",
-                    "to": ":phone_account2",
-                    "duration": "PT31M2S"
+                    "@type": "uco-observable:PhoneCall",
+                    "uco-observable:callType": "mobile",
+                    "uco-observable:startTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    },
+                    "uco-observable:endTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T18:30:41.25Z"
+                    },
+                    "uco-observable:from": ":phone_account1",
+                    "uco-observable:to": ":phone_account2",
+                    "uco-observable:duration": {
+                        "@type": "xsd:long",
+                        "@value": 1862
+                    }
                 }
             ]
         }

@@ -1,3 +1,4 @@
+Account	uco-observable:Account
 Action	uco-action:Action
 ActionReferences	uco-action:ActionReferences
 Annotation	uco-core:Annotation
@@ -16,6 +17,8 @@ LatLongCoordinates	uco-location:LatLongCoordinates
 Location	uco-location:Location
 OperatingSystem	uco-observable:OperatingSystem
 PathRelation	uco-observable:PathRelation
+PhoneAccount	uco-observable:PhoneAccount
+PhoneCall	uco-observable:PhoneCall
 PropertyBundle	case-core:PropertyBundle
 RasterPicture	uco-observable:RasterPicture
 SQLiteBlob	uco-observable:SQLiteBlob

@@ -1,9 +1,11 @@
 accessAction
 accessedAction
 accessedTime	uco-observable:accessedTime	xsd:dateTime
+accountIssuer	uco-observable:accountIssuer
 biosVersion	uco-observable:biosVersion
 bitsPerPixel	uco-observable:bitsPerPixel
 byteOrder	uco-observable:byteOrder
+callType	uco-observable:callType
 columnName	uco-observable:columnName
 country	uco-location:country
 createAction
@@ -12,20 +14,24 @@ cpuFamily	uco-observable:cpuFamily
 createdTime	uco-observable:createdTime	xsd:dateTime
 dataPayload	uco-observable:dataPayload
 description	uco-core:description
+duration	uco-observable:duration	xsd:long
 encodingMethod	uco-observable:encodingMethod
 encryptionMethod	uco-observable:encryptionMethod
 encryptionMode	uco-observable:encryptionMode
+endTime	uco-observable:endTime	xsd:dateTime
 environment	uco-action:environment
 exifData	uco-observable:exifData
 fileName	uco-observable:fileName
 filePath	uco-observable:filePath
 fileSystemType	uco-observable:fileSystemType
 fragmentIndex	uco-observable:fragmentIndex
+from	uco-observable:from
 gpuFamily	uco-observable:gpuFamily
 hash	uco-observable:hash
 hashMethod	uco-types:hashMethod	uco-core:HashNameEnum
 hashValue	uco-types:hashValue	xsd:hexBinary
 instrument	uco-action:instrument
+isActive	uco-observable:isActive
 isDirectory	uco-observable:isDirectory
 iv	uco-observable:encryptionIV
 isDirectional	uco-core:isDirectional
@@ -43,6 +49,7 @@ name	uco-core:name
 partIndex	uco-observable:partitionID
 path	uco-observable:path
 performer	uco-action:performer
+phoneNumber	uco-observable:phoneNumber
 pictureType	uco-observable:picturetype
 pictureheight	uco-observable:pictureHeight
 picturewidth	uco-observable:pictureWidth
@@ -57,8 +64,10 @@ rowCondition	uco-observable:rowCondition
 serialNumber	uco-observable:serialNumber
 sizeInBytes	uco-observable:sizeInBytes
 source	uco-core:source
+startTime	uco-observable:startTime	xsd:dateTime
 street	uco-location:street
 tableName	uco-observable:tableName
 tag	uco-core:tag
 target	uco-core:target
 totalRam	uco-observable:totalRam	xsd:long
+to	uco-observable:to

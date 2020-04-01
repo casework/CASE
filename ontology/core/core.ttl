@@ -3,9 +3,11 @@
 
 @base <https://caseontology.org/ontology/case/core> .
 @prefix case-core: <https://caseontology.org/ontology/case/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix uco-core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
@@ -13,26 +15,34 @@
 
 <https://caseontology.org/ontology/case/core>
 	a owl:Ontology ;
+	owl:ontologyIRI <https://caseontology.org/ontology/case/core> ;
 	rdfs:label "case-core"@en ;
+	dct:title "CASE (Core)"@en ;
+	rdfs:comment "The CASE Core ontology defines the fundamental concepts used across CASE to represent digital investigations, their characteristics, and relations to other entities. The preferred namespace abbreviation for this ontology is: case-core."@en ;
 	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
 	.
 
 case-core:PropertyBundle
 	a owl:Class ;
-	rdfs:label "Property Bundle"@en ;
-	rdfs:comment "A grouping of properties characterizing a particular aspect/facet of an object."@en ;
+	rdfs:label "PropertyBundle"@en ;
+	skos:prefLabel "Property Bundle"@en ;
+	skos:definition "A grouping of properties characterizing a particular aspect/facet of an object. [UCO Core: Facet]"@en ;
 	owl:equivalentClass uco-core:Facet ;
 	.
 
 case-core:Trace
 	a owl:Class ;
 	rdfs:label "Trace"@en ;
-	rdfs:comment "A distinct entity observed within a digital investigation."@en ;
+	skos:prefLabel "Trace"@en ;
+	skos:definition "A distinct entity observed within a digital investigation. [UCO Core: UcoObject]"@en ;
 	owl:equivalentClass uco-core:UcoObject ;
 	.
 
-case-core:propertyBundle
+case-core:hasPropertyBundle
 	a owl:ObjectProperty ;
+	rdfs:label "hasPropertyBundle"@en ;
+	skos:prefLabel "Has Property Bundle"@en ;
+	skos:definition "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized. [UCO Core: facets]"@en ;
 	owl:equivalentProperty uco-core:facets ;
 	.
 

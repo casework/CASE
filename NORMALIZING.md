@@ -1,6 +1,6 @@
 # Ontology data normalization
 
-CASES uses a normalization process to help prevent errors and confusion during version control. This makes sure that the ontology files will reflect only substantive changes.
+CASE uses a normalization process to help prevent errors and confusion during version control. This makes sure that the ontology files will reflect only substantive changes.
 
 This file describes the normalization requirement for submitting revisions to the CASE ontology's Turtle files.
 
@@ -13,7 +13,7 @@ The CASE ontology, encoded as Turtle, follows a procedure based on the [`rdf-too
 * Expansion of [collections](https://www.w3.org/TR/turtle/#collections)
 * Blank node placement
 
-The CASE community considers "normalizing the ontology serialization" to be when an application of rules to decide the above "stylistic" matters no longer changes a Turtle file.
+The CASE community considers the ontology serialization to be "normalized" when an application of rules to decide the above "stylistic" matters no longer changes a Turtle file.
 
 
 ## Normalization command

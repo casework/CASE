@@ -1,8 +1,12 @@
 accessAction
 accessedAction
 accessedTime	uco-observable:accessedTime	xsd:dateTime
+accountIdentifier	uco-observable:accountIdentifier
 accountIssuer	uco-observable:accountIssuer
+accountLogin	uco-observable:accountLogin
+application	uco-observable:application
 biosVersion	uco-observable:biosVersion
+birthdate	uco-identity:birthdate	xsd:dateTime
 bitsPerPixel	uco-observable:bitsPerPixel
 byteOrder	uco-observable:byteOrder
 callType	uco-observable:callType
@@ -14,18 +18,23 @@ cpuFamily	uco-observable:cpuFamily
 createdTime	uco-observable:createdTime	xsd:dateTime
 dataPayload	uco-observable:dataPayload
 description	uco-core:description
+displayName	uco-observable:displayName
 duration	uco-observable:duration	xsd:long
+emailAddress	uco-observable:value
 encodingMethod	uco-observable:encodingMethod
 encryptionMethod	uco-observable:encryptionMethod
 encryptionMode	uco-observable:encryptionMode
 endTime	uco-observable:endTime	xsd:dateTime
 environment	uco-action:environment
 exifData	uco-observable:exifData
+familyName	uco-identity:familyName
 fileName	uco-observable:fileName
 filePath	uco-observable:filePath
 fileSystemType	uco-observable:fileSystemType
+firstLoginTime	uco-observable:firstLoginTime	xsd:dateTime
 fragmentIndex	uco-observable:fragmentIndex
 from	uco-observable:from
+givenName	uco-identity:givenName
 gpuFamily	uco-observable:gpuFamily
 hash	uco-observable:hash
 hashMethod	uco-types:hashMethod	uco-core:HashNameEnum
@@ -36,6 +45,7 @@ isDirectory	uco-observable:isDirectory
 iv	uco-observable:encryptionIV
 isDirectional	uco-core:isDirectional
 kindOfRelationship	uco-core:kindOfRelationship
+lastLoginTime	uco-observable:lastLoginTime	xsd:dateTime
 latitude	uco-location:latitude	xsd:decimal
 locality	uco-location:locality
 longitude	uco-location:longitude	xsd:decimal
@@ -47,6 +57,8 @@ model	uco-observable:model
 modifiedTime	uco-observable:modifiedTime	xsd:dateTime
 name	uco-core:name
 partIndex	uco-observable:partitionID
+password	uco-observable:password
+passwordLastChanged	uco-observable:passwordLastChanged	xsd:dateTime
 path	uco-observable:path
 performer	uco-action:performer
 phoneNumber	uco-observable:phoneNumber

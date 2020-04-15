@@ -4,157 +4,190 @@
         "": "http://example.org/kb#",
         "case-core": "https://caseontology.org/ontology/case/core#",
         "draft": "http://example.org/draft#",
-        "olo": "http://purl.org/ontology/olo/core#"
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": ":actor1",
-            "@type": "Identity",
+            "@type": "uco-identity:Identity",
             "case-core:propertyBundle": [
                 {
-                    "@type": "SimpleName",
-                    "givenName": "William",
-                    "familyName": "Smith"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "William",
+                    "uco-identity:familyName": "Smith"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1968-09-25T17:59:43.25Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1968-09-25T17:59:43.25Z"
+                    }
                 }
             ]
         },
         {
             "@id": ":associated-account1",
-            "@type": "Relationship",
-            "source": ":actor1",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":actor1",
+            "uco-core:target": [
                 ":facebook_account1"
             ],
-            "kindOfRelationship": "has-account",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-account",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":associated-account2",
-            "@type": "Relationship",
-            "source": ":actor1",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":actor1",
+            "uco-core:target": [
                 ":google_account1"
             ],
-            "kindOfRelationship": "has-account",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-account",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":associated-account3",
-            "@type": "Relationship",
-            "source": ":actor1",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":actor1",
+            "uco-core:target": [
                 ":email_account1"
             ],
-            "kindOfRelationship": "has-account",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "has-account",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":facebook_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIdentifier": "1235556677@facebook.net",
-                    "accountIssuer": ":facebook_org"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIdentifier": "1235556677@facebook.net",
+                    "uco-observable:accountIssuer": ":facebook_org"
                 },
                 {
-                    "@type": "DigitalAccount",
-                    "accountLogin": "xXWillyRocksXx",
-                    "firstLoginTime": "2010-01-21T17:59:43.25Z",
-                    "lastLoginTime": "2010-03-12T17:59:43.25Z",
-                    "displayName": "WILLY THE KID"
+                    "@type": "uco-observable:DigitalAccount",
+                    "uco-observable:accountLogin": "xXWillyRocksXx",
+                    "uco-observable:firstLoginTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-21T17:59:43.25Z"
+                    },
+                    "uco-observable:lastLoginTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-03-12T17:59:43.25Z"
+                    },
+                    "uco-observable:displayName": "WILLY THE KID"
                 },
                 {
-                    "@type": "AccountAuthentication",
-                    "password": "123secretpassword456",
-                    "passwordLastChanged": "2010-01-15T17:59:43.25Z"
+                    "@type": "uco-observable:AccountAuthentication",
+                    "uco-observable:password": "123secretpassword456",
+                    "uco-observable:passwordLastChanged": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    }
                 },
                 {
-                    "@type": "ApplicationAccount",
-                    "application": ":application1"
+                    "@type": "uco-observable:ApplicationAccount",
+                    "uco-observable:application": ":application1"
                 },
                 {
-                    "@type": "SimpleName",
-                    "givenName": "Willy",
-                    "familyName": "Smith"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "Willy",
+                    "uco-identity:familyName": "Smith"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1968-09-25T17:59:43.25Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1968-09-25T17:59:43.25Z"
+                    }
                 }
             ]
         },
         {
             "@id": ":associated-account4",
-            "@type": "Relationship",
-            "source": ":facebook_account1",
-            "target": [
+            "@type": "uco-core:Relationship",
+            "uco-core:source": ":facebook_account1",
+            "uco-core:target": [
                 ":email_account1"
             ],
-            "kindOfRelationship": "associated-account",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "associated-account",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":google_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "Account",
-                    "accountIdentifier": "willyROX@gmail.com",
-                    "accountIssuer": ":google_org",
-                    "createdTime": "2010-01-15T17:59:43.25Z"
+                    "@type": "uco-observable:Account",
+                    "uco-observable:accountIdentifier": "willyROX@gmail.com",
+                    "uco-observable:accountIssuer": ":google_org",
+                    "uco-observable:createdTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    }
                 },
                 {
-                    "@type": "DigitalAccount",
-                    "accountLogin": [
+                    "@type": "uco-observable:DigitalAccount",
+                    "uco-observable:accountLogin": [
                         "willyROX",
                         "willyROX@gmail.com"
                     ],
-                    "firstLoginTime": "2010-01-21T17:59:43.25Z",
-                    "lastLoginTime": "2010-03-12T17:59:43.25Z",
-                    "displayName": "William Smith"
+                    "uco-observable:firstLoginTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-21T17:59:43.25Z"
+                    },
+                    "uco-observable:lastLoginTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-03-12T17:59:43.25Z"
+                    },
+                    "uco-observable:displayName": "William Smith"
                 },
                 {
-                    "@type": "AccountAuthentication",
-                    "password": "1337_P@ZZW0RD",
-                    "passwordLastChanged": "2010-01-15T17:59:43.25Z"
+                    "@type": "uco-observable:AccountAuthentication",
+                    "uco-observable:password": "1337_P@ZZW0RD",
+                    "uco-observable:passwordLastChanged": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2010-01-15T17:59:43.25Z"
+                    }
                 },
                 {
-                    "@type": "ApplicationAccount",
-                    "application": ":application2"
+                    "@type": "uco-observable:ApplicationAccount",
+                    "uco-observable:application": ":application2"
                 },
                 {
-                    "@type": "SimpleName",
-                    "givenName": "William",
-                    "familyName": "Smith"
+                    "@type": "uco-identity:SimpleName",
+                    "uco-identity:givenName": "William",
+                    "uco-identity:familyName": "Smith"
                 },
                 {
-                    "@type": "BirthInformation",
-                    "birthdate": "1968-09-25T17:59:43.25Z"
+                    "@type": "uco-identity:BirthInformation",
+                    "uco-identity:birthdate": {
+                        "@type": "xsd:dateTime",
+                        "@value": "1968-09-25T17:59:43.25Z"
+                    }
                 }
             ]
         },
         {
             "@id": ":associated-account4",
-            "@type": "Relationship",
-            "source": ":google_account1",
-            "target": [
+            "@type": "uco-observable:CyberRelationship",
+            "uco-core:source": ":google_account1",
+            "uco-core:target": [
                 ":email_account1"
             ],
-            "kindOfRelationship": "associated-account",
-            "isDirectional": true
+            "uco-core:kindOfRelationship": "associated-account",
+            "uco-core:isDirectional": true
         },
         {
             "@id": ":email_account1",
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "EmailAccount",
-                    "emailAddress": ":email-address1"
+                    "@type": "uco-observable:EmailAccount",
+                    "uco-observable:emailAddress": ":email-address1"
                 }
             ]
         },
@@ -163,8 +196,8 @@
             "@type": "case-core:Trace",
             "case-core:propertyBundle": [
                 {
-                    "@type": "EmailAddress",
-                    "emailAddress": "willyROX@gmail.com"
+                    "@type": "uco-observable:EmailAddress",
+                    "uco-observable:value": "willyROX@gmail.com"
                 }
             ]
         }

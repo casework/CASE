@@ -1,3 +1,5 @@
+IEMI	uco-observable:IEMI
+MSISDN	uco-observable:MSISDN
 accessAction
 accessedAction
 accessedTime	uco-observable:accessedTime	xsd:dateTime
@@ -14,6 +16,7 @@ birthdate	uco-identity:birthdate	xsd:dateTime
 bitsPerPixel	uco-observable:bitsPerPixel
 byteOrder	uco-observable:byteOrder
 callType	uco-observable:callType
+clockSetting	uco-observable:clockSetting
 columnName	uco-observable:columnName
 content	uco-core:object
 country	uco-location:country
@@ -31,6 +34,7 @@ encryptionMethod	uco-observable:encryptionMethod
 encryptionMode	uco-observable:encryptionMode
 endTime	uco-observable:endTime	xsd:dateTime
 environment	uco-action:environment
+exhibitNumber	uco-investigation:exhibitNumber
 exifData	uco-observable:exifData
 familyName	uco-identity:familyName
 fileName	uco-observable:fileName
@@ -53,6 +57,7 @@ isDirectional	uco-core:isDirectional
 kindOfRelationship	uco-core:kindOfRelationship
 lastLoginTime	uco-observable:lastLoginTime	xsd:dateTime
 latitude	uco-location:latitude	xsd:decimal
+localeLanguage
 locality	uco-location:locality
 longitude	uco-location:longitude	xsd:decimal
 magicNumber	uco-observable:magicNumber
@@ -67,6 +72,7 @@ password	uco-observable:password
 passwordLastChanged	uco-observable:passwordLastChanged	xsd:dateTime
 path	uco-observable:path
 performer	uco-action:performer
+phoneActivationTime	uco-observable:phoneActivationTime	xsd:dateTime
 phoneNumber	uco-observable:phoneNumber
 pictureType	uco-observable:picturetype
 pictureheight	uco-observable:pictureHeight
@@ -83,9 +89,12 @@ serialNumber	uco-observable:serialNumber
 sizeInBytes	uco-observable:sizeInBytes
 source	uco-core:source
 startTime	uco-observable:startTime	xsd:dateTime
+storageCapacity	uco-observable:storageCapacityInBytes	xsd:long
 street	uco-location:street
 tableName	uco-observable:tableName
 tag	uco-core:tag
 target	uco-core:target
 totalRam	uco-observable:totalRam	xsd:long
 to	uco-observable:to
+uniqueID
+value	uco-observable:value

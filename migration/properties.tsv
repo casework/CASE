@@ -5,12 +5,17 @@ accountIdentifier	uco-observable:accountIdentifier
 accountIssuer	uco-observable:accountIssuer
 accountLogin	uco-observable:accountLogin
 application	uco-observable:application
+authorizationType	uco-investigation:authorizationType
+authorizationIdentifier	uco-investigation:authorizationIdentifier
+authorizationAuthority
+authorizationIssuedDate
 biosVersion	uco-observable:biosVersion
 birthdate	uco-identity:birthdate	xsd:dateTime
 bitsPerPixel	uco-observable:bitsPerPixel
 byteOrder	uco-observable:byteOrder
 callType	uco-observable:callType
 columnName	uco-observable:columnName
+content	uco-core:object
 country	uco-location:country
 createAction
 createdAction
@@ -32,6 +37,7 @@ fileName	uco-observable:fileName
 filePath	uco-observable:filePath
 fileSystemType	uco-observable:fileSystemType
 firstLoginTime	uco-observable:firstLoginTime	xsd:dateTime
+focus	uco-investigation:focus
 fragmentIndex	uco-observable:fragmentIndex
 from	uco-observable:from
 givenName	uco-identity:givenName

@@ -4,7 +4,9 @@ Action	uco-action:Action
 ActionReferences	uco-action:ActionReferences
 Annotation	uco-core:Annotation
 ApplicationAccount	uco-observable:ApplicationAccount
+Authorization	uco-investigation:Authorization
 BirthInformation	uco-identity:BirthInformation
+Bundle	uco-core:Bundle
 ComputerSpecification	uco-observable:ComputerSpecification
 ContentData	uco-observable:ContentData
 DataRange	uco-observable:DataRange
@@ -19,6 +21,7 @@ Encryption	uco-observable:EncryptedStream
 Fragment	uco-observable:Fragment
 Hash	uco-types:Hash
 Identity	uco-identity:Identity
+Investigation	uco-investigation:Investigation
 InvestigativeAction	uco-investigation:InvestigativeAction
 LatLongCoordinates	uco-location:LatLongCoordinates
 Location	uco-location:Location

@@ -19,17 +19,20 @@ callType	uco-observable:callType
 clockSetting	uco-observable:clockSetting
 columnName	uco-observable:columnName
 configurationSetting	uco-tool:configurationSettings
+connectionState
 content	uco-core:object
 country	uco-location:country
 createAction
 createdAction
-createdTime	uco-observable:createdTime	xsd:dateTime
+createdBy	uco-core:createdBy
 creator	uco-tool:creator
 cpuFamily	uco-observable:cpuFamily
 createdTime	uco-observable:createdTime	xsd:dateTime
 dataPayload	uco-observable:dataPayload
 description	uco-core:description
+destinationPort	uco-observable:destinationPort
 displayName	uco-observable:displayName
+dst	uco-observable:dst
 duration	uco-observable:duration	xsd:long
 emailAddress	uco-observable:value
 encodingMethod	uco-observable:encodingMethod
@@ -87,6 +90,7 @@ picturewidth	uco-observable:pictureWidth
 postalCode	uco-location:postalCode
 processorArchitecture	uco-observable:processorArchitecture
 propertyBundle	case-core:propertyBundle
+protocols	uco-observable:protocols	uco-types:ControlledDictionary
 rangeOffset	uco-observable:rangeOffset
 rangeSize	uco-observable:rangeSize	xsd:long
 region	uco-location:region
@@ -95,7 +99,9 @@ rowCondition	uco-observable:rowCondition
 sentTime	uco-observable:sentTime	xsd:dateTime
 serialNumber	uco-observable:serialNumber
 sizeInBytes	uco-observable:sizeInBytes	xsd:long
-startTime	uco-observable:startTime
+sourcePort	uco-observable:sourcePort
+src	uco-observable:src
+startTime	uco-observable:startTime	xsd:dateTime
 source	uco-core:source
 startTime	uco-observable:startTime	xsd:dateTime
 storageCapacity	uco-observable:storageCapacityInBytes	xsd:long

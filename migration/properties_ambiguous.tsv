@@ -1,3 +1,5 @@
+createdTime	uco-core:createdTime	xsd:dateTime
+createdTime	uco-observable:createdTime	xsd:dateTime
 endTime	uco-action:endTime	xsd:dateTime
 endTime	uco-core:endTime	xsd:dateTime
 key	uco-observable:encryptionKey

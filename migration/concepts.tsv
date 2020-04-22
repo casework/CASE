@@ -30,6 +30,7 @@ LatLongCoordinates	uco-location:LatLongCoordinates
 Location	uco-location:Location
 Message	uco-observable:Message
 MobileDevice	uco-observable:MobileDevice
+NetworkConnection	uco-observable:NetworkConnection
 OperatingSystem	uco-observable:OperatingSystem
 PathRelation	uco-observable:PathRelation
 PhoneAccount	uco-observable:PhoneAccount

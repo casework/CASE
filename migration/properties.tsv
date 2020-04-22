@@ -18,10 +18,13 @@ byteOrder	uco-observable:byteOrder
 callType	uco-observable:callType
 clockSetting	uco-observable:clockSetting
 columnName	uco-observable:columnName
+configurationSetting	uco-tool:configurationSettings
 content	uco-core:object
 country	uco-location:country
 createAction
 createdAction
+createdTime	uco-observable:createdTime	xsd:dateTime
+creator	uco-tool:creator
 cpuFamily	uco-observable:cpuFamily
 createdTime	uco-observable:createdTime	xsd:dateTime
 dataPayload	uco-observable:dataPayload
@@ -36,6 +39,7 @@ endTime	uco-observable:endTime	xsd:dateTime
 environment	uco-action:environment
 exhibitNumber	uco-investigation:exhibitNumber
 exifData	uco-observable:exifData
+extension	uco-observable:extension
 familyName	uco-identity:familyName
 fileName	uco-observable:fileName
 filePath	uco-observable:filePath
@@ -52,6 +56,8 @@ hashValue	uco-types:hashValue	xsd:hexBinary
 instrument	uco-action:instrument
 isActive	uco-observable:isActive
 isDirectory	uco-observable:isDirectory
+itemName	uco-tool:itemName
+itemValue	uco-tool:itemValue
 iv	uco-observable:encryptionIV
 isDirectional	uco-core:isDirectional
 kindOfRelationship	uco-core:kindOfRelationship
@@ -86,7 +92,7 @@ region	uco-location:region
 result	uco-action:result
 rowCondition	uco-observable:rowCondition
 serialNumber	uco-observable:serialNumber
-sizeInBytes	uco-observable:sizeInBytes
+sizeInBytes	uco-observable:sizeInBytes	xsd:long
 source	uco-core:source
 startTime	uco-observable:startTime	xsd:dateTime
 storageCapacity	uco-observable:storageCapacityInBytes	xsd:long
@@ -94,6 +100,7 @@ street	uco-location:street
 tableName	uco-observable:tableName
 tag	uco-core:tag
 target	uco-core:target
+toolType	uco-tool:toolType	
 totalRam	uco-observable:totalRam	xsd:long
 to	uco-observable:to
 uniqueID

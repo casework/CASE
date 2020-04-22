@@ -9,6 +9,7 @@ BirthInformation	uco-identity:BirthInformation
 BluetoothAddress	uco-observable:BluetoothAddress
 Bundle	uco-core:Bundle
 ComputerSpecification	uco-observable:ComputerSpecification
+ConfigurationSetting	uco-tool:ConfigurationSettingType
 ContentData	uco-observable:ContentData
 DataRange	uco-observable:DataRange
 Device	uco-observable:Device
@@ -19,6 +20,7 @@ EmailAccount	uco-observable:EmailAccount
 EmailAddress	uco-observable:EmailAddress
 Encoding	uco-observable:EncodedStream
 Encryption	uco-observable:EncryptedStream
+File	uco-observable:File
 Fragment	uco-observable:Fragment
 Hash	uco-types:Hash
 Identity	uco-identity:Identity
@@ -37,6 +39,8 @@ RasterPicture	uco-observable:RasterPicture
 SQLiteBlob	uco-observable:SQLiteBlob
 SimpleAddress	uco-location:SimpleAddress
 SimpleName	uco-identity:SimpleName
+Tool	uco-tool:Tool
+ToolConfiguration	uco-tool:ToolConfigurationType
 Trace	case-core:Trace
 WiFiAddress	uco-observable:WifiAddress
 iPhoneDevice

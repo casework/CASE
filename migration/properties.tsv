@@ -68,6 +68,7 @@ locality	uco-location:locality
 longitude	uco-location:longitude	xsd:decimal
 magicNumber	uco-observable:magicNumber
 manufacturer	uco-observable:manufacturer
+messageText	uco-observable:messageText
 metadataChangedTime	uco-observable:metadataChangedTime	xsd:dateTime
 mimeType	uco-observable:mimeType
 model	uco-observable:model
@@ -91,8 +92,10 @@ rangeSize	uco-observable:rangeSize	xsd:long
 region	uco-location:region
 result	uco-action:result
 rowCondition	uco-observable:rowCondition
+sentTime	uco-observable:sentTime	xsd:dateTime
 serialNumber	uco-observable:serialNumber
 sizeInBytes	uco-observable:sizeInBytes	xsd:long
+startTime	uco-observable:startTime
 source	uco-core:source
 startTime	uco-observable:startTime	xsd:dateTime
 storageCapacity	uco-observable:storageCapacityInBytes	xsd:long
@@ -100,7 +103,7 @@ street	uco-location:street
 tableName	uco-observable:tableName
 tag	uco-core:tag
 target	uco-core:target
-toolType	uco-tool:toolType	
+toolType	uco-tool:toolType
 totalRam	uco-observable:totalRam	xsd:long
 to	uco-observable:to
 uniqueID

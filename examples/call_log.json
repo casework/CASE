@@ -10,7 +10,7 @@
         {
             "@id": ":phone_account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":ATT",
@@ -25,7 +25,7 @@
         {
             "@id": ":phone_account2",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":Sprint",
@@ -40,7 +40,7 @@
         {
             "@id": ":phone_call1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:PhoneCall",
                     "uco-observable:callType": "mobile",

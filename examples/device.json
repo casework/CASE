@@ -12,7 +12,7 @@
             "@id": ":forensic_lab_computer1",
             "@type": "case-core:Trace",
             "location": ":forensic_lab1",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "Dell",

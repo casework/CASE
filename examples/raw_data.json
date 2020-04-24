@@ -13,7 +13,7 @@
         {
             "@id": ":digital_photograph_thumbnail1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:magicNumber": "/9j/4AAQSkZ",
@@ -49,7 +49,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 224,
@@ -63,7 +63,7 @@
         {
             "@id": ":digital_photograph1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:magicNumber": "/9j/4AAQSkZ",

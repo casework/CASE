@@ -34,7 +34,7 @@
                 ":trace-relationship2-uuid",
                 ":trace-relationship3-uuid"
             ],
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Authorization",
                     "authorizationIdentifier": "Warrant3554",
@@ -55,7 +55,7 @@
             "@id": ":extraction-action-uuid",
             "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "instrument": ":pcap-tool-uuid",
@@ -89,7 +89,7 @@
             "@type": "case-core:Trace",
             "createdBy": ":81ee357b-5fc1-5aa8-b932-ff29ace0f65b",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:createdTime": {
@@ -144,7 +144,7 @@
             "@id": ":source-host-uuid",
             "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "IPv4Address",
                     "value": "10.10.10.2"
@@ -160,7 +160,7 @@
             "@id": ":destination-host-uuid",
             "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "IPv4Address",
                     "value": "10.10.10.50"
@@ -176,7 +176,7 @@
             "@id": ":network-connection1-uuid",
             "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6256260Z",
@@ -195,7 +195,7 @@
             "@id": ":network-connection2-uuid",
             "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6264620Z",
@@ -214,7 +214,7 @@
             "@id": ":network-connection3-uuid",
             "createdBy": ":investigator1-uuid",
             "createdTime": "2017-09-29T11:47:54.2889922Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "NetworkConnection",
                     "startTime": "2009-04-03T02:29:25.6370540Z",
@@ -240,7 +240,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": "true",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "StarttimeRelation",
                     "startTime": "2009-04-03T02:29:25.6256260Z"
@@ -259,7 +259,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": "true",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "StarttimeRelation",
                     "startTime": "2009-04-03T02:29:25.6264620Z"
@@ -278,7 +278,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": "true",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "StarttimeRelation",
                     "startTime": "2009-04-03T02:29:25.6370540Z"

@@ -13,7 +13,7 @@
         {
             "@id": ":actor1",
             "@type": "uco-identity:Identity",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "William",
@@ -61,7 +61,7 @@
         {
             "@id": ":facebook_account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIdentifier": "1235556677@facebook.net",
@@ -119,7 +119,7 @@
         {
             "@id": ":google_account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIdentifier": "willyROX@gmail.com",
@@ -184,7 +184,7 @@
         {
             "@id": ":email_account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:EmailAccount",
                     "uco-observable:emailAddress": ":email-address1"
@@ -194,7 +194,7 @@
         {
             "@id": ":email_address1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:EmailAddress",
                     "uco-observable:value": "willyROX@gmail.com"

@@ -11,7 +11,7 @@
         {
             "@id": ":sms_message1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Message",
                     "application": ":sms_application1",
@@ -27,7 +27,7 @@
         {
             "@id": ":contact1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Contact",
                     "rdfs:comment": [
@@ -85,7 +85,7 @@
         {
             "@id": ":phone_account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Account",
                     "rdfs:comment": "TODO: Is the accountType necessary? We know its phone account due to the existence of 'PhoneAccount' (duck type model and all that)",
@@ -101,7 +101,7 @@
         {
             "@id": ":phone_account2",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Phone",
@@ -116,7 +116,7 @@
         {
             "@id": ":email_account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Email",
@@ -131,7 +131,7 @@
         {
             "@id": ":phone_account3",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Phone",
@@ -146,7 +146,7 @@
         {
             "@id": ":android_phonebook1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Application",
                     "name": "Android Phonebook",

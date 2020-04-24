@@ -12,7 +12,7 @@
         {
             "@id": ":location1",
             "@type": "uco-location:Location",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-location:SimpleAddress",
                     "uco-location:locality": "Seattle",
@@ -30,7 +30,7 @@
         {
             "@id": ":location2",
             "@type": "uco-location:Location",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-location:SimpleAddress",
                     "uco-location:locality": "Paris",

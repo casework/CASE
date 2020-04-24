@@ -10,7 +10,7 @@
         {
             "@id": ":os1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "OperatingSystem",
                     "name": "Android",
@@ -22,7 +22,7 @@
         {
             "@id": ":application1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Application",
                     "name": "WhatsApp",
@@ -36,7 +36,7 @@
         {
             "@id": ":account1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ApplicationAccount",
                     "application": ":application1"
@@ -46,7 +46,7 @@
         {
             "@id": ":account2",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ApplicationAccount",
                     "application": ":application1"
@@ -56,7 +56,7 @@
         {
             "@id": ":account3",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ApplicationAccount",
                     "application": ":application2"
@@ -66,7 +66,7 @@
         {
             "@id": ":account4",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ApplicationAccount",
                     "application": ":application2"
@@ -76,7 +76,7 @@
         {
             "@id": ":thread1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "MessageThread",
                     "identifier": "billy~sarah@whatsapp.gs.net",
@@ -109,7 +109,7 @@
         {
             "@id": ":thread2",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "MessageThread",
                     "identifier": "twitter_public",
@@ -134,7 +134,7 @@
         {
             "@id": ":post1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Message",
                     "application": ":application2",
@@ -149,7 +149,7 @@
         {
             "@id": ":message1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Message",
                     "application": ":application1",
@@ -169,7 +169,7 @@
             "target": ":message1",
             "kindOfRelationship": "attachment-of",
             "isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Attachment",
                     "url": "http://maps.google.com/maps/@32.5345,-123.4324,11z"
@@ -183,7 +183,7 @@
             "target": ":message1",
             "kindOfRelationship": "attachment-of",
             "isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Attachment",
                     "url": "http://whatsapp.com/attachments/thumbnails/1.png"
@@ -197,7 +197,7 @@
             "target": ":message1",
             "kindOfRelationship": "attachment-of",
             "isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Attachment",
                     "url": "http://whatsapp.com/attachments/1.png"

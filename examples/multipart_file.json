@@ -18,7 +18,7 @@
             "uco-core:target": ":data_piece0",
             "uco-core:kindOfRelationship": "has-fragment",
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Fragment",
                     "uco-observable:fragmentIndex": 0,
@@ -33,7 +33,7 @@
             "uco-core:target": ":data_piece1",
             "uco-core:kindOfRelationship": "has-fragment",
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Fragment",
                     "uco-observable:fragmentIndex": 1,
@@ -48,7 +48,7 @@
             "uco-core:target": ":data_piece2",
             "uco-core:kindOfRelationship": "has-fragment",
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Fragment",
                     "uco-observable:fragmentIndex": 2,
@@ -59,7 +59,7 @@
         {
             "@id": ":multipart_file",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:byteOrder": "BigEndian",
@@ -87,7 +87,7 @@
         {
             "@id": ":data_piece0",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileSystemType": "EXT4",
@@ -136,7 +136,7 @@
         {
             "@id": ":data_piece1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileSystemType": "EXT4",
@@ -185,7 +185,7 @@
         {
             "@id": ":data_piece2",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileSystemType": "EXT4",
@@ -241,7 +241,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:PathRelation",
                     "uco-observable:path": "/data/data/multipart_file.001"
@@ -258,7 +258,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:PathRelation",
                     "uco-observable:path": "/data/data/multipart_file.002"
@@ -275,7 +275,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:PathRelation",
                     "uco-observable:path": "/data/data/multipart_file.003"

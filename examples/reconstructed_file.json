@@ -19,7 +19,7 @@
             "target": ":data_piece0",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Fragment",
                     "fragmentIndex": 0,
@@ -34,7 +34,7 @@
             "target": ":data_piece1",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Fragment",
                     "fragmentIndex": 1,
@@ -49,7 +49,7 @@
             "target": ":data_piece2",
             "kindOfRelationship": "has-fragment",
             "isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Fragment",
                     "fragmentIndex": 2,
@@ -60,7 +60,7 @@
         {
             "@id": ":reconstructed_file",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -79,7 +79,7 @@
         {
             "@id": ":data_piece0",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -98,7 +98,7 @@
         {
             "@id": ":data_piece1",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -117,7 +117,7 @@
         {
             "@id": ":data_piece2",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
@@ -143,7 +143,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 45156,
@@ -164,7 +164,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 57984,
@@ -178,7 +178,7 @@
         {
             "@id": ":android_image",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileSystemType": "NTFS",
@@ -232,7 +232,7 @@
             "name": "carved",
             "startTime": "2010-01-20T17:59:43.25Z",
             "endTime": "2010-01-21T17:59:43.25Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": ":role4",
@@ -259,7 +259,7 @@
             "name": "reconstructed",
             "startTime": "2010-01-20T17:59:43.25Z",
             "endTime": "2010-01-21T17:59:43.25Z",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "ActionReferences",
                     "performer": ":role4",

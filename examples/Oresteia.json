@@ -132,7 +132,7 @@
                 ":orestes-facebookmsg-uuid",
                 ":attach_relationship1"
             ],
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-investigation:Authorization",
                     "uco-investigation:authorizationIdentifier": "Warrant12345",
@@ -156,7 +156,7 @@
         {
             "@id": ":argos-palace-uuid",
             "@type": "uco-location:Location",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-location:SimpleAddress",
                     "uco-location:locality": "Argos",
@@ -179,7 +179,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "Aeschylus",
@@ -228,7 +228,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-25T12:12:12.12Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "Euripides",
@@ -271,7 +271,7 @@
         {
             "@id": ":cassandra-uuid",
             "@type": "uco-identity:Identity",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "Cassandra",
@@ -315,7 +315,7 @@
         {
             "@id": ":cassandra-device-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Device",
                     "uco-observable:manufacturer": "Samsung",
@@ -342,7 +342,7 @@
         {
             "@id": ":cassandra-mobileaccount-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountType": "PhoneAccount",
@@ -372,7 +372,7 @@
                 "@value": "2017-06-25T15:59:43.00Z"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-core:Confidence",
                     "rdfs:comment": "TODO This no longer matches the type prescription in UCO.",
@@ -398,7 +398,7 @@
                 "@value": "2017-06-22T15:59:43.25Z"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-core:Confidence",
                     "rdfs:comment": "TODO This no longer matches the type prescription in UCO.",
@@ -409,7 +409,7 @@
         {
             "@id": ":thyestes-uuid",
             "@type": "uco-identity:Identity",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "Thyestes",
@@ -457,7 +457,7 @@
         {
             "@id": ":electra-uuid",
             "@type": "uco-identity:Identity",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "Electra",
@@ -485,7 +485,7 @@
         {
             "@id": ":clytemnestra-device-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Device",
                     "uco-observable:manufacturer": "Apple",
@@ -537,7 +537,7 @@
         {
             "@id": ":clytemnestra-mobileaccount-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountType": "PhoneAccount",
@@ -557,7 +557,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-21T22:36:24.35Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:instrument": ":athens-warrant1-uuid",
@@ -590,7 +590,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T08:01:23.14Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:instrument": ":athens-warrant1-uuid",
@@ -636,7 +636,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T08:39:19.24Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:location": ":argos-palace-uuid",
@@ -682,7 +682,7 @@
         {
             "@id": ":cassandra-mobiledevice-forensicduplicate-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:createdTime": {
@@ -741,7 +741,7 @@
         {
             "@type": "case-core:Trace",
             "@id": ":cassandra-mobiledevice-mmssms-uuid",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:createdTime": {
@@ -793,7 +793,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:PathRelation",
                     "uco-observable:path": "/data/data/com.android.providers.telephony/mmssms.db"
@@ -803,7 +803,7 @@
         {
             "@id": ":cassandra-image-partition6-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:DiskPartition",
                     "rdfs:comment": [
@@ -853,7 +853,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 234909233,
@@ -868,7 +868,7 @@
             "uco-tool:toolType": "Extraction",
             "uco-tool:creator": "Joachim Metz",
             "uco-tool:version": "1.5.2_201701013",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-tool:ToolConfigurationType",
                     "uco-tool:configurationSettings": [
@@ -927,7 +927,7 @@
             "uco-core:name": "sqlite/android_sms",
             "uco-tool:toolType": "Parser",
             "uco-tool:creator": "Joachim Metz",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-tool:ToolConfigurationType",
                     "uco-tool:configurationSettings": [
@@ -957,7 +957,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T10:31:19.24Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:location": ":argos-palace-uuid",
@@ -988,7 +988,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-06-22T10:31:19.24Z"
             },
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:location": ":argos-palace-uuid",
@@ -1026,7 +1026,7 @@
         {
             "@id": ":sms-message1-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Message",
                     "rdfs:comment": [
@@ -1051,7 +1051,7 @@
         {
             "@id": ":sms-message2-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Message",
                     "uco-observable:application": ":sms-application1",
@@ -1072,7 +1072,7 @@
         {
             "@id": ":argive-elder1-phoneaccnt-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":olympus-uuid",
@@ -1087,7 +1087,7 @@
         {
             "@id": ":argive-elder2-phoneaccnt-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":olympus-uuid",
@@ -1102,7 +1102,7 @@
         {
             "@id": ":argive-elder3-phoneaccnt-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": ":olympus-uuid",
@@ -1117,7 +1117,7 @@
         {
             "@id": ":electra-emailaccount-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:EmailAccount",
                     "uco-observable:emailAddress": "electra.pleiade@sevensisters.com"
@@ -1127,7 +1127,7 @@
         {
             "@id": ":electra-orestes-email-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:EmailMessage",
                     "uco-observable:to": [
@@ -1163,7 +1163,7 @@
         {
             "@id": ":orestes-facebookmsg-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "draft:FacebookMessage",
                     "uco-observable:from": [
@@ -1193,7 +1193,7 @@
             ],
             "uco-core:kindOfRelationship": "Attachment_Of",
             "uco-core:isDirectional": true,
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "uco-observable:Attachment",
                     "rdfs:comment": "TODO: uco-observable:Attachment seems ill-defined.",

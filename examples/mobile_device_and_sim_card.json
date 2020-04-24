@@ -13,7 +13,7 @@
         {
             "@id": ":mobile-device-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Device",
                     "manufacturer": "iPhone",
@@ -68,7 +68,7 @@
         {
             "@id": ":sim-card-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "SIMCard",
                     "ICCID": "456673345673436xxx",
@@ -84,7 +84,7 @@
         {
             "@id": ":mobile-account1-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Phone",
@@ -99,7 +99,7 @@
         {
             "@id": ":mobile-account2-uuid",
             "@type": "case-core:Trace",
-            "case-core:propertyBundle": [
+            "case-core:hasPropertyBundle": [
                 {
                     "@type": "Account",
                     "accountType": "Phone",

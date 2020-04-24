@@ -331,7 +331,10 @@
                     "uco-observable:keypadUnlockCode": "1234",
                     "uco-observable:IMEI": "359305065690067",
                     "uco-observable:clockSetting": "2017-06-22T07:36:24.35Z",
-                    "uco-observable:storageCapacityInBytes": 11000000000
+                    "uco-observable:storageCapacityInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 11000000000
+                    }
                 },
                 {
                     "@type": "uco-observable:MobileAccount",
@@ -509,7 +512,10 @@
                         "@type": "xsd:dateTime",
                         "@value": "2017-05-09T07:36:24.35Z"
                     },
-                    "uco-observable:storageCapacityInBytes": 11000000000
+                    "uco-observable:storageCapacityInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 11000000000
+                    }
                 },
                 {
                     "@type": "draft:iPhoneDevice",

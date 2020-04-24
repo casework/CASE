@@ -64,7 +64,10 @@
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
-                    "sizeInBytes": 774,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 774
+                    },
                     "dataPayload": "<base 64 encoded data of the file>",
                     "hash": [
                         {
@@ -83,7 +86,10 @@
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
-                    "sizeInBytes": 14,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 14
+                    },
                     "dataPayload": "w7/DmMO/w6AAEEpGSUY=",
                     "hash": [
                         {
@@ -102,7 +108,10 @@
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
-                    "sizeInBytes": 512,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 512
+                    },
                     "dataPayload": "<base 64 encoded data of the file>",
                     "hash": [
                         {
@@ -121,7 +130,10 @@
                 {
                     "@type": "ContentData",
                     "byteOrder": "BigEndian",
-                    "sizeInBytes": 248,
+                    "uco-observable:sizeInBytes": {
+                        "@type": "xsd:long",
+                        "@value": 248
+                    },
                     "dataPayload": "<base 64 encoded data of the file>",
                     "hash": [
                         {

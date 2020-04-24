@@ -89,7 +89,7 @@ pictureheight	uco-observable:pictureHeight
 picturewidth	uco-observable:pictureWidth
 postalCode	uco-location:postalCode
 processorArchitecture	uco-observable:processorArchitecture
-propertyBundle	case-core:propertyBundle
+propertyBundle	case-core:hasPropertyBundle
 protocols	uco-observable:protocols	uco-types:ControlledDictionary
 rangeOffset	uco-observable:rangeOffset
 rangeSize	uco-observable:rangeSize	xsd:long

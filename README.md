@@ -6,10 +6,10 @@ _For learning about the Unified Cyber Ontology, CASE's parent, see [UCO](https:/
 # Examples in this Repository
 _These will eventually be moved to the Wiki (likely [Mapping Guide](https://github.com/casework/CASE/wiki/Mapping-Guide))._
 Mapping notes & respective JSON-LD output:
+- [Accounts](examples/accounts.json)
 - [Bulk Extractor Forensic Path](examples/bulk_extractor_forensic_path.json) (*[info](examples/bulk_extractor_forensic_path.md)*)
 - [Call Log](examples/call_log.json)
 - [Device](examples/device.json)
-- [Email](examples/email.json)
 - [EXIF Data](examples/exif_data.json)
 - [Files](examples/file.json) (*[info](examples/file.md)*)
 - [Forensic Lifecycle](examples/forensic_lifecycle.json)

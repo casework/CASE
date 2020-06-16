@@ -15,34 +15,34 @@
 
 <https://caseontology.org/ontology/case/core>
 	a owl:Ontology ;
-	owl:ontologyIRI <https://caseontology.org/ontology/case/core> ;
 	rdfs:label "case-core"@en ;
-	dct:title "CASE (Core)"@en ;
 	rdfs:comment "The CASE Core ontology defines the fundamental concepts used across CASE to represent digital investigations, their characteristics, and relations to other entities. The preferred namespace abbreviation for this ontology is: case-core."@en ;
+	dct:title "CASE (Core)"@en ;
 	owl:imports <https://unifiedcyberontology.org/ontology/uco/core> ;
+	owl:ontologyIRI <https://caseontology.org/ontology/case/core> ;
 	.
 
 case-core:PropertyBundle
 	a owl:Class ;
 	rdfs:label "PropertyBundle"@en ;
-	skos:prefLabel "Property Bundle"@en ;
-	skos:definition "A grouping of properties characterizing a particular aspect/facet of an object. [UCO Core: Facet]"@en ;
 	owl:equivalentClass uco-core:Facet ;
+	skos:definition "A grouping of properties characterizing a particular aspect/facet of an object. [UCO Core: Facet]"@en ;
+	skos:prefLabel "Property Bundle"@en ;
 	.
 
 case-core:Trace
 	a owl:Class ;
 	rdfs:label "Trace"@en ;
-	skos:prefLabel "Trace"@en ;
-	skos:definition "A distinct entity observed within a digital investigation. [UCO Core: UcoObject]"@en ;
 	owl:equivalentClass uco-core:UcoObject ;
+	skos:definition "A distinct entity observed within a digital investigation. [UCO Core: UcoObject]"@en ;
+	skos:prefLabel "Trace"@en ;
 	.
 
 case-core:hasPropertyBundle
 	a owl:ObjectProperty ;
 	rdfs:label "hasPropertyBundle"@en ;
-	skos:prefLabel "Has Property Bundle"@en ;
-	skos:definition "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized. [UCO Core: facets]"@en ;
 	owl:equivalentProperty uco-core:facets ;
+	skos:definition "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized. [UCO Core: facets]"@en ;
+	skos:prefLabel "Has Property Bundle"@en ;
 	.
 

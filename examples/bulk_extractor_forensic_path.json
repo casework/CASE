@@ -6,6 +6,7 @@
         "draft": "http://example.org/draft#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -14,18 +15,24 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
-                    "byteOrder": "BigEndian",
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 17
                     },
-                    "data": "bmVsc29uQGNyeW53ci5jb20=",
-                    "hash": [
+                    "uco-observable:dataPayload": "bmVsc29uQGNyeW53ci5jb20=",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "8fabebdaf41b54014f6c3507c44ae160547d05d31bd50d6a12234c5bc4bdb45c"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "8fabebdaf41b54014f6c3507c44ae160547d05d31bd50d6a12234c5bc4bdb45c"
+                            }
                         }
                     ]
                 }
@@ -43,9 +50,12 @@
             "uco-core:isDirectional": true,
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 1600,
-                    "rangeSize": 17
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 1600,
+                    "uco-observable:rangeSize": {
+                        "@type": "xsd:long",
+                        "@value": 17
+                    }
                 }
             ]
         },
@@ -54,18 +64,24 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
-                    "byteOrder": "BigEndian",
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:byteOrder": "BigEndian",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 15
                     },
-                    "data": "c3Rya0BrZXliaXQubmV0",
-                    "hash": [
+                    "uco-observable:dataPayload": "c3Rya0BrZXliaXQubmV0",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "9a6c11d66829bf429efe5ef4c066d50272394481cc3f8ae8116a006c81dc6cf9"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "9a6c11d66829bf429efe5ef4c066d50272394481cc3f8ae8116a006c81dc6cf9"
+                            }
                         }
                     ]
                 }
@@ -83,9 +99,12 @@
             "uco-core:isDirectional": true,
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 16095,
-                    "rangeSize": 15
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 16095,
+                    "uco-observable:rangeSize": {
+                        "@type": "xsd:long",
+                        "@value": 15
+                    }
                 }
             ]
         },
@@ -94,19 +113,25 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
-                    "byteOrder": "BigEndian",
-                    "magicNumber": "H4s=",
-                    "mimeType": "application/x-compressed",
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:byteOrder": "BigEndian",
+                    "uco-observable:magicNumber": "H4s=",
+                    "uco-observable:mimeType": "application/x-compressed",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 17605
                     },
-                    "hash": [
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "8c8b39473c4064f6b4db11a67251ffdf65c42ebadc5c3e02a009f95f6cf7c9e8"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "8c8b39473c4064f6b4db11a67251ffdf65c42ebadc5c3e02a009f95f6cf7c9e8"
+                            }
                         }
                     ]
                 }
@@ -114,15 +139,15 @@
         },
         {
             "@id": ":relationship3",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":decompressed_gzip0",
             "uco-core:target": ":compressed_gzip0",
             "uco-core:kindOfRelationship": "decompressed-from",
             "uco-core:isDirectional": true,
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "Compression",
-                    "compressionMethod": "GZIP"
+                    "@type": "uco-observable:CompressedStream",
+                    "uco-observable:compressionMethod": "GZIP"
                 }
             ]
         },
@@ -131,17 +156,23 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
+                    "@type": "uco-observable:ContentData",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 4598
                     },
-                    "data": "<base 64 encoded data of the file>",
-                    "hash": [
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+                            }
                         }
                     ]
                 }
@@ -159,9 +190,12 @@
             "uco-core:isDirectional": true,
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 64000,
-                    "rangeSize": 45988
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 64000,
+                    "uco-observable:rangeSize": {
+                        "@type": "xsd:long",
+                        "@value": 45988
+                    }
                 }
             ]
         },
@@ -170,17 +204,23 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
+                    "@type": "uco-observable:ContentData",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 54564465
                     },
-                    "data": "<base 64 encoded data of the file>",
-                    "hash": [
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
+                            }
                         }
                     ]
                 }
@@ -188,15 +228,15 @@
         },
         {
             "@id": ":relationship5",
-            "@type": "Relationship",
+            "@type": "uco-observable:CyberRelationship",
             "uco-core:source": ":decompressed_gzip1",
             "uco-core:target": ":compressed_gzip1",
             "uco-core:kindOfRelationship": "decompressed-from",
             "uco-core:isDirectional": true,
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "Compression",
-                    "compressionMethod": "GZIP"
+                    "@type": "uco-observable:CompressedStream",
+                    "uco-observable:compressionMethod": "GZIP"
                 }
             ]
         },
@@ -205,17 +245,23 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
+                    "@type": "uco-observable:ContentData",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 23564465
                     },
-                    "data": "<base 64 encoded data of the file>",
-                    "hash": [
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+                            }
                         }
                     ]
                 }
@@ -233,9 +279,12 @@
             "uco-core:isDirectional": true,
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "DataRange",
-                    "rangeOffset": 946315592,
-                    "rangeSize": 23564465
+                    "@type": "uco-observable:DataRange",
+                    "uco-observable:rangeOffset": 946315592,
+                    "uco-observable:rangeSize": {
+                        "@type": "xsd:long",
+                        "@value": 23564465
+                    }
                 }
             ]
         },
@@ -244,17 +293,23 @@
             "@type": "case-core:Trace",
             "case-core:hasPropertyBundle": [
                 {
-                    "@type": "ContentData",
+                    "@type": "uco-observable:ContentData",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 2000000000
                     },
-                    "data": "<base 64 encoded data of the file>",
-                    "hash": [
+                    "uco-observable:dataPayload": "<base 64 encoded data of the file>",
+                    "uco-observable:hash": [
                         {
-                            "@type": "Hash",
-                            "hashMethod": "SHA256",
-                            "hashValue": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-core:HashNameEnum",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+                            }
                         }
                     ]
                 }

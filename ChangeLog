@@ -1,4 +1,12 @@
 2020-06-16
 	* Established ontology normalization procedure
+
 2020-04-01
 	* Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
+
+2019-08-06
+	* Separated CASE ontology files by namespace
+
+2019-07-13
+	* Removed prototype contents of case.ttl file
+	* Changed namespace to caseontology.org

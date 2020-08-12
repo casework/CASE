@@ -88,12 +88,12 @@ investigation:Investigation
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#endTime> ;
+			owl:onProperty investigation:investigationStatus ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty investigation:investigationStatus ;
+			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#endTime> ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
@@ -204,3 +204,4 @@ investigation:relevantAuthorization
 	rdfs:comment "Specifies an authorization relevant to a particular investigation."@en ;
 	rdfs:range investigation:Authorization ;
 	.
+

@@ -1,12 +1,18 @@
+2020-08-12
+	* ONT-288: ChangeLog format selected (new feature)
+
+2020-07-29
+	* ONT-144: Moved examples directory to own repository, CASE-Examples
+
 2020-06-16
-	* Established ontology normalization procedure
+	* ONT-5: Established ontology normalization procedure
 
 2020-04-01
-	* Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
+	* ONT-201: Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
 
 2019-08-06
-	* Separated CASE ontology files by namespace
+	* ONT-51: Separated CASE ontology files by namespace
 
 2019-07-13
-	* Removed prototype contents of case.ttl file
-	* Changed namespace to caseontology.org
+	* ONT-51: Removed prototype contents of case.ttl file
+	* ONT-53: Changed namespace to caseontology.org

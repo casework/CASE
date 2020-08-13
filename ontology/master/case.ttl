@@ -1,5 +1,7 @@
 # baseURI: https://caseontology.org/ontology/case/case
 # imports: https://caseontology.org/ontology/case/core
+# imports: https://caseontology.org/ontology/case/investigation
+# imports: https://caseontology.org/ontology/case/vocabulary
 # imports: https://unifiedcyberontology.org/ontology/uco/uco
 
 @base <https://caseontology.org/ontology/case/case> .
@@ -19,6 +21,8 @@
 	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:imports
 		<https://caseontology.org/ontology/case/core> ,
+		<https://caseontology.org/ontology/case/investigation> ,
+		<https://caseontology.org/ontology/case/vocabulary> ,
 		<https://unifiedcyberontology.org/ontology/uco/uco>
 		;
 	owl:incompatibleWith <http://case.example.org/core> ;

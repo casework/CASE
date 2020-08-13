@@ -1,3 +1,6 @@
+2020-08-13
+	* ONT-231: Resolved naming inconsistency and associated equivalent class complexity (breaking change)
+
 2020-08-12
 	* ONT-281: Moved investigation.ttl and related vocabulary into CASE from UCO (new feature)
 	* ONT-288: ChangeLog format selected (new feature)

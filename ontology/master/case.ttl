@@ -1,5 +1,4 @@
 # baseURI: https://caseontology.org/ontology/case/case
-# imports: https://caseontology.org/ontology/case/core
 # imports: https://caseontology.org/ontology/case/investigation
 # imports: https://caseontology.org/ontology/case/vocabulary
 # imports: https://unifiedcyberontology.org/ontology/uco/uco
@@ -20,7 +19,6 @@
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
 	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:imports
-		<https://caseontology.org/ontology/case/core> ,
 		<https://caseontology.org/ontology/case/investigation> ,
 		<https://caseontology.org/ontology/case/vocabulary> ,
 		<https://unifiedcyberontology.org/ontology/uco/uco>

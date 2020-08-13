@@ -1,0 +1,26 @@
+# baseURI: https://caseontology.org/ontology/case/vocabulary
+
+@base <https://caseontology.org/ontology/case/vocabulary> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocab: <https://caseontology.org/ontology/case/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://caseontology.org/ontology/case/vocabulary>
+	a owl:Ontology ;
+	rdfs:label "vocabularies"@en ;
+	.
+
+vocab:InvestigationFormVocab
+	a rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource ;
+	rdfs:label "Investigation Form Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
+	owl:oneOf (
+		"case"^^vocab:InvestigationFormVocab
+		"incident"^^vocab:InvestigationFormVocab
+		"suspicious-activity"^^vocab:InvestigationFormVocab
+	) ;
+	.
+

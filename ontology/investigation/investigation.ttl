@@ -14,8 +14,8 @@
 
 <https://caseontology.org/ontology/case/investigation>
 	a owl:Ontology ;
-	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	rdfs:label "investigation"@en ;
+	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
 		<https://caseontology.org/ontology/case/vocabulary> ,
 		<https://unifiedcyberontology.org/ontology/uco/action> ,

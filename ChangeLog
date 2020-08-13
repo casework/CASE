@@ -1,0 +1,23 @@
+2020-08-13
+	* ONT-231: Resolved naming inconsistency and associated equivalent class complexity (breaking change)
+
+2020-08-12
+	* ONT-318: Updated ontology README to reflect website and Jira (bugfix)
+	* ONT-281: Moved investigation.ttl and related vocabulary into CASE from UCO (new feature)
+	* ONT-288: ChangeLog format selected (new feature)
+
+2020-07-29
+	* ONT-144: Moved examples directory to own repository, CASE-Examples (new feature, breaking change)
+
+2020-06-16
+	* ONT-5: Established ontology normalization procedure (new feature)
+
+2020-04-01
+	* ONT-201: Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
+
+2019-08-06
+	* ONT-51: Separated CASE ontology files by namespace (breaking change)
+
+2019-07-13
+	* ONT-51: Removed prototype contents of case.ttl file (breaking change)
+	* ONT-53: Changed namespace to caseontology.org (new feature, breaking change)

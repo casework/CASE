@@ -2,6 +2,7 @@
 	* ONT-231: Resolved naming inconsistency and associated equivalent class complexity (breaking change)
 
 2020-08-12
+	* ONT-318: Updated ontology README to reflect website and Jira (bugfix)
 	* ONT-281: Moved investigation.ttl and related vocabulary into CASE from UCO (new feature)
 	* ONT-288: ChangeLog format selected (new feature)
 

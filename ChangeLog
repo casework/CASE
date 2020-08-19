@@ -1,3 +1,6 @@
+2020-08-19
+	* ONT-293: Release CASE 0.2.0, with release notes at https://caseontology.org/releases/0.2.0/
+
 2020-08-13
 	* (19b698a) ONT-314: Removed documentation generated for CASE 0.1.0 (breaking change)
 	* (1d9b468) ONT-140: Linked Style Guidance as development practice (new feature)

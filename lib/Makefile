@@ -31,5 +31,5 @@ rdf-toolkit.jar:
 	test \
 	  "x$$(openssl dgst -sha512 $@_ | awk '{print($$NF)}')" \
 	  == \
-	  "x$$(head -n1 $<)"
+	  "x$$(head -n1 rdf-toolkit.jar.sha512)"
 	mv $@_ $@

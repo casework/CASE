@@ -1,0 +1,28 @@
+2020-08-19
+	* ONT-293: Release CASE 0.2.0, with release notes at https://caseontology.org/releases/0.2.0/
+
+2020-08-13
+	* (19b698a) ONT-314: Removed documentation generated for CASE 0.1.0 (breaking change)
+	* (1d9b468) ONT-140: Linked Style Guidance as development practice (new feature)
+	* (965f5e4) ONT-231: Resolved naming inconsistency and associated equivalent class complexity (breaking change)
+
+2020-08-12
+	* (12a081a) ONT-318: Updated ontology README to reflect website and Jira (bugfix)
+	* (cd8b27f) ONT-281: Moved investigation.ttl and related vocabulary into CASE from UCO (new feature)
+	* (fe7f069) ONT-288: ChangeLog format selected (new feature)
+
+2020-07-29
+	* (07e6c12) ONT-144: Moved examples directory to own repository, CASE-Examples (new feature, breaking change)
+
+2020-06-16
+	* (2fed9a5) ONT-5: Established ontology normalization procedure (new feature)
+
+2020-04-01
+	* (5c2a19b) ONT-201: Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
+
+2019-08-06
+	* (ca5ca15) ONT-51: Separated CASE ontology files by namespace (breaking change)
+
+2019-07-13
+	* (93b40ac) ONT-51: Removed prototype contents of case.ttl file (breaking change)
+	* (93b40ac) ONT-53: Changed namespace to caseontology.org (new feature, breaking change)

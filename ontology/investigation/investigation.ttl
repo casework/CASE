@@ -1,12 +1,12 @@
 # baseURI: https://caseontology.org/ontology/case/investigation
-# imports: https://caseontology.org/ontology/case/vocabulary
-# imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/role
+# imports: https://archive.caseontology.org/ontology/case/vocabulary/0.3.0
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/action/0.6.0
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/location/0.6.0
+# imports: https://archive.unifiedcyberontology.org/ontology/uco/role/0.6.0
 
 @base <https://caseontology.org/ontology/case/investigation> .
-@prefix investigation: <https://caseontology.org/ontology/case/investigation#> .
+@prefix investigation: <https://archive.caseontology.org/ontology/case/investigation/0.3.0#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -17,17 +17,20 @@
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
-		<https://caseontology.org/ontology/case/vocabulary> ,
-		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/role>
+		<https://archive.caseontology.org/ontology/case/vocabulary/0.3.0> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/action/0.6.0> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/location/0.6.0> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/role/0.6.0>
 		;
+	owl:ontologyIRI <https://caseontology.org/ontology/case/investigation> ;
+	owl:versionIRI <https://archive.caseontology.org/ontology/case/investigation/0.3.0> ;
+	owl:versionInfo "0.3.0" ;
 	.
 
 investigation:Attorney
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/role/0.6.0#BenevolentRole> ;
 	rdfs:label "Attorney"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -35,7 +38,7 @@ investigation:Attorney
 investigation:Authorization
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#UcoObject> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#UcoObject> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty investigation:authorizationType ;
@@ -43,13 +46,13 @@ investigation:Authorization
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#endTime> ;
+			owl:onProperty <https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#endTime> ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:dateTime ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#startTime> ;
+			owl:onProperty <https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#startTime> ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:dateTime ;
 		] ,
@@ -66,14 +69,14 @@ investigation:Authorization
 
 investigation:Examiner
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/role/0.6.0#BenevolentRole> ;
 	rdfs:label "Examiner"@en ;
 	rdfs:comment ""@en ;
 	.
 
 investigation:ExaminerActionLifecylce
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/action/0.6.0#ActionLifecycle> ;
 	rdfs:label "ExaminerActionLifecylce"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -81,7 +84,7 @@ investigation:ExaminerActionLifecylce
 investigation:Investigation
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#ContextualCompilation> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#ContextualCompilation> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty investigation:investigationForm ;
@@ -94,12 +97,12 @@ investigation:Investigation
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#endTime> ;
+			owl:onProperty <https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#endTime> ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		] ,
 		[
 			a owl:Restriction ;
-			owl:onProperty <https://unifiedcyberontology.org/ontology/uco/core#startTime> ;
+			owl:onProperty <https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#startTime> ;
 			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 		]
 		;
@@ -109,14 +112,14 @@ investigation:Investigation
 
 investigation:InvestigativeAction
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/action/0.6.0#Action> ;
 	rdfs:label "InvestigativeAction"@en ;
 	rdfs:comment "An examination action taken as part of a cyber investigation."@en ;
 	.
 
 investigation:Investigator
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/role/0.6.0#BenevolentRole> ;
 	rdfs:label "Investigator"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -124,7 +127,7 @@ investigation:Investigator
 investigation:ProvenanceRecord
 	a owl:Class ;
 	rdfs:subClassOf
-		<https://unifiedcyberontology.org/ontology/uco/core#ContextualCompilation> ,
+		<https://archive.unifiedcyberontology.org/ontology/uco/core/0.6.0#ContextualCompilation> ,
 		[
 			a owl:Restriction ;
 			owl:onProperty investigation:exhibitNumber ;
@@ -138,21 +141,21 @@ investigation:ProvenanceRecord
 
 investigation:Subject
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#MaliciousRole> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/role/0.6.0#MaliciousRole> ;
 	rdfs:label "Subject"@en ;
 	rdfs:comment ""@en ;
 	.
 
 investigation:SubjectActionLifecycle
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/action/0.6.0#ActionLifecycle> ;
 	rdfs:label "SubjectActionLifecycle"@en ;
 	rdfs:comment ""@en ;
 	.
 
 investigation:VictimActionLifecycle
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
+	rdfs:subClassOf <https://archive.unifiedcyberontology.org/ontology/uco/action/0.6.0#ActionLifecycle> ;
 	rdfs:label "VictimActionLifecycle"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -189,7 +192,7 @@ investigation:investigationForm
 	a owl:DatatypeProperty ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
-	rdfs:range <https://caseontology.org/ontology/case/vocabulary#InvestigationFormVocab> ;
+	rdfs:range <https://archive.caseontology.org/ontology/case/vocabulary/0.3.0#InvestigationFormVocab> ;
 	.
 
 investigation:investigationStatus

@@ -12,7 +12,7 @@
 # This workflow uses Make to confirm ontology files have been
 # normalized according to the procedures in NORMALIZE.md.
 
-name: Web resources CI
+name: Continuous Integration
 
 on:
   push:

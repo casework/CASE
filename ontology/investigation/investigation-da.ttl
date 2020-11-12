@@ -11,7 +11,7 @@
 <https://caseontology.org/ontology/case/investigation-da>
 	a owl:Ontology ;
 	rdfs:label "investigation domain assertions"@en ;
-	owl:imports <https://caseontology.org/ontology/case/investigation/0.3.0> ;
+	owl:imports <https://archive.caseontology.org/ontology/case/investigation/0.3.0> ;
 	owl:ontologyIRI <https://caseontology.org/ontology/case/investigation-da> ;
 	owl:versionIRI <https://archive.caseontology.org/ontology/case/investigation-da/0.3.0> ;
 	owl:versionInfo "0.3.0" ;

@@ -16,18 +16,20 @@ SHELL := /bin/bash
 all: \
   rdf-toolkit.jar
 
-# Downloading rdf-toolkit is done here following the directions at:
+# Downloading rdf-toolkit was previously done following the directions
+# at:
 #   https://github.com/edmcouncil/rdf-toolkit
-# Checksum is confirmed before moving file into position.  (This
-# practice will probably require frequent updates, unless signed
-# checksum can be retrieved somehow.)
-# Checksum is not a dependency of the file to avoid timestamp-based
-# re-downloads.
+# However, on the file becoming temporarily unavailable, CASE has placed
+# a verified copy at a custom location.
+# The checksum of the original file from EDM Council is confirmed before
+# moving file into position.  (This practice will probably require
+# frequent updates, unless a signed checksum for the jar can be
+# retrieved somehow.)
 rdf-toolkit.jar:
 	test -r rdf-toolkit.jar.sha512
 	wget \
 	  --output-document $@_ \
-	  https://jenkins.edmcouncil.org/job/rdf-toolkit-build/lastSuccessfulBuild/artifact/target/scala-2.12/rdf-toolkit.jar
+	  http://files.caseontology.org/rdf-toolkit.jar
 	test \
 	  "x$$(openssl dgst -sha512 $@_ | awk '{print($$NF)}')" \
 	  == \

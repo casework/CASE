@@ -1,3 +1,6 @@
+2021-03-16
+	* ONT-251: Established unit tests and Continuous Integration for ontology repository (new feature)
+
 2020-08-13
 	* ONT-314: Removed documentation generated for CASE 0.1.0 (breaking change)
 	* ONT-140: Linked Style Guidance as development practice (new feature)

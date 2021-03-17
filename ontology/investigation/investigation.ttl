@@ -111,7 +111,7 @@ investigation:InvestigativeAction
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
 	rdfs:label "InvestigativeAction"@en ;
-	rdfs:comment "An investigative action is something that may be done or performed within the context of a cyber investigation, typically to examine or analyze evidence or other data."@en ;
+	rdfs:comment "An investigative action is something that may be done or performed within the context of an investigation, typically to examine or analyze evidence or other data."@en ;
 	.
 
 investigation:Investigator

@@ -68,7 +68,7 @@ investigation:Examiner
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Examiner"@en ;
-	rdfs:comment "Examiner is a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
+	rdfs:comment "Examiner is a role involved in providing scientific evaluations of evidence that are used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:ExaminerActionLifecylce

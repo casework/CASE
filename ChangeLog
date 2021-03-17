@@ -1,5 +1,6 @@
 2021-03-16
 	* ONT-363: Removed intermediate role classes
+	* ONT-251: Established unit tests and Continuous Integration for ontology repository (new feature)
 
 2020-08-19
 	* ONT-293: Release CASE 0.2.0, with release notes at https://caseontology.org/releases/0.2.0/

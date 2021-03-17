@@ -2,6 +2,11 @@
 	* ONT-413: Defined and used prefixes for imported concepts
 	* CP-25: https://drive.google.com/file/d/1HUeY8AHxsnukP0sFOvsPQZRuyNbqcf6n/view
 
+2021-03-16
+	* ONT-363: Removed intermediate role classes
+	* CP-15: https://drive.google.com/file/d/1PLcPA3TSDqt7wX84SYlezC1thK_Sznrc/view
+	* ONT-251: Established unit tests and Continuous Integration for ontology repository (new feature)
+
 2020-08-19
 	* ONT-293: Release CASE 0.2.0, with release notes at https://caseontology.org/releases/0.2.0/
 

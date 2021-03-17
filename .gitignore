@@ -1,6 +1,9 @@
 *.pyc
 *.pyo
 
+# Unit testing files
+.lib.done.log
+.*.ttl
 
 # Pycharm files
 .idea

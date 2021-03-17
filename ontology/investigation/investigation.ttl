@@ -27,7 +27,7 @@
 
 investigation:Attorney
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Attorney"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -66,7 +66,7 @@ investigation:Authorization
 
 investigation:Examiner
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Examiner"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -116,7 +116,7 @@ investigation:InvestigativeAction
 
 investigation:Investigator
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#BenevolentRole> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Investigator"@en ;
 	rdfs:comment ""@en ;
 	.
@@ -138,7 +138,7 @@ investigation:ProvenanceRecord
 
 investigation:Subject
 	a owl:Class ;
-	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#MaliciousRole> ;
+	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Subject"@en ;
 	rdfs:comment ""@en ;
 	.

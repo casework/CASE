@@ -29,7 +29,7 @@ investigation:Attorney
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Attorney"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "Attorney is a role involved in preparing, interpreting, and applying law."@en ;
 	.
 
 investigation:Authorization
@@ -61,21 +61,21 @@ investigation:Authorization
 		]
 		;
 	rdfs:label "Authorization"@en ;
-	rdfs:comment "Identifies some form of authorization for investigatory action."@en ;
+	rdfs:comment "An authorization is a grouping of characteristics unique to some form of authoritative permission identified for investigative action."@en ;
 	.
 
 investigation:Examiner
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Examiner"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "Examiner is a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:ExaminerActionLifecylce
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
 	rdfs:label "ExaminerActionLifecylce"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "An examiner action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:Investigation
@@ -104,21 +104,21 @@ investigation:Investigation
 		]
 		;
 	rdfs:label "Investigation"@en ;
-	rdfs:comment "An exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
+	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	.
 
 investigation:InvestigativeAction
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#Action> ;
 	rdfs:label "InvestigativeAction"@en ;
-	rdfs:comment "An examination action taken as part of a cyber investigation."@en ;
+	rdfs:comment "An investigative action is something that may be done or performed within the context of a cyber investigation, typically to examine or analyze evidence or other data."@en ;
 	.
 
 investigation:Investigator
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Investigator"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "Investigator is a role involved in coordinating an investigation."@en ;
 	.
 
 investigation:ProvenanceRecord
@@ -133,28 +133,28 @@ investigation:ProvenanceRecord
 		]
 		;
 	rdfs:label "ProvenanceRecord"@en ;
-	rdfs:comment "A provenantial connection between a forensic action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
+	rdfs:comment "A provenance record is a grouping of characteristics unique to the provenantial (chronology of the ownership, custody or location) connection between an investigative action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
 	.
 
 investigation:Subject
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/role#Role> ;
 	rdfs:label "Subject"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "Subject is a role whose conduct is within the scope of an investigation."@en ;
 	.
 
 investigation:SubjectActionLifecycle
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
 	rdfs:label "SubjectActionLifecycle"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A subject action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
 	.
 
 investigation:VictimActionLifecycle
 	a owl:Class ;
 	rdfs:subClassOf <https://unifiedcyberontology.org/ontology/uco/action#ActionLifecycle> ;
 	rdfs:label "VictimActionLifecycle"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "A victim action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed a result of a crime, accident, or other event or action."@en ;
 	.
 
 investigation:authorizationIdentifier

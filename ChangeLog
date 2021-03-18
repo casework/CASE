@@ -2,17 +2,17 @@
 	* ONT-362: Release CASE 0.3.0, with release notes at https://caseontology.org/releases/0.3.0/
 
 2021-03-18
-	* ONT-413: Defined and used prefixes for imported concepts
+	* (22b313d) ONT-413, CP-25: Defined and used prefixes for imported concepts (new feature)
 	* CP-25: https://drive.google.com/file/d/1HUeY8AHxsnukP0sFOvsPQZRuyNbqcf6n/view
 
 2021-03-17
-	* ONT-379: Updated and improve Investigation namespace class definition comments for clarity and consistency
+	* (f754fd4) ONT-379, CP-18: Updated and improve Investigation namespace class definition comments for clarity and consistency (new feature)
 	* CP-18: https://drive.google.com/file/d/1AmVX6x2ZORr2-h2OIXug2PiptYaHcvuh/view
 
 2021-03-16
-	* ONT-363: Removed intermediate role classes
+	* (a8209d7) ONT-363, CP-15: Removed intermediate role classes (breaking change)
 	* CP-15: https://drive.google.com/file/d/1PLcPA3TSDqt7wX84SYlezC1thK_Sznrc/view
-	* ONT-251: Established unit tests and Continuous Integration for ontology repository (new feature)
+	* (b515a81) ONT-251, CP-16: Established unit tests and Continuous Integration for ontology repository (new feature)
 	* CP-16: https://drive.google.com/file/d/1622v5k7fXo2fjDs_EzfhbTyvWIjDBZv-/view
 
 2020-08-19

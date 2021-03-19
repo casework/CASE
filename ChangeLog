@@ -19,27 +19,38 @@
 	* ONT-293: Release CASE 0.2.0, with release notes at https://caseontology.org/releases/0.2.0/
 
 2020-08-13
-	* (19b698a) ONT-314: Removed documentation generated for CASE 0.1.0 (breaking change)
-	* (1d9b468) ONT-140: Linked Style Guidance as development practice (new feature)
-	* (965f5e4) ONT-231: Resolved naming inconsistency and associated equivalent class complexity (breaking change)
+	* (19b698a) ONT-314, CP-12: Removed documentation generated for CASE 0.1.0 (breaking change)
+	* CP-12: https://drive.google.com/file/d/1LE2P12w66TjIFVah567gyKbYWYkZziP5/view
+	* (1d9b468) ONT-140, CP-6: Linked Style Guidance as development practice (new feature)
+	* CP-6: https://drive.google.com/file/d/1jlCFCuL4BDojJOsIzR8asJjf-lAp8uLd/view
+	* (965f5e4) ONT-231, CP-10: Resolved naming inconsistency and associated equivalent class complexity (breaking change)
+	* CP-10: https://drive.google.com/file/d/1lut9Km0rYp2Iaftz7m0f4u50R4YD60F6/view
 
 2020-08-12
-	* (12a081a) ONT-318: Updated ontology README to reflect website and Jira (bugfix)
-	* (cd8b27f) ONT-281: Moved investigation.ttl and related vocabulary into CASE from UCO (new feature)
-	* (fe7f069) ONT-288: ChangeLog format selected (new feature)
+	* (12a081a) ONT-318, CP-13: Updated ontology README to reflect website and Jira (bugfix)
+	* CP-13: https://drive.google.com/file/d/1fJoDjMjfbaXw0BWKKZ_9mK-gZzoJpgFS/view
+	* (cd8b27f) ONT-281, CP-9: Moved investigation.ttl and related vocabulary into CASE from UCO (new feature)
+	* CP-9: https://drive.google.com/file/d/1TNL7NtkSy4Veo1eObJGCmMGvmmxqeCJB/view
+	* (fe7f069) ONT-288, CP-11: ChangeLog format selected (new feature)
+	* CP-11: https://drive.google.com/file/d/1zWjQ_uhhVxEjkqS2mrcabT4tNh8s0JQx/view
 
 2020-07-29
-	* (07e6c12) ONT-144: Moved examples directory to own repository, CASE-Examples (new feature, breaking change)
+	* (07e6c12) ONT-144, CP-7: Moved examples directory to own repository, CASE-Examples (new feature, breaking change)
+	* CP-7: https://drive.google.com/file/d/1DiLxBTQYt0FQSdjn3mX6RabhqK9QbiDo/view
 
 2020-06-16
-	* (2fed9a5) ONT-5: Established ontology normalization procedure (new feature)
+	* (2fed9a5) ONT-5, CP-3: Established ontology normalization procedure (new feature)
+	* CP-3: https://caseontology.org/resources/references/CASE%20Change%20Proposal%203.zip
 
 2020-04-01
-	* (5c2a19b) ONT-201: Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
+	* (5c2a19b) ONT-201, CP-8: Renamed "propertyBundle" to "hasPropertyBundle", per CASE Style Guide
+	* CP-8: https://caseontology.org/resources/references/CASE%20Change%20Proposal%208.zip
 
 2019-08-06
-	* (ca5ca15) ONT-51: Separated CASE ontology files by namespace (breaking change)
+	* (ca5ca15) ONT-51, CP-4: Separated CASE ontology files by namespace (breaking change)
 
 2019-07-13
-	* (93b40ac) ONT-51: Removed prototype contents of case.ttl file (breaking change)
-	* (93b40ac) ONT-53: Changed namespace to caseontology.org (new feature, breaking change)
+	* (93b40ac) ONT-51, CP-4: Removed prototype contents of case.ttl file (breaking change)
+	* CP-4: https://drive.google.com/file/d/1CE9sfrc-czegRX15Q5xeqaffAfAH06ov/view
+	* (93b40ac) ONT-53, CP-2: Changed namespace to caseontology.org (new feature, breaking change)
+	* CP-2: https://drive.google.com/file/d/1_J3994JiPA5PMIHfno9x-NeXKaHFVCrJ/view

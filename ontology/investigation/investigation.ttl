@@ -185,7 +185,7 @@ investigation:authorizationType
 investigation:exhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "exhibitNumber"@en ;
-	rdfs:comment ""@en ;
+	rdfs:comment "Specifies a unique identifier assigned to a given object at any stage of an investigation to differentiate it from all other objects."@en ;
 	rdfs:range xsd:string ;
 	.
 

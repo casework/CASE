@@ -141,6 +141,12 @@ investigation:ProvenanceRecord
 			owl:onProperty investigation:exhibitNumber ;
 			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 			owl:onDataRange xsd:string ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty investigation:rootExhibitNumber ;
+			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+			owl:onDataRange xsd:string ;
 		]
 		;
 	rdfs:label "ProvenanceRecord"@en ;
@@ -215,6 +221,13 @@ investigation:relevantAuthorization
 	rdfs:label "relevantAuthorization"@en ;
 	rdfs:comment "Specifies an authorization relevant to a particular investigation."@en ;
 	rdfs:range investigation:Authorization ;
+	.
+
+investigation:rootExhibitNumber
+	a owl:DatatypeProperty ;
+	rdfs:label "rootExhibitNumber"@en ;
+	rdfs:comment "Specifies a unique identifier assigned to a given object at the start of its treatment as part of an investigation. The first node in a provenance chain, which can be viewed as a heirarchical tree originating from a single root."@en ;
+	rdfs:range xsd:string ;
 	.
 
 investigation:wasDerivedFrom

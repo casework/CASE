@@ -3,7 +3,8 @@
 	* CP-22: https://drive.google.com/file/d/1_nWd8IV8pBgXBACE_kFQd-eg3jTH8-Qp/view
 
 2021-05-19
-	* ONT-436, CP-35: Defined exhibitNumber in ProvenanceRecord
+	* (c1d5e2e) ONT-436, CP-35: Defined exhibitNumber in ProvenanceRecord
+	* CP-35: https://drive.google.com/file/d/1LbLZnDXZlq-8n92iz55n0fQD46c-pa4w/view
 
 2021-04-28
 	* (bf4c72b) ONT-390, CP-21: Add direct node-linking predicates for transitive provenance querying

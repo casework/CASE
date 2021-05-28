@@ -1,5 +1,6 @@
 2021-05-24
-	* ONT-403, CP-22: Added rootExhibitNumber property to ProvenanceRecord
+	* (d3531dd) ONT-403, CP-22: Added rootExhibitNumber property to ProvenanceRecord
+	* CP-22: https://drive.google.com/file/d/1_nWd8IV8pBgXBACE_kFQd-eg3jTH8-Qp/view
 
 2021-05-19
 	* ONT-436, CP-35: Defined exhibitNumber in ProvenanceRecord

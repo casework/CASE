@@ -1,3 +1,15 @@
+2021-05-24
+	* (d3531dd) ONT-403, CP-22: Added rootExhibitNumber property to ProvenanceRecord
+	* CP-22: https://drive.google.com/file/d/1_nWd8IV8pBgXBACE_kFQd-eg3jTH8-Qp/view
+
+2021-05-19
+	* (c1d5e2e) ONT-436, CP-35: Defined exhibitNumber in ProvenanceRecord
+	* CP-35: https://drive.google.com/file/d/1LbLZnDXZlq-8n92iz55n0fQD46c-pa4w/view
+
+2021-04-28
+	* (bf4c72b) ONT-390, CP-21: Add direct node-linking predicates for transitive provenance querying
+	* CP-21: https://drive.google.com/file/d/1EJnOYgJfDoDZteFsNxxCbxgQqiqVDL_L/view
+
 2021-04-22
 	* ONT-418, CP-27: Revise merge review procedures and ChangeLog format to allow asynchronous change proposal posting
 	* CP-27: https://drive.google.com/file/d/1mxfChpnW_QGTe7EzU0U2oYmgv-0mGLyf/view

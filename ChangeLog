@@ -10,6 +10,10 @@
 	* (bf4c72b) ONT-390, CP-21: Add direct node-linking predicates for transitive provenance querying
 	* CP-21: https://drive.google.com/file/d/1EJnOYgJfDoDZteFsNxxCbxgQqiqVDL_L/view
 
+2021-04-22
+	* ONT-418, CP-27: Revise merge review procedures and ChangeLog format to allow asynchronous change proposal posting
+	* CP-27: https://drive.google.com/file/d/17AUfa4EWe9-Tbv5wT46fM0q5LIWMzuYT/view
+
 2021-03-18
 	* ONT-362: Release CASE 0.3.0, with release notes at https://caseontology.org/releases/0.3.0/
 

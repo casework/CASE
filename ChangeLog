@@ -6,7 +6,8 @@
 	* ONT-436, CP-35: Defined exhibitNumber in ProvenanceRecord
 
 2021-04-28
-	* ONT-390, CP-21: Add direct node-linking predicates for transitive provenance querying
+	* (bf4c72b) ONT-390, CP-21: Add direct node-linking predicates for transitive provenance querying
+	* CP-21: https://drive.google.com/file/d/1EJnOYgJfDoDZteFsNxxCbxgQqiqVDL_L/view
 
 2021-03-18
 	* ONT-362: Release CASE 0.3.0, with release notes at https://caseontology.org/releases/0.3.0/

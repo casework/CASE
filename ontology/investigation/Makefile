@@ -19,7 +19,6 @@ all:
   $(top_srcdir)/.lib.done.log \
   investigation.ttl
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source investigation.ttl \
 	  --source-format turtle \
@@ -31,7 +30,6 @@ all:
   $(top_srcdir)/.lib.done.log \
   investigation-da.ttl
 	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source investigation-da.ttl \
 	  --source-format turtle \

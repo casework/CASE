@@ -1,6 +1,3 @@
-# baseURI: https://caseontology.org/ontology/case/investigation-da
-
-@base <https://caseontology.org/ontology/case/investigation-da> .
 @prefix investigation: <https://caseontology.org/ontology/case/investigation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

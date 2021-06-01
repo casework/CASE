@@ -1,4 +1,5 @@
 2021-06-01
+	* ONT-435, CP-34: Revise CASE IRI structure to support granular resource service (applied for CASE 0.2.1)
 	* ONT-445, CP-38: Removed "base IRI" features from ontology and normalization procedure
 
 2021-03-18

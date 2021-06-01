@@ -39,7 +39,7 @@ def test_concept_iri(investigation_ttl_filepath):
     """
     This test confirms the IRI for InvestigativeAction matches an expected hard-coded value when retrieved from the investigation ontology file.
     """
-    expected = "https://caseontology.org/ontology/case/investigation#InvestigativeAction"
+    expected = "https://ontology.caseontology.org/case/investigation/InvestigativeAction"
 
     graph = rdflib.Graph()
     graph.parse(investigation_ttl_filepath, format="turtle")
@@ -54,7 +54,7 @@ def test_concept_iri(investigation_ttl_filepath):
     assert not n_ontology is None, "Ontology unversioned IRI not found in investigation.ttl file."
     ontology_str = n_ontology.toPython()
 
-    NS_CASE_INVESTIGATION = rdflib.Namespace(ontology_str + "#")
+    NS_CASE_INVESTIGATION = rdflib.Namespace(ontology_str + "/")
 
     n_investigative_action = NS_CASE_INVESTIGATION.InvestigativeAction
     computed = n_investigative_action.toPython()

@@ -23,9 +23,15 @@ check: \
 	$(MAKE) \
 	  --directory ontology \
 	  check
+	$(MAKE) \
+	  --directory tests \
+	  check
 
 clean:
 	@rm -f .lib.done.log
+	@$(MAKE) \
+	  --directory tests \
+	  clean
 	@$(MAKE) \
 	  --directory ontology \
 	  clean

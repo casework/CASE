@@ -1,13 +1,14 @@
-# baseURI: https://caseontology.org/ontology/case/investigation-da
+# baseURI: https://ontology.caseontology.org/case/investigation-da
 
-@base <https://caseontology.org/ontology/case/investigation-da> .
-@prefix investigation: <https://caseontology.org/ontology/case/investigation#> .
+@base <https://ontology.caseontology.org/case/investigation-da> .
+@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://caseontology.org/ontology/case/investigation-da>
+<https://ontology.caseontology.org/case/investigation-da>
 	a owl:Ontology ;
 	rdfs:label "investigation domain assertions"@en ;
 	.
@@ -46,5 +47,13 @@ investigation:relevantAuthorization
 
 investigation:startTime
 	rdfs:domain investigation:Investigation ;
+	.
+
+investigation:wasDerivedFrom
+	rdfs:domain uco-core:UcoObject ;
+	.
+
+investigation:wasInformedBy
+	rdfs:domain investigation:InvestigativeAction ;
 	.
 

@@ -1,25 +1,27 @@
-# imports: https://ontology.caseontology.org/case/vocabulary
+# baseURI: https://caseontology.org/ontology/case/investigation
+# imports: https://caseontology.org/ontology/case/vocabulary
 # imports: https://unifiedcyberontology.org/ontology/uco/action
 # imports: https://unifiedcyberontology.org/ontology/uco/core
 # imports: https://unifiedcyberontology.org/ontology/uco/location
 # imports: https://unifiedcyberontology.org/ontology/uco/role
 
-@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
+@base <https://caseontology.org/ontology/case/investigation> .
+@prefix investigation: <https://caseontology.org/ontology/case/investigation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix uco-action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix uco-core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix uco-role: <https://unifiedcyberontology.org/ontology/uco/role#> .
-@prefix vocabulary: <https://ontology.caseontology.org/case/vocabulary/> .
+@prefix vocabulary: <https://caseontology.org/ontology/case/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ontology.caseontology.org/case/investigation>
+<https://caseontology.org/ontology/case/investigation>
 	a owl:Ontology ;
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
-		<https://ontology.caseontology.org/case/vocabulary> ,
+		<https://caseontology.org/ontology/case/vocabulary> ,
 		<https://unifiedcyberontology.org/ontology/uco/action> ,
 		<https://unifiedcyberontology.org/ontology/uco/core> ,
 		<https://unifiedcyberontology.org/ontology/uco/location> ,

@@ -22,6 +22,7 @@ This invocation of `rdf-toolkit` shows the flags to be used.  "`INPUT_TTL_FILE`"
 
 ```
 java -jar rdf-toolkit.jar \
+  --infer-base-iri \
   --inline-blank-nodes \
   --source INPUT_TTL_FILE \
   --source-format turtle \

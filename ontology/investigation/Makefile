@@ -1,0 +1,49 @@
+#!/usr/bin/make -f
+
+# This software was developed at the National Institute of Standards
+# and Technology by employees of the Federal Government in the course
+# of their official duties. Pursuant to title 17 Section 105 of the
+# United States Code this software is not subject to copyright
+# protection and is in the public domain. NIST assumes no
+# responsibility whatsoever for its use by other parties, and makes
+# no guarantees, expressed or implied, about its quality,
+# reliability, or any other characteristic.
+#
+# We would appreciate acknowledgement if the software is used.
+
+top_srcdir := ../..
+
+all:
+
+.check-investigation.ttl: \
+  $(top_srcdir)/.lib.done.log \
+  investigation.ttl
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --inline-blank-nodes \
+	  --source investigation.ttl \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	mv _$@ $@
+
+.check-investigation-da.ttl: \
+  $(top_srcdir)/.lib.done.log \
+  investigation-da.ttl
+	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	  --inline-blank-nodes \
+	  --source investigation-da.ttl \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	mv _$@ $@
+
+check: \
+  .check-investigation.ttl \
+  .check-investigation-da.ttl
+	diff investigation.ttl .check-investigation.ttl
+	diff investigation-da.ttl .check-investigation-da.ttl
+
+clean:
+	@rm -f \
+	  .check-*.ttl \
+	  _*

@@ -2,7 +2,7 @@
 *.pyo
 
 # Unit testing files
-.lib.done.log
+.*.done.log
 .*.ttl
 
 # Pycharm files

@@ -21,10 +21,6 @@ investigation:authorizationType
 	rdfs:domain investigation:Authorization ;
 	.
 
-investigation:endTime
-	rdfs:domain investigation:Investigation ;
-	.
-
 investigation:exhibitNumber
 	rdfs:domain investigation:ProvenanceRecord ;
 	.
@@ -42,10 +38,6 @@ investigation:investigationStatus
 	.
 
 investigation:relevantAuthorization
-	rdfs:domain investigation:Investigation ;
-	.
-
-investigation:startTime
 	rdfs:domain investigation:Investigation ;
 	.
 

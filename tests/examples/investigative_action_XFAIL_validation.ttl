@@ -1,0 +1,66 @@
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/provenance-record-1> ;
+            sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+            sh:resultPath investigation:exhibitNumber ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path investigation:exhibitNumber ] ;
+            sh:value 1 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/provenance-record-1> ;
+            sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+            sh:resultPath investigation:rootExhibitNumber ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:minCount 0 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path investigation:rootExhibitNumber ] ;
+            sh:value 1 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb/provenance-record-1> ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath core:object ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class core:UcoObject ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path core:object ] ;
+            sh:value <http://example.org/kb/file-1> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N10a0ca03f1f44fe0bad47c15367b2d78 ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n003585f0a8764b4c8ac06a0fd53da90db44 ;
+            sh:value <http://example.org/kb/file-1> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N10a0ca03f1f44fe0bad47c15367b2d78 ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n003585f0a8764b4c8ac06a0fd53da90db44 ;
+            sh:value <http://example.org/kb/provenance-record-1> ] .
+
+_:N10a0ca03f1f44fe0bad47c15367b2d78 a action:ActionReferencesFacet ;
+    action:result <http://example.org/kb/file-1>,
+        <http://example.org/kb/provenance-record-1> .
+
+_:n003585f0a8764b4c8ac06a0fd53da90db44 sh:class core:UcoObject ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path action:result .
+

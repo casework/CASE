@@ -1,3 +1,6 @@
 [submodule "dependencies/UCO"]
 	path = dependencies/UCO
 	url = https://github.com/ucoProject/UCO.git
+[submodule "dependencies/pySHACL"]
+	path = dependencies/pySHACL
+	url = https://github.com/RDFLib/pySHACL.git

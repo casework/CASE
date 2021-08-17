@@ -26,6 +26,11 @@ all:
 	  || (git submodule init dependencies/UCO && git submodule update dependencies/UCO)
 	@test -r dependencies/UCO/README.md \
 	  || (echo "ERROR:Makefile:UCO submodule README.md file not found, even though that submodule is initialized." >&2 ; exit 2)
+	# pySHACL (TODO Temporary)
+	test -r dependencies/pySHACL/README.md \
+	  || (git submodule init dependencies/pySHACL && git submodule update dependencies/pySHACL)
+	@test -r dependencies/pySHACL/README.md \
+	  || (echo "ERROR:Makefile:pySHACL submodule README.md file not found, even though that submodule is initialized." >&2 ; exit 2)
 	$(MAKE) \
 	  --directory dependencies/UCO \
 	  .git_submodule_init.done.log

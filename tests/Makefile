@@ -39,6 +39,9 @@ all:
 	    wheel
 	source venv/bin/activate \
 	  && pip install \
+	    $(top_srcdir)/dependencies/pySHACL
+	source venv/bin/activate \
+	  && pip install \
 	    $(top_srcdir)/dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
 	source venv/bin/activate \
 	  && pip install \

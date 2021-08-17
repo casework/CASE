@@ -52,22 +52,27 @@ investigation:Authorization
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path uco-core:endTime ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path uco-core:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path investigation:authorizationIdentifier ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:authorizationIdentifier ;
 		]
 		;
 	.
@@ -102,27 +107,39 @@ investigation:Investigation
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	sh:property
 		[
-			sh:path investigation:focus ;
-		] ,
-		[
+			sh:class investigation:Authorization ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path investigation:relevantAuthorization ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:path investigation:investigationForm ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:path investigation:investigationStatus ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path uco-core:endTime ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path uco-core:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:investigationStatus ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:focus ;
+		] ,
+		[
+			sh:datatype vocabulary:InvestigationFormVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:investigationForm ;
 		]
 		;
 	.
@@ -137,6 +154,7 @@ investigation:InvestigativeAction
 	rdfs:comment "An investigative action is something that may be done or performed within the context of an investigation, typically to examine or analyze evidence or other data."@en ;
 	sh:property [
 		sh:class investigation:InvestigativeAction ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path investigation:wasInformedBy ;
 	] ;
 	.
@@ -163,11 +181,13 @@ investigation:ProvenanceRecord
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path investigation:exhibitNumber ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path investigation:rootExhibitNumber ;
 		]
 		;

@@ -45,8 +45,10 @@ investigation:Authorization
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		uco-core:UcoObject ,
+	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:label "Authorization"@en ;
+	rdfs:comment "An authorization is a grouping of characteristics unique to some form of authoritative permission identified for investigative action."@en ;
+	sh:property
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -68,8 +70,6 @@ investigation:Authorization
 			sh:path investigation:authorizationType ;
 		]
 		;
-	rdfs:label "Authorization"@en ;
-	rdfs:comment "An authorization is a grouping of characteristics unique to some form of authoritative permission identified for investigative action."@en ;
 	.
 
 investigation:Examiner
@@ -97,8 +97,10 @@ investigation:Investigation
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		uco-core:ContextualCompilation ,
+	rdfs:subClassOf uco-core:ContextualCompilation ;
+	rdfs:label "Investigation"@en ;
+	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
+	sh:property
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
@@ -117,8 +119,6 @@ investigation:Investigation
 			sh:path uco-core:startTime ;
 		]
 		;
-	rdfs:label "Investigation"@en ;
-	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	.
 
 investigation:InvestigativeAction
@@ -126,15 +126,13 @@ investigation:InvestigativeAction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		uco-action:Action ,
-		[
-			sh:class investigation:InvestigativeAction ;
-			sh:path investigation:wasInformedBy ;
-		]
-		;
+	rdfs:subClassOf uco-action:Action ;
 	rdfs:label "InvestigativeAction"@en ;
 	rdfs:comment "An investigative action is something that may be done or performed within the context of an investigation, typically to examine or analyze evidence or other data."@en ;
+	sh:property [
+		sh:class investigation:InvestigativeAction ;
+		sh:path investigation:wasInformedBy ;
+	] ;
 	.
 
 investigation:Investigator
@@ -152,8 +150,10 @@ investigation:ProvenanceRecord
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		uco-core:ContextualCompilation ,
+	rdfs:subClassOf uco-core:ContextualCompilation ;
+	rdfs:label "ProvenanceRecord"@en ;
+	rdfs:comment "A provenance record is a grouping of characteristics unique to the provenantial (chronology of the ownership, custody or location) connection between an investigative action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
+	sh:property
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -165,8 +165,6 @@ investigation:ProvenanceRecord
 			sh:path investigation:rootExhibitNumber ;
 		]
 		;
-	rdfs:label "ProvenanceRecord"@en ;
-	rdfs:comment "A provenance record is a grouping of characteristics unique to the provenantial (chronology of the ownership, custody or location) connection between an investigative action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
 	.
 
 investigation:Subject

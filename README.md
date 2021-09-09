@@ -13,7 +13,7 @@ The CASE Ontology Committee models domain concepts, developing the knowledge enc
 
 Example CASE data and narratives can be found at these locations:
 
-* The [CASE Topics Gallery](https://caseontology.org/ontology/gallery.html)
+* The [CASE Topics Gallery](https://caseontology.org/examples/)
 * The [CASE Examples Repository](https://github.com/casework/CASE-Examples)
 
 ## I have a question!

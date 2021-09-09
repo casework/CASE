@@ -1,3 +1,6 @@
+2021-09-08
+	* ONT-442, CP-37: Fixed broken link to website examples gallery in README
+
 2021-06-01
 	* (b9f0f7b) ONT-435, CP-34: Revised CASE IRI structure to support granular resource service (applied for CASE 0.4.0)
 	* CP-34: https://drive.google.com/file/d/1J2UeRVeG_CCloTwo9Do628zvWcIpO5GR/view

@@ -54,14 +54,18 @@ clean:
 	@$(MAKE) \
 	  --directory ontology \
 	  clean
-	@$(MAKE) \
-	  --directory dependencies/UCO \
-	  clean
+	@test ! -r dependencies/UCO/README.md \
+	  || $(MAKE) \
+	    --directory dependencies/UCO \
+	    clean
 	@# Restore UCO validation output files that do not affect CASE build process.
-	@cd dependencies/UCO \
-	  && git checkout \
-	    -- \
-	    tests/examples \
-	    || true
+	@test ! -r dependencies/UCO/README.md \
+	  || ( \
+	    cd dependencies/UCO \
+	      && git checkout \
+	        -- \
+	        tests/examples \
+	        || true \
+	  )
 	@rm -f \
 	  .*.done.log

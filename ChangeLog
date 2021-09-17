@@ -1,3 +1,6 @@
+2021-09-17
+	* ONT-462, CP-42: Removed investigation-namespaced startTime and endTime properties from investigation-da.ttl
+
 2021-09-08
 	* ONT-442, CP-37: Fixed broken link to website examples gallery in README
 

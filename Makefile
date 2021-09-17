@@ -13,19 +13,32 @@
 
 all:
 
+# This recipe guarantees that 'git submodule init' and 'git submodule update' have run at least once.
+# The recipe avoids running 'git submodule update' more than once, in case a user is testing with the submodule at a different commit than what CASE tracks.
+.git_submodule_init.done.log: \
+  .gitmodules
+	# UCO
+	test -r dependencies/UCO/README.md \
+	  || (git submodule init dependencies/UCO && git submodule update dependencies/UCO)
+	@test -r dependencies/UCO/README.md \
+	  || (echo "ERROR:Makefile:UCO submodule README.md file not found, even though that submodule is initialized." >&2 ; exit 2)
+	touch $@
+
 .lib.done.log:
 	$(MAKE) \
 	  --directory lib
 	touch $@
 
 check: \
+  .git_submodule_init.done.log \
   .lib.done.log
 	$(MAKE) \
 	  --directory ontology \
 	  check
 
 clean:
-	@rm -f .lib.done.log
 	@$(MAKE) \
 	  --directory ontology \
 	  clean
+	@rm -f \
+	  .*.done.log

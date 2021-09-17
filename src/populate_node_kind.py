@@ -16,7 +16,7 @@ The purpose of this program is to build definition statements in a SHACL ontolog
 
 The program's current intent is as a single-purpose utility.  Usage:
 1. Be in a Python environment that has rdflib installed.  (This could be done by enabling the virtual environment under ../tests/venv.)
-2. Run this program.  It will **overwrite** all ontology files matching the pattern ../uco-*/*.ttl.
+2. Run this program.  It will **overwrite** all ontology files matching the pattern ../ontology/*/*.ttl and ../dependencies/UCO/uco-*/*.ttl.
 3. Re-run 'make check' from the root directory, to re-normalize ontology files.
 
 The outline of this program is:
@@ -29,9 +29,11 @@ The outline of this program is:
        3.1.3 ObjectProperty -> sh:nodeKind = sh:BlankNodeOrIRI
        3.1.4 ObjectProperty -> sh:class = (rdfs:range of property, if an IRI[1])
        [1] If a property's rdfs:range is a blank node, currently this script does NOT generate a sh:datatype or sh:class constraint, due to needing to address ontology design issues.
+
+This program is copied from the implementation in UCO made for UCO CP-23.  It will modify all CASE and UCO files; however, as a manual intervention, only the CASE modifications should be retained.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 import argparse
 import logging
@@ -62,12 +64,21 @@ def main():
     # Sanity check.
     assert (top_srcdir / ".git").exists(), "Hard-coded top_srcdir discovery is no longer correct."
 
+    # Find UCO.
+    uco_srcdir = top_srcdir / "dependencies" / "UCO"
+
     # 1. Load all ontology files into dictionary of graphs.
 
     # The extra filtering step loop to keep from picking up CI files.  Path.glob returns dot files, unlike shell's glob.
     # The uco.ttl file is also skipped because the Python output removes supplementary prefix statements.
     ontology_filepaths : typing.List[pathlib.Path] = []
-    for x in top_srcdir.glob("uco-*/*.ttl"):
+    for x in top_srcdir.glob("ontology/*/*.ttl"):
+        if ".check-" in str(x):
+            continue
+        if "case.ttl" in str(x):
+            continue
+        ontology_filepaths.append(x)
+    for x in uco_srcdir.glob("uco-*/*.ttl"):
         if ".check-" in str(x):
             continue
         if "uco.ttl" in str(x):
@@ -89,16 +100,21 @@ def main():
     for ontology_filepath in sorted(filepath_to_graph.keys()):
         tmp_nsdict = {k:v for (k,v) in filepath_to_graph[ontology_filepath].namespace_manager.namespaces()}
         for key in tmp_nsdict:
-            if key in nsdict:
+            if "unifiedcyberontology.org" in tmp_nsdict[key]:
+                prefix = "uco-%s" % key
+            else:
+                prefix = key
+            if prefix in nsdict:
                 try:
-                    assert nsdict[key] == tmp_nsdict[key]
+                    assert nsdict[prefix] == tmp_nsdict[key]
                 except:
                     _logger.error("ontology_filepath = %s.", ontology_filepath)
                     _logger.error("key = %r.", key)
-                    _logger.error("nsdict[key] = %r.", nsdict[key])
-                    _logger.error("tmp_nsdict[key] = %r.", tmp_nsdict[key])
+                    _logger.error("prefix = %r.", prefix)
+                    _logger.error("nsdict[prefix] = %r.", nsdict[prefix])
+                    _logger.error("tmp_nsdict[prefix] = %r.", tmp_nsdict[prefix])
                     raise
-            nsdict[key] = tmp_nsdict[key]
+            nsdict[prefix] = tmp_nsdict[key]
 
     # 2. Store all property-defining rdf:type and rdfs:range triples from all loaded ontologies into a "properties" graph.
 

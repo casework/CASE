@@ -31,38 +31,41 @@
 	.
 
 investigation:Attorney
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Attorney"@en ;
 	rdfs:comment "Attorney is a role involved in preparing, interpreting, and applying law."@en ;
 	.
 
 investigation:Authorization
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf
 		uco-core:UcoObject ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:authorizationType ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path uco-core:endTime ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:endTime ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:dateTime ;
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path uco-core:startTime ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:startTime ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:dateTime ;
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path investigation:authorizationIdentifier ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:authorizationIdentifier ;
-			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path investigation:authorizationType ;
 		]
 		;
 	rdfs:label "Authorization"@en ;
@@ -70,42 +73,48 @@ investigation:Authorization
 	.
 
 investigation:Examiner
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Examiner"@en ;
 	rdfs:comment "Examiner is a role involved in providing scientific evaluations of evidence that are used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:ExaminerActionLifecylce
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "ExaminerActionLifecylce"@en ;
 	rdfs:comment "An examiner action life cycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:Investigation
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf
 		uco-core:ContextualCompilation ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:investigationForm ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path investigation:investigationForm ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:investigationStatus ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path investigation:investigationStatus ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:endTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path uco-core:endTime ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:startTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path uco-core:startTime ;
 		]
 		;
 	rdfs:label "Investigation"@en ;
@@ -113,13 +122,15 @@ investigation:Investigation
 	.
 
 investigation:InvestigativeAction
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf
 		uco-action:Action ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:wasInformedBy ;
-			owl:onClass investigation:InvestigativeAction ;
+			sh:class investigation:InvestigativeAction ;
+			sh:path investigation:wasInformedBy ;
 		]
 		;
 	rdfs:label "InvestigativeAction"@en ;
@@ -127,27 +138,31 @@ investigation:InvestigativeAction
 	.
 
 investigation:Investigator
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Investigator"@en ;
 	rdfs:comment "Investigator is a role involved in coordinating an investigation."@en ;
 	.
 
 investigation:ProvenanceRecord
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf
 		uco-core:ContextualCompilation ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:exhibitNumber ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path investigation:exhibitNumber ;
 		] ,
 		[
-			a owl:Restriction ;
-			owl:onProperty investigation:rootExhibitNumber ;
-			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
+			sh:datatype xsd:string ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:path investigation:rootExhibitNumber ;
 		]
 		;
 	rdfs:label "ProvenanceRecord"@en ;
@@ -155,21 +170,30 @@ investigation:ProvenanceRecord
 	.
 
 investigation:Subject
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Subject"@en ;
 	rdfs:comment "Subject is a role whose conduct is within the scope of an investigation."@en ;
 	.
 
 investigation:SubjectActionLifecycle
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "SubjectActionLifecycle"@en ;
 	rdfs:comment "A subject action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
 	.
 
 investigation:VictimActionLifecycle
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "VictimActionLifecycle"@en ;
 	rdfs:comment "A victim action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;

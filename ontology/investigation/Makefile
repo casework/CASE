@@ -27,23 +27,9 @@ all:
 	  --target-format turtle
 	mv _$@ $@
 
-.check-investigation-da.ttl: \
-  $(top_srcdir)/.lib.done.log \
-  investigation-da.ttl
-	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
-	  --inline-blank-nodes \
-	  --source investigation-da.ttl \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	mv _$@ $@
-
 check: \
-  .check-investigation.ttl \
-  .check-investigation-da.ttl
+  .check-investigation.ttl
 	diff investigation.ttl .check-investigation.ttl
-	diff investigation-da.ttl .check-investigation-da.ttl
 
 clean:
 	@rm -f \

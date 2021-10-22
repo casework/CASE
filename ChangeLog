@@ -1,7 +1,7 @@
 2021-09-17
 	* ONT-456, CP-41: Converted current property restrictions and domain assertions to SHACL class shapes
-	* ONT-462, CP-42: Removed investigation-namespaced startTime and endTime properties from investigation-da.ttl
 	* ONT-455, CP-40: Adopted UCO 0.7.0 as a Git submodule
+	* ONT-462, CP-42: Removed investigation-namespaced startTime and endTime properties from investigation-da.ttl
 
 2021-09-08
 	* ONT-442, CP-37: Fixed broken link to website examples gallery in README

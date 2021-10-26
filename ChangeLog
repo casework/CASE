@@ -10,6 +10,9 @@
 	* (f79ac53) ONT-442, CP-37: Fixed broken link to website examples gallery in README
 	* CP-37: https://drive.google.com/file/d/16maCSg22Tfwro3OXajT6aYXfLhiihgL4/view
 
+2021-06-02
+	* ONT-400: Release CASE 0.4.0, with release notes at https://caseontology.org/releases/0.4.0/
+
 2021-06-01
 	* (b9f0f7b) ONT-435, CP-34: Revised CASE IRI structure to support granular resource service (applied for CASE 0.4.0)
 	* CP-34: https://drive.google.com/file/d/1J2UeRVeG_CCloTwo9Do628zvWcIpO5GR/view

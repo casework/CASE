@@ -10,6 +10,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix uco-action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix uco-core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix uco-role: <https://unifiedcyberontology.org/ontology/uco/role#> .
@@ -30,145 +31,193 @@
 	.
 
 investigation:Attorney
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Attorney"@en ;
 	rdfs:comment "Attorney is a role involved in preparing, interpreting, and applying law."@en ;
 	.
 
 investigation:Authorization
-	a owl:Class ;
-	rdfs:subClassOf
-		uco-core:UcoObject ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:authorizationType ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:endTime ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:dateTime ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:startTime ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:dateTime ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:authorizationIdentifier ;
-			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf uco-core:UcoObject ;
 	rdfs:label "Authorization"@en ;
 	rdfs:comment "An authorization is a grouping of characteristics unique to some form of authoritative permission identified for investigative action."@en ;
+	sh:property
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path uco-core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path uco-core:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:authorizationType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:authorizationIdentifier ;
+		]
+		;
 	.
 
 investigation:Examiner
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Examiner"@en ;
 	rdfs:comment "Examiner is a role involved in providing scientific evaluations of evidence that are used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:ExaminerActionLifecylce
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "ExaminerActionLifecylce"@en ;
 	rdfs:comment "An examiner action life cycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	.
 
 investigation:Investigation
-	a owl:Class ;
-	rdfs:subClassOf
-		uco-core:ContextualCompilation ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:investigationForm ;
-			owl:cardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:investigationStatus ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:endTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty uco-core:startTime ;
-			owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf uco-core:ContextualCompilation ;
 	rdfs:label "Investigation"@en ;
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
+	sh:property
+		[
+			sh:class investigation:Authorization ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path investigation:relevantAuthorization ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path uco-core:endTime ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path uco-core:startTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:investigationStatus ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:focus ;
+		] ,
+		[
+			sh:datatype vocabulary:InvestigationFormVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:investigationForm ;
+		]
+		;
 	.
 
 investigation:InvestigativeAction
-	a owl:Class ;
-	rdfs:subClassOf
-		uco-action:Action ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:wasInformedBy ;
-			owl:onClass investigation:InvestigativeAction ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf uco-action:Action ;
 	rdfs:label "InvestigativeAction"@en ;
 	rdfs:comment "An investigative action is something that may be done or performed within the context of an investigation, typically to examine or analyze evidence or other data."@en ;
+	sh:property [
+		sh:class investigation:InvestigativeAction ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path investigation:wasInformedBy ;
+	] ;
 	.
 
 investigation:Investigator
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Investigator"@en ;
 	rdfs:comment "Investigator is a role involved in coordinating an investigation."@en ;
 	.
 
 investigation:ProvenanceRecord
-	a owl:Class ;
-	rdfs:subClassOf
-		uco-core:ContextualCompilation ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:exhibitNumber ;
-			owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		] ,
-		[
-			a owl:Restriction ;
-			owl:onProperty investigation:rootExhibitNumber ;
-			owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-			owl:onDataRange xsd:string ;
-		]
+	a
+		owl:Class ,
+		sh:NodeShape
 		;
+	rdfs:subClassOf uco-core:ContextualCompilation ;
 	rdfs:label "ProvenanceRecord"@en ;
 	rdfs:comment "A provenance record is a grouping of characteristics unique to the provenantial (chronology of the ownership, custody or location) connection between an investigative action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:exhibitNumber ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:minCount "0"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:rootExhibitNumber ;
+		]
+		;
 	.
 
 investigation:Subject
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-role:Role ;
 	rdfs:label "Subject"@en ;
 	rdfs:comment "Subject is a role whose conduct is within the scope of an investigation."@en ;
 	.
 
 investigation:SubjectActionLifecycle
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "SubjectActionLifecycle"@en ;
 	rdfs:comment "A subject action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
 	.
 
 investigation:VictimActionLifecycle
-	a owl:Class ;
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "VictimActionLifecycle"@en ;
 	rdfs:comment "A victim action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;
@@ -234,6 +283,7 @@ investigation:wasDerivedFrom
 	a owl:ObjectProperty ;
 	rdfs:label "wasDerivedFrom"@en ;
 	rdfs:comment "A re-implementation of the wasDerivedFrom property in W3C PROV-O.  The definition of this property is 'A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.' [Ref: https://www.w3.org/TR/prov-o/#wasDerivedFrom]"@en ;
+	rdfs:domain uco-core:UcoObject ;
 	rdfs:range uco-core:UcoObject ;
 	.
 
@@ -241,6 +291,7 @@ investigation:wasInformedBy
 	a owl:ObjectProperty ;
 	rdfs:label "wasInformedBy"@en ;
 	rdfs:comment "A re-implementation of the wasInformedBy property in W3C PROV-O, where an entity is exchanged by two activities, 'one activity using the entity generated by the other'. [Ref: https://www.w3.org/TR/prov-o/#wasInformedBy]"@en ;
+	rdfs:domain investigation:InvestigativeAction ;
 	rdfs:range investigation:InvestigativeAction ;
 	.
 

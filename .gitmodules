@@ -1,0 +1,3 @@
+[submodule "dependencies/UCO"]
+	path = dependencies/UCO
+	url = https://github.com/ucoProject/UCO.git

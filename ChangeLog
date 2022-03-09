@@ -1,3 +1,8 @@
+2022-03-08
+	* (cc19756) UCO OC-62, CP-89: Removed ActionReferencesFacet
+	* (bfc6d02) UCO OC-125, CP-56: Updated UCO ontology file paths
+	* UCO OC-217, CP-107: Revised ontology IRI structure as in CASE CP-34
+
 2022-02-14
 	* ONT-468, CP-44: Made sh:targetClass shape application statements consistent between CASE and UCO
 	

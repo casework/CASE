@@ -4,7 +4,8 @@
 	* UCO OC-217, CP-107: Revised ontology IRI structure as in CASE CP-34
 
 2022-02-14
-	* ONT-468, CP-44: Made sh:targetClass shape application statements consistent between CASE and UCO
+	* (ee4143d) ONT-468, CP-44: Made sh:targetClass shape application statements consistent between CASE and UCO (bug fix)
+	* CP-44: https://drive.google.com/file/d/1GN9lbqTpWLiU-TGPj53wYQzTQ9AvYb4l/view?usp=sharing
 	
 2021-10-26
 	* ONT-437: Release CASE 0.5.0, with release notes at https://caseontology.org/releases/0.5.0/

@@ -251,7 +251,7 @@ investigation:authorizationType
 investigation:exhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "exhibitNumber"@en ;
-	rdfs:comment "Specifies a unique identifier assigned to a given object at any stage of an investigation to differentiate it from all other objects."@en ;
+	rdfs:comment "The exhibit number specifies an identifier assigned to a set of objects, unique within the scope of an investigation."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -286,7 +286,7 @@ investigation:relevantAuthorization
 investigation:rootExhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "rootExhibitNumber"@en ;
-	rdfs:comment "Specifies a unique identifier assigned to a given object at the start of its treatment as part of an investigation. The first node in a provenance chain, which can be viewed as a heirarchical tree originating from a single root."@en ;
+	rdfs:comment "The root exhibit number specifies a unique identifier assigned to a set of objects at the start of their treatment as part of an investigation. When found on a provenance record that comes after initial investigative treatment, the root exhibit number is a reference to the initial provenance record."@en ;
 	rdfs:range xsd:string ;
 	.
 

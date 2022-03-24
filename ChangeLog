@@ -1,3 +1,6 @@
+2022-03-24
+	* ONT-463: Release CASE 0.6.0, with release notes at https://caseontology.org/releases/0.6.0/
+
 2022-03-23
 	* (a1b5d0b) ONT-471: Adopt UCO 0.8.0
 	* (8f7c87a) ONT-438, CP-36: Corrected rootExhibitNumber definition issues and aligned with exhibitNumber

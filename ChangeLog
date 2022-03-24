@@ -1,3 +1,20 @@
+2022-03-24
+	* ONT-463: Release CASE 0.6.0, with release notes at https://caseontology.org/releases/0.6.0/
+
+2022-03-23
+	* (a1b5d0b) ONT-471: Adopt UCO 0.8.0
+	* (8f7c87a) ONT-438, CP-36: Corrected rootExhibitNumber definition issues and aligned with exhibitNumber
+	* CP-36: https://drive.google.com/file/d/114XogkDDIqciWuJBJ3oRlMR5HoHCXwU7/view
+
+2022-03-08
+	* (cc19756) UCO OC-62, CP-89: Removed ActionReferencesFacet
+	* (bfc6d02) UCO OC-125, CP-56: Updated UCO ontology file paths
+	* (bc99cf7) UCO OC-217, CP-107: Revised ontology IRI structure as in CASE CP-34
+
+2022-02-14
+	* (ee4143d) ONT-468, CP-44: Made sh:targetClass shape application statements consistent between CASE and UCO
+	* CP-44: https://drive.google.com/file/d/1GN9lbqTpWLiU-TGPj53wYQzTQ9AvYb4l/view
+	
 2021-10-26
 	* ONT-437: Release CASE 0.5.0, with release notes at https://caseontology.org/releases/0.5.0/
 

@@ -1,7 +1,7 @@
 # baseURI: https://ontology.caseontology.org/case/case
 # imports: https://ontology.caseontology.org/case/investigation
 # imports: https://ontology.caseontology.org/case/vocabulary
-# imports: https://unifiedcyberontology.org/ontology/uco/uco
+# imports: https://ontology.unifiedcyberontology.org/uco/uco
 
 @base <https://ontology.caseontology.org/case/case> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -21,11 +21,11 @@
 	owl:imports
 		<https://ontology.caseontology.org/case/investigation> ,
 		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://unifiedcyberontology.org/ontology/uco/uco>
+		<https://ontology.unifiedcyberontology.org/uco/uco>
 		;
 	owl:incompatibleWith <http://case.example.org/core> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.5.0" ;
+	owl:versionInfo "0.6.0" ;
 	.
 

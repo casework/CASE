@@ -18,7 +18,7 @@ all:
 .check-case.ttl: \
   $(top_srcdir)/.lib.done.log \
   case.ttl
-	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
 	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source case.ttl \

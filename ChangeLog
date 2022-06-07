@@ -1,3 +1,38 @@
+2022-03-24
+	* ONT-463: Release CASE 0.6.0, with release notes at https://caseontology.org/releases/0.6.0/
+
+2022-03-23
+	* (a1b5d0b) ONT-471: Adopt UCO 0.8.0
+	* (8f7c87a) ONT-438, CP-36: Corrected rootExhibitNumber definition issues and aligned with exhibitNumber
+	* CP-36: https://drive.google.com/file/d/114XogkDDIqciWuJBJ3oRlMR5HoHCXwU7/view
+
+2022-03-08
+	* (cc19756) UCO OC-62, CP-89: Removed ActionReferencesFacet
+	* (bfc6d02) UCO OC-125, CP-56: Updated UCO ontology file paths
+	* (bc99cf7) UCO OC-217, CP-107: Revised ontology IRI structure as in CASE CP-34
+
+2022-02-14
+	* (ee4143d) ONT-468, CP-44: Made sh:targetClass shape application statements consistent between CASE and UCO
+	* CP-44: https://drive.google.com/file/d/1GN9lbqTpWLiU-TGPj53wYQzTQ9AvYb4l/view
+	
+2021-10-26
+	* ONT-437: Release CASE 0.5.0, with release notes at https://caseontology.org/releases/0.5.0/
+
+2021-09-17
+	* (21b3a1c) ONT-456, CP-41: Converted current property restrictions and domain assertions to SHACL class shapes
+	* CP-41: https://drive.google.com/file/d/1sKFTTiEe-LmQLEG1Bowf52QF1VPZDssL/view
+	* (1652d7c) ONT-455, CP-40: Adopted UCO 0.7.0 as a Git submodule
+	* CP-40: https://drive.google.com/file/d/1JqPx0ngdFKGxxOgGD1UgwuT9LgM4SKUV/view
+	* (b82a101) ONT-462, CP-42: Removed investigation-namespaced startTime and endTime properties from investigation-da.ttl
+	* CP-42: https://drive.google.com/file/d/1JDkSrI7bpVtr2aJ_8lLLa0BrLnBKpEOp/view
+
+2021-09-08
+	* (f79ac53) ONT-442, CP-37: Fixed broken link to website examples gallery in README
+	* CP-37: https://drive.google.com/file/d/16maCSg22Tfwro3OXajT6aYXfLhiihgL4/view
+
+2021-06-02
+	* ONT-400: Release CASE 0.4.0, with release notes at https://caseontology.org/releases/0.4.0/
+
 2021-06-01
 	* (b9f0f7b) ONT-435, CP-34: Revised CASE IRI structure to support granular resource service (applied for CASE 0.4.0)
 	* CP-34: https://drive.google.com/file/d/1J2UeRVeG_CCloTwo9Do628zvWcIpO5GR/view

@@ -1,0 +1,54 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:file-1",
+            "@type": [
+                "uco-observable:File",
+                "uco-observable:RasterPicture"
+            ],
+            "uco-core:description": "Screenshot of webpage",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:fileName": "screenshot-1.png",
+                    "uco-observable:sizeInBytes": 1234567
+                },
+                {
+                    "@type": "uco-observable:RasterPictureFacet",
+                    "uco-observable:pictureHeight": 1024,
+                    "uco-observable:pictureWidth": 768
+                }
+            ]
+        },
+        {
+            "@id": "kb:investigative-action-1",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:result": [
+                {
+                    "@id": "kb:file-1"
+                },
+                {
+                    "@id": "kb:provenance-record-1"
+                }
+            ],
+            "uco-core:name": "Submit reference graphic"
+        },
+        {
+            "@id": "kb:provenance-record-1",
+            "@type": "case-investigation:ProvenanceRecord",
+            "case-investigation:exhibitNumber": "1",
+            "case-investigation:rootExhibitNumber": "1",
+            "uco-core:object": {
+                "@id": "kb:file-1"
+            }
+        }
+    ]
+}

@@ -11,7 +11,25 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
+SHELL := /bin/bash
+
+PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
+
 all:
+
+# This recipe guarantees that 'git submodule init' and 'git submodule update' have run at least once.
+# The recipe avoids running 'git submodule update' more than once, in case a user is testing with the submodule at a different commit than what CASE tracks.
+.git_submodule_init.done.log: \
+  .gitmodules
+	# UCO
+	test -r dependencies/UCO/README.md \
+	  || (git submodule init dependencies/UCO && git submodule update dependencies/UCO)
+	@test -r dependencies/UCO/README.md \
+	  || (echo "ERROR:Makefile:UCO submodule README.md file not found, even though that submodule is initialized." >&2 ; exit 2)
+	$(MAKE) \
+	  --directory dependencies/UCO \
+	  .git_submodule_init.done.log
+	touch $@
 
 .lib.done.log:
 	$(MAKE) \
@@ -19,13 +37,35 @@ all:
 	touch $@
 
 check: \
+  .git_submodule_init.done.log \
   .lib.done.log
 	$(MAKE) \
 	  --directory ontology \
 	  check
+	$(MAKE) \
+	  PYTHON3=$(PYTHON3) \
+	  --directory tests \
+	  check
 
 clean:
-	@rm -f .lib.done.log
+	@$(MAKE) \
+	  --directory tests \
+	  clean
 	@$(MAKE) \
 	  --directory ontology \
 	  clean
+	@test ! -r dependencies/UCO/README.md \
+	  || $(MAKE) \
+	    --directory dependencies/UCO \
+	    clean
+	@# Restore UCO validation output files that do not affect CASE build process.
+	@test ! -r dependencies/UCO/README.md \
+	  || ( \
+	    cd dependencies/UCO \
+	      && git checkout \
+	        -- \
+	        tests/examples \
+	        || true \
+	  )
+	@rm -f \
+	  .*.done.log

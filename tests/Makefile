@@ -56,7 +56,7 @@ case_monolithic.ttl: \
 	    __$@ \
 	    $(case_turtle_files) \
 	    $(uco_turtle_files)
-	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
 	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source __$@ \

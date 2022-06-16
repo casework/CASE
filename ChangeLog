@@ -1,3 +1,12 @@
+2022-06-16
+	* (3d13cc1): Adopt UCO 0.9.0
+
+2022-06-14
+	* (6ff8e99) UCO Issue 373: Upgraded Java to 11 and rdf-toolkit to post-1.10.0; delegated rdf-toolkit retrieval to UCO implementation
+
+2022-06-10
+	* (07810a2) ONT-465: Updated syntax surrounding ExaminerActionLifecycle
+
 2022-03-24
 	* ONT-463: Release CASE 0.6.0, with release notes at https://caseontology.org/releases/0.6.0/
 

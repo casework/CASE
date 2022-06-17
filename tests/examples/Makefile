@@ -49,7 +49,7 @@ all: \
 	    --output __$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
-	java -jar $(top_srcdir)/lib/rdf-toolkit.jar \
+	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
 	  --source __$@ \
 	  --source-format turtle \

@@ -31,13 +31,14 @@ all:
 	  .git_submodule_init.done.log
 	touch $@
 
-.lib.done.log:
+.lib.done.log: \
+  .git_submodule_init.done.log
 	$(MAKE) \
-	  --directory lib
+	  --directory dependencies/UCO \
+	  .lib.done.log
 	touch $@
 
 check: \
-  .git_submodule_init.done.log \
   .lib.done.log
 	$(MAKE) \
 	  --directory ontology \

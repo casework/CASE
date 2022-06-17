@@ -26,6 +26,6 @@
 	owl:incompatibleWith <http://case.example.org/core> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.6.0" ;
+	owl:versionInfo "0.7.0" ;
 	.
 

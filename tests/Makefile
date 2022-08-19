@@ -47,15 +47,14 @@ all:
 
 case_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
-  $(top_srcdir)/dependencies/UCO/tests/src/glom_graph.py \
   $(case_turtle_files) \
   $(uco_turtle_files) \
   .venv.done.log
 	source venv/bin/activate \
-	  && python3 $(top_srcdir)/dependencies/UCO/tests/src/glom_graph.py \
-	    __$@ \
+	  && rdfpipe \
 	    $(case_turtle_files) \
-	    $(uco_turtle_files)
+	    $(uco_turtle_files) \
+	    > __$@
 	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
 	  --infer-base-iri \
 	  --inline-blank-nodes \

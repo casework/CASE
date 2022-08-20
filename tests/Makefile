@@ -56,6 +56,16 @@ case_monolithic.ttl: \
 	    __$@ \
 	    $(case_turtle_files) \
 	    $(uco_turtle_files)
+	# Review UCO for OWL 2 DL conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl $(top_srcdir)/dependencies/UCO/ontology/owl/owl.ttl \
+	    --shacl-file-format turtle \
+	    __$@
 	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
 	  --infer-base-iri \
 	  --inline-blank-nodes \

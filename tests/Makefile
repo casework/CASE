@@ -52,6 +52,7 @@ case_monolithic.ttl: \
   .venv.done.log
 	source venv/bin/activate \
 	  && rdfpipe \
+	    --output-format turtle \
 	    $(case_turtle_files) \
 	    $(uco_turtle_files) \
 	    > __$@

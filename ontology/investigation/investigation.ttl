@@ -1,11 +1,9 @@
-# baseURI: https://ontology.caseontology.org/case/investigation
 # imports: https://ontology.caseontology.org/case/vocabulary
 # imports: https://ontology.unifiedcyberontology.org/uco/action
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/location
 # imports: https://ontology.unifiedcyberontology.org/uco/role
 
-@base <https://ontology.caseontology.org/case/investigation> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

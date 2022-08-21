@@ -14,9 +14,11 @@
 
 vocab:InvestigationFormVocab
 	a rdfs:Datatype ;
+	rdfs:label "Investigation Form Vocabulary"@en-US ;
+	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
 	owl:equivalentClass [
-		rdfs:label "Investigation Form Vocabulary"@en-US ;
-		rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
+		a rdfs:Datatype ;
+		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"case"^^vocab:InvestigationFormVocab
 			"incident"^^vocab:InvestigationFormVocab

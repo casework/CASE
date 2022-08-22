@@ -1,11 +1,9 @@
-# baseURI: https://ontology.caseontology.org/case/investigation
 # imports: https://ontology.caseontology.org/case/vocabulary
 # imports: https://ontology.unifiedcyberontology.org/uco/action
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/location
 # imports: https://ontology.unifiedcyberontology.org/uco/role
 
-@base <https://ontology.caseontology.org/case/investigation> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -140,9 +138,39 @@ investigation:Investigation
 		] ,
 		[
 			sh:datatype vocabulary:InvestigationFormVocab ;
+			sh:message "Value is outside the default vocabulary InvestigationFormVocab." ;
+			sh:path investigation:investigationForm ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:InvestigationFormVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path investigation:investigationForm ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:InvestigationFormVocab ;
+					sh:in (
+						"case"^^vocabulary:InvestigationFormVocab
+						"incident"^^vocabulary:InvestigationFormVocab
+						"suspicious-activity"^^vocabulary:InvestigationFormVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path investigation:investigationForm ;
 		]
 		;
@@ -266,7 +294,13 @@ investigation:investigationForm
 	a owl:DatatypeProperty ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
-	rdfs:range vocabulary:InvestigationFormVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:InvestigationFormVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 investigation:investigationStatus

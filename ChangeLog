@@ -1,3 +1,6 @@
+2022-08-30
+	* (d9db048): CASE Issue 106: Removed legacy requirements.txt
+
 2022-08-23
 	* (25bc31e): CASE Issue 98: Change minCount from 1 to 0 on multiple properties on Investigation object
 	* (8c4322c): ONT-467: Vocabulary datatypes are OWL-syntactically incomplete (Fix OWL syntax of CASE datatype)

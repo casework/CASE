@@ -1,6 +1,6 @@
 # imports: https://ontology.caseontology.org/case/investigation/0.7.1
 # imports: https://ontology.caseontology.org/case/vocabulary/0.7.1
-# imports: https://ontology.unifiedcyberontology.org/uco/uco/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/uco/1.0.0
 
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -19,7 +19,7 @@
 	owl:imports
 		<https://ontology.caseontology.org/case/investigation/0.7.1> ,
 		<https://ontology.caseontology.org/case/vocabulary/0.7.1> ,
-		<https://ontology.unifiedcyberontology.org/uco/uco/0.9.1>
+		<https://ontology.unifiedcyberontology.org/uco/uco/1.0.0>
 		;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:versionIRI <https://ontology.caseontology.org/case/case/0.7.1> ;

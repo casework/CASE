@@ -10,6 +10,8 @@
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/vocabulary> ;
+	owl:versionIRI vocab:0.7.1 ;
 	.
 
 vocab:InvestigationFormVocab

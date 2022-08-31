@@ -120,7 +120,7 @@ clean:
 	  --directory examples \
 	  clean
 	@rm -f \
-	  .venv.done.log \
+	  .*.done.log \
 	  case_monolithic.ttl
 	@rm -rf \
 	  venv

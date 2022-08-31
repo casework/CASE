@@ -99,7 +99,6 @@ case_monolithic.ttl: \
 	    --shacl-file-format turtle \
 	    __$@
 	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
-	  --infer-base-iri \
 	  --inline-blank-nodes \
 	  --source __$@ \
 	  --source-format turtle \

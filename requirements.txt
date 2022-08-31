@@ -1,8 +1,0 @@
-html5lib==0.999999999
-isodate==0.5.4
-keepalive==0.5
-pyparsing==2.1.10
-rdflib==4.2.1
-six==1.10.0
-SPARQLWrapper==1.7.6
-webencodings==0.5

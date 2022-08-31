@@ -18,7 +18,7 @@ top_srcdir := $(shell cd .. ; pwd)
 PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
 
 case_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl)
-uco_turtle_files := $(shell /bin/ls $(top_srcdir)/dependencies/UCO/ontology/*/*.ttl)
+uco_turtle_files := $(shell /bin/ls $(top_srcdir)/dependencies/UCO/ontology/*/*.ttl $(top_srcdir)/dependencies/UCO/ontology/*/*/*.ttl)
 
 all:
 
@@ -56,24 +56,16 @@ all:
 
 case_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
-  $(top_srcdir)/dependencies/UCO/tests/src/glom_graph.py \
   $(case_turtle_files) \
   $(uco_turtle_files) \
   .shapes.done.log
 	source venv/bin/activate \
-	  && python3 $(top_srcdir)/dependencies/UCO/tests/src/glom_graph.py \
-	    __$@ \
+	  && rdfpipe \
+	    --output-format turtle \
 	    $(case_turtle_files) \
-	    $(uco_turtle_files)
+	    $(uco_turtle_files) \
+	    > __$@
 	# Review CASE for OWL 2 DL versioning conformance.
-	source venv/bin/activate \
-	  && pyshacl \
-	    --data-file-format turtle \
-	    --format turtle \
-	    --inference none \
-	    --shacl $(top_srcdir)/dependencies/UCO/tests/shapes/uco-owl.ttl \
-	    --shacl-file-format turtle \
-	    __$@
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
@@ -96,6 +88,16 @@ case_monolithic.ttl: \
 	    --format turtle \
 	    --inference none \
 	    --shacl shapes/case-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	# Review CASE for OWL 2 DL conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --allow-warnings \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl $(top_srcdir)/dependencies/UCO/ontology/owl/owl.ttl \
 	    --shacl-file-format turtle \
 	    __$@
 	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \

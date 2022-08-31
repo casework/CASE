@@ -105,7 +105,6 @@ case_monolithic.ttl: \
 	# Review CASE for OWL 2 DL conformance.
 	source venv/bin/activate \
 	  && pyshacl \
-	    --allow-warnings \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \

@@ -1,5 +1,13 @@
-2022-06-16
+2022-08-31
+	* ONT-410: Release CASE 0.7.1, with release notes at https://caseontology.org/releases/0.7.1/
+	* (5b8c03f): UCO Issue 437: Adopt UCO 0.9.1
+	* (e673017): UCO OC-217, CP-107: Revise ontology IRI to be slash-based and drop IRI base
+	* (0e7337e): UCO Issue 437: Adopt versionIRI practice prepared for UCO 0.9.1
+
+2022-06-17
 	* ONT-476: Release CASE 0.7.0, with release notes at https://caseontology.org/releases/0.7.0/
+
+2022-06-16
 	* (3d13cc1): Adopt UCO 0.9.0
 
 2022-06-14

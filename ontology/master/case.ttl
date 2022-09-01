@@ -1,9 +1,7 @@
-# baseURI: https://ontology.caseontology.org/case/case
-# imports: https://ontology.caseontology.org/case/investigation
-# imports: https://ontology.caseontology.org/case/vocabulary
-# imports: https://ontology.unifiedcyberontology.org/uco/uco
+# imports: https://ontology.caseontology.org/case/investigation/0.7.1
+# imports: https://ontology.caseontology.org/case/vocabulary/0.7.1
+# imports: https://ontology.unifiedcyberontology.org/uco/uco/0.9.1
 
-@base <https://ontology.caseontology.org/case/case> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -19,13 +17,12 @@
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
 	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:imports
-		<https://ontology.caseontology.org/case/investigation> ,
-		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://ontology.unifiedcyberontology.org/uco/uco>
+		<https://ontology.caseontology.org/case/investigation/0.7.1> ,
+		<https://ontology.caseontology.org/case/vocabulary/0.7.1> ,
+		<https://ontology.unifiedcyberontology.org/uco/uco/0.9.1>
 		;
-	owl:incompatibleWith <http://case.example.org/core> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
-	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.7.0" ;
+	owl:versionIRI <https://ontology.caseontology.org/case/case/0.7.1> ;
+	owl:versionInfo "0.7.1" ;
 	.
 

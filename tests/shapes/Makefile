@@ -11,26 +11,43 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
-top_srcdir := ../..
+SHELL := /bin/bash
 
-all:
+top_srcdir := $(shell cd ../.. ; pwd)
 
-.check-investigation.ttl: \
-  $(top_srcdir)/.lib.done.log \
-  investigation.ttl
+tests_srcdir := $(top_srcdir)/tests
+
+all: \
+  .check-case-qc.ttl
+
+.PHONY: \
+  check-%.ttl
+
+.PRECIOUS: \
+  .check-%.ttl
+
+.check-%.ttl: \
+  %.ttl \
+  $(top_srcdir)/.lib.done.log
 	java -jar $(top_srcdir)/dependencies/UCO/lib/rdf-toolkit.jar \
 	  --inline-blank-nodes \
-	  --source investigation.ttl \
+	  --source $< \
 	  --source-format turtle \
-	  --target _$@ \
+	  --target $@_ \
 	  --target-format turtle
-	mv _$@ $@
+	mv $@_ $@
 
 check: \
-  .check-investigation.ttl
-	diff investigation.ttl .check-investigation.ttl
+  check-case-qc.ttl
+
+# Reminder: diff exits non-0 on finding any differences.
+# Reminder: The $^ automatic Make variable is the name of all recipe prerequisites.
+check-%.ttl: \
+  %.ttl \
+  .check-%.ttl
+	diff $^ \
+	  || (echo "ERROR:tests/shapes/Makefile:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder tests/shapes/ to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@rm -f \
-	  .check-*.ttl \
-	  _*
+	  .check-*.ttl*

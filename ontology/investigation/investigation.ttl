@@ -1,11 +1,7 @@
-# baseURI: https://ontology.caseontology.org/case/investigation
-# imports: https://ontology.caseontology.org/case/vocabulary
-# imports: https://ontology.unifiedcyberontology.org/uco/action
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/location
-# imports: https://ontology.unifiedcyberontology.org/uco/role
+# imports: https://ontology.caseontology.org/case/vocabulary/0.7.1
+# imports: https://ontology.unifiedcyberontology.org/uco/action/0.9.1
+# imports: https://ontology.unifiedcyberontology.org/uco/role/0.9.1
 
-@base <https://ontology.caseontology.org/case/investigation> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -22,12 +18,12 @@
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
-		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/role>
+		vocabulary:0.7.1 ,
+		uco-action:0.9.1 ,
+		uco-role:0.9.1
 		;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/investigation> ;
+	owl:versionIRI investigation:0.7.1 ;
 	.
 
 investigation:Attorney

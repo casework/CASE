@@ -7,6 +7,10 @@
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
+	owl:incompatibleWith vocab:0.7.1 ;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/vocabulary> ;
+	owl:priorVersion vocab:0.7.1 ;
+	owl:versionIRI vocab:1.0.0 ;
 	.
 
 vocab:InvestigationFormVocab

@@ -9,7 +9,7 @@
     },
     "@graph": [
         {
-            "@id": "kb:file-1",
+            "@id": "kb:file-9c9e20f9-e545-490f-bd3d-1fe230c18c0b",
             "@type": [
                 "uco-observable:File",
                 "uco-observable:RasterPicture"
@@ -17,10 +17,12 @@
             "uco-core:description": "Screenshot of webpage",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-da204016-29ff-4d5e-a36f-ff75a9d3169b",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "screenshot-1.png"
                 },
                 {
+                    "@id": "kb:raster-picture-facet-022af595-c417-47bf-b5f3-9a19ed3554bc",
                     "@type": "uco-observable:RasterPictureFacet",
                     "rdfs:comment": "The sizeInBytes property does not belong on this Facet.",
                     "uco-observable:pictureHeight": 1024,
@@ -30,26 +32,26 @@
             ]
         },
         {
-            "@id": "kb:investigative-action-1",
+            "@id": "kb:investigative-action-a6b22845-2d81-4d24-ac22-dec5139d027a",
             "@type": "case-investigation:InvestigativeAction",
             "uco-action:result": [
                 {
-                    "@id": "kb:file-1"
+                    "@id": "kb:file-9c9e20f9-e545-490f-bd3d-1fe230c18c0b"
                 },
                 {
-                    "@id": "kb:provenance-record-1"
+                    "@id": "kb:provenance-record-f54f88ad-2659-4fba-8c3e-d96efa560fdf"
                 }
             ],
             "uco-core:name": "Submit reference graphic"
         },
         {
-            "@id": "kb:provenance-record-1",
+            "@id": "kb:provenance-record-f54f88ad-2659-4fba-8c3e-d96efa560fdf",
             "@type": "case-investigation:ProvenanceRecord",
             "rdfs:comment": "The exhibitNumber and rootExhibitNumber properties are errantly integers here, instead of strings.",
             "case-investigation:exhibitNumber": 1,
             "case-investigation:rootExhibitNumber": 1,
             "uco-core:object": {
-                "@id": "kb:file-1"
+                "@id": "kb:file-9c9e20f9-e545-490f-bd3d-1fe230c18c0b"
             }
         }
     ]

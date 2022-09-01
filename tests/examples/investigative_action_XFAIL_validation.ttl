@@ -11,7 +11,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record-1> ;
+			sh:focusNode <http://example.org/kb/provenance-record-f54f88ad-2659-4fba-8c3e-d96efa560fdf> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath investigation:exhibitNumber ;
 			sh:resultSeverity sh:Violation ;
@@ -26,7 +26,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record-1> ;
+			sh:focusNode <http://example.org/kb/provenance-record-f54f88ad-2659-4fba-8c3e-d96efa560fdf> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath investigation:rootExhibitNumber ;
 			sh:resultSeverity sh:Violation ;

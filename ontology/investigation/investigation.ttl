@@ -1,6 +1,6 @@
-# imports: https://ontology.caseontology.org/case/vocabulary/0.7.1
-# imports: https://ontology.unifiedcyberontology.org/uco/action/0.9.1
-# imports: https://ontology.unifiedcyberontology.org/uco/role/0.9.1
+# imports: https://ontology.caseontology.org/case/vocabulary/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.0.0
 
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -18,12 +18,14 @@
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
-		vocabulary:0.7.1 ,
-		uco-action:0.9.1 ,
-		uco-role:0.9.1
+		vocabulary:1.0.0 ,
+		uco-action:1.0.0 ,
+		uco-role:1.0.0
 		;
+	owl:incompatibleWith investigation:0.7.1 ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/investigation> ;
-	owl:versionIRI investigation:0.7.1 ;
+	owl:priorVersion investigation:0.7.1 ;
+	owl:versionIRI investigation:1.0.0 ;
 	.
 
 investigation:Attorney
@@ -61,13 +63,11 @@ investigation:Authorization
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationIdentifier ;
 		]
@@ -136,9 +136,38 @@ investigation:Investigation
 		] ,
 		[
 			sh:datatype vocabulary:InvestigationFormVocab ;
+			sh:message "Value is outside the default vocabulary InvestigationFormVocab." ;
+			sh:path investigation:investigationForm ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary:InvestigationFormVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path investigation:investigationForm ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary:InvestigationFormVocab ;
+					sh:in (
+						"case"^^vocabulary:InvestigationFormVocab
+						"incident"^^vocabulary:InvestigationFormVocab
+						"suspicious-activity"^^vocabulary:InvestigationFormVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path investigation:investigationForm ;
 		]
 		;
@@ -262,7 +291,13 @@ investigation:investigationForm
 	a owl:DatatypeProperty ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
-	rdfs:range vocabulary:InvestigationFormVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary:InvestigationFormVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 investigation:investigationStatus

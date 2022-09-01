@@ -1,8 +1,26 @@
 2022-08-31
+	* ONT-295: Release CASE 1.0.0, with release notes at https://caseontology.org/releases/1.0.0/
+	* (761b058): Adopt UCO 1.0.0
+	* (40c4ba1): UCO Issue 430: Require non-blank nodes in graph data
+	* (33a0c3e): UCO Issue 437: Adopt priorVersion practice prepared for UCO 1.0.0
 	* ONT-410: Release CASE 0.7.1, with release notes at https://caseontology.org/releases/0.7.1/
 	* (5b8c03f): UCO Issue 437: Adopt UCO 0.9.1
 	* (e673017): UCO OC-217, CP-107: Revise ontology IRI to be slash-based and drop IRI base
 	* (0e7337e): UCO Issue 437: Adopt versionIRI practice prepared for UCO 0.9.1
+
+2022-08-30
+	* (d9db048): CASE Issue 106: Removed legacy requirements.txt
+
+2022-08-23
+	* (25bc31e): CASE Issue 98: Change minCount from 1 to 0 on multiple properties on Investigation object
+	* (8c4322c): ONT-467: Vocabulary datatypes are OWL-syntactically incomplete (Fix OWL syntax of CASE datatype)
+
+2022-08-22
+	* (52834ea): UCO Issue 406: UCO should perform OWL 2 DL review with SHACL-SPARQL
+	* (cd82078): UCO OC-217, CP-107: Revise ontology IRI to be slash-based and drop IRI base 
+	* (4f4731f): UCO Issue 387: Adapt for UCO files being under different directories
+	* (a495369): UCO CP-100: Apply semi-open vocabulary patterns
+	* (2a5af00): UCO Issue 424: Replace UCO glom_graph.py reference with rdfpipe
 
 2022-06-17
 	* ONT-476: Release CASE 0.7.0, with release notes at https://caseontology.org/releases/0.7.0/

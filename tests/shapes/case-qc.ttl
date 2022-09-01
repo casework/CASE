@@ -1,0 +1,71 @@
+@prefix case-qc: <urn:example:case:qc:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:example:case:qc>
+	a owl:Ontology ;
+	rdfs:comment "This ontology contains shapes meant to be used against the transitive closure of CASE, excluding imported ontologies developed externally to UCO."@en ;
+	.
+
+case-qc:owl-Ontology-shape
+	a sh:NodeShape ;
+	sh:sparql
+		[
+			a sh:SPARQLConstraint ;
+			sh:message "CASE imports of other CASE and UCO ontologies are expected to be of versionIRIs."@en ;
+			sh:select '''
+				SELECT $this ?value
+				WHERE {
+					$this owl:imports ?value .
+					FILTER (
+						STRSTARTS (
+							STR(?value),
+							"https://ontology.caseontology.org/"
+						)
+						||
+						STRSTARTS (
+							STR(?value),
+							"https://ontology.unifiedcyberontology.org/"
+						)
+					)
+					FILTER NOT EXISTS {
+						?nOtherUcoOntology
+							owl:versionIRI ?value ;
+							.
+					}
+				}
+			''' ;
+		] ,
+		[
+			a sh:SPARQLConstraint ;
+			sh:message "CASE version IRIs are expected to have a fragment matching the versionInfo string in the master CASE ontology."@en ;
+			sh:select '''
+				SELECT $this ?value
+				WHERE {
+					$this owl:versionIRI ?value .
+					<https://ontology.caseontology.org/case/case> owl:versionInfo ?lCaseVersionInfo .
+					FILTER (
+						STRSTARTS (
+							STR($this),
+							"https://ontology.caseontology.org/"
+						)
+					)
+					FILTER (
+						STR(?value)
+						!= 
+						CONCAT(
+							STR($this),
+							"/",
+							?lCaseVersionInfo
+						)
+					)
+				}
+			''' ;
+		]
+		;
+	sh:targetClass owl:Ontology ;
+	.
+

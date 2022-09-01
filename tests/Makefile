@@ -22,6 +22,15 @@ uco_turtle_files := $(shell /bin/ls $(top_srcdir)/dependencies/UCO/ontology/*/*.
 
 all:
 
+# Ensure the CASE-internal shapes pass their own tests.
+.shapes.done.log: \
+  .venv.done.log \
+  shapes/case-qc.ttl
+	$(MAKE) \
+	  --directory shapes \
+	  check
+	touch $@
+
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
   $(top_srcdir)/.git_submodule_init.done.log \
@@ -49,14 +58,39 @@ case_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
   $(case_turtle_files) \
   $(uco_turtle_files) \
-  .venv.done.log
+  .shapes.done.log
 	source venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
 	    $(case_turtle_files) \
 	    $(uco_turtle_files) \
 	    > __$@
-	# Review UCO for OWL 2 DL conformance.
+	# Review CASE for OWL 2 DL versioning conformance.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl $(top_srcdir)/dependencies/UCO/tests/shapes/uco-closure-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl $(top_srcdir)/dependencies/UCO/tests/shapes/uco-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --shacl shapes/case-qc.ttl \
+	    --shacl-file-format turtle \
+	    __$@
+	# Review CASE for OWL 2 DL conformance.
 	source venv/bin/activate \
 	  && pyshacl \
 	    --allow-warnings \
@@ -88,7 +122,7 @@ clean:
 	  --directory examples \
 	  clean
 	@rm -f \
-	  .venv.done.log \
+	  .*.done.log \
 	  case_monolithic.ttl
 	@rm -rf \
 	  venv

@@ -20,6 +20,10 @@ PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null ||
 case_turtle_files := $(shell /bin/ls $(top_srcdir)/ontology/*/*.ttl)
 uco_turtle_files := $(shell /bin/ls $(top_srcdir)/dependencies/UCO/ontology/*/*.ttl $(top_srcdir)/dependencies/UCO/ontology/*/*/*.ttl)
 
+uco_imported_ontology_files := \
+  $(top_srcdir)/dependencies/UCO/dependencies/collections-ontology/collections.owl \
+  $(top_srcdir)/dependencies/UCO/dependencies/error/docs/current/error.owl
+
 all:
 
 # Ensure the CASE-internal shapes pass their own tests.
@@ -65,7 +69,12 @@ case_monolithic.ttl: \
 	    $(case_turtle_files) \
 	    $(uco_turtle_files) \
 	    > __$@
-	# Review CASE for OWL 2 DL versioning conformance.
+	# Review CASE closure for versioning consistency.
+	source venv/bin/activate \
+          && rdfpipe \
+	  __$@ \
+	  $(imported_ontology_files) \
+	  > ___$@
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
@@ -73,7 +82,10 @@ case_monolithic.ttl: \
 	    --inference none \
 	    --shacl $(top_srcdir)/dependencies/UCO/tests/shapes/uco-closure-qc.ttl \
 	    --shacl-file-format turtle \
-	    __$@
+	    ___$@
+	# Test has passed; remove closure file.
+	rm ___$@
+	# Review CASE for practice conformance.
 	source venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format turtle \
@@ -93,7 +105,6 @@ case_monolithic.ttl: \
 	# Review CASE for OWL 2 DL conformance.
 	source venv/bin/activate \
 	  && pyshacl \
-	    --allow-warnings \
 	    --data-file-format turtle \
 	    --format turtle \
 	    --inference none \

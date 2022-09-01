@@ -1,4 +1,8 @@
 2022-08-31
+	* ONT-295: Release CASE 1.0.0, with release notes at https://caseontology.org/releases/1.0.0/
+	* (761b058): Adopt UCO 1.0.0
+	* (40c4ba1): UCO Issue 430: Require non-blank nodes in graph data
+	* (33a0c3e): UCO Issue 437: Adopt priorVersion practice prepared for UCO 1.0.0
 	* ONT-410: Release CASE 0.7.1, with release notes at https://caseontology.org/releases/0.7.1/
 	* (5b8c03f): UCO Issue 437: Adopt UCO 0.9.1
 	* (e673017): UCO OC-217, CP-107: Revise ontology IRI to be slash-based and drop IRI base

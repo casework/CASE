@@ -22,7 +22,6 @@
 		<https://ontology.unifiedcyberontology.org/uco/uco/1.0.0>
 		;
 	owl:incompatibleWith <https://ontology.caseontology.org/case/case/0.7.1> ;
-	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:priorVersion <https://ontology.caseontology.org/case/case/0.7.1> ;
 	owl:versionIRI <https://ontology.caseontology.org/case/case/1.0.0> ;
 	owl:versionInfo "1.0.0" ;

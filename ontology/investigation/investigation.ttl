@@ -23,7 +23,6 @@
 		uco-role:1.0.0
 		;
 	owl:incompatibleWith investigation:0.7.1 ;
-	owl:ontologyIRI <https://ontology.caseontology.org/case/investigation> ;
 	owl:priorVersion investigation:0.7.1 ;
 	owl:versionIRI investigation:1.0.0 ;
 	.

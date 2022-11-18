@@ -60,6 +60,7 @@ all:
 
 case_monolithic.ttl: \
   $(top_srcdir)/.lib.done.log \
+  $(top_srcdir)/dependencies/UCO/tests/thing.ttl \
   $(case_turtle_files) \
   $(uco_turtle_files) \
   .shapes.done.log
@@ -83,7 +84,17 @@ case_monolithic.ttl: \
 	    --shacl $(top_srcdir)/dependencies/UCO/tests/shapes/uco-closure-qc.ttl \
 	    --shacl-file-format turtle \
 	    ___$@
-	# Test has passed; remove closure file.
+	# Review CASE closure with SHACL-SHACL.
+	source venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format turtle \
+	    --format turtle \
+	    --inference none \
+	    --metashacl \
+	    --shacl ___$@ \
+	    --shacl-file-format turtle \
+	    $(top_srcdir)/dependencies/UCO/tests/thing.ttl
+	# Closure tests have passed; remove closure file.
 	rm ___$@
 	# Review CASE for practice conformance.
 	source venv/bin/activate \

@@ -135,6 +135,10 @@ case_monolithic.ttl: \
 check: \
   inheritance_review.ttl \
   case_monolithic.ttl
+	source venv/bin/activate \
+	  && pytest \
+	    --ignore examples \
+	    --log-level=DEBUG
 	$(MAKE) \
 	  --directory examples \
 	  check

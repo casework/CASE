@@ -1,3 +1,12 @@
+2022-11-22
+	* ONT-491: Release CASE 1.1.0, with release notes at https://caseontology.org/releases/1.1.0/
+
+2022-11-18
+	* (9922288) Issue 119: Test for concept-membership of used design vocabularies
+	* (137fff8) UCO Issue 491: Bump UCO to remove owl:ontologyIRI concept review
+	* (48e9d58) UCO Issue 493: Trigger CI on all branches starting with "develop" and "unstable"
+	* (ae27b42) UCO Issue 504: Test monolithic build with SHACL-SHACL
+
 2022-08-31
 	* ONT-295: Release CASE 1.0.0, with release notes at https://caseontology.org/releases/1.0.0/
 	* (761b058): Adopt UCO 1.0.0

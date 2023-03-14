@@ -11,17 +11,37 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
-all:
+SHELL := /bin/bash
 
 top_srcdir := ..
 
+all: \
+  all-investigation \
+  all-master \
+  all-vocabulary
+
 .PHONY: \
+  all-investigation \
+  all-master \
+  all-vocabulary \
   check-investigation \
   check-master \
   check-vocabulary \
   clean-investigation \
   clean-master \
   clean-vocabulary
+
+all-investigation:
+	$(MAKE) \
+	  --directory investigation
+
+all-master:
+	$(MAKE) \
+	  --directory master
+
+all-vocabulary:
+	$(MAKE) \
+	  --directory vocabulary
 
 check: \
   check-master \

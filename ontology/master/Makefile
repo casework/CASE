@@ -11,9 +11,16 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
+SHELL := /bin/bash
+
 top_srcdir := ../..
 
-all:
+uco_srcdir := $(top_srcdir)/dependencies/UCO
+
+ttl_basenames := case.ttl
+
+all: \
+  catalog-v001.xml
 
 .check-case.ttl: \
   $(top_srcdir)/.lib.done.log \
@@ -26,11 +33,30 @@ all:
 	  --target-format turtle
 	mv _$@ $@
 
+catalog-v001.xml: \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/etc/domain_directories.tsv \
+  $(top_srcdir)/etc/dependency_files.tsv \
+  $(uco_srcdir)/ontology/uco/master/catalog-v001.xml \
+  $(uco_srcdir)/src/create-catalog-v001.xml.py
+	rm -f _$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && python3 $(uco_srcdir)/src/create-catalog-v001.xml.py \
+	    --catalog-xml $(uco_srcdir)/ontology/uco/master/catalog-v001.xml \
+	    _$@ \
+	    $(top_srcdir)/etc/domain_directories.tsv \
+	    $(top_srcdir)/etc/dependency_files.tsv \
+	    "$(top_srcdir)" \
+	    $(ttl_basenames)
+	mv _$@ $@
+
 check: \
-  .check-case.ttl
+  .check-case.ttl \
+  catalog-v001.xml
 	diff case.ttl .check-case.ttl
 
 clean:
 	@rm -f \
 	  .check-*.ttl \
-	  _*
+	  _* \
+	  catalog-v001.xml

@@ -10,5 +10,4 @@ venv
 .idea
 
 # Protege files
-catalog-v001.xml
 .project

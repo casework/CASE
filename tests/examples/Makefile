@@ -35,9 +35,9 @@ all: \
 # characteristics.
 %_validation.ttl: \
   %.json \
-  $(tests_srcdir)/.venv.done.log \
-  $(tests_srcdir)/case_monolithic.ttl
-	source $(tests_srcdir)/venv/bin/activate \
+  $(tests_srcdir)/case_monolithic.ttl \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
 	    --data-file-format json-ld \
 	    --format turtle \
@@ -61,7 +61,7 @@ all: \
 check: \
   investigative_action_PASS_validation.ttl \
   investigative_action_XFAIL_validation.ttl
-	source $(tests_srcdir)/venv/bin/activate \
+	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG
 

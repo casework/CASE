@@ -1,0 +1,2 @@
+https://ontology.caseontology.org/	${top_srcdir}/ontology/
+https://ontology.unifiedcyberontology.org/	${top_srcdir}/dependencies/UCO/ontology/

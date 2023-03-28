@@ -13,9 +13,12 @@
 
 SHELL := /bin/bash
 
-PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3)
+PYTHON3 ?= $(shell which python3)
 
-all:
+all: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory ontology
 
 # This recipe guarantees that 'git submodule init' and 'git submodule update' have run at least once.
 # The recipe avoids running 'git submodule update' more than once, in case a user is testing with the submodule at a different commit than what CASE tracks.
@@ -38,8 +41,32 @@ all:
 	  .lib.done.log
 	touch $@
 
+# The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
+.venv.done.log: \
+  .git_submodule_init.done.log \
+  dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
+  dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
+  dependencies/UCO/requirements.txt
+	rm -rf venv
+	$(PYTHON3) -m venv \
+	  venv
+	source venv/bin/activate \
+	  && pip install \
+	    --upgrade \
+	    pip \
+	    setuptools \
+	    wheel
+	source venv/bin/activate \
+	  && pip install \
+	    dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer
+	source venv/bin/activate \
+	  && pip install \
+	    --requirement dependencies/UCO/requirements.txt
+	touch $@
+
 check: \
-  .lib.done.log
+  .lib.done.log \
+  .venv.done.log
 	$(MAKE) \
 	  --directory ontology \
 	  check
@@ -70,3 +97,17 @@ clean:
 	  )
 	@rm -f \
 	  .*.done.log
+	@rm -rf \
+	  venv
+
+dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py: \
+  .git_submodule_init.done.log
+	$(MAKE) \
+	  --directory dependencies/UCO \
+	  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py
+
+dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg: \
+  .git_submodule_init.done.log
+	$(MAKE) \
+	  --directory dependencies/UCO \
+	  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg

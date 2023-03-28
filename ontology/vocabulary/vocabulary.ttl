@@ -7,9 +7,9 @@
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
-	owl:backwardCompatibleWith vocab:1.0.0 ;
-	owl:priorVersion vocab:1.0.0 ;
-	owl:versionIRI vocab:1.1.0 ;
+	owl:backwardCompatibleWith vocab:1.1.0 ;
+	owl:priorVersion vocab:1.1.0 ;
+	owl:versionIRI vocab:1.2.0 ;
 	.
 
 vocab:InvestigationFormVocab

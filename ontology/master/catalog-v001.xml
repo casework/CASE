@@ -2,25 +2,25 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
     <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/dependencies/collections-ontology/collections.owl" name="http://purl.org/co"/>
     <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/dependencies/error/docs/current/error.ttl" name="http://purl.org/spar/error"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/co/co.ttl" name="https://ontology.unifiedcyberontology.org/co/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/owl/owl.ttl" name="https://ontology.unifiedcyberontology.org/owl/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/action/action.ttl" name="https://ontology.unifiedcyberontology.org/uco/action/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/analysis/analysis.ttl" name="https://ontology.unifiedcyberontology.org/uco/analysis/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/configuration/configuration.ttl" name="https://ontology.unifiedcyberontology.org/uco/configuration/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/core/core.ttl" name="https://ontology.unifiedcyberontology.org/uco/core/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/identity/identity.ttl" name="https://ontology.unifiedcyberontology.org/uco/identity/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/location/location.ttl" name="https://ontology.unifiedcyberontology.org/uco/location/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/marking/marking.ttl" name="https://ontology.unifiedcyberontology.org/uco/marking/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/master/uco.ttl" name="https://ontology.unifiedcyberontology.org/uco/uco/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/observable/observable.ttl" name="https://ontology.unifiedcyberontology.org/uco/observable/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/pattern/pattern.ttl" name="https://ontology.unifiedcyberontology.org/uco/pattern/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/role/role.ttl" name="https://ontology.unifiedcyberontology.org/uco/role/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/time/time.ttl" name="https://ontology.unifiedcyberontology.org/uco/time/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/tool/tool.ttl" name="https://ontology.unifiedcyberontology.org/uco/tool/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/types/types.ttl" name="https://ontology.unifiedcyberontology.org/uco/types/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/victim/victim.ttl" name="https://ontology.unifiedcyberontology.org/uco/victim/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../investigation/investigation.ttl" name="https://ontology.caseontology.org/case/investigation/1.1.0"/>
-    <uri id="User Entered Import Resolution" uri="../vocabulary/vocabulary.ttl" name="https://ontology.caseontology.org/case/vocabulary/1.1.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/co/co.ttl" name="https://ontology.unifiedcyberontology.org/co/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/owl/owl.ttl" name="https://ontology.unifiedcyberontology.org/owl/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/action/action.ttl" name="https://ontology.unifiedcyberontology.org/uco/action/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/analysis/analysis.ttl" name="https://ontology.unifiedcyberontology.org/uco/analysis/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/configuration/configuration.ttl" name="https://ontology.unifiedcyberontology.org/uco/configuration/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/core/core.ttl" name="https://ontology.unifiedcyberontology.org/uco/core/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/identity/identity.ttl" name="https://ontology.unifiedcyberontology.org/uco/identity/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/location/location.ttl" name="https://ontology.unifiedcyberontology.org/uco/location/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/marking/marking.ttl" name="https://ontology.unifiedcyberontology.org/uco/marking/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/master/uco.ttl" name="https://ontology.unifiedcyberontology.org/uco/uco/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/observable/observable.ttl" name="https://ontology.unifiedcyberontology.org/uco/observable/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/pattern/pattern.ttl" name="https://ontology.unifiedcyberontology.org/uco/pattern/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/role/role.ttl" name="https://ontology.unifiedcyberontology.org/uco/role/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/time/time.ttl" name="https://ontology.unifiedcyberontology.org/uco/time/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/tool/tool.ttl" name="https://ontology.unifiedcyberontology.org/uco/tool/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/types/types.ttl" name="https://ontology.unifiedcyberontology.org/uco/types/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/victim/victim.ttl" name="https://ontology.unifiedcyberontology.org/uco/victim/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../investigation/investigation.ttl" name="https://ontology.caseontology.org/case/investigation/1.2.0"/>
+    <uri id="User Entered Import Resolution" uri="../vocabulary/vocabulary.ttl" name="https://ontology.caseontology.org/case/vocabulary/1.2.0"/>
     <uri id="User Entered Import Resolution" uri="case.ttl" name="https://ontology.caseontology.org/case/case"/>
 </catalog>

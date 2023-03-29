@@ -1,6 +1,6 @@
-# imports: https://ontology.caseontology.org/case/vocabulary/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.1.0
-# imports: https://ontology.unifiedcyberontology.org/uco/role/1.1.0
+# imports: https://ontology.caseontology.org/case/vocabulary/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.2.0
 
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -17,14 +17,14 @@
 	a owl:Ontology ;
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
-	owl:backwardCompatibleWith investigation:1.0.0 ;
+	owl:backwardCompatibleWith investigation:1.1.0 ;
 	owl:imports
-		vocabulary:1.1.0 ,
-		uco-action:1.1.0 ,
-		uco-role:1.1.0
+		vocabulary:1.2.0 ,
+		uco-action:1.2.0 ,
+		uco-role:1.2.0
 		;
-	owl:priorVersion investigation:1.0.0 ;
-	owl:versionIRI investigation:1.1.0 ;
+	owl:priorVersion investigation:1.1.0 ;
+	owl:versionIRI investigation:1.2.0 ;
 	.
 
 investigation:Attorney

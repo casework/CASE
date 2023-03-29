@@ -4,10 +4,10 @@
 # Unit testing files
 .*.done.log
 .*.ttl
+venv
 
 # Pycharm files
 .idea
 
 # Protege files
-catalog-v001.xml
 .project

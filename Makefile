@@ -46,7 +46,8 @@ all: \
   .git_submodule_init.done.log \
   dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
   dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
-  dependencies/UCO/requirements.txt
+  dependencies/UCO/requirements.txt \
+  requirements.txt
 	rm -rf venv
 	$(PYTHON3) -m venv \
 	  venv
@@ -62,6 +63,9 @@ all: \
 	source venv/bin/activate \
 	  && pip install \
 	    --requirement dependencies/UCO/requirements.txt
+	source venv/bin/activate \
+	  && pip install \
+	    --requirement requirements.txt
 	touch $@
 
 check: \

@@ -1,3 +1,21 @@
+2024-01-24
+	* (79afa93) UCO Pull Request 579: Update change request template
+
+2024-01-22
+	* (caf5bd3) UCO Issue 571: Reduce UCO OWL RDF List review scope to OWL Sequences
+
+2023-12-05
+	* (279d2b7) UCO Issue 563: Designate action:Action and core:Event disjoint
+
+2023-11-16
+	* (24ea57f) UCO Issue 541: Add Event
+
+2023-10-20
+	* (8c8fa59) UCO Issue 536: Declare and warn of observable:File and :URL disjointedness
+
+2023-03-29
+	* ONT-494: Release CASE 1.2.0, with release notes at https://caseontology.org/releases/1.2.0/
+
 2023-03-28
 	* (0cb7b85) UCO Issue 449: Enable generating Protégé catalog files
 

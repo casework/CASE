@@ -46,7 +46,6 @@ all: \
 
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
-  .git_submodule_init.done.log \
   dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
   dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
   dependencies/UCO/requirements.txt
@@ -103,14 +102,26 @@ clean:
 	@rm -rf \
 	  venv
 
+# This recipe maintains timestamp order.
+# The target file creation is handled by recursive initialization done
+# in the recipe for .git_submodule_init.done.log.
 dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py: \
   .git_submodule_init.done.log
-	$(MAKE) \
-	  --directory dependencies/UCO \
-	  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py
+	test -r $@
+	touch -c $@
 
+# This recipe maintains timestamp order.
+# The target file creation is handled by recursive initialization done
+# in the recipe for .git_submodule_init.done.log.
 dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg: \
   .git_submodule_init.done.log
-	$(MAKE) \
-	  --directory dependencies/UCO \
-	  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg
+	test -r $@
+	touch -c $@
+
+# This recipe maintains timestamp order.
+# The target file creation is handled by initialization done in the
+# recipe for .git_submodule_init.done.log.
+dependencies/UCO/requirements.txt: \
+  .git_submodule_init.done.log
+	test -r $@
+	touch -c $@

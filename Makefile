@@ -1,13 +1,16 @@
 #!/usr/bin/make -f
 
+# Portions of this file contributed by NIST are governed by the
+# following statement:
+#
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
 
@@ -43,7 +46,6 @@ all: \
 
 # The two CASE-Utility... files are to trigger rebuilds based on command-line interface changes or version increments.
 .venv.done.log: \
-  .git_submodule_init.done.log \
   dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py \
   dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg \
   dependencies/UCO/requirements.txt
@@ -100,14 +102,26 @@ clean:
 	@rm -rf \
 	  venv
 
+# This recipe maintains timestamp order.
+# The target file creation is handled by recursive initialization done
+# in the recipe for .git_submodule_init.done.log.
 dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py: \
   .git_submodule_init.done.log
-	$(MAKE) \
-	  --directory dependencies/UCO \
-	  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/case_shacl_inheritance_reviewer/__init__.py
+	test -r $@
+	touch -c $@
 
+# This recipe maintains timestamp order.
+# The target file creation is handled by recursive initialization done
+# in the recipe for .git_submodule_init.done.log.
 dependencies/UCO/dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg: \
   .git_submodule_init.done.log
-	$(MAKE) \
-	  --directory dependencies/UCO \
-	  dependencies/CASE-Utility-SHACL-Inheritance-Reviewer/setup.cfg
+	test -r $@
+	touch -c $@
+
+# This recipe maintains timestamp order.
+# The target file creation is handled by initialization done in the
+# recipe for .git_submodule_init.done.log.
+dependencies/UCO/requirements.txt: \
+  .git_submodule_init.done.log
+	test -r $@
+	touch -c $@

@@ -105,6 +105,7 @@ investigation:Investigation
 	rdfs:label "Investigation"@en ;
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	sh:property
+		investigation:Investigation-investigationForm-in-shape ,
 		[
 			sh:class investigation:Authorization ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -140,22 +141,24 @@ investigation:Investigation
 			sh:path investigation:focus ;
 		] ,
 		[
-			sh:in (
-				"case"
-				"incident"
-				"suspicious-activity"
-			) ;
-			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
-			sh:path investigation:investigationForm ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:investigationForm ;
 		]
 		;
 	sh:targetClass investigation:Investigation ;
+	.
+
+investigation:Investigation-investigationForm-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"case"
+		"incident"
+		"suspicious-activity"
+	) ;
+	sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+	sh:path investigation:investigationForm ;
+	sh:severity sh:Info ;
 	.
 
 investigation:InvestigativeAction

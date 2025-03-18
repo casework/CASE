@@ -105,6 +105,7 @@ investigation:Investigation
 	rdfs:label "Investigation"@en ;
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	sh:property
+		investigation:Investigation-investigationForm-in-shape ,
 		[
 			sh:class investigation:Authorization ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -130,47 +131,34 @@ investigation:Investigation
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of CASE 1.4.0, the datatype to use for investigation:investigationForm should be xsd:string.  Not using xsd:string will be an error in CASE 2.0.0." ;
+			sh:path investigation:investigationForm ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:focus ;
 		] ,
 		[
-			sh:datatype vocabulary:InvestigationFormVocab ;
-			sh:message "Value is outside the default vocabulary InvestigationFormVocab." ;
-			sh:path investigation:investigationForm ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:InvestigationFormVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path investigation:investigationForm ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:InvestigationFormVocab ;
-					sh:in (
-						"case"^^vocabulary:InvestigationFormVocab
-						"incident"^^vocabulary:InvestigationFormVocab
-						"suspicious-activity"^^vocabulary:InvestigationFormVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path investigation:investigationForm ;
 		]
 		;
 	sh:targetClass investigation:Investigation ;
+	.
+
+investigation:Investigation-investigationForm-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"case"
+		"incident"
+		"suspicious-activity"
+	) ;
+	sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+	sh:path investigation:investigationForm ;
+	sh:severity sh:Info ;
 	.
 
 investigation:InvestigativeAction

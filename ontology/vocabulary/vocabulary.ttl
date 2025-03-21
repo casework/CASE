@@ -19,9 +19,9 @@ vocab:InvestigationFormVocab
 	owl:equivalentClass [
 		a rdfs:Datatype ;
 		owl:oneOf (
-			"case"^^vocab:InvestigationFormVocab
-			"incident"^^vocab:InvestigationFormVocab
-			"suspicious-activity"^^vocab:InvestigationFormVocab
+			"case"
+			"incident"
+			"suspicious-activity"
 		) ;
 	] ;
 	.

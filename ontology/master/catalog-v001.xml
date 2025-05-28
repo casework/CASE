@@ -20,7 +20,7 @@
     <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/types/types.ttl" name="https://ontology.unifiedcyberontology.org/uco/types/1.4.0"/>
     <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/victim/victim.ttl" name="https://ontology.unifiedcyberontology.org/uco/victim/1.4.0"/>
     <uri id="User Entered Import Resolution" uri="../../dependencies/UCO/ontology/uco/vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary/1.4.0"/>
-    <uri id="User Entered Import Resolution" uri="../investigation/investigation.ttl" name="https://ontology.caseontology.org/case/investigation/1.3.0"/>
-    <uri id="User Entered Import Resolution" uri="../vocabulary/vocabulary.ttl" name="https://ontology.caseontology.org/case/vocabulary/1.3.0"/>
+    <uri id="User Entered Import Resolution" uri="../investigation/investigation.ttl" name="https://ontology.caseontology.org/case/investigation/1.4.0"/>
+    <uri id="User Entered Import Resolution" uri="../vocabulary/vocabulary.ttl" name="https://ontology.caseontology.org/case/vocabulary/1.4.0"/>
     <uri id="User Entered Import Resolution" uri="case.ttl" name="https://ontology.caseontology.org/case/case"/>
 </catalog>

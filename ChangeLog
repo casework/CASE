@@ -1,3 +1,48 @@
+2025-03-18
+	* (7ecdaf4) UCO Issue 629: Revise vocabulary pattern
+
+2025-02-13
+	* (256b474) UCO Issue 640: Add `core:informalType` and link as parent of type-describing properties
+
+2024-12-19
+	* (a0a62e9) Issue 167: Adjust top Makefile dependency ordering in submodule initialization
+
+2024-11-23
+	* (b5720af) UCO Issue 624: Add cpeid to DeviceFacet
+
+2024-11-08
+	* (96d45fb) UCO Issue 632: Prepare OperatingSystem to become a subclass of Software
+	* (f759e47) Pull Request 164: Update NIST licensing text 
+	* (2eb3991) UCO Pull Request 642: Update NIST licensing text 
+
+2024-11-07
+	* (820d63d) UCO Pull Request 639: Bump GitHub Action versions
+	* (cc5535e) UCO Pull Request 638: Refresh validation files to reflect validation tool template updates
+
+2024-10-18
+	* (557269c) UCO Issue 593: Remove owl:onDatatype from vocabulary definitions
+
+2024-10-16
+	* (8a353f8) UCO Issue 612: Warn if a `Disk` instance is not also a `StorageMedium`
+
+2024-09-11
+	* (8ba5929) UCO Issue 549: Add `core:objectStatus`
+
+2024-07-26
+	* (b93add7) UCO Issue 602: Warn about key-uniqueness enforcement to `types:Dictionary`
+
+2024-06-18
+	* (0d409cc) UCO Issue 609: Fix typo
+
+2024-06-10
+	* (5cf57b7) UCO Issues 586, 590: Warn of prior disjointedness declarations in `core:` and `types:`; warn if an `AlternateDataStream` instance is not also a `FileSystemObject`
+
+2024-05-01
+	* (50eb05b) UCO Issues 573, 584, 599: Warn if target or source on an `ObservableRelationship` are not `Observable`s; replace errant reference to non-existent concept `owl:Datatype`; remove 1-member minimum on `core:ContextualCompilation`
+
+2024-01-24
+	* OCCASE-495: Release CASE 1.3.0, with release notes at https://caseontology.org/releases/1.3.0/
+
 2024-01-24
 	* (79afa93) UCO Pull Request 579: Update change request template
 

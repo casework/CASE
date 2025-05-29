@@ -1,6 +1,6 @@
-# imports: https://ontology.caseontology.org/case/vocabulary/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/role/1.3.0
+# imports: https://ontology.caseontology.org/case/vocabulary/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.4.0
 
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -17,14 +17,14 @@
 	a owl:Ontology ;
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
-	owl:backwardCompatibleWith investigation:1.2.0 ;
+	owl:backwardCompatibleWith investigation:1.3.0 ;
 	owl:imports
-		vocabulary:1.3.0 ,
-		uco-action:1.3.0 ,
-		uco-role:1.3.0
+		vocabulary:1.4.0 ,
+		uco-action:1.4.0 ,
+		uco-role:1.4.0
 		;
-	owl:priorVersion investigation:1.2.0 ;
-	owl:versionIRI investigation:1.3.0 ;
+	owl:priorVersion investigation:1.3.0 ;
+	owl:versionIRI investigation:1.4.0 ;
 	.
 
 investigation:Attorney
@@ -105,6 +105,7 @@ investigation:Investigation
 	rdfs:label "Investigation"@en ;
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	sh:property
+		investigation:Investigation-investigationForm-in-shape ,
 		[
 			sh:class investigation:Authorization ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -130,47 +131,34 @@ investigation:Investigation
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of CASE 1.4.0, the datatype to use for investigation:investigationForm should be xsd:string.  Not using xsd:string will be an error in CASE 2.0.0." ;
+			sh:path investigation:investigationForm ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:focus ;
 		] ,
 		[
-			sh:datatype vocabulary:InvestigationFormVocab ;
-			sh:message "Value is outside the default vocabulary InvestigationFormVocab." ;
-			sh:path investigation:investigationForm ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:InvestigationFormVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path investigation:investigationForm ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:InvestigationFormVocab ;
-					sh:in (
-						"case"^^vocabulary:InvestigationFormVocab
-						"incident"^^vocabulary:InvestigationFormVocab
-						"suspicious-activity"^^vocabulary:InvestigationFormVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path investigation:investigationForm ;
 		]
 		;
 	sh:targetClass investigation:Investigation ;
+	.
+
+investigation:Investigation-investigationForm-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"case"
+		"incident"
+		"suspicious-activity"
+	) ;
+	sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+	sh:path investigation:investigationForm ;
+	sh:severity sh:Info ;
 	.
 
 investigation:InvestigativeAction
@@ -267,6 +255,7 @@ investigation:authorizationIdentifier
 
 investigation:authorizationType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-core:informalType ;
 	rdfs:label "authorizationType"@en ;
 	rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
 	rdfs:range xsd:string ;
@@ -288,6 +277,7 @@ investigation:focus
 
 investigation:investigationForm
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf uco-core:informalType ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
 	rdfs:range [

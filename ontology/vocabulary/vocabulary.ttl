@@ -7,9 +7,9 @@
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
-	owl:backwardCompatibleWith vocab:1.2.0 ;
-	owl:priorVersion vocab:1.2.0 ;
-	owl:versionIRI vocab:1.3.0 ;
+	owl:backwardCompatibleWith vocab:1.3.0 ;
+	owl:priorVersion vocab:1.3.0 ;
+	owl:versionIRI vocab:1.4.0 ;
 	.
 
 vocab:InvestigationFormVocab
@@ -18,11 +18,10 @@ vocab:InvestigationFormVocab
 	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"case"^^vocab:InvestigationFormVocab
-			"incident"^^vocab:InvestigationFormVocab
-			"suspicious-activity"^^vocab:InvestigationFormVocab
+			"case"
+			"incident"
+			"suspicious-activity"
 		) ;
 	] ;
 	.

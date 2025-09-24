@@ -27,6 +27,17 @@
 	owl:versionIRI investigation:1.4.0 ;
 	.
 
+investigation:AcademicResearchInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Academic-Research Investigator"@en ;
+	rdfs:comment "A principal or co-investigator on a university or research-institute project who designs and conducts scholarly investigations under institutional research-ethics policy."@en ;
+	sh:targetClass investigation:AcademicResearchInvestigator ;
+	.
+
 investigation:Attorney
 	a
 		owl:Class ,
@@ -74,6 +85,28 @@ investigation:Authorization
 	sh:targetClass investigation:Authorization ;
 	.
 
+investigation:CivilSocietyInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Civil-Society / Open-Source Investigator"@en ;
+	rdfs:comment "An investigator working for an NGO, newsroom, or public OSINT collective who gathers, verifies, and preserves open-source information on matters of public interest (e.g., war-crimes documentation, environmental abuse)."@en ;
+	sh:targetClass investigation:CivilSocietyInvestigator ;
+	.
+
+investigation:CorporateInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Corporate Investigator"@en ;
+	rdfs:comment "An internal or contracted investigator who conducts fact-finding for a private-sector organisation under corporate policy and applicable civil law (e.g., fraud, misconduct, or e-discovery inquiries)."@en ;
+	sh:targetClass investigation:CorporateInvestigator ;
+	.
+
 investigation:Examiner
 	a
 		owl:Class ,
@@ -94,6 +127,39 @@ investigation:ExaminerActionLifecycle
 	rdfs:label "ExaminerActionLifecycle"@en ;
 	rdfs:comment "An examiner action lifecycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	sh:targetClass investigation:ExaminerActionLifecylce ;
+	.
+
+investigation:HumanRightsInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Human-Rights Investigator"@en ;
+	rdfs:comment "An investigator mandated by an international or regional body (e.g., UN fact-finding mission, ICC Office of the Prosecutor) to collect and analyse evidence of human-rights or humanitarian-law violations."@en ;
+	sh:targetClass investigation:HumanRightsInvestigator ;
+	.
+
+investigation:InsuranceInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Insurance Investigator"@en ;
+	rdfs:comment "A specialist (often in an insurer's Special Investigation Unit) who examines claims and related evidence to detect, document, and prevent insurance fraud."@en ;
+	sh:targetClass investigation:InsuranceInvestigator ;
+	.
+
+investigation:IntelligenceInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Intelligence Investigator"@en ;
+	rdfs:comment "An investigator within a civil or military intelligence or counter-intelligence agency who collects and analyses information to detect, assess, and neutralize foreign-intelligence or terrorism threats."@en ;
+	sh:targetClass investigation:IntelligenceInvestigator ;
 	.
 
 investigation:Investigation
@@ -188,6 +254,39 @@ investigation:Investigator
 	sh:targetClass investigation:Investigator ;
 	.
 
+investigation:LawEnforcementInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Law-Enforcement Investigator"@en ;
+	rdfs:comment "An investigator empowered by criminal-procedure law—e.g., police detective, federal special agent—to collect evidence of suspected offences, execute warrants, and file charges."@en ;
+	sh:targetClass investigation:LawEnforcementInvestigator ;
+	.
+
+investigation:MilitaryInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Military Investigator"@en ;
+	rdfs:comment "A member of a military criminal-investigation organisation who investigates offences under military justice codes and the law of armed conflict (e.g., Army CID, Naval Criminal Investigative Service agent)."@en ;
+	sh:targetClass investigation:MilitaryInvestigator ;
+	.
+
+investigation:PrivateInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Private Investigator"@en ;
+	rdfs:comment "A non-law enforcement investigator (often called a PI, private detective, or private eye) hired by private clients to conduct investigative services, such as, surveillance, background checks, or asset tracing. Private Investigators oftentimes require a license but not in all jurisdictions."@en ;
+	sh:targetClass investigation:PrivateInvestigator ;
+	.
+
 investigation:ProvenanceRecord
 	a
 		owl:Class ,
@@ -211,6 +310,17 @@ investigation:ProvenanceRecord
 		]
 		;
 	sh:targetClass investigation:ProvenanceRecord ;
+	.
+
+investigation:RegulatoryInvestigator
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf investigation:Investigator ;
+	rdfs:label "Regulatory Investigator"@en ;
+	rdfs:comment "An investigator acting under statutory regulatory authority—such as securities, health-and-safety, or data-protection law—to determine compliance and recommend administrative sanctions."@en ;
+	sh:targetClass investigation:RegulatoryInvestigator ;
 	.
 
 investigation:Subject

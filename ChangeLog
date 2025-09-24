@@ -1,5 +1,5 @@
 2025-09-23
-	* CASE Issue 178: Add investigator role subclasses and shapes in investigation namespace:
+	* (26c65ee) Issue 178: Add investigator role subclasses and shapes in investigation namespace:
 	  AcademicResearchInvestigator, CivilSocietyInvestigator, CorporateInvestigator,
 	  HumanRightsInvestigator, InsuranceInvestigator, IntelligenceInvestigator,
 	  LawEnforcementInvestigator, MilitaryInvestigator, PrivateInvestigator,

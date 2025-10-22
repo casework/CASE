@@ -1,0 +1,64 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:technician-identity-9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+            "@type": "uco-core:Identity",
+            "uco-core:name": "Forensic Technician Williams",
+            "uco-core:role": {
+                "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a"
+            }
+        },
+        {
+            "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a",
+            "@type": "case-investigation:Technician",
+            "uco-core:startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2024-01-15T09:00:00Z"
+            }
+        },
+        {
+            "@id": "kb:disk-image-3f8a2c7d-b1e9-4d3c-a5f7-1b2e4a9c8d6f",
+            "@type": "uco-observable:File",
+            "uco-core:description": "Forensic disk image of evidence laptop",
+            "uco-core:hasFacet": {
+                "@id": "kb:disk-image-facet-a3c9f7e1-d5b2-4a8e-9c3f-7e1a5d9b2c4f",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:fileName": "evidence-laptop-001.dd",
+                "uco-observable:sizeInBytes": 512000000000
+            }
+        },
+        {
+            "@id": "kb:disk-imaging-action-5d7a3e9f-c2b4-4f8a-9e3d-6c1b5a8f7e2d",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-core:name": "Disk imaging of evidence laptop",
+            "uco-action:performer": {
+                "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a"
+            },
+            "uco-action:result": [
+                {
+                    "@id": "kb:disk-image-3f8a2c7d-b1e9-4d3c-a5f7-1b2e4a9c8d6f"
+                },
+                {
+                    "@id": "kb:provenance-record-e9f5c1a7-d4b8-4a6e-9c2f-3e5d7a9b1c4f"
+                }
+            ]
+        },
+        {
+            "@id": "kb:provenance-record-e9f5c1a7-d4b8-4a6e-9c2f-3e5d7a9b1c4f",
+            "@type": "case-investigation:ProvenanceRecord",
+            "case-investigation:exhibitNumber": "2024-001-E1",
+            "case-investigation:rootExhibitNumber": "2024-001-E1",
+            "uco-core:object": {
+                "@id": "kb:disk-image-3f8a2c7d-b1e9-4d3c-a5f7-1b2e4a9c8d6f"
+            }
+        }
+    ]
+}

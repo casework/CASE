@@ -4,13 +4,14 @@
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
         {
             "@id": "kb:technician-identity-9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-            "@type": "uco-core:Identity",
+            "@type": "uco-identity:Identity",
             "uco-core:name": "Forensic Technician Williams",
             "uco-core:role": {
                 "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a"
@@ -18,7 +19,19 @@
         },
         {
             "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a",
-            "@type": "case-investigation:Technician",
+            "@type": "case-investigation:Technician"
+        },
+        {
+            "@id": "kb:relationship-13b1d06d-1697-4085-bd1c-88d1df713b19",
+            "@type": "uco-core:Relationship",
+            "uco-core:kindOfRelationship": "Has_Role",
+            "uco-core:isDirectional": true,
+            "uco-core:source": {
+                "@id": "kb:technician-identity-9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
+            },
+            "uco-core:target": {
+                "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a"
+            },
             "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2024-01-15T09:00:00Z"
@@ -40,7 +53,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "Disk imaging of evidence laptop",
             "uco-action:performer": {
-                "@id": "kb:technician-role-c8d9f2e1-a4b7-4c3e-8f5d-6a1e9b2c7f4a"
+                "@id": "kb:technician-identity-9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
             },
             "uco-action:result": [
                 {

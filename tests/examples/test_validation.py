@@ -128,3 +128,10 @@ def test_investigative_action_XFAIL_validation() -> None:
         str(NS_CASE_INVESTIGATION.rootExhibitNumber)
       }
     )
+
+def test_technician_role_PASS_validation() -> None:
+    """
+    Confirm the Technician role PASS instance data passes validation.
+    """
+    g = load_validation_graph("technician_role_PASS_validation.ttl", True)
+    assert isinstance(g, rdflib.Graph)

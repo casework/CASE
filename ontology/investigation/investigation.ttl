@@ -235,6 +235,17 @@ investigation:SubjectActionLifecycle
 	sh:targetClass investigation:SubjectActionLifecycle ;
 	.
 
+investigation:Technician
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf uco-role:Role ;
+	rdfs:label "Technician"@en ;
+	rdfs:comment "Technician is a role involved in performing technical tasks during investigations, such as evidence collection, preservation, processing, initial analysis, and repair."@en ;
+	sh:targetClass investigation:Technician ;
+	.
+
 investigation:VictimActionLifecycle
 	a
 		owl:Class ,

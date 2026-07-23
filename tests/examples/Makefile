@@ -22,7 +22,8 @@ tests_srcdir := $(top_srcdir)/tests
 
 all: \
   investigative_action_PASS_validation.ttl \
-  investigative_action_XFAIL_validation.ttl
+  investigative_action_XFAIL_validation.ttl \
+  technician_role_PASS_validation.ttl
 
 .PRECIOUS: \
   %_validation.ttl
@@ -63,7 +64,8 @@ all: \
 
 check: \
   investigative_action_PASS_validation.ttl \
-  investigative_action_XFAIL_validation.ttl
+  investigative_action_XFAIL_validation.ttl \
+  technician_role_PASS_validation.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG

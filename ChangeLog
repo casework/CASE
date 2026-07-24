@@ -1,3 +1,10 @@
+2025-09-23
+	* (26c65ee) Issue 178: Add investigator role subclasses and shapes in investigation namespace:
+	  AcademicResearchInvestigator, CivilSocietyInvestigator, CorporateInvestigator,
+	  HumanRightsInvestigator, InsuranceInvestigator, IntelligenceInvestigator,
+	  LawEnforcementInvestigator, MilitaryInvestigator, PrivateInvestigator,
+	  RegulatoryInvestigator
+
 2025-03-18
 	* (7ecdaf4) UCO Issue 629: Revise vocabulary pattern
 

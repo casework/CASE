@@ -1,3 +1,15 @@
+2026-07-23
+	* (217b29b) UCO Issue 666: Fix typo; add class-vs-instance clarifying remarks 
+
+2026-07-19
+	* (876173b) UCO Issue 670: Fix typo "withing"
+	* (876173b) UCO Issue 669: Fix typo "Implemetation"
+	* (876173b) UCO Issue 667: Fix typo "MessageTread"
+	* (876173b) UCO Issue 666: Add `core:UcoType` and `action:Technique`
+
+2025-05-29
+	* OCCASE-496: Release CASE 1.4.0, with release notes at https://caseontology.org/releases/1.4.0/
+
 2025-03-18
 	* (7ecdaf4) UCO Issue 629: Revise vocabulary pattern
 

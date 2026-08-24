@@ -93,7 +93,7 @@ investigation:ExaminerActionLifecycle
 	rdfs:subClassOf uco-action:ActionLifecycle ;
 	rdfs:label "ExaminerActionLifecycle"@en ;
 	rdfs:comment "An examiner action lifecycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
-	sh:targetClass investigation:ExaminerActionLifecylce ;
+	sh:targetClass investigation:ExaminerActionLifecycle ;
 	.
 
 investigation:Investigation

@@ -127,6 +127,12 @@ investigation:Investigation
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path investigation:investigationIdentifier ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path investigation:investigationStatus ;
 		] ,
 		[
@@ -287,6 +293,14 @@ investigation:investigationForm
 			xsd:string
 		) ;
 	] ;
+	.
+
+investigation:investigationIdentifier
+	a owl:DatatypeProperty ;
+	rdfs:label "investigationIdentifier"@en ;
+	rdfs:comment "A string identifier for an investigation.  This would typically be assigned according to practice of the organization pursuing the investigation, e.g., meeting triggering conditions and consistent with a certain string structure decided by the organization.  CASE makes no requirement whether or not this identifier is related to the IRI identifying the investigation's node within the graph.  The time this identifier is designated is not necessarily the same time as the initiation of the investigation."@en ;
+	rdfs:domain investigation:Investigation ;
+	rdfs:range xsd:string ;
 	.
 
 investigation:investigationStatus
